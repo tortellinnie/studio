@@ -1,5 +1,5 @@
 
-import { GraduationCap, BookOpen, Mic, PenTool, Code, Users, Newspaper, Award } from 'lucide-react';
+import { GraduationCap, BookOpen, Mic, PenTool, Code, Users, Newspaper, Award, Search, Radio } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Education() {
@@ -10,12 +10,12 @@ export function Education() {
       period: 'Sep 2023 – Jul 2027',
       grade: 'Grade: 3.6 (GPA)',
       activities: [
+        { label: 'President', sub: 'Student Library Committee', icon: BookOpen },
+        { label: 'Junior Officer', sub: 'ACM Tech Publicity', icon: Radio },
         { label: 'Senior Writer', sub: 'The Innovator', icon: PenTool },
         { label: 'Campus Journalist', sub: 'UAAP', icon: Newspaper },
-        { label: 'Junior Officer', sub: 'ACM', icon: Code },
         { label: 'Podcast Host', sub: 'ACM Diaries', icon: Mic },
-        { label: 'Committee Officer', sub: 'GDSC', icon: Users },
-        { label: 'President', sub: 'FEU Tech Library', icon: BookOpen }
+        { label: 'Committee Officer', sub: 'GDSC', icon: Users }
       ],
       skills: ['Software Solution Development', 'Technical Writing', 'Computational Logic']
     },

@@ -1,22 +1,22 @@
 
 'use client';
 
-import { Award, ShieldCheck, Trophy, BadgeCheck, Sparkles, BookOpen, GraduationCap, Smartphone, Server, Code, Code2, Terminal, BrainCircuit, ShieldAlert, Cpu, Database, Globe, Medal, Zap } from 'lucide-react';
+import { Award, ShieldCheck, Trophy, BadgeCheck, Sparkles, BookOpen, GraduationCap, Smartphone, Server, Code, Code2, Terminal, BrainCircuit, ShieldAlert, Cpu, Database, Globe, Medal, Zap, Layout } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 export function Achievements() {
   const data = {
     scholarships: [
-      { title: "Merit Scholarship", org: "DOST Philippines", year: "2023 - Present", icon: GraduationCap },
-      { title: "Financial Academic Scholarship", org: "FEU Institute of Technology", year: "2023 - Present", icon: Sparkles },
-      { title: "Economic Scholarship", org: "QC Youth Development Office (QCYDO)", year: "2025 - Present", icon: BadgeCheck },
-      { title: "Partial Scholarship (40%)", org: "Asia Pacific Youth Exchange / Urban Youth Academy", year: "2025", icon: Globe },
-      { title: "Datacamp Scholarship (100%)", org: "Data Engineering Pilipinas", year: "2024", icon: BookOpen }
+      { title: "Economic Scholarship", org: "Quezon City Youth Dev Office", year: "2025", icon: BadgeCheck },
+      { title: "Partial Scholarship (40%)", org: "APYE / Urban Youth Academy", year: "2025", icon: Globe },
+      { title: "Datacamp Scholarship (100%)", org: "Data Engineering Pilipinas", year: "2024", icon: Database },
+      { title: "Financial Academic Scholarship", org: "FEU Institute of Technology", year: "2023", icon: Sparkles },
+      { title: "Merit Scholarship", org: "DOST Philippines", year: "2023", icon: GraduationCap }
     ],
     honors: [
       { title: "EMC Global Award", org: "EMC Global Summit 2026", id: "C-RAM Solutions", icon: Trophy },
-      { title: "Most Outstanding Youth Awardee", org: "QC Government / SK Commonwealth", id: "Tech Innovation", icon: Medal },
+      { title: "Most Outstanding Youth Awardee", org: "QC Gov / SK Commonwealth", id: "Tech Innovation", icon: Medal },
       { title: "1st Runner-Up, Philippine Startup Challenge X", org: "DICT Regional NCR", id: "NERDS 2.0", icon: ShieldCheck },
       { title: "1st Runner-Up, Readers Rising Hackathon", org: "NBDB Philippines", id: "Salayliwa", icon: Zap },
       { title: "Winner, Musashinova Pitching Event", org: "EMC Global / Musashino Uni", id: "Japan Delegate", icon: Globe },
@@ -24,16 +24,16 @@ export function Achievements() {
       { title: "2x Top Performing Student", org: "FEU Tech CS Department", id: "Academic Excellence", icon: Trophy }
     ],
     certifications: [
-      { title: "Oracle Cloud Infrastructure 2025 AI Foundations", org: "Oracle", year: "2025", icon: BrainCircuit },
-      { title: "Certified Network Security Practitioner (CNSP)", org: "The SecOps Group", year: "2025", icon: ShieldAlert },
-      { title: "AI Associate", org: "Salesforce", year: "2025", icon: Sparkles },
-      { title: "Accredited Generative AI Fundamentals", org: "Databricks Academy", year: "2025", icon: Database },
+      { title: "Learning MATLAB", org: "LinkedIn", year: "2025", icon: Code },
+      { title: "Android Dev with Kotlin", org: "LinkedIn", year: "2025", icon: Smartphone },
+      { title: "Node.js: Testing and Code Quality", org: "LinkedIn", year: "2025", icon: Server },
       { title: "Linux Essentials Certification", org: "Cisco Networking Academy", year: "2025", icon: Terminal },
       { title: "IT Specialist - Python", org: "Certiport", year: "2025", icon: Code2 },
+      { title: "Oracle Cloud Infrastructure AI Foundations", org: "Oracle", year: "2025", icon: BrainCircuit },
+      { title: "Certified Network Security Practitioner (CNSP)", org: "The SecOps Group", year: "2025", icon: ShieldAlert },
       { title: "Microsoft Summer Bootcamp Bronze", org: "Microsoft", year: "2025", icon: Cpu },
-      { title: "Android Development with Kotlin", org: "LinkedIn", year: "2025", icon: Smartphone },
-      { title: "Node.js: Testing and Code Quality", org: "LinkedIn", year: "2025", icon: Server },
-      { title: "Learning MATLAB", org: "LinkedIn", year: "2025", icon: Code }
+      { title: "AI Associate", org: "Salesforce", year: "2025", icon: Sparkles },
+      { title: "Accredited Generative AI Fundamentals", org: "Databricks Academy", year: "2025", icon: Layout }
     ]
   };
 
@@ -63,7 +63,7 @@ export function Achievements() {
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white mb-1 leading-tight">{item.title}</h4>
-                      <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{item.org} • {item.id}</p>
+                      <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{item.org} • {item.id || item.year}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -107,7 +107,7 @@ export function Achievements() {
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white mb-1 leading-tight">{item.title}</h4>
-                      <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{item.org} • Issued 2025</p>
+                      <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{item.org} • Issued {item.year}</p>
                     </div>
                   </CardContent>
                 </Card>

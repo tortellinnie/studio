@@ -1,7 +1,7 @@
 
 'use client';
 
-import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap, Rocket, Briefcase } from 'lucide-react';
+import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap, Rocket, Briefcase, Building2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -10,53 +10,53 @@ export function Experience() {
       title: 'Executive Lead',
       org: 'NERDS 2.0 · Freelance',
       period: 'Apr 2025 - Present',
-      description: 'Spearheading award-winning startups Salayliwa and Gabaydiwa. Currently architecting Proxygen and Birdseye.',
+      description: 'Spearheading award-winning startups and leading multidisciplinary teams.',
       icon: Microscope,
       details: [
-        'Directed full-cycle project development from ideation to prototype deployment for national initiatives.',
-        'Led 3 cross-functional teams using Agile Scrum, ensuring research alignment and culturally grounded design.',
-        'Earned national and regional recognition, presenting to 1000+ attendees at innovation fairs.',
-        'Collaborated with DOST-PCHRD and EAMC Dept. of Neurosciences for system validation.'
+        'Directed full-cycle project development for Salayliwa (gamified literacy) and Gabaydiwa (cognitive monitoring).',
+        'Led 3 cross-functional teams using Agile Scrum to ensure research alignment and culturally grounded design.',
+        'Currently architecting Proxygen (aquaculture DO management) and Birdseye (poultry monitoring).',
+        'Earned national and regional recognition, presenting to 1000+ attendees at major innovation fairs.'
       ],
-      skills: ['Program Management', 'Agile Scrum', 'Data Modeling', 'UI/UX Design']
+      skills: ['Agile Scrum', 'Data Modeling', 'UI/UX Design', 'Program Management']
     },
     {
       title: 'Chief Strategist',
       org: 'AGAPE PH0209 Child Development Center',
       period: 'Nov 2025 - Present',
-      description: 'Directing operations and strategic foresight for a major youth NGO.',
+      description: 'Directing operations and strategic foresight for a 200+ member NGO.',
       icon: Rocket,
       details: [
-        'Directing strategic planning for a youth-led NGO with 200+ active members.',
-        'Leading occasional meetings with stakeholders for resource planning and innovative proposals.'
+        'Directing strategic planning and foresight for youth-led community programs.',
+        'Orchestrating meetings with stakeholders for resource planning and innovative proposals.'
       ],
-      skills: ['Strategic Planning', 'Foresight', 'Leadership']
+      skills: ['Strategic Planning', 'Strategic Foresight', 'Resource Management']
     },
     {
       title: 'President',
       org: 'AGAPE PH0209 Child Development Center',
       period: 'Feb 2024 - Nov 2025',
-      description: 'Managed nationwide community impact programs.',
+      description: 'Led 15+ nationwide community programs impacting 600+ beneficiaries.',
       icon: Users,
       details: [
-        'Organized 15+ community programs impacting over 600 beneficiaries nationwide.',
-        'Managed cross-functional volunteer teams ensuring success within strict budgets.',
-        'Strengthened local government partnerships through city-wide forum representation.'
+        'Managed cross-functional volunteer teams ensuring program success within strict budgets.',
+        'Strengthened partnerships with local government and NGOs through city-wide forums.',
+        'Focused on education, leadership, and digital literacy for youth nationwide.'
       ],
-      skills: ['Organizational Leadership', 'Resource Management', 'Community Outreach']
+      skills: ['Organizational Leadership', 'Community Outreach', 'Crisis Management']
     },
     {
       title: 'President',
       org: 'FEU Tech Student Library Committee',
       period: 'Oct 2025 - Present',
-      description: 'Overseeing operations and strategic initiatives for the campus library system.',
+      description: 'Overseeing operations and strategic initiatives for the campus library.',
       icon: Library,
       details: [
-        'Leading a team of 20+ officers, increased library engagement by 35% via digital campaigns.',
-        'Developed four new library programs enhancing student resource access.',
-        'Mentored officers in leadership and project execution.'
+        'Led a team of 20+ officers, increasing library engagement by an estimated 35% via digital campaigns.',
+        'Developed four new library programs enhancing student access to research tools.',
+        'Mentored officers in leadership, organizational management, and project execution.'
       ],
-      skills: ['Engagement Strategy', 'Project Execution', 'Team Mentorship']
+      skills: ['Engagement Strategy', 'Team Mentorship', 'Organizational Management']
     },
     {
       title: 'Chief Marketing Officer',
@@ -65,11 +65,11 @@ export function Experience() {
       description: 'Positioned the startup for high-value competitive grants and boosted investor relations.',
       icon: Megaphone,
       details: [
-        'Drove campaigns securing grants worth hundreds of thousands in PHP.',
-        'Provided UX/UI insights to the Scrum team to shape the product roadmap.',
-        'Boosted investor engagement by 30% through strategic competition representation.'
+        'Drove campaigns securing grants worth hundreds of thousands in Philippine Peso.',
+        'Boosted investor engagement by 30% and directly led to four new qualified opportunities.',
+        'Provided UX/UI insights to the Scrum team to shape the product roadmap.'
       ],
-      skills: ['Marketing', 'Innovation Development', 'UX Insights']
+      skills: ['Marketing Strategy', 'Innovation Development', 'Investor Relations']
     },
     {
       title: 'University Representative',
@@ -78,24 +78,24 @@ export function Experience() {
       description: 'Primary delegate to the DOST-NCR Alliance, representing tens of thousands of scholars.',
       icon: Globe,
       details: [
-        'Secured institutional support to formalize the on-campus scholar community.',
-        'Shaped regional policy through direct collaboration with 10+ universities.',
-        'Coordinated regional development projects maximizing collective scholar impact.'
+        'Secured institutional support to formalize and sustain the on-campus scholar community.',
+        'Shaped regional policy and elevated the institution\'s voice among peer universities.',
+        'Coordinated regional development projects with representatives from 10+ universities.'
       ],
-      skills: ['Strategic Partnerships', 'Policy Shaping', 'Event Coordination']
+      skills: ['Strategic Partnerships', 'Policy Shaping', 'Regional Coordination']
     },
     {
       title: 'Project Manager & Frontend Developer',
-      org: 'PUP - RISFI · Internship',
+      org: 'PUP - Research Institute for Strategic Foresight and Innovation',
       period: 'Feb 2022 - Jun 2023',
-      description: 'Technical lead for research-driven software solutions at the Research Institute.',
+      description: 'Technical lead for research-driven software solutions.',
       icon: Terminal,
       details: [
-        'Managed a team of six developers, overseeing all delivery and QA metrics.',
-        'Executed agile strategic plans meeting strict research institute deadlines.',
-        'Liaised between the dev team and stakeholders to align technical goals.'
+        'Managed a team of six developers, serving as the Technical Project Lead responsible for delivery.',
+        'Developed and executed agile strategic plans and task roadmaps meeting strict deadlines.',
+        'Liaised between development team and business stakeholders to align technical goals.'
       ],
-      skills: ['Web Development', 'Project Management', 'Agile Planning']
+      skills: ['Web Development', 'Project Management', 'Agile Strategic Planning']
     }
   ];
 

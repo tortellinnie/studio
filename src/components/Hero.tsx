@@ -11,8 +11,7 @@ export function Hero() {
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-headshot');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-48 pb-20 overflow-hidden">
-      {/* Dynamic Background Elements */}
+    <section className="relative min-h-screen flex items-center justify-center pt-64 pb-20 overflow-hidden">
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
       
@@ -21,24 +20,24 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <Sparkles className="w-3 h-3" />
-              <span>Available for Internship</span>
+              <span>Open to Software Engineering & PM Roles</span>
             </div>
             
-            <h1 className="text-6xl lg:text-[7rem] font-black text-white leading-[0.85] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+            <h1 className="text-6xl lg:text-[7.5rem] font-black text-white leading-[0.85] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
               <span className="text-gradient uppercase block">TECHNO</span>
               <span className="text-gradient uppercase block">LEADER</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
               Student Founder & Executive Lead | Youth NGO Consultant | Speaker <br />
-              Intelligent Solutions. Let&apos;s make it happen.
+              Developing innovative, socially impactful technology through AI and data systems.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-8 items-center animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-500">
             <Button size="lg" className="rounded-full bg-white text-black hover:bg-white/90 h-16 px-12 text-xl font-black group transition-all hover:scale-105" asChild>
               <Link href="/#projects">
-                Explore Work
+                Explore Innovations
                 <ChevronRight className="w-6 h-6 ml-2 transition-transform group-hover:translate-x-2" />
               </Link>
             </Button>
@@ -57,11 +56,11 @@ export function Hero() {
           <div className="aspect-[4/5] relative overflow-hidden rounded-[3rem] border-[1px] border-white/10 glass-card shadow-3xl transform rotate-2 hover:rotate-0 transition-all duration-1000 group">
             <Image
               src={profileImage?.imageUrl || ''}
-              alt="Portrait"
+              alt="Shann Karl Felipe"
               fill
               className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
               priority
-              data-ai-hint="minimalist professional portrait"
+              data-ai-hint="professional headshot portrait"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
@@ -72,7 +71,7 @@ export function Hero() {
             </div>
             <div>
               <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">Academic Rank</p>
-              <p className="text-sm font-black text-white">Software Engineering Top Performing Student</p>
+              <p className="text-sm font-black text-white">Top Performing Software Engineering Student</p>
             </div>
           </div>
         </div>
