@@ -1,7 +1,7 @@
 'use client';
 
 import { Badge } from '@/components/ui/badge';
-import { Building2, Landmark, GraduationCap, Globe2, ShieldCheck, Cpu } from 'lucide-react';
+import { Building2, Landmark, GraduationCap, Globe2 } from 'lucide-react';
 
 export function Collaborators() {
   const sectors = [
@@ -82,7 +82,7 @@ export function Collaborators() {
               ))}
             </div>
             <p className="text-white/60 font-medium text-sm">
-              Actively coordinating with <span className="text-primary font-black">6+ underrepresented sectors</span> across the Philippine archipelago.
+              Actively coordinating with <span className="text-primary font-black">4 core sectors</span> across the Philippine archipelago.
             </p>
           </div>
         </div>
