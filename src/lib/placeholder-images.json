@@ -9,43 +9,43 @@
     {
       "id": "project-salayliwa",
       "description": "Thumbnail for Salayliwa project",
-      "imageUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "reading culture"
     },
     {
       "id": "project-gabaydiwa",
       "description": "Thumbnail for GabayDiwa project",
-      "imageUrl": "https://images.unsplash.com/photo-1547027072-332f09bd6bb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1547027072-332f09bd6bb3?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "healthcare data"
     },
     {
       "id": "project-proxygen",
       "description": "Thumbnail for Proxygen project",
-      "imageUrl": "https://images.unsplash.com/photo-1623824204241-f851d3bcfaf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1623824204241-f851d3bcfaf5?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "aquaculture sensor"
     },
     {
       "id": "project-birdseye",
       "description": "Dashboard for Birdseye poultry monitoring",
-      "imageUrl": "https://images.unsplash.com/photo-1551288049-bbbda536339a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "poultry dashboard"
     },
     {
       "id": "project-video-automation",
       "description": "Thumbnail for Video Automation Engine",
-      "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "automation code"
     },
     {
       "id": "featured-travel-1",
       "description": "Travel highlight 1",
-      "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "alpine mountain"
     },
     {
       "id": "featured-speaking-1",
       "description": "Speakership highlight 1",
-      "imageUrl": "https://images.unsplash.com/photo-1475721027185-4038e0588f03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1475721027185-4038e0588f03?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "tech conference"
     }
   ]

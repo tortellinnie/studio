@@ -11,7 +11,7 @@ export function Hero() {
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-headshot');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-96 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-48 pb-20 overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
@@ -30,6 +30,7 @@ export function Hero() {
             </h1>
             
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
+              Student Founder & Executive Lead | Youth NGO Consultant | Speaker <br />
               Intelligent Solutions. Let&apos;s make it happen.
             </p>
           </div>
@@ -65,7 +66,6 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
           
-          {/* Statistics Card */}
           <div className="absolute -bottom-12 -left-12 glass-card p-8 rounded-[2rem] flex items-center gap-6 border-white/10 animate-bounce-slow max-w-xs">
             <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-[0_0_30px_rgba(139,92,246,0.5)] shrink-0">
               3.6

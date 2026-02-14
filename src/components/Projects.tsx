@@ -12,33 +12,9 @@ import { Github, ArrowUpRight } from 'lucide-react';
 export function Projects() {
   const projects = [
     {
-      id: 'salayliwa',
-      title: 'Salayliwa',
-      description: 'National award-winning edu-cultural project revitalizing reading engagement through adaptive digital experiences and culturally resonant stories.',
-      tags: ['Next.js', 'AI', 'Cultural UX', 'EduTech'],
-      links: { github: '#', live: '/projects/salayliwa' },
-      imageId: 'project-salayliwa'
-    },
-    {
-      id: 'gabaydiwa',
-      title: 'GabayDiwa',
-      description: 'Revolutionizing Filipino Dementia Home Care with a Cognitive Health Monitoring System. 1st Runner-Up in Philippine Startup Challenge X.',
-      tags: ['React', 'AI Modeling', 'Healthcare', 'Startup'],
-      links: { github: '#', live: '/projects/gabaydiwa' },
-      imageId: 'project-gabaydiwa'
-    },
-    {
-      id: 'proxygen',
-      title: 'Proxygen',
-      description: 'Proactive, weather-aware dissolved oxygen management system for pond aquaculture using fuzzy logic to prevent fish kills.',
-      tags: ['IoT', 'Fuzzy Logic', 'Data Science', 'AWS'],
-      links: { github: '#', live: '/projects/proxygen' },
-      imageId: 'project-proxygen'
-    },
-    {
       id: 'birdseye',
       title: 'Birdseye',
-      description: 'Computer vision on edge devices detecting wet zones in poultry litter in real-time to improve bird welfare and reduce emissions.',
+      description: 'Computer vision on edge devices detecting wet zones in poultry litter in real-time to improve bird welfare and reduce ammonia emissions. Pilot tested in commercial Luzon farms.',
       tags: ['Computer Vision', 'Edge AI', 'IoT', 'Agriculture'],
       links: { github: '#', live: '/projects/birdseye' },
       imageId: 'project-birdseye'
@@ -46,10 +22,34 @@ export function Projects() {
     {
       id: 'video-automation',
       title: 'Video Automation Engine',
-      description: 'End-to-end motivational video generation engine built on n8n and Docker, powered by local LLMs (Gemini) and FFmpeg.',
+      description: 'End-to-end motivational video generation engine built on n8n and Docker, powered by local LLMs (Gemini) and FFmpeg for YouTube upload.',
       tags: ['Docker', 'n8n', 'Gemini AI', 'FFmpeg'],
       links: { github: '#', live: '/projects/video-automation' },
       imageId: 'project-video-automation'
+    },
+    {
+      id: 'gabaydiwa',
+      title: 'GabayDiwa',
+      description: 'Revolutionizing Filipino Dementia Home Care with a Cognitive Health Monitoring System. 1st Runner-Up in Philippine Startup Challenge X Regional.',
+      tags: ['React', 'AI Modeling', 'Healthcare', 'Startup'],
+      links: { github: '#', live: '/projects/gabaydiwa' },
+      imageId: 'project-gabaydiwa'
+    },
+    {
+      id: 'proxygen',
+      title: 'Proxygen',
+      description: 'Proactive, weather-aware dissolved oxygen management system for pond aquaculture using fuzzy logic to prevent fish kills and optimize feeding.',
+      tags: ['IoT', 'Fuzzy Logic', 'Data Science', 'AWS'],
+      links: { github: '#', live: '/projects/proxygen' },
+      imageId: 'project-proxygen'
+    },
+    {
+      id: 'salayliwa',
+      title: 'Salayliwa',
+      description: 'National award-winning edu-cultural project revitalizing reading engagement through adaptive digital experiences and culturally resonant stories.',
+      tags: ['Next.js', 'AI', 'Cultural UX', 'EduTech'],
+      links: { github: '#', live: '/projects/salayliwa' },
+      imageId: 'project-salayliwa'
     }
   ];
 

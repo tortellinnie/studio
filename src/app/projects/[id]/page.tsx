@@ -15,42 +15,6 @@ export default function ProjectDetail() {
   const id = params.id as string;
 
   const projectDetails: Record<string, any> = {
-    'salayliwa': {
-      title: 'Salayliwa',
-      tags: ['Next.js', 'AI', 'Cultural UX', 'EduTech'],
-      description: 'National award-winning edu-cultural project focused on revitalizing reading engagement among Filipino youth through adaptive digital experiences and culturally resonant stories. Designed to merge technology, inclusivity, and creativity.',
-      challenges: [
-        'Recognized at NARA Con 2025 at the National Library',
-        'Revitalizing literacy through community-driven habits',
-        'Designing culturally grounded digital storytelling interfaces'
-      ],
-      imageId: 'project-salayliwa',
-      status: 'National Award'
-    },
-    'gabaydiwa': {
-      title: 'GabayDiwa',
-      tags: ['React', 'AI Modeling', 'Healthcare', 'Startup'],
-      description: 'A Cognitive Health and Progression Monitoring System empowering caregivers with data-driven insights through cognitive trend maps and structured health tracking.',
-      challenges: [
-        '1st Runner-Up in Philippine Startup Challenge X',
-        'Bridging the gap between clinical insight and home care',
-        'Developing proactive risk indicators for dementia care'
-      ],
-      imageId: 'project-gabaydiwa',
-      status: 'Award-Winning'
-    },
-    'proxygen': {
-      title: 'Proxygen',
-      tags: ['IoT', 'Fuzzy Logic', 'Data Science', 'AWS'],
-      description: 'Proactive dissolved oxygen (DO) management system for Filipino pond aquaculture. Integrates sensor data and weather forecasts through a fuzzy logic-based decision engine.',
-      challenges: [
-        '30–40% improvement in DO maintenance achieved',
-        'Preventing mass fish kills through predictive alerts',
-        'Aligning with SDGs 2, 9, 12, and 14 for sustainability'
-      ],
-      imageId: 'project-proxygen',
-      status: 'Industrial Grade'
-    },
     'birdseye': {
       title: 'Birdseye',
       tags: ['Computer Vision', 'Edge AI', 'IoT', 'Agriculture'],
@@ -74,10 +38,46 @@ export default function ProjectDetail() {
       ],
       imageId: 'project-video-automation',
       status: 'Autonomous'
+    },
+    'gabaydiwa': {
+      title: 'GabayDiwa',
+      tags: ['React', 'AI Modeling', 'Healthcare', 'Startup'],
+      description: 'A Cognitive Health and Progression Monitoring System empowering caregivers with data-driven insights through cognitive trend maps and structured health tracking.',
+      challenges: [
+        '1st Runner-Up in Philippine Startup Challenge X Regional',
+        'Bridging the gap between clinical insight and home care',
+        'Developing proactive risk indicators for dementia care'
+      ],
+      imageId: 'project-gabaydiwa',
+      status: 'Award-Winning'
+    },
+    'proxygen': {
+      title: 'Proxygen',
+      tags: ['IoT', 'Fuzzy Logic', 'Data Science', 'AWS'],
+      description: 'Proactive dissolved oxygen (DO) management system for Filipino pond aquaculture. Integrates sensor data and weather forecasts through a fuzzy logic-based decision engine.',
+      challenges: [
+        '30–40% improvement in DO maintenance achieved',
+        'Preventing mass fish kills through predictive alerts',
+        'Aligning with SDGs 2, 9, 12, and 14 for sustainability'
+      ],
+      imageId: 'project-proxygen',
+      status: 'Industrial Grade'
+    },
+    'salayliwa': {
+      title: 'Salayliwa',
+      tags: ['Next.js', 'AI', 'Cultural UX', 'EduTech'],
+      description: 'National award-winning edu-cultural project focused on revitalizing reading engagement among Filipino youth through adaptive digital experiences and culturally resonant stories.',
+      challenges: [
+        'Recognized at NARA Con 2025 at the National Library',
+        'Revitalizing literacy through community-driven habits',
+        'Designing culturally grounded digital storytelling interfaces'
+      ],
+      imageId: 'project-salayliwa',
+      status: 'National Award'
     }
   };
 
-  const project = projectDetails[id] || projectDetails['salayliwa'];
+  const project = projectDetails[id] || projectDetails['birdseye'];
   const img = PlaceHolderImages.find(p => p.id === project.imageId) || PlaceHolderImages[1];
 
   return (
@@ -137,6 +137,7 @@ export default function ProjectDetail() {
                   alt={project.title}
                   fill
                   className="object-cover"
+                  unoptimized={img?.imageUrl.includes('drive.google.com')}
                 />
               </div>
               <div className="mt-8 grid grid-cols-3 gap-4">

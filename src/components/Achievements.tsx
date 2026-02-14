@@ -1,4 +1,6 @@
 
+'use client';
+
 import { Award, ShieldCheck, Trophy, BadgeCheck, Sparkles, BookOpen, GraduationCap, Smartphone, Server, Code, Code2, Terminal, BrainCircuit, ShieldAlert, Cpu, Database, Globe, Medal, Zap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,142 +8,32 @@ import { Badge } from '@/components/ui/badge';
 export function Achievements() {
   const data = {
     scholarships: [
-      {
-        title: "Merit Scholarship",
-        org: "DOST Philippines",
-        year: "2023 - Present",
-        icon: GraduationCap
-      },
-      {
-        title: "Financial Academic Scholarship",
-        org: "FEU Institute of Technology",
-        year: "2023 - Present",
-        icon: Sparkles
-      },
-      {
-        title: "Economic Scholarship",
-        org: "QC Youth Development Office (QCYDO)",
-        year: "2025 - Present",
-        icon: BadgeCheck
-      },
-      {
-        title: "Asia Pacific Youth Exchange (Partial 40%)",
-        org: "Urban Youth Academy",
-        year: "2025",
-        icon: Globe
-      },
-      {
-        title: "Datacamp Scholarship (100%)",
-        org: "Data Engineering Pilipinas",
-        year: "2024",
-        icon: BookOpen
-      }
+      { title: "Merit Scholarship", org: "DOST Philippines", year: "2023 - Present", icon: GraduationCap },
+      { title: "Financial Academic Scholarship", org: "FEU Institute of Technology", year: "2023 - Present", icon: Sparkles },
+      { title: "Economic Scholarship", org: "QC Youth Development Office (QCYDO)", year: "2025 - Present", icon: BadgeCheck },
+      { title: "Partial Scholarship (40%)", org: "Asia Pacific Youth Exchange / Urban Youth Academy", year: "2025", icon: Globe },
+      { title: "Datacamp Scholarship (100%)", org: "Data Engineering Pilipinas", year: "2024", icon: BookOpen }
     ],
     honors: [
-      {
-        title: "EMC Global Award",
-        org: "EMC Global Summit 2026",
-        id: "Honoree",
-        icon: Trophy
-      },
-      {
-        title: "Most Outstanding Youth Awardee",
-        org: "QC Government / SK Commonwealth",
-        id: "Tech Innovation",
-        icon: Medal
-      },
-      {
-        title: "1st Runner-Up, Philippine Startup Challenge X",
-        org: "DICT Regional NCR",
-        id: "Regional Winner",
-        icon: ShieldCheck
-      },
-      {
-        title: "1st Runner-Up, Readers Rising Hackathon",
-        org: "NBDB Philippines",
-        id: "National Level",
-        icon: Zap
-      },
-      {
-        title: "Winner, Musashinova Pitching Event",
-        org: "EMC Global / Musashino Uni",
-        id: "Japan Delegate",
-        icon: Globe
-      },
-      {
-        title: "2nd Runner-Up, Startup QC",
-        org: "Quezon City Government",
-        id: "Startup Competition",
-        icon: Award
-      },
-      {
-        title: "2x Top Performing Student",
-        org: "FEU Tech CS Department",
-        id: "Academic Excellence",
-        icon: Trophy
-      }
+      { title: "EMC Global Award", org: "EMC Global Summit 2026", id: "C-RAM Solutions", icon: Trophy },
+      { title: "Most Outstanding Youth Awardee", org: "QC Government / SK Commonwealth", id: "Tech Innovation", icon: Medal },
+      { title: "1st Runner-Up, Philippine Startup Challenge X", org: "DICT Regional NCR", id: "NERDS 2.0", icon: ShieldCheck },
+      { title: "1st Runner-Up, Readers Rising Hackathon", org: "NBDB Philippines", id: "Salayliwa", icon: Zap },
+      { title: "Winner, Musashinova Pitching Event", org: "EMC Global / Musashino Uni", id: "Japan Delegate", icon: Globe },
+      { title: "2nd Runner-Up, Startup QC", org: "Quezon City Government", id: "C-RAM Solutions", icon: Award },
+      { title: "2x Top Performing Student", org: "FEU Tech CS Department", id: "Academic Excellence", icon: Trophy }
     ],
     certifications: [
-      {
-        title: "Oracle Cloud Infrastructure 2025 AI Foundations",
-        org: "Oracle",
-        year: "2025",
-        icon: BrainCircuit
-      },
-      {
-        title: "Certified Network Security Practitioner (CNSP)",
-        org: "The SecOps Group",
-        year: "2025",
-        icon: ShieldAlert
-      },
-      {
-        title: "AI Associate",
-        org: "Salesforce",
-        year: "2025",
-        icon: Sparkles
-      },
-      {
-        title: "Accredited Generative AI Fundamentals",
-        org: "Databricks Academy",
-        year: "2025",
-        icon: Database
-      },
-      {
-        title: "Linux Essentials Certification",
-        org: "Cisco Networking Academy",
-        year: "2025",
-        icon: Terminal
-      },
-      {
-        title: "IT Specialist - Python",
-        org: "Certiport",
-        year: "2025",
-        icon: Code2
-      },
-      {
-        title: "Microsoft Summer Bootcamp Bronze",
-        org: "Microsoft",
-        year: "2025",
-        icon: Cpu
-      },
-      {
-        title: "Android Development with Kotlin",
-        org: "LinkedIn",
-        year: "2025",
-        icon: Smartphone
-      },
-      {
-        title: "Node.js: Testing and Code Quality",
-        org: "LinkedIn",
-        year: "2025",
-        icon: Server
-      },
-      {
-        title: "Learning MATLAB",
-        org: "LinkedIn",
-        year: "2025",
-        icon: Code
-      }
+      { title: "Oracle Cloud Infrastructure 2025 AI Foundations", org: "Oracle", year: "2025", icon: BrainCircuit },
+      { title: "Certified Network Security Practitioner (CNSP)", org: "The SecOps Group", year: "2025", icon: ShieldAlert },
+      { title: "AI Associate", org: "Salesforce", year: "2025", icon: Sparkles },
+      { title: "Accredited Generative AI Fundamentals", org: "Databricks Academy", year: "2025", icon: Database },
+      { title: "Linux Essentials Certification", org: "Cisco Networking Academy", year: "2025", icon: Terminal },
+      { title: "IT Specialist - Python", org: "Certiport", year: "2025", icon: Code2 },
+      { title: "Microsoft Summer Bootcamp Bronze", org: "Microsoft", year: "2025", icon: Cpu },
+      { title: "Android Development with Kotlin", org: "LinkedIn", year: "2025", icon: Smartphone },
+      { title: "Node.js: Testing and Code Quality", org: "LinkedIn", year: "2025", icon: Server },
+      { title: "Learning MATLAB", org: "LinkedIn", year: "2025", icon: Code }
     ]
   };
 

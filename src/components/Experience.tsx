@@ -1,4 +1,6 @@
 
+'use client';
+
 import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap, Rocket, Briefcase } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
@@ -6,31 +8,42 @@ export function Experience() {
   const experiences = [
     {
       title: 'Executive Lead',
-      org: 'NERDS 2.0',
+      org: 'NERDS 2.0 · Freelance',
       period: 'Apr 2025 - Present',
-      description: 'Spearheading award-winning innovation startups. Directed full-cycle development for Salayliwa (literacy) and Gabaydiwa (dementia care). Currently architecting Proxygen (Fish Pond Risk Assessment) and Birdseye (Poultry Health Monitoring).',
+      description: 'Spearheading award-winning startups Salayliwa and Gabaydiwa. Currently architecting Proxygen and Birdseye.',
       icon: Microscope,
       details: [
-        'Directed full-cycle project development from research integration to prototype deployment.',
-        'Led 3 cross-functional teams of developers and researchers using Agile Scrum.',
-        'Earned national recognition and presented to 1000+ attendees at innovation fairs.',
-        'Collaborated with DOST-PCHRD and Dept. of Neurosciences for validation.'
+        'Directed full-cycle project development from ideation to prototype deployment for national initiatives.',
+        'Led 3 cross-functional teams using Agile Scrum, ensuring research alignment and culturally grounded design.',
+        'Earned national and regional recognition, presenting to 1000+ attendees at innovation fairs.',
+        'Collaborated with DOST-PCHRD and EAMC Dept. of Neurosciences for system validation.'
       ],
-      skills: ['Program Management', 'Agile Scrum', 'Data Modeling', 'Product Strategy']
+      skills: ['Program Management', 'Agile Scrum', 'Data Modeling', 'UI/UX Design']
+    },
+    {
+      title: 'Chief Strategist',
+      org: 'AGAPE PH0209 Child Development Center',
+      period: 'Nov 2025 - Present',
+      description: 'Directing operations and strategic foresight for a major youth NGO.',
+      icon: Rocket,
+      details: [
+        'Directing strategic planning for a youth-led NGO with 200+ active members.',
+        'Leading occasional meetings with stakeholders for resource planning and innovative proposals.'
+      ],
+      skills: ['Strategic Planning', 'Foresight', 'Leadership']
     },
     {
       title: 'President',
       org: 'AGAPE PH0209 Child Development Center',
-      period: 'Feb 2024 - Present',
-      description: 'Directing operations for a youth-led NGO with 200+ active members. Focusing on nationwide community impact and strategic foresight.',
+      period: 'Feb 2024 - Nov 2025',
+      description: 'Managed nationwide community impact programs.',
       icon: Users,
       details: [
         'Organized 15+ community programs impacting over 600 beneficiaries nationwide.',
         'Managed cross-functional volunteer teams ensuring success within strict budgets.',
-        'Strengthened local government partnerships through city-wide forum representation.',
-        'In-charge of strategic foresight reports and innovative proposals for stakeholders.'
+        'Strengthened local government partnerships through city-wide forum representation.'
       ],
-      skills: ['Organizational Leadership', 'Strategic Planning', 'Resource Management']
+      skills: ['Organizational Leadership', 'Resource Management', 'Community Outreach']
     },
     {
       title: 'President',
@@ -39,24 +52,22 @@ export function Experience() {
       description: 'Overseeing operations and strategic initiatives for the campus library system.',
       icon: Library,
       details: [
-        'Leading a team of 20+ officers and volunteers for engagement programs.',
-        'Increased library engagement by 35% through targeted digital campaigns.',
+        'Leading a team of 20+ officers, increased library engagement by 35% via digital campaigns.',
         'Developed four new library programs enhancing student resource access.',
-        'Mentored officers in leadership and organizational management.'
+        'Mentored officers in leadership and project execution.'
       ],
-      skills: ['Team Mentorship', 'Engagement Strategy', 'Project Execution']
+      skills: ['Engagement Strategy', 'Project Execution', 'Team Mentorship']
     },
     {
       title: 'Chief Marketing Officer',
-      org: 'C-RAM Solutions',
+      org: 'C-RAM Solutions · Freelance',
       period: 'Dec 2024 - Nov 2025',
       description: 'Positioned the startup for high-value competitive grants and boosted investor relations.',
       icon: Megaphone,
       details: [
-        'Drove campaigns that secured grants worth hundreds of thousands in PHP.',
+        'Drove campaigns securing grants worth hundreds of thousands in PHP.',
         'Provided UX/UI insights to the Scrum team to shape the product roadmap.',
-        'Boosted investor engagement by 30% through strategic competition representation.',
-        'Secured positive media mentions in key industry publications.'
+        'Boosted investor engagement by 30% through strategic competition representation.'
       ],
       skills: ['Marketing', 'Innovation Development', 'UX Insights']
     },
@@ -75,16 +86,16 @@ export function Experience() {
     },
     {
       title: 'Project Manager & Frontend Developer',
-      org: 'PUP - RISFI',
+      org: 'PUP - RISFI · Internship',
       period: 'Feb 2022 - Jun 2023',
       description: 'Technical lead for research-driven software solutions at the Research Institute.',
       icon: Terminal,
       details: [
         'Managed a team of six developers, overseeing all delivery and QA metrics.',
         'Executed agile strategic plans meeting strict research institute deadlines.',
-        'Liaised between the dev team and business stakeholders to align technical goals.'
+        'Liaised between the dev team and stakeholders to align technical goals.'
       ],
-      skills: ['Web Development', 'Project Management', 'Agile Strategic Planning']
+      skills: ['Web Development', 'Project Management', 'Agile Planning']
     }
   ];
 
