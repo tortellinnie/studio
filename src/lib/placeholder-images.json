@@ -26,9 +26,9 @@
     },
     {
       "id": "project-birdseye",
-      "description": "Thumbnail for Birdseye project",
-      "imageUrl": "https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "poultry farming"
+      "description": "Dashboard for Birdseye poultry monitoring",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bbbda536339a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "poultry dashboard"
     },
     {
       "id": "project-video-automation",
