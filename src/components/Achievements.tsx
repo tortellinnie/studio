@@ -37,9 +37,9 @@ export function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-32 relative">
+    <section id="achievements" className="py-24 relative">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-24 space-y-6">
+        <div className="text-center mb-16 space-y-6">
           <Badge variant="outline" className="border-primary text-primary font-bold uppercase tracking-widest px-4 py-1">Recognition</Badge>
           <h2 className="text-4xl lg:text-6xl font-black text-white uppercase italic">Impact & Credentials.</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed font-medium">

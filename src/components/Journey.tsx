@@ -38,9 +38,9 @@ export function Journey() {
   ];
 
   return (
-    <section id="journey" className="py-32 relative bg-background">
+    <section id="journey" className="py-24 relative bg-background">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-32 space-y-6">
+        <div className="flex flex-col items-center text-center mb-24 space-y-6">
           <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
             Professional Roadmap
           </Badge>
@@ -53,7 +53,7 @@ export function Journey() {
         <div className="relative max-w-6xl mx-auto">
           <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2 hidden lg:block" />
 
-          <div className="space-y-24">
+          <div className="space-y-16">
             {milestones.map((item, i) => (
               <div key={i} className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-0 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                 <div className={`flex-1 w-full lg:px-20 ${i % 2 === 0 ? 'text-center lg:text-right' : 'text-center lg:text-left'}`}>

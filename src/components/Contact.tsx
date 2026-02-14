@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 
 export function Contact() {
   return (
-    <footer id="contact" className="py-32 relative">
+    <footer id="contact" className="py-24 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto glass-card rounded-[3rem] p-8 md:p-16 border-white/5 shadow-3xl overflow-hidden relative">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -z-10" />
@@ -76,7 +76,7 @@ export function Contact() {
           </div>
         </div>
 
-        <div className="mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground font-medium">
+        <div className="mt-16 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground font-medium">
           <p>© 2026 TECHNOLEADER. Engineering Excellence in Manila.</p>
           <div className="flex gap-10">
             <a href="#" className="hover:text-primary transition-colors">Resume</a>

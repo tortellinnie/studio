@@ -108,9 +108,9 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-32 relative bg-white/[0.01]">
+    <section id="experience" className="py-24 relative bg-white/[0.01]">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto space-y-24">
+        <div className="max-w-5xl mx-auto space-y-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 border-b border-white/5 pb-16">
             <div className="space-y-6">
               <Badge className="bg-white/5 text-white/60 border-white/10 px-4 py-1 rounded-full font-black uppercase text-[10px] tracking-widest">
@@ -125,7 +125,7 @@ export function Experience() {
 
           <div className="grid gap-12">
             {experiences.map((exp, idx) => (
-              <div key={idx} className="group grid md:grid-cols-12 gap-12 p-12 glass-card rounded-[3rem] border-white/5 hover:border-primary/20 transition-all duration-700">
+              <div key={idx} className="group grid md:grid-cols-12 gap-12 p-10 glass-card rounded-[3rem] border-white/5 hover:border-primary/20 transition-all duration-700">
                 <div className="md:col-span-1">
                   <div className="w-16 h-16 rounded-[1.25rem] bg-white/[0.02] border border-white/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500 shadow-2xl">
                     <exp.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />

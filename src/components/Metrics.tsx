@@ -1,6 +1,6 @@
 'use client';
 
-import { Users, Mic, Landmark, Trophy } from 'lucide-react';
+import { Users, Mic, Landmark, Globe } from 'lucide-react';
 
 export function Metrics() {
   const stats = [
@@ -20,22 +20,22 @@ export function Metrics() {
     },
     {
       label: 'Total Capital',
-      value: '₱500k+',
+      value: '₱1.2M+',
       description: 'Secured for startup initiatives',
       icon: Landmark,
       color: 'text-emerald-500'
     },
     {
-      label: 'Prestigious Awards',
+      label: 'Global Initiatives',
       value: '5',
-      description: 'International & National recognitions',
-      icon: Trophy,
+      description: 'National & International programs',
+      icon: Globe,
       color: 'text-blue-500'
     }
   ];
 
   return (
-    <section className="relative z-20 -mt-16 mb-24">
+    <section className="relative z-20 -mt-16 mb-16">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, i) => (

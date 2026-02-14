@@ -27,9 +27,9 @@ export function Featured() {
   ];
 
   return (
-    <section id="featured" className="py-32 relative overflow-hidden">
+    <section id="featured" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-24 space-y-6">
+        <div className="flex flex-col items-center text-center mb-16 space-y-6">
           <Badge className="bg-accent/10 text-accent border-accent/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
             Highlights 2026
           </Badge>

@@ -51,9 +51,9 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-32 relative">
+    <section id="projects" className="py-24 relative">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="space-y-4">
             <Badge variant="outline" className="text-primary border-primary font-bold">INNOVATIONS</Badge>
             <h2 className="text-4xl lg:text-5xl font-black text-white italic uppercase">Selected Works.</h2>
