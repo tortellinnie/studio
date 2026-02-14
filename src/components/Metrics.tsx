@@ -1,35 +1,35 @@
 'use client';
 
-import { Users, Globe, Target, Zap, TrendingUp, Award } from 'lucide-react';
+import { Users, Mic, Landmark, Trophy } from 'lucide-react';
 
 export function Metrics() {
   const stats = [
     {
       label: 'Direct Beneficiaries',
-      value: '301,600+',
+      value: '300,000+',
       description: 'Impacted across community initiatives',
       icon: Users,
       color: 'text-primary'
     },
     {
-      label: 'Sectors Served',
-      value: '6',
-      description: 'Underrepresented communities empowered',
-      icon: Globe,
+      label: 'Speakership Reach',
+      value: '2,000+',
+      description: 'Audience at major innovation fairs',
+      icon: Mic,
       color: 'text-accent'
     },
     {
-      label: 'DO Improvement',
-      value: '40%',
-      description: 'Increase in aquaculture maintenance',
-      icon: Target,
+      label: 'Total Capital',
+      value: '₱500k+',
+      description: 'Secured for startup initiatives',
+      icon: Landmark,
       color: 'text-emerald-500'
     },
     {
-      label: 'Engagement Boost',
-      value: '35%',
-      description: 'Library & digital platform growth',
-      icon: TrendingUp,
+      label: 'Prestigious Awards',
+      value: '5',
+      description: 'International & National recognitions',
+      icon: Trophy,
       color: 'text-blue-500'
     }
   ];
