@@ -21,14 +21,14 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              Available for Internship 2025
+              Available for New Opportunities
             </div>
             <h1 className="text-6xl lg:text-8xl font-black text-white leading-[0.9] tracking-tighter">
               CRAFTING THE <br />
               <span className="text-gradient">FUTURE OF CODE</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-lg leading-relaxed font-medium">
-              Alex here. A Software Engineer obsessed with building high-performance distributed systems and pixel-perfect interfaces. 
+              Software Engineer focused on building high-performance systems and pixel-perfect interfaces. 
             </p>
           </div>
           <div className="flex flex-wrap gap-6 items-center">
@@ -53,11 +53,11 @@ export function Hero() {
           <div className="aspect-[4/5] relative overflow-hidden rounded-[2.5rem] border-[12px] border-white/5 glass-card shadow-3xl transform lg:rotate-3 hover:rotate-0 transition-transform duration-700">
             <Image
               src={profileImage?.imageUrl || ''}
-              alt="Alex's Portrait"
+              alt="Developer Portrait"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
               priority
-              data-ai-hint="professional headshot student"
+              data-ai-hint="professional headshot"
             />
           </div>
           
