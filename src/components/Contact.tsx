@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Twitter, MapPin, Send } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -18,7 +18,7 @@ export function Contact() {
                   <span className="text-gradient">NEW PROJECT.</span>
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed max-w-md font-medium">
-                  Currently seeking full-time Software Engineering roles for 2025. Let's discuss how I can contribute to your team.
+                  Currently seeking high-impact Software Engineering roles for 2026. Let's discuss how I can contribute to your team's mission.
                 </p>
               </div>
               
@@ -29,7 +29,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-black text-muted-foreground uppercase tracking-widest">Email Me</p>
-                    <p className="text-lg font-bold text-white">alex.dev@university.edu</p>
+                    <p className="text-lg font-bold text-white">felipeshannkarl@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6 group">
@@ -38,17 +38,18 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-xs font-black text-muted-foreground uppercase tracking-widest">Location</p>
-                    <p className="text-lg font-bold text-white">San Francisco, CA</p>
+                    <p className="text-lg font-bold text-white">Manila, Philippines</p>
                   </div>
                 </div>
               </div>
 
               <div className="flex gap-4">
-                 {[Github, Linkedin, Twitter].map((Icon, i) => (
-                   <a key={i} href="#" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-all text-white/50 hover:text-white">
-                      <Icon className="w-5 h-5" />
-                   </a>
-                 ))}
+                 <a href="https://github.com/tortellinnie" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-all text-white/50 hover:text-white">
+                    <Github className="w-5 h-5" />
+                 </a>
+                 <a href="https://www.linkedin.com/in/shann-karl-felipe/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:bg-primary hover:border-primary transition-all text-white/50 hover:text-white">
+                    <Linkedin className="w-5 h-5" />
+                 </a>
               </div>
             </div>
 
@@ -56,15 +57,15 @@ export function Contact() {
               <div className="space-y-6">
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase text-primary tracking-widest">Full Name</label>
-                  <input type="text" className="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:ring-2 focus:ring-primary outline-none text-white transition-all placeholder:text-white/20" placeholder="Jane Doe" />
+                  <input type="text" className="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:ring-2 focus:ring-primary outline-none text-white transition-all placeholder:text-white/20" placeholder="Your Name" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase text-primary tracking-widest">Your Email</label>
-                  <input type="email" className="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:ring-2 focus:ring-primary outline-none text-white transition-all placeholder:text-white/20" placeholder="jane@example.com" />
+                  <input type="email" className="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:ring-2 focus:ring-primary outline-none text-white transition-all placeholder:text-white/20" placeholder="email@example.com" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase text-primary tracking-widest">Message</label>
-                  <textarea rows={4} className="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:ring-2 focus:ring-primary outline-none text-white transition-all placeholder:text-white/20 resize-none" placeholder="What's on your mind?" />
+                  <textarea rows={4} className="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:ring-2 focus:ring-primary outline-none text-white transition-all placeholder:text-white/20 resize-none" placeholder="How can we collaborate?" />
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90 h-14 rounded-xl text-lg font-black group shadow-[0_0_20px_rgba(139,92,246,0.3)]">
                   Send Message
@@ -76,7 +77,7 @@ export function Contact() {
         </div>
 
         <div className="mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground font-medium">
-          <p>© 2024 Ascension Profile. Engineering Excellence.</p>
+          <p>© 2026 TECHNOLEADER. Engineering Excellence in Manila.</p>
           <div className="flex gap-10">
             <a href="#" className="hover:text-primary transition-colors">Resume</a>
             <a href="#" className="hover:text-primary transition-colors">Privacy</a>

@@ -2,7 +2,7 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { MapPin, Mic2, Plane, Calendar, Quote } from 'lucide-react';
+import { MapPin, Plane, Calendar, Quote } from 'lucide-react';
 
 export function Featured() {
   const highlights = [
@@ -11,8 +11,8 @@ export function Featured() {
       type: 'Mission',
       title: 'Socially Impactful Innovation',
       location: 'Manila, PH',
-      date: '2025',
-      description: 'Passionate about leveraging AI, data systems, and user-centered design to develop technology that is both innovative and socially impactful.',
+      date: '2026',
+      description: 'Passionate about leveraging AI, data systems, and user-centered design to develop technology that is both innovative and socially impactful for the Filipino community.',
       icon: Quote
     },
     {
@@ -20,8 +20,8 @@ export function Featured() {
       type: 'Recognition',
       title: 'Global Delegate (Japan)',
       location: 'Tokyo, Japan',
-      date: 'Sep 2025',
-      description: 'Winner of the Musashinova Pitching Event, representing Filipino innovation on a global stage.',
+      date: 'Sep 2026',
+      description: 'Winner of the Musashinova Pitching Event, representing Filipino innovation on a global stage at Musashino University.',
       icon: Plane
     }
   ];
@@ -31,11 +31,11 @@ export function Featured() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-24 space-y-6">
           <Badge className="bg-accent/10 text-accent border-accent/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
-            Highlights
+            Highlights 2026
           </Badge>
           <h2 className="text-5xl lg:text-7xl font-black text-white">CORE IMPACT</h2>
           <p className="text-muted-foreground max-w-2xl text-xl font-medium leading-relaxed">
-            The values and milestones that drive my engineering philosophy.
+            The values and milestones that drive my engineering philosophy in the 2026 tech landscape.
           </p>
         </div>
 

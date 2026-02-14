@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-48 pb-32 overflow-hidden px-6">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-32 overflow-hidden px-6">
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
       
@@ -15,7 +15,7 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <Sparkles className="w-3 h-3" />
-              <span>Available for Software Engineering & PM Roles</span>
+              <span>Available for 2026 Software Engineering & PM Roles</span>
             </div>
             
             <div className="overflow-hidden py-4">
@@ -25,7 +25,7 @@ export function Hero() {
             </div>
             
             <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
-              As an innovator and Executive Lead at <span className="text-white font-black italic">NERDS 2.0</span>, I leverage AI, data systems, and user-centered design to develop technology that is both innovative and socially impactful.
+              Innovator and Executive Lead at <span className="text-white font-black italic">NERDS 2.0</span>. Leveraging AI, data systems, and user-centered design for socially impactful technology in Manila.
             </p>
           </div>
 
@@ -37,10 +37,10 @@ export function Hero() {
               </Link>
             </Button>
             <div className="flex items-center gap-6">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary hover:border-primary transition-all text-muted-foreground hover:text-white group">
+              <a href="https://github.com/tortellinnie" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary hover:border-primary transition-all text-muted-foreground hover:text-white group">
                 <Github className="w-7 h-7 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="https://linkedin.com/in/shann-karl-felipe/" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary hover:border-primary transition-all text-muted-foreground hover:text-white group">
+              <a href="https://www.linkedin.com/in/shann-karl-felipe/" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary hover:border-primary transition-all text-muted-foreground hover:text-white group">
                 <Linkedin className="w-7 h-7 group-hover:scale-110 transition-transform" />
               </a>
             </div>

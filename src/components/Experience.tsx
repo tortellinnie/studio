@@ -1,6 +1,6 @@
 'use client';
 
-import { Users, Microscope, Rocket, Library, Megaphone, Globe, Terminal, Briefcase, ChevronRight, GraduationCap } from 'lucide-react';
+import { Users, Microscope, Rocket, Library, Megaphone, Globe, Terminal, Briefcase, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -93,7 +93,7 @@ export function Experience() {
     },
     {
       title: 'Project Manager & Frontend Developer',
-      org: 'PUP - Research Institute for Strategic Foresight and Innovation',
+      org: 'PUP - RISFI',
       period: 'Feb 2022 - Jun 2023',
       description: 'Technical lead for research-driven software solutions.',
       icon: Terminal,
@@ -114,12 +114,12 @@ export function Experience() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 border-b border-white/5 pb-16">
             <div className="space-y-6">
               <Badge className="bg-white/5 text-white/60 border-white/10 px-4 py-1 rounded-full font-black uppercase text-[10px] tracking-widest">
-                Impact & Leadership
+                Impact & Leadership 2026
               </Badge>
               <h2 className="text-5xl lg:text-7xl font-black text-white italic uppercase">Footprint.</h2>
             </div>
             <p className="text-muted-foreground text-xl leading-relaxed max-w-sm font-medium">
-              Transforming technical expertise into collective impact through high-performance leadership.
+              Transforming technical expertise into collective impact through high-performance leadership in Manila.
             </p>
           </div>
 

@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 export function Journey() {
   const milestones = [
     {
-      date: '2025 - Present',
+      date: '2025 - 2026',
       title: 'Executive Lead & Innovation Strategist',
       org: 'NERDS 2.0',
       desc: 'Spearheading Salayliwa and Gabaydiwa innovation startups. Managing multidisciplinary teams to develop functional prototypes for cognitive health and gamified literacy.',
@@ -12,7 +12,7 @@ export function Journey() {
       color: 'bg-primary'
     },
     {
-      date: '2024 - Present',
+      date: '2024 - 2026',
       title: 'Senior Software Engineering Student',
       org: 'Far Eastern University - Institute of Technology',
       desc: 'Focused on AI, data systems, and user-centered design. Consistently recognized as a Top Performing Student with a 3.6 GPA.',
@@ -20,7 +20,7 @@ export function Journey() {
       color: 'bg-blue-500'
     },
     {
-      date: '2024 - 2025',
+      date: '2024 - 2026',
       title: 'President & Chief Strategist',
       org: 'AGAPE PH0209',
       desc: 'Led a youth-led NGO with 200+ members. Orchestrated 15+ community programs impacting 600+ beneficiaries nationwide.',
@@ -46,7 +46,7 @@ export function Journey() {
           </Badge>
           <h2 className="text-5xl lg:text-7xl font-black text-white uppercase italic">Impact.</h2>
           <p className="text-muted-foreground max-w-2xl text-xl font-medium leading-relaxed">
-            A track record of technological innovation, social leadership, and consistent academic excellence.
+            A track record of technological innovation, social leadership, and consistent academic excellence in Manila.
           </p>
         </div>
 
