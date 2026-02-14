@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-32 overflow-hidden px-6">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-48 pb-32 overflow-hidden px-6">
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
       
@@ -19,7 +19,7 @@ export function Hero() {
             </div>
             
             <div className="overflow-hidden py-4">
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-none tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase whitespace-nowrap">
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white leading-none tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase whitespace-nowrap">
                 <span className="text-gradient">TECHNOLEADER</span>
               </h1>
             </div>
@@ -47,10 +47,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      <Link href="/#journey" className="mt-24 animate-bounce text-white/20 hover:text-primary transition-colors">
-        <MoveDown className="w-8 h-8" />
-      </Link>
     </section>
   );
 }

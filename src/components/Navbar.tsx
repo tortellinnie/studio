@@ -19,7 +19,7 @@ export function Navbar() {
             TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
           </Link>
           
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 overflow-hidden">
             {navItems.map((item) => (
               <Link
                 key={item.href}
