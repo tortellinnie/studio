@@ -1,6 +1,6 @@
 'use client';
 
-import { Users, Mic, Landmark } from 'lucide-react';
+import { Users, Mic, Landmark, Trophy } from 'lucide-react';
 import {
   TooltipProvider,
 } from "@/components/ui/tooltip";

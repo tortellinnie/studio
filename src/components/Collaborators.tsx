@@ -13,18 +13,28 @@ export function Collaborators() {
         'DICT Philippines',
         'Quezon City Government',
         'NBDB-Philippines',
-        'National Library of the Philippines'
+        'National Library of the Philippines',
+        'DTI Philippines',
+        'SK Commonwealth',
+        'NCR Alliance of DOST Scholars'
       ]
     },
     {
       title: 'Industry & Global',
       icon: Globe2,
       partners: [
+        'Procter & Gamble (P&G)',
+        'PLDT',
+        'Smart Communications',
+        'Microsoft Philippines',
         'EMC Global (Japan)',
         'Urban Youth Academy',
         'Asia Pacific Youth Exchange',
         'C-RAM Solutions',
-        'The SecOps Group'
+        'The SecOps Group',
+        'Oracle',
+        'Salesforce',
+        'Databricks'
       ]
     },
     {
@@ -35,7 +45,10 @@ export function Collaborators() {
         'FEU Institute of Technology',
         'PUP - RISFI',
         'EAMC Dept. of Neurosciences',
-        'DOST-PCHRD'
+        'DOST-PCHRD',
+        'ACM Tech Publicity',
+        'GDSC FEU Tech',
+        'Data Engineering Pilipinas'
       ]
     }
   ];
@@ -50,7 +63,7 @@ export function Collaborators() {
             </Badge>
             <h2 className="text-4xl lg:text-6xl font-black text-white uppercase italic">Collaborators.</h2>
             <p className="text-muted-foreground max-w-2xl text-lg font-medium">
-              Bridging the gap between student-led innovation and national-scale infrastructure through key institutional partnerships.
+              A comprehensive network of institutional partners, global industry leaders, and academic stakeholders.
             </p>
           </div>
 
@@ -82,7 +95,7 @@ export function Collaborators() {
               ))}
             </div>
             <p className="text-white/60 font-medium text-sm">
-              Actively coordinating with <span className="text-primary font-black">4 core sectors</span> across the Philippine archipelago.
+              Coordinating with over <span className="text-primary font-black">25+ institutional partners</span> across Manila and global hubs.
             </p>
           </div>
         </div>
