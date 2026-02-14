@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Metrics } from '@/components/Metrics';
+import { Collaborators } from '@/components/Collaborators';
 import { Journey } from '@/components/Journey';
 import { Featured } from '@/components/Featured';
 import { Projects } from '@/components/Projects';
@@ -14,14 +15,17 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
-      <Metrics />
-      <Journey />
-      <Featured />
-      <Projects />
-      <Education />
-      <Experience />
-      <Achievements />
-      <Contact />
+      <div className="space-y-0">
+        <Metrics />
+        <Collaborators />
+        <Journey />
+        <Featured />
+        <Projects />
+        <Education />
+        <Experience />
+        <Achievements />
+        <Contact />
+      </div>
     </main>
   );
 }

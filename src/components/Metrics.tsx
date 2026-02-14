@@ -35,7 +35,7 @@ export function Metrics() {
   ];
 
   return (
-    <section className="relative z-20 -mt-16 mb-16">
+    <section className="relative z-20 py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, i) => (

@@ -6,14 +6,14 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 overflow-hidden px-6">
+    <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden px-6">
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
       
       <div className="container mx-auto z-10 text-center flex flex-col items-center">
         <div className="space-y-12 w-full max-w-screen-xl">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md text-[10px] font-bold uppercase tracking-[0.2em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <Sparkles className="w-3 h-3" />
               <span>Available for 2026 Software Engineering & PM Roles</span>
             </div>
@@ -48,8 +48,8 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <MoveDown className="text-white/20 w-6 h-6" />
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-20">
+        <MoveDown className="text-white/40 w-8 h-8" />
       </div>
     </section>
   );
