@@ -26,9 +26,9 @@ export function Metrics() {
       color: 'text-emerald-500'
     },
     {
-      label: 'Global Initiatives',
+      label: 'National & Global Initiatives',
       value: '5',
-      description: 'National & International programs',
+      description: 'High-impact programs and missions',
       icon: Globe,
       color: 'text-blue-500'
     }
