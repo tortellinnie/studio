@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "profile-headshot",
+      "description": "Professional headshot of a computer science student",
+      "imageUrl": "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHN0dWRlbnR8ZW58MHx8fHwxNzcxMDk4NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot student"
+    },
+    {
+      "id": "project-1",
+      "description": "AI-powered data visualization dashboard",
+      "imageUrl": "https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkYXRhJTIwZGFzaGJvYXJkfGVufDB8fHx8MTc3MTA0MTY1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data dashboard"
+    },
+    {
+      "id": "project-2",
+      "description": "Distributed cloud storage platform interface",
+      "imageUrl": "https://images.unsplash.com/photo-1547027072-332f09bd6bb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjbG91ZCUyMGludGVyZmFjZXxlbnwwfHx8fDE3NzEwOTg1Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud interface"
+    },
+    {
+      "id": "project-3",
+      "description": "Mobile application for smart agriculture IoT",
+      "imageUrl": "https://images.unsplash.com/photo-1495022954506-e30ba8e61161?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2JpbGUlMjBpb3R8ZW58MHx8fHwxNzcxMDk4NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile iot"
+    }
+  ]
 }
