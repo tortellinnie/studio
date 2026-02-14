@@ -1,4 +1,4 @@
-import { Users, Code2, Terminal, Globe } from 'lucide-react';
+import { Users, Code2, Terminal, Zap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -7,25 +7,25 @@ export function Experience() {
       title: 'Executive President',
       org: 'Computer Science Society',
       period: '2023 - Present',
-      description: 'Orchestrating technical development initiatives and hackathons for a student body of 1,000+. Focused on bridging the gap between academia and industry.',
+      description: 'Orchestrating technical development initiatives and high-stakes hackathons for a student body of 1,000+. Managing a diverse executive board to bridge the gap between academic theory and industry-scale engineering.',
       icon: Users,
-      skills: ['Strategic Leadership', 'Public Speaking', 'Community Building']
+      skills: ['Strategic Leadership', 'Project Management', 'Public Speaking', 'Community Building']
     },
     {
       title: 'Advanced DSA Peer Mentor',
       org: 'University Tech Academy',
       period: '2022 - 2023',
-      description: 'Guided 50+ students through complex algorithmic challenges and competitive programming logic. Developed custom technical assessments.',
+      description: 'Guided 50+ students through complex algorithmic challenges and competitive programming logic. Developed custom technical assessments and optimized learning paths for Data Structures and Algorithms.',
       icon: Terminal,
-      skills: ['Algorithms', 'Mentorship', 'C++', 'Java']
+      skills: ['Algorithms', 'Mentorship', 'C++', 'Java', 'Problem Solving']
     },
     {
       title: 'Software Development Associate',
       org: 'Student Tech Collective',
       period: '2021 - 2022',
-      description: 'Collaborated on internal university portal improvements and open-source automation scripts using Python and React.',
+      description: 'Collaborated on internal university portal improvements and open-source automation scripts. Authored highly accessible UI components and streamlined CI/CD workflows using Python and React.',
       icon: Code2,
-      skills: ['Full Stack', 'CI/CD', 'Git Workflow']
+      skills: ['Full Stack', 'CI/CD', 'Git Workflow', 'Accessibility']
     }
   ];
 

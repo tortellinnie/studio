@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ArrowUpRight } from 'lucide-react';
@@ -13,21 +13,21 @@ export function Projects() {
     {
       id: 'project-1',
       title: 'Aura Data Engine',
-      description: 'A high-throughput data processing engine designed for real-time market sentiment analysis using advanced NLP models.',
+      description: 'A high-throughput data processing engine designed for real-time market sentiment analysis using advanced NLP models and distributed pipelines.',
       tags: ['Next.js', 'PyTorch', 'AWS', 'Redis'],
       links: { github: '#', live: '/projects/aura-analytics' }
     },
     {
       id: 'project-2',
       title: 'CloudVault Secure',
-      description: 'Distributed file storage solution leveraging IPFS and cryptographic hashing for immutable data integrity and privacy.',
+      description: 'Distributed file storage solution leveraging IPFS and cryptographic hashing for immutable data integrity, privacy, and hybrid-cloud sync.',
       tags: ['Solidity', 'Go', 'Docker', 'Web3'],
       links: { github: '#', live: '/projects/cloudvault' }
     },
     {
       id: 'project-3',
       title: 'AgriSense IoT Node',
-      description: 'An end-to-end IoT platform for precision agriculture, featuring real-time soil telemetry and automated irrigation control.',
+      description: 'An end-to-end IoT platform for precision agriculture, featuring real-time soil telemetry and automated low-bandwidth synchronization.',
       tags: ['IoT', 'C++', 'ESP32', 'Firebase'],
       links: { github: '#', live: '/projects/agrisense' }
     }
@@ -41,7 +41,7 @@ export function Projects() {
             <Badge variant="outline" className="text-primary border-primary font-bold">PORTFOLIO</Badge>
             <h2 className="text-4xl lg:text-5xl font-black text-white italic uppercase">Selected Works.</h2>
             <p className="text-muted-foreground max-w-xl text-lg">
-              Engineering solutions for complex problems across distributed systems and cloud architectures.
+              Engineering solutions for complex problems across distributed systems, cloud architectures, and intelligent hardware.
             </p>
           </div>
           <Button variant="outline" className="rounded-full h-12 px-8 border-white/10 hover:bg-white/5 font-bold group">
@@ -108,4 +108,9 @@ export function Projects() {
       </div>
     </section>
   );
+}
+
+// Inline Footer replacement to avoid extra component imports in this scope
+function CardFooter({ children, className }: { children: React.ReactNode, className?: string }) {
+  return <div className={`flex items-center p-6 pt-0 ${className}`}>{children}</div>;
 }

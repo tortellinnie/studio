@@ -7,7 +7,7 @@ export function Journey() {
       date: '2024 - Present',
       title: 'Senior Software Engineering Student',
       org: 'Far Eastern University - Institute of Technology',
-      desc: 'Specializing in high-performance computing and distributed systems. Maintaining a consistent Top Performing Student ranking.',
+      desc: 'Specializing in high-performance computing, distributed systems, and real-time data pipelines. Maintaining a Top Performing Student ranking with a 3.6 GPA.',
       icon: GraduationCap,
       color: 'bg-blue-500'
     },
@@ -15,23 +15,23 @@ export function Journey() {
       date: 'SUMMER 2024',
       title: 'Full Stack Engineer Intern',
       org: 'Tech Innovation Lab',
-      desc: 'Optimized cloud-native microservices architecture, improving data processing efficiency by 40% using Next.js and Go.',
+      desc: 'Architected cloud-native microservices using Next.js and Go. Optimized backend throughput by 40% and implemented automated testing frameworks.',
       icon: Briefcase,
       color: 'bg-primary'
     },
     {
       date: 'JAN 2024',
       title: 'Industry Case Study Winner',
-      org: 'Tech Symposium 2024',
-      desc: 'Awarded first place for architecting a decentralized identity verification system using blockchain technology.',
+      org: 'National Tech Symposium',
+      desc: 'Awarded first place for developing a decentralized identity verification prototype using Ethereum and IPFS.',
       icon: Award,
       color: 'bg-amber-500'
     },
     {
       date: 'AUG 2023',
       title: 'Technical Project Lead',
-      org: 'Academic Research Group',
-      desc: 'Led a team of 5 in developing an AI-driven predictive analytics tool for local environmental monitoring.',
+      org: 'Academic Research Council',
+      desc: 'Led a cross-functional team of 5 to build an AI-driven predictive analytics tool for environmental monitoring in urban areas.',
       icon: Milestone,
       color: 'bg-emerald-500'
     }
@@ -46,7 +46,7 @@ export function Journey() {
           </Badge>
           <h2 className="text-5xl lg:text-7xl font-black text-white uppercase italic">Growth.</h2>
           <p className="text-muted-foreground max-w-2xl text-xl font-medium leading-relaxed">
-            A chronological timeline of technical milestones and academic excellence.
+            A chronological timeline of technical breakthroughs, leadership milestones, and academic milestones.
           </p>
         </div>
 
