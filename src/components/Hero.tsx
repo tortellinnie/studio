@@ -4,18 +4,18 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, ChevronRight, Sparkles } from 'lucide-react';
+import { Github, Linkedin, ChevronRight, Sparkles, MoveDown } from 'lucide-react';
 import Link from 'next/link';
 
 export function Hero() {
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-headshot');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-80 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-96 pb-32 overflow-hidden px-6">
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
       
-      <div className="container mx-auto px-6 grid lg:grid-cols-12 gap-16 items-center z-10">
+      <div className="container mx-auto grid lg:grid-cols-12 gap-20 items-center z-10">
         <div className="lg:col-span-7 space-y-12">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -23,14 +23,13 @@ export function Hero() {
               <span>Open to Software Engineering & PM Roles</span>
             </div>
             
-            <h1 className="text-6xl lg:text-[7.5rem] font-black text-white leading-[0.85] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+            <h1 className="text-6xl lg:text-[8rem] font-black text-white leading-[0.8] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
               <span className="text-gradient uppercase block">TECHNO</span>
               <span className="text-gradient uppercase block">LEADER</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
-              Student Founder & Executive Lead | Youth NGO Consultant | Speaker <br />
-              Developing innovative, socially impactful technology through AI and data systems.
+              As an innovator and Executive Lead at <span className="text-white font-black italic">NERDS 2.0</span>, I leverage AI, data systems, and user-centered design to develop technology that is both innovative and socially impactful.
             </p>
           </div>
 
@@ -72,11 +71,15 @@ export function Hero() {
             </div>
             <div>
               <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">Academic Rank</p>
-              <p className="text-sm font-black text-white">Top Performing Software Engineering Student</p>
+              <p className="text-sm font-black text-white leading-tight">Top Performing Software Engineering Student</p>
             </div>
           </div>
         </div>
       </div>
+
+      <Link href="/#journey" className="mt-24 animate-bounce text-white/20 hover:text-primary transition-colors">
+        <MoveDown className="w-8 h-8" />
+      </Link>
     </section>
   );
 }

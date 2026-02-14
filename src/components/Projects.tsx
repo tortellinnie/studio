@@ -7,49 +7,49 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github, ArrowUpRight } from 'lucide-react';
+import { Github, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 export function Projects() {
   const projects = [
     {
       id: 'birdseye',
       title: 'Birdseye',
-      description: 'Computer vision on edge devices detecting wet zones in poultry litter in real-time to improve bird welfare and reduce ammonia emissions. Pilot tested in commercial Luzon farms.',
-      tags: ['Computer Vision', 'Edge AI', 'IoT', 'Agriculture'],
-      links: { github: '#', live: '/projects/birdseye' },
-      imageId: 'project-birdseye'
+      description: 'Transforming poultry farm management using computer vision on edge devices to detect wet zones in litter in real-time, improving bird welfare and ammonia emissions.',
+      tags: ['Computer Vision', 'Edge AI', 'IoT'],
+      imageId: 'project-birdseye',
+      impact: 'Pilot tested in commercial Luzon farms.'
     },
     {
       id: 'video-automation',
       title: 'Video Automation Engine',
-      description: 'End-to-end motivational video generation engine built on n8n and Docker, powered by local LLMs (Gemini) and FFmpeg for YouTube upload.',
+      description: 'Autonomous content production workflow built on n8n and Docker. Automates media processing via FFmpeg and motivational video generation using Gemini 2.5 Flash.',
       tags: ['Docker', 'n8n', 'Gemini AI', 'FFmpeg'],
-      links: { github: '#', live: '/projects/video-automation' },
-      imageId: 'project-video-automation'
+      imageId: 'project-video-automation',
+      impact: 'End-to-end autonomous YouTube delivery.'
     },
     {
       id: 'gabaydiwa',
       title: 'GabayDiwa',
-      description: 'Revolutionizing Filipino Dementia Home care with a Cognitive Health Monitoring System. 1st Runner-Up in Philippine Startup Challenge X Regional.',
-      tags: ['React', 'AI Modeling', 'Healthcare', 'Startup'],
-      links: { github: '#', live: '/projects/gabaydiwa' },
-      imageId: 'project-gabaydiwa'
+      description: 'A Cognitive Health and Progression Monitoring System empowering caregivers with data-driven insights through cognitive trend maps and structured tracking.',
+      tags: ['AI Modeling', 'Healthcare', 'Startup'],
+      imageId: 'project-gabaydiwa',
+      impact: '1st Runner-Up, Philippine Startup Challenge X.'
     },
     {
       id: 'proxygen',
       title: 'Proxygen',
       description: 'Proactive, weather-aware dissolved oxygen management system for pond aquaculture using fuzzy logic to prevent fish kills and optimize feeding.',
-      tags: ['IoT', 'Fuzzy Logic', 'Data Science', 'AWS'],
-      links: { github: '#', live: '/projects/proxygen' },
-      imageId: 'project-proxygen'
+      tags: ['IoT', 'Fuzzy Logic', 'Data Science'],
+      imageId: 'project-proxygen',
+      impact: '30-40% improvement in DO maintenance.'
     },
     {
       id: 'salayliwa',
       title: 'Salayliwa',
-      description: 'National award-winning edu-cultural project revitalizing reading engagement through adaptive digital experiences and culturally resonant stories.',
-      tags: ['Next.js', 'AI', 'Cultural UX', 'EduTech'],
-      links: { github: '#', live: '/projects/salayliwa' },
-      imageId: 'project-salayliwa'
+      description: 'National award-winning edu-cultural project focused on revitalizing reading engagement among Filipino youth through adaptive digital experiences.',
+      tags: ['AI', 'EduTech', 'Cultural UX'],
+      imageId: 'project-salayliwa',
+      impact: 'Recognized at NLP NARA Con 2025.'
     }
   ];
 
@@ -65,7 +65,7 @@ export function Projects() {
             </p>
           </div>
           <Button variant="outline" className="rounded-full h-12 px-8 border-white/10 hover:bg-white/5 font-bold group">
-            All Projects <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            All Innovations <ArrowUpRight className="ml-2 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Button>
         </div>
 
@@ -73,7 +73,7 @@ export function Projects() {
           {projects.map((project) => {
             const img = PlaceHolderImages.find(p => p.id === project.imageId) || PlaceHolderImages[1];
             return (
-              <Link href={project.links.live} key={project.id} className="group">
+              <Link href={`/projects/${project.id}`} key={project.id} className="group">
                 <Card className="glass-card overflow-hidden border-white/10 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
                   <div className="relative aspect-video overflow-hidden">
                     <Image
@@ -85,16 +85,8 @@ export function Projects() {
                       unoptimized={img?.imageUrl.includes('drive.google.com')}
                     />
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                       <Button 
-                        size="icon" 
-                        variant="outline" 
-                        className="rounded-full bg-white/10 border-white/20 hover:bg-primary text-white" 
-                        asChild 
-                        onClick={(e) => e.stopPropagation()}
-                       >
-                          <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-5 h-5" />
-                          </a>
+                       <Button size="icon" variant="outline" className="rounded-full bg-white/10 border-white/20 hover:bg-primary text-white">
+                          <Github className="w-5 h-5" />
                        </Button>
                     </div>
                   </div>
@@ -111,10 +103,14 @@ export function Projects() {
                       <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-muted-foreground leading-relaxed">
+                  <CardContent className="flex-grow space-y-4">
+                    <p className="text-muted-foreground leading-relaxed line-clamp-3">
                       {project.description}
                     </p>
+                    <div className="flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-widest">
+                      <CheckCircle2 className="w-3 h-3" />
+                      {project.impact}
+                    </div>
                   </CardContent>
                   <CardFooter className="pt-0 pb-6">
                      <span className="text-sm font-bold text-primary group-hover:underline decoration-2 underline-offset-8">

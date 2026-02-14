@@ -1,23 +1,16 @@
 
 'use client';
 
-import { Award, ShieldCheck, Trophy, BadgeCheck, Sparkles, BookOpen, GraduationCap, Smartphone, Server, Code, Code2, Terminal, BrainCircuit, ShieldAlert, Cpu, Database, Globe, Medal, Zap, Layout } from 'lucide-react';
+import { Award, Trophy, BadgeCheck, Sparkles, GraduationCap, Smartphone, Server, Code, Code2, Terminal, BrainCircuit, ShieldAlert, Cpu, Layout, Medal, Zap, Database, Globe } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 export function Achievements() {
   const data = {
-    scholarships: [
-      { title: "Economic Scholarship", org: "Quezon City Youth Dev Office", year: "2025", icon: BadgeCheck },
-      { title: "Partial Scholarship (40%)", org: "APYE / Urban Youth Academy", year: "2025", icon: Globe },
-      { title: "Datacamp Scholarship (100%)", org: "Data Engineering Pilipinas", year: "2024", icon: Database },
-      { title: "Financial Academic Scholarship", org: "FEU Institute of Technology", year: "2023", icon: Sparkles },
-      { title: "Merit Scholarship", org: "DOST Philippines", year: "2023", icon: GraduationCap }
-    ],
     honors: [
       { title: "EMC Global Award", org: "EMC Global Summit 2026", id: "C-RAM Solutions", icon: Trophy },
       { title: "Most Outstanding Youth Awardee", org: "QC Gov / SK Commonwealth", id: "Tech Innovation", icon: Medal },
-      { title: "1st Runner-Up, Philippine Startup Challenge X", org: "DICT Regional NCR", id: "NERDS 2.0", icon: ShieldCheck },
+      { title: "1st Runner-Up, Philippine Startup Challenge X", org: "DICT Regional NCR", id: "NERDS 2.0", icon: BadgeCheck },
       { title: "1st Runner-Up, Readers Rising Hackathon", org: "NBDB Philippines", id: "Salayliwa", icon: Zap },
       { title: "Winner, Musashinova Pitching Event", org: "EMC Global / Musashino Uni", id: "Japan Delegate", icon: Globe },
       { title: "2nd Runner-Up, Startup QC", org: "Quezon City Government", id: "C-RAM Solutions", icon: Award },
@@ -25,15 +18,22 @@ export function Achievements() {
     ],
     certifications: [
       { title: "Learning MATLAB", org: "LinkedIn", year: "2025", icon: Code },
-      { title: "Android Dev with Kotlin", org: "LinkedIn", year: "2025", icon: Smartphone },
+      { title: "Complete Guide to Android with Kotlin", org: "LinkedIn", year: "2025", icon: Smartphone },
       { title: "Node.js: Testing and Code Quality", org: "LinkedIn", year: "2025", icon: Server },
       { title: "Linux Essentials Certification", org: "Cisco Networking Academy", year: "2025", icon: Terminal },
       { title: "IT Specialist - Python", org: "Certiport", year: "2025", icon: Code2 },
-      { title: "Oracle Cloud Infrastructure AI Foundations", org: "Oracle", year: "2025", icon: BrainCircuit },
+      { title: "OCI 2025 Certified AI Foundations", org: "Oracle", year: "2025", icon: BrainCircuit },
       { title: "Certified Network Security Practitioner (CNSP)", org: "The SecOps Group", year: "2025", icon: ShieldAlert },
       { title: "Microsoft Summer Bootcamp Bronze", org: "Microsoft", year: "2025", icon: Cpu },
       { title: "AI Associate", org: "Salesforce", year: "2025", icon: Sparkles },
       { title: "Accredited Generative AI Fundamentals", org: "Databricks Academy", year: "2025", icon: Layout }
+    ],
+    scholarships: [
+      { title: "Economic Scholarship", org: "Quezon City Youth Dev Office", year: "2025", icon: BadgeCheck },
+      { title: "Partial Scholarship (40%)", org: "APYE / Urban Youth Academy", year: "2025", icon: Globe },
+      { title: "Datacamp Scholarship (100%)", org: "Data Engineering Pilipinas", year: "2024", icon: Database },
+      { title: "Financial Academic Scholarship", org: "FEU Institute of Technology", year: "2023", icon: Sparkles },
+      { title: "Merit Scholarship", org: "DOST Philippines", year: "2023", icon: GraduationCap }
     ]
   };
 
@@ -63,7 +63,7 @@ export function Achievements() {
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white mb-1 leading-tight">{item.title}</h4>
-                      <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{item.org} • {item.id || item.year}</p>
+                      <p className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">{item.org} • {item.id}</p>
                     </div>
                   </CardContent>
                 </Card>

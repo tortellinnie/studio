@@ -1,5 +1,7 @@
 
-import { GraduationCap, BookOpen, Mic, PenTool, Code, Users, Newspaper, Award, Search, Radio } from 'lucide-react';
+'use client';
+
+import { GraduationCap, BookOpen, Mic, PenTool, Radio, Users, Newspaper, Award, Search, CheckCircle2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Education() {
@@ -17,16 +19,18 @@ export function Education() {
         { label: 'Podcast Host', sub: 'ACM Diaries', icon: Mic },
         { label: 'Committee Officer', sub: 'GDSC', icon: Users }
       ],
-      skills: ['Software Solution Development', 'Technical Writing', 'Computational Logic']
+      skills: ['Software Solution Development', 'Technical Writing', 'Computational Logic'],
+      honors: ['DOST Scholar', 'QCYDO Scholar', 'FEU Tech Financial Scholar', 'Datacamp Scholar']
     },
     {
       school: 'Polytechnic University of the Philippines',
       degree: 'ICT',
       period: 'Sep 2021 – Jul 2023',
       activities: [
-        { label: 'PUPSHS COMELEC', sub: 'ICT Representative', icon: Users }
+        { label: 'ICT Rep', sub: 'PUPSHS COMELEC', icon: Users }
       ],
-      skills: ['Information Technology', 'Systems Management']
+      skills: ['Information Technology', 'Systems Management'],
+      honors: ['Academic Excellence']
     }
   ];
 
@@ -85,12 +89,13 @@ export function Education() {
                   <div className="space-y-6">
                     <h4 className="text-xs font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3">
                       <Award className="w-4 h-4" />
-                      Core Competencies
+                      Scholarly Recognition
                     </h4>
                     <div className="flex flex-wrap gap-3">
-                      {edu.skills.map((skill, i) => (
-                        <span key={i} className="px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-[10px] font-black text-primary uppercase tracking-widest">
-                          {skill}
+                      {edu.honors.map((honor, i) => (
+                        <span key={i} className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-[10px] font-black text-accent uppercase tracking-widest">
+                          <CheckCircle2 className="w-3 h-3" />
+                          {honor}
                         </span>
                       ))}
                     </div>

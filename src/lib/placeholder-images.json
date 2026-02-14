@@ -2,25 +2,25 @@
   "placeholderImages": [
     {
       "id": "profile-headshot",
-      "description": "Main profile photo for the Hero section.",
+      "description": "Professional profile headshot",
       "imageUrl": "https://drive.google.com/uc?id=1Vc5JOEVk5UVlqlnFWYtzDFXrzQ2yAGM2",
-      "imageHint": "professional headshot"
+      "imageHint": "professional portrait"
     },
     {
       "id": "project-salayliwa",
-      "description": "Thumbnail for Salayliwa project",
+      "description": "Salayliwa - Edu-cultural literacy project",
       "imageUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "reading culture"
     },
     {
       "id": "project-gabaydiwa",
-      "description": "Thumbnail for GabayDiwa project",
+      "description": "GabayDiwa - Dementia cognitive monitoring",
       "imageUrl": "https://images.unsplash.com/photo-1547027072-332f09bd6bb3?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "healthcare data"
     },
     {
       "id": "project-proxygen",
-      "description": "Thumbnail for Proxygen project",
+      "description": "Proxygen - Aquaculture DO management",
       "imageUrl": "https://images.unsplash.com/photo-1623824204241-f851d3bcfaf5?auto=format&fit=crop&q=80&w=1080",
       "imageHint": "aquaculture sensor"
     },
@@ -32,21 +32,21 @@
     },
     {
       "id": "project-video-automation",
-      "description": "Thumbnail for Video Automation Engine",
+      "description": "Video Automation Engine Thumbnail",
       "imageUrl": "https://drive.google.com/uc?id=1DsWiDI_tf3C9wETLsctpafhEc7x2qoxi",
       "imageHint": "automation workflow"
     },
     {
       "id": "featured-travel-1",
-      "description": "Travel highlight 1",
+      "description": "Travel highlight - Global delegate",
       "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1080",
-      "imageHint": "alpine mountain"
+      "imageHint": "global delegate"
     },
     {
       "id": "featured-speaking-1",
-      "description": "Speakership highlight 1",
+      "description": "Speaking highlight - Innovation pitch",
       "imageUrl": "https://images.unsplash.com/photo-1475721027185-4038e0588f03?auto=format&fit=crop&q=80&w=1080",
-      "imageHint": "tech conference"
+      "imageHint": "tech pitch"
     }
   ]
 }

@@ -1,7 +1,7 @@
 
 'use client';
 
-import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap, Rocket, Briefcase, Building2 } from 'lucide-react';
+import { Users, Microscope, Rocket, Library, Megaphone, Globe, Terminal, Briefcase, ChevronRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -15,24 +15,26 @@ export function Experience() {
       details: [
         'Directed full-cycle project development for Salayliwa (gamified literacy) and Gabaydiwa (cognitive monitoring).',
         'Led 3 cross-functional teams of developers, researchers, and designers using Agile Scrum.',
-        'Currently architecting Proxygen (aquaculture DO management) and Birdseye (poultry monitoring).',
-        'Earned national and regional recognition, presenting to 1000+ attendees at major innovation fairs.'
+        'Earned national and regional recognition, presenting to 1000+ attendees at major innovation fairs.',
+        'Collaborated with DOST-PCHRD, EAMC Dept. of Neurosciences, and NBDB-Philippines to validate system functionality.',
+        'Currently architecting Proxygen (aquaculture DO) and Birdseye (poultry monitoring).'
       ],
-      skills: ['Agile Scrum', 'Data Modeling', 'UI/UX Design', 'Program Management']
+      skills: ['Program Management', 'Agile Scrum', 'Data Modeling', 'UI/UX Design']
     },
     {
-      title: 'Chief Strategist & President',
+      title: 'President & Chief Strategist',
       org: 'AGAPE PH0209 Child Development Center',
       period: 'Feb 2024 - Present',
       description: 'Directing operations and strategic foresight for a 200+ member NGO.',
       icon: Rocket,
       details: [
-        'Directed strategic planning and foresight for youth-led community programs.',
+        'Directed operations and strategic planning for a youth-led NGO with 200+ active members.',
         'Organized 15+ community programs impacting 600+ beneficiaries nationwide.',
         'Managed cross-functional volunteer teams ensuring success within strict budgets.',
-        'Strengthened partnerships with local government and NGOs through city-wide forums.'
+        'Strengthened partnerships with local government and NGOs through city-wide forums.',
+        'Led resource planning, strategic foresight, and innovative proposals for stakeholders.'
       ],
-      skills: ['Organizational Leadership', 'Strategic Planning', 'Strategic Foresight', 'Community Outreach']
+      skills: ['Organizational Leadership', 'Strategic Planning', 'Community Outreach']
     },
     {
       title: 'President',
@@ -41,8 +43,10 @@ export function Experience() {
       description: 'Overseeing operations and strategic initiatives for the campus library.',
       icon: Library,
       details: [
-        'Led a team of 20+ officers, increasing library engagement by an estimated 35% via digital campaigns.',
-        'Developed four new library programs enhancing student access to research tools.',
+        'Led a team of 20+ officers and volunteers, overseeing operations and strategic initiatives.',
+        'Increased library engagement by an estimated 35% through digital campaigns and workshops.',
+        'Developed and implemented four new library programs enhancing student access to research tools.',
+        'Coordinated faculty and student organization collaborations to expand library reach.',
         'Mentored officers in leadership, organizational management, and project execution.'
       ],
       skills: ['Engagement Strategy', 'Team Mentorship', 'Organizational Management']
@@ -55,10 +59,11 @@ export function Experience() {
       icon: Megaphone,
       details: [
         'Drove campaigns securing grants worth hundreds of thousands in Philippine Peso.',
+        'Provided UX/UI insights to the Scrum team to shape the product roadmap.',
         'Boosted investor engagement by 30% and directly led to four new qualified opportunities.',
-        'Provided UX/UI insights to the Scrum team to shape the product roadmap.'
+        'Secured four positive media mentions in key industry publications.'
       ],
-      skills: ['Marketing Strategy', 'Innovation Development', 'Investor Relations']
+      skills: ['Marketing', 'Innovation Development', 'Investor Relations']
     },
     {
       title: 'University Representative',
@@ -68,8 +73,9 @@ export function Experience() {
       icon: Globe,
       details: [
         'Secured institutional support to formalize and sustain the on-campus scholar community.',
-        'Shaped regional policy and elevated the institution\'s voice among peer universities.',
-        'Coordinated regional development projects with representatives from 10+ universities.'
+        'Functioned as the primary delegate to the DOST-NCR Alliance, shaping regional policy.',
+        'Coordinated regional development projects with representatives from 10+ universities.',
+        'Elevated the institution\'s voice among peer universities in NCR.'
       ],
       skills: ['Strategic Partnerships', 'Policy Shaping', 'Regional Coordination']
     },
@@ -82,7 +88,8 @@ export function Experience() {
       details: [
         'Managed a team of six developers, serving as the Technical Project Lead responsible for delivery.',
         'Developed and executed agile strategic plans and task roadmaps meeting strict deadlines.',
-        'Liaised between development team and business stakeholders to align technical goals.'
+        'Liaised between development team and business stakeholders to align technical goals.',
+        'Ensured high quality assurance and performance metrics for research-driven software.'
       ],
       skills: ['Web Development', 'Project Management', 'Agile Strategic Planning']
     }
@@ -100,7 +107,7 @@ export function Experience() {
               <h2 className="text-5xl lg:text-7xl font-black text-white italic uppercase">Footprint.</h2>
             </div>
             <p className="text-muted-foreground text-xl leading-relaxed max-w-sm font-medium">
-              Transforming technical expertise into collective impact through leadership and mentorship.
+              Transforming technical expertise into collective impact through high-performance leadership.
             </p>
           </div>
 
@@ -113,22 +120,22 @@ export function Experience() {
                   </div>
                 </div>
                 
-                <div className="md:col-span-8 space-y-6">
+                <div className="md:col-span-8 space-y-8">
                   <div>
                     <h3 className="text-3xl font-black text-white group-hover:text-primary transition-colors">{exp.title}</h3>
                     <p className="text-primary font-bold uppercase tracking-[0.2em] text-xs mt-2">{exp.org}</p>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="grid gap-4">
                     {exp.details.map((detail, i) => (
-                      <li key={i} className="flex gap-3 text-muted-foreground font-medium">
-                        <Rocket className="w-4 h-4 text-primary shrink-0 mt-1" />
-                        <span>{detail}</span>
+                      <li key={i} className="flex gap-4 text-muted-foreground font-medium group/item">
+                        <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-1 group-hover/item:translate-x-1 transition-transform" />
+                        <span className="text-sm lg:text-base">{detail}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-3 pt-4">
                     {exp.skills.map(skill => (
-                      <span key={skill} className="px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/5 text-xs font-bold text-white/40 uppercase tracking-widest">
+                      <span key={skill} className="px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/5 text-[10px] font-black text-white/40 uppercase tracking-widest">
                         {skill}
                       </span>
                     ))}
