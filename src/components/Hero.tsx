@@ -60,7 +60,7 @@ export function Hero() {
               priority
               data-ai-hint="minimalist professional portrait"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
           
           {/* Statistics Card */}
