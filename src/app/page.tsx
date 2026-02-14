@@ -2,6 +2,7 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Journey } from '@/components/Journey';
+import { Featured } from '@/components/Featured';
 import { Projects } from '@/components/Projects';
 import { Achievements } from '@/components/Achievements';
 import { Experience } from '@/components/Experience';
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Journey />
+      <Featured />
       <Projects />
       <Achievements />
       <Experience />

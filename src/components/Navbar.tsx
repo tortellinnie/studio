@@ -1,9 +1,11 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export function Navbar() {
   const navItems = [
     { label: 'Journey', href: '/#journey' },
+    { label: 'Featured', href: '/#featured' },
     { label: 'Projects', href: '/#projects' },
     { label: 'Experience', href: '/#experience' },
     { label: 'Achievements', href: '/#achievements' },

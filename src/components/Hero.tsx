@@ -1,3 +1,6 @@
+
+'use client';
+
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
@@ -21,7 +24,7 @@ export function Hero() {
               <span>Available for Internship</span>
             </div>
             
-            <h1 className="text-7xl lg:text-[10rem] font-black text-white leading-[0.8] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+            <h1 className="text-7xl lg:text-[8rem] font-black text-white leading-[0.8] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
               <span className="text-gradient uppercase block">TECHNO</span>
               <span className="text-gradient uppercase block">LEADER</span>
             </h1>
@@ -69,7 +72,7 @@ export function Hero() {
             </div>
             <div>
               <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">Top Performing</p>
-              <p className="text-lg font-black text-white">Software Engineering Student</p>
+              <p className="text-lg font-black text-white">Software Engineering Top Performing Student</p>
             </div>
           </div>
         </div>
