@@ -18,11 +18,12 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <Sparkles className="w-3 h-3" />
-              <span>Available for 2025 Opportunities</span>
+              <span>Available for Internship</span>
             </div>
             
-            <h1 className="text-7xl lg:text-9xl font-black text-white leading-[0.85] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-              <span className="text-gradient uppercase">TECHNOLEADER</span>
+            <h1 className="text-7xl lg:text-[10rem] font-black text-white leading-[0.8] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+              <span className="text-gradient uppercase block">TECHNO</span>
+              <span className="text-gradient uppercase block">LEADER</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
@@ -64,11 +65,11 @@ export function Hero() {
           {/* Statistics Card */}
           <div className="absolute -bottom-12 -left-12 glass-card p-8 rounded-[2rem] flex items-center gap-6 border-white/10 animate-bounce-slow">
             <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-[0_0_30px_rgba(139,92,246,0.5)]">
-              3.9
+              3.6
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">Academic Rank</p>
-              <p className="text-lg font-black text-white">Dean's List Honoree</p>
+              <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">Top Performing</p>
+              <p className="text-lg font-black text-white">Software Engineering Student</p>
             </div>
           </div>
         </div>

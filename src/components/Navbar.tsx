@@ -14,7 +14,7 @@ export function Navbar() {
       <div className="container mx-auto px-6">
         <div className="h-20 glass-card rounded-[2rem] px-10 flex items-center justify-between border-white/[0.08] shadow-2xl">
           <Link href="/" className="text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group">
-            SHANN<span className="text-primary group-hover:animate-pulse">.</span>
+            TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
           </Link>
           
           <div className="hidden md:flex items-center gap-12">
