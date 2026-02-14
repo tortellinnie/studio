@@ -22,13 +22,11 @@ export function Hero() {
             </div>
             
             <h1 className="text-7xl lg:text-9xl font-black text-white leading-[0.85] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-              CRAFTING THE <br />
-              <span className="text-gradient">FUTURE OF CODE</span>
+              <span className="text-gradient uppercase">TECHNOLEADER</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
-              Software Engineer specialized in high-performance architectures and 
-              immersive digital experiences. Turning complex logic into elegant solutions.
+              Intelligent Solutions. Let&apos;s make it happen.
             </p>
           </div>
 
