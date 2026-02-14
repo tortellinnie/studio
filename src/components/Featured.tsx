@@ -2,18 +2,18 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { MapPin, Plane, Calendar, Quote } from 'lucide-react';
+import { MapPin, Plane, Calendar, Building2 } from 'lucide-react';
 
 export function Featured() {
   const highlights = [
     {
-      id: 'vision-1',
+      id: 'pg-intern',
       type: 'Mission',
-      title: 'Socially Impactful Innovation',
+      title: 'Incoming P&G Intern',
       location: 'Manila, PH',
-      date: '2026',
-      description: 'Passionate about leveraging AI, data systems, and user-centered design to develop technology that is both innovative and socially impactful for the Filipino community.',
-      icon: Quote
+      date: 'March 2026',
+      description: 'Joining Procter & Gamble for a high-impact internship in Product Supply, focusing on operational excellence and global supply chain systems.',
+      icon: Building2
     },
     {
       id: 'speaking-1',

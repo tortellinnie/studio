@@ -1,8 +1,16 @@
-import { GraduationCap, Briefcase, Award, Milestone, Rocket } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, Milestone, Rocket, Building2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Journey() {
   const milestones = [
+    {
+      date: 'March 2026 - Present',
+      title: 'Incoming Product Supply Intern',
+      org: 'Procter & Gamble (P&G)',
+      desc: 'Selected for the prestigious P&G internship program. Focusing on high-scale supply chain optimization and operational excellence within a global FMCG leader.',
+      icon: Building2,
+      color: 'bg-blue-600'
+    },
     {
       date: '2025 - 2026',
       title: 'Executive Lead & Innovation Strategist',

@@ -1,6 +1,6 @@
 'use client';
 
-import { Users, Mic, Landmark, Globe, Info } from 'lucide-react';
+import { Users, Mic, Landmark, Globe } from 'lucide-react';
 import {
   Tooltip,
   TooltipContent,
@@ -61,9 +61,8 @@ export function Metrics() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <div className="cursor-help">
-                          <h3 className="text-4xl font-black text-white tracking-tighter flex items-center gap-2">
+                          <h3 className="text-4xl font-black text-white tracking-tighter">
                             {stat.value}
-                            <Info className="w-4 h-4 text-white/20" />
                           </h3>
                         </div>
                       </TooltipTrigger>
