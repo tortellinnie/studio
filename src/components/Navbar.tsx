@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -7,8 +6,9 @@ export function Navbar() {
     { label: 'Journey', href: '/#journey' },
     { label: 'Featured', href: '/#featured' },
     { label: 'Projects', href: '/#projects' },
+    { label: 'Education', href: '/#education' },
     { label: 'Experience', href: '/#experience' },
-    { label: 'Achievements', href: '/#achievements' },
+    { label: 'Honors', href: '/#achievements' },
   ];
 
   return (
