@@ -30,7 +30,7 @@ export function Projects() {
     {
       id: 'gabaydiwa',
       title: 'GabayDiwa',
-      description: 'Revolutionizing Filipino Dementia Home Care with a Cognitive Health Monitoring System. 1st Runner-Up in Philippine Startup Challenge X Regional.',
+      description: 'Revolutionizing Filipino Dementia Home care with a Cognitive Health Monitoring System. 1st Runner-Up in Philippine Startup Challenge X Regional.',
       tags: ['React', 'AI Modeling', 'Healthcare', 'Startup'],
       links: { github: '#', live: '/projects/gabaydiwa' },
       imageId: 'project-gabaydiwa'
