@@ -6,23 +6,25 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-80 pb-32 overflow-hidden px-6">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-48 pb-32 overflow-hidden px-6">
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
       
       <div className="container mx-auto z-10 text-center flex flex-col items-center">
-        <div className="space-y-12">
+        <div className="space-y-12 w-full max-w-screen-xl">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <Sparkles className="w-3 h-3" />
               <span>Available for Software Engineering & PM Roles</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white leading-tight tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase">
-              <span className="text-gradient">TECHNOLEADER</span>
-            </h1>
+            <div className="overflow-hidden py-4">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-none tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase whitespace-nowrap">
+                <span className="text-gradient">TECHNOLEADER</span>
+              </h1>
+            </div>
             
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
+            <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
               As an innovator and Executive Lead at <span className="text-white font-black italic">NERDS 2.0</span>, I leverage AI, data systems, and user-centered design to develop technology that is both innovative and socially impactful.
             </p>
           </div>
