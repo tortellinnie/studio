@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Award, Trophy, BadgeCheck, Sparkles, GraduationCap, Smartphone, Server, Code, Code2, Terminal, BrainCircuit, ShieldAlert, Cpu, Layout, Medal, Zap, Database, Globe } from 'lucide-react';

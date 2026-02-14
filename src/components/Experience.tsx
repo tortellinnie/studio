@@ -1,7 +1,6 @@
-
 'use client';
 
-import { Users, Microscope, Rocket, Library, Megaphone, Globe, Terminal, Briefcase, ChevronRight } from 'lucide-react';
+import { Users, Microscope, Rocket, Library, Megaphone, Globe, Terminal, Briefcase, ChevronRight, GraduationCap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -17,14 +16,14 @@ export function Experience() {
         'Led 3 cross-functional teams of developers, researchers, and designers using Agile Scrum.',
         'Earned national and regional recognition, presenting to 1000+ attendees at major innovation fairs.',
         'Collaborated with DOST-PCHRD, EAMC Dept. of Neurosciences, and NBDB-Philippines to validate system functionality.',
-        'Currently architecting Proxygen (aquaculture DO) and Birdseye (poultry monitoring).'
+        'Architecting Proxygen (aquaculture DO) and Birdseye (poultry monitoring).'
       ],
       skills: ['Program Management', 'Agile Scrum', 'Data Modeling', 'UI/UX Design']
     },
     {
-      title: 'President & Chief Strategist',
-      org: 'AGAPE PH0209 Child Development Center',
-      period: 'Feb 2024 - Present',
+      title: 'Chief Strategist',
+      org: 'AGAPE PH0209 · Freelance',
+      period: 'Nov 2025 - Present',
       description: 'Directing operations and strategic foresight for a 200+ member NGO.',
       icon: Rocket,
       details: [
@@ -32,20 +31,33 @@ export function Experience() {
         'Organized 15+ community programs impacting 600+ beneficiaries nationwide.',
         'Managed cross-functional volunteer teams ensuring success within strict budgets.',
         'Strengthened partnerships with local government and NGOs through city-wide forums.',
-        'Led resource planning, strategic foresight, and innovative proposals for stakeholders.'
+        'Leading resource planning, strategic foresight, and innovative proposals for stakeholders.'
       ],
       skills: ['Organizational Leadership', 'Strategic Planning', 'Community Outreach']
     },
     {
       title: 'President',
-      org: 'FEU Tech Student Library Committee',
+      org: 'AGAPE PH0209 Child Development Center',
+      period: 'Feb 2024 - Nov 2025',
+      description: 'Led community impact programs and organizational growth.',
+      icon: Users,
+      details: [
+        'Orchestrated outreach initiatives and workshops for over 600 beneficiaries.',
+        'Delegated responsibilities across volunteer teams ensuring on-time program delivery.',
+        'Represented the organization in inter-church and city-wide forums.'
+      ],
+      skills: ['Team Management', 'Public Relations']
+    },
+    {
+      title: 'President',
+      org: 'FEU Tech Student Library Committee · Contract',
       period: 'Oct 2025 - Present',
       description: 'Overseeing operations and strategic initiatives for the campus library.',
       icon: Library,
       details: [
         'Led a team of 20+ officers and volunteers, overseeing operations and strategic initiatives.',
         'Increased library engagement by an estimated 35% through digital campaigns and workshops.',
-        'Developed and implemented four new library programs enhancing student access to research tools.',
+        'Developed four new library programs enhancing student access to research tools.',
         'Coordinated faculty and student organization collaborations to expand library reach.',
         'Mentored officers in leadership, organizational management, and project execution.'
       ],

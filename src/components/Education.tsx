@@ -1,7 +1,6 @@
-
 'use client';
 
-import { GraduationCap, BookOpen, Mic, PenTool, Radio, Users, Newspaper, Award, Search, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, BookOpen, Mic, PenTool, Radio, Users, Award, CheckCircle2, Laptop, Terminal } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Education() {
@@ -10,27 +9,28 @@ export function Education() {
       school: 'FEU Institute of Technology',
       degree: "Bachelor's degree, Computer Science",
       period: 'Sep 2023 – Jul 2027',
-      grade: 'Grade: 3.6 (GPA)',
+      grade: '3.6 GPA • Top Performing Student',
       activities: [
         { label: 'President', sub: 'Student Library Committee', icon: BookOpen },
         { label: 'Junior Officer', sub: 'ACM Tech Publicity', icon: Radio },
         { label: 'Senior Writer', sub: 'The Innovator', icon: PenTool },
-        { label: 'Campus Journalist', sub: 'UAAP', icon: Newspaper },
+        { label: 'Campus Journalist', sub: 'UAAP', icon: Laptop },
         { label: 'Podcast Host', sub: 'ACM Diaries', icon: Mic },
-        { label: 'Committee Officer', sub: 'GDSC', icon: Users }
+        { label: 'Committee Officer', sub: 'GDSC', icon: Terminal }
       ],
       skills: ['Software Solution Development', 'Technical Writing', 'Computational Logic'],
       honors: ['DOST Scholar', 'QCYDO Scholar', 'FEU Tech Financial Scholar', 'Datacamp Scholar']
     },
     {
       school: 'Polytechnic University of the Philippines',
-      degree: 'ICT',
+      degree: 'Information & Communications Technology (ICT)',
       period: 'Sep 2021 – Jul 2023',
+      grade: 'Academic Excellence',
       activities: [
         { label: 'ICT Rep', sub: 'PUPSHS COMELEC', icon: Users }
       ],
       skills: ['Information Technology', 'Systems Management'],
-      honors: ['Academic Excellence']
+      honors: ['Academic Distinction']
     }
   ];
 
@@ -58,11 +58,9 @@ export function Education() {
                   <h3 className="text-3xl font-black text-white leading-tight">{edu.school}</h3>
                   <p className="text-primary font-bold uppercase tracking-widest text-xs">{edu.degree}</p>
                   <p className="text-muted-foreground font-bold text-sm">{edu.period}</p>
-                  {edu.grade && (
-                    <div className="inline-block px-4 py-2 rounded-xl bg-white/5 border border-white/10 mt-4">
-                      <span className="text-white font-black">{edu.grade}</span>
-                    </div>
-                  )}
+                  <div className="inline-block px-4 py-2 rounded-xl bg-white/5 border border-white/10 mt-4">
+                    <span className="text-white font-black">{edu.grade}</span>
+                  </div>
                 </div>
 
                 <div className="md:col-span-8 space-y-10">

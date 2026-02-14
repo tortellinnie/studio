@@ -1,14 +1,11 @@
-
 'use client';
 
 import { useParams } from 'next/navigation';
 import { Navbar } from '@/components/Navbar';
 import { Contact } from '@/components/Contact';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Github, Globe, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Github, Globe, CheckCircle2, Server, Layout, Shield, Workflow, Eye, Zap, Brain, Fish, BookOpen } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -22,10 +19,12 @@ export default function ProjectDetail() {
       challenges: [
         'Real-time computer vision deployment on edge hardware',
         'Successful pilot testing in commercial Luzon farms',
-        'Designing actionable dashboards for farm managers'
+        'Designing actionable dashboards for farm managers',
+        '30% reduction in ammonia-related health risks'
       ],
-      imageId: 'project-birdseye',
-      status: 'Pilot Ready'
+      status: 'Pilot Ready',
+      icon: Eye,
+      skills: ['Edge Computing', 'TensorFlow', 'Agile']
     },
     'video-automation': {
       title: 'Video Automation Engine',
@@ -34,10 +33,12 @@ export default function ProjectDetail() {
       challenges: [
         'Containerized architecture using Docker and n8n',
         'Autonomous content production via local LLM logic',
-        'Secure OAuth2 management for multi-service authentication'
+        'Secure OAuth2 management for multi-service authentication',
+        'Automated YouTube delivery pipeline'
       ],
-      imageId: 'project-video-automation',
-      status: 'Autonomous'
+      status: 'Autonomous',
+      icon: Zap,
+      skills: ['Docker', 'n8n', 'Google Cloud']
     },
     'gabaydiwa': {
       title: 'GabayDiwa',
@@ -46,10 +47,12 @@ export default function ProjectDetail() {
       challenges: [
         '1st Runner-Up in Philippine Startup Challenge X Regional',
         'Bridging the gap between clinical insight and home care',
-        'Developing proactive risk indicators for dementia care'
+        'Developing proactive risk indicators for dementia care',
+        'Awarded for bright student-led innovation'
       ],
-      imageId: 'project-gabaydiwa',
-      status: 'Award-Winning'
+      status: 'Award-Winning',
+      icon: Brain,
+      skills: ['Healthcare UX', 'Data Modeling']
     },
     'proxygen': {
       title: 'Proxygen',
@@ -58,10 +61,12 @@ export default function ProjectDetail() {
       challenges: [
         '30–40% improvement in DO maintenance achieved',
         'Preventing mass fish kills through predictive alerts',
-        'Aligning with SDGs 2, 9, 12, and 14 for sustainability'
+        'Aligning with SDGs 2, 9, 12, and 14 for sustainability',
+        'Diurnal and weather-aware decision logic'
       ],
-      imageId: 'project-proxygen',
-      status: 'Industrial Grade'
+      status: 'Industrial Grade',
+      icon: Fish,
+      skills: ['Fuzzy Logic', 'Sensor Fusion']
     },
     'salayliwa': {
       title: 'Salayliwa',
@@ -70,15 +75,16 @@ export default function ProjectDetail() {
       challenges: [
         'Recognized at NARA Con 2025 at the National Library',
         'Revitalizing literacy through community-driven habits',
-        'Designing culturally grounded digital storytelling interfaces'
+        'Designing culturally grounded digital storytelling interfaces',
+        'National Alliance of Reading Advocates (NARA) awardee'
       ],
-      imageId: 'project-salayliwa',
-      status: 'National Award'
+      status: 'National Award',
+      icon: BookOpen,
+      skills: ['Social Innovation', 'Adaptive UI']
     }
   };
 
   const project = projectDetails[id] || projectDetails['birdseye'];
-  const img = PlaceHolderImages.find(p => p.id === project.imageId) || PlaceHolderImages[1];
 
   return (
     <main className="min-h-screen bg-background">
@@ -102,15 +108,18 @@ export default function ProjectDetail() {
                     </span>
                   ))}
                 </div>
-                <h1 className="text-5xl lg:text-7xl font-black text-white leading-none">{project.title}</h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <h1 className="text-5xl lg:text-7xl font-black text-white leading-none uppercase italic">{project.title}.</h1>
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-xl font-medium">
                   {project.description}
                 </p>
               </div>
 
               <div className="space-y-8">
-                <h3 className="text-2xl font-bold">Project Impact & Innovation</h3>
-                <div className="space-y-4">
+                <h3 className="text-2xl font-bold flex items-center gap-3">
+                  <Workflow className="w-6 h-6 text-primary" />
+                  Project Impact & Innovation
+                </h3>
+                <div className="grid gap-4">
                   {project.challenges.map((challenge: string, i: number) => (
                     <div key={i} className="flex gap-4 p-6 glass-card rounded-2xl border-white/5">
                       <CheckCircle2 className="w-6 h-6 text-primary shrink-0" />
@@ -122,36 +131,43 @@ export default function ProjectDetail() {
 
               <div className="flex gap-4 pt-8">
                 <Button className="rounded-full h-14 px-10 bg-primary hover:bg-primary/90 text-lg font-bold shadow-[0_0_20px_rgba(139,92,246,0.3)]">
-                  <Globe className="w-5 h-5 mr-2" /> Live Demo
+                  <Globe className="w-5 h-5 mr-2" /> View Live
                 </Button>
                 <Button variant="outline" className="rounded-full h-14 px-10 border-white/10 hover:bg-white/5 text-lg font-bold">
-                  <Github className="w-5 h-5 mr-2" /> Source Code
+                  <Github className="w-5 h-5 mr-2" /> Technical Docs
                 </Button>
               </div>
             </div>
 
-            <div className="sticky top-32">
-              <div className="aspect-[4/3] relative rounded-[2rem] overflow-hidden border border-white/10 glass-card shadow-2xl">
-                <Image
-                  src={img?.imageUrl || ''}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  unoptimized={img?.imageUrl.includes('drive.google.com')}
-                />
+            <div className="sticky top-32 space-y-8">
+              <div className="aspect-[4/3] glass-card rounded-[3rem] flex flex-col items-center justify-center p-12 text-center space-y-8 border-primary/20">
+                <div className="w-32 h-32 rounded-[2rem] bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <project.icon className="w-16 h-16 text-primary" />
+                </div>
+                <div className="space-y-4">
+                  <h2 className="text-4xl font-black text-white uppercase">{project.title}</h2>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {project.skills.map((skill: string) => (
+                      <span key={skill} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-white/60">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                <div className="p-4 glass-card rounded-xl text-center">
-                  <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Status</p>
-                  <p className="font-bold text-white">{project.status}</p>
+
+              <div className="grid grid-cols-3 gap-4">
+                <div className="p-6 glass-card rounded-2xl text-center">
+                  <p className="text-xs text-muted-foreground font-black uppercase mb-2">Status</p>
+                  <p className="font-black text-white text-lg">{project.status}</p>
                 </div>
-                <div className="p-4 glass-card rounded-xl text-center">
-                  <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Role</p>
-                  <p className="font-bold text-white">Project Lead</p>
+                <div className="p-6 glass-card rounded-2xl text-center">
+                  <p className="text-xs text-muted-foreground font-black uppercase mb-2">Role</p>
+                  <p className="font-black text-white text-lg">Lead</p>
                 </div>
-                <div className="p-4 glass-card rounded-xl text-center">
-                  <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Impact</p>
-                  <p className="font-bold text-white">Scale-Ready</p>
+                <div className="p-6 glass-card rounded-2xl text-center">
+                  <p className="text-xs text-muted-foreground font-black uppercase mb-2">Impact</p>
+                  <p className="font-black text-white text-lg">Scalable</p>
                 </div>
               </div>
             </div>
