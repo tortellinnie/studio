@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -11,7 +10,7 @@ export function Hero() {
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-headshot');
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
@@ -24,7 +23,7 @@ export function Hero() {
               <span>Available for Internship</span>
             </div>
             
-            <h1 className="text-7xl lg:text-[8rem] font-black text-white leading-[0.8] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
+            <h1 className="text-6xl lg:text-[7rem] font-black text-white leading-[0.85] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
               <span className="text-gradient uppercase block">TECHNO</span>
               <span className="text-gradient uppercase block">LEADER</span>
             </h1>
@@ -66,13 +65,13 @@ export function Hero() {
           </div>
           
           {/* Statistics Card */}
-          <div className="absolute -bottom-12 -left-12 glass-card p-8 rounded-[2rem] flex items-center gap-6 border-white/10 animate-bounce-slow">
-            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-[0_0_30px_rgba(139,92,246,0.5)]">
+          <div className="absolute -bottom-12 -left-12 glass-card p-8 rounded-[2rem] flex items-center gap-6 border-white/10 animate-bounce-slow max-w-xs">
+            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-[0_0_30px_rgba(139,92,246,0.5)] shrink-0">
               3.6
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">Top Performing</p>
-              <p className="text-lg font-black text-white">Software Engineering Top Performing Student</p>
+              <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">Academic Rank</p>
+              <p className="text-sm font-black text-white">Software Engineering Top Performing Student</p>
             </div>
           </div>
         </div>

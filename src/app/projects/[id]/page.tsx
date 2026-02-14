@@ -13,45 +13,44 @@ export default function ProjectDetail() {
   const params = useParams();
   const id = params.id as string;
 
-  // Professional mapping based on profile deep-scan
   const projectDetails: Record<string, any> = {
+    'salayliwa': {
+      title: 'Salayliwa',
+      tags: ['Next.js', 'PostgreSQL', 'UI/UX'],
+      description: 'A gamified reading engagement platform for Filipino youth. Developed to address literacy challenges through a culturally grounded digital experience.',
+      challenges: [
+        'Designing a culturally resonant UX for Filipino children',
+        'Implementing real-time progress tracking for literacy metrics',
+        'Scaling the platform for national competition deployment'
+      ],
+      imageId: 'project-1'
+    },
+    'gabaydiwa': {
+      title: 'Gabaydiwa',
+      tags: ['React', 'Node.js', 'Healthcare'],
+      description: 'A comprehensive cognitive health and progression monitoring system for dementia home care. Recognized for social innovation and technological impact.',
+      challenges: [
+        'Ensuring accessibility for senior citizens and caregivers',
+        'Collaborating with neuroscientists for medical validation',
+        'Developing predictive data models for cognitive health'
+      ],
+      imageId: 'project-2'
+    },
     'aura-analytics': {
       title: 'Aura Data Engine',
-      tags: ['Next.js', 'PyTorch', 'AWS Lambda', 'Redis'],
-      description: 'A high-throughput sentiment analysis engine that processes over 1M events daily. Utilizes NLP models to visualize market volatility and sentiment trends in real-time.',
+      tags: ['Next.js', 'PyTorch', 'AWS'],
+      description: 'A high-throughput sentiment analysis engine that processes over 1M events daily. Utilizes NLP models to visualize market volatility.',
       challenges: [
         'Scaling WebSocket connections for 10k+ concurrent users',
         'Optimizing PyTorch inference for sub-100ms latency',
         'Implementing a fault-tolerant Redis caching layer'
       ],
       imageId: 'project-1'
-    },
-    'cloudvault': {
-      title: 'CloudVault Secure',
-      tags: ['Solidity', 'Go', 'IPFS', 'Docker'],
-      description: 'A decentralized file-sharing platform that ensures 100% data integrity through content-addressing and blockchain-based audit logs.',
-      challenges: [
-        'Reducing IPFS retrieval latency across global nodes',
-        'Managing smart contract state efficiency to lower gas fees',
-        'Architecting a zero-knowledge proof authentication module'
-      ],
-      imageId: 'project-2'
-    },
-    'agrisense': {
-      title: 'AgriSense IoT Node',
-      tags: ['C++', 'React Native', 'ESP32', 'Firebase'],
-      description: 'Comprehensive precision farming system featuring hardware-level optimization for low-power soil telemetry and automated cloud synchronization.',
-      challenges: [
-        'Hardware-to-cloud sync in ultra-low bandwidth environments',
-        'Extending battery life via deep-sleep firmware cycles',
-        'Developing a real-time React Native dashboard for telemetry'
-      ],
-      imageId: 'project-3'
     }
   };
 
-  const project = projectDetails[id] || projectDetails['aura-analytics'];
-  const img = PlaceHolderImages.find(p => p.id === project.imageId);
+  const project = projectDetails[id] || projectDetails['salayliwa'];
+  const img = PlaceHolderImages.find(p => p.id === id) || PlaceHolderImages[1];
 
   return (
     <main className="min-h-screen bg-background">
@@ -82,7 +81,7 @@ export default function ProjectDetail() {
               </div>
 
               <div className="space-y-8">
-                <h3 className="text-2xl font-bold">Key Challenges & Solutions</h3>
+                <h3 className="text-2xl font-bold">Project Impact & Innovation</h3>
                 <div className="space-y-4">
                   {project.challenges.map((challenge: string, i: number) => (
                     <div key={i} className="flex gap-4 p-6 glass-card rounded-2xl border-white/5">
@@ -114,16 +113,16 @@ export default function ProjectDetail() {
               </div>
               <div className="mt-8 grid grid-cols-3 gap-4">
                 <div className="p-4 glass-card rounded-xl text-center">
-                  <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Duration</p>
-                  <p className="font-bold text-white">4 Months</p>
+                  <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Status</p>
+                  <p className="font-bold text-white">Award-Winning</p>
                 </div>
                 <div className="p-4 glass-card rounded-xl text-center">
                   <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Role</p>
-                  <p className="font-bold text-white">Architect</p>
+                  <p className="font-bold text-white">Exec Lead</p>
                 </div>
                 <div className="p-4 glass-card rounded-xl text-center">
-                  <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Status</p>
-                  <p className="font-bold text-white">Production</p>
+                  <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Impact</p>
+                  <p className="font-bold text-white">600+ Users</p>
                 </div>
               </div>
             </div>

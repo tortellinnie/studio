@@ -1,37 +1,37 @@
-import { GraduationCap, Briefcase, Award, Milestone } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, Milestone, Rocket } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Journey() {
   const milestones = [
     {
+      date: '2025 - Present',
+      title: 'Executive Lead & Innovation Strategist',
+      org: 'NERDS 2.0',
+      desc: 'Spearheading Salayliwa and Gabaydiwa innovation startups. Managing multidisciplinary teams to develop functional prototypes for cognitive health and gamified literacy.',
+      icon: Rocket,
+      color: 'bg-primary'
+    },
+    {
       date: '2024 - Present',
       title: 'Senior Software Engineering Student',
       org: 'Far Eastern University - Institute of Technology',
-      desc: 'Specializing in high-performance computing, distributed systems, and real-time data pipelines. Maintaining a Top Performing Student ranking with a 3.6 GPA.',
+      desc: 'Focused on AI, data systems, and user-centered design. Consistently recognized as a Top Performing Student with a 3.6 GPA.',
       icon: GraduationCap,
       color: 'bg-blue-500'
     },
     {
-      date: 'SUMMER 2024',
-      title: 'Full Stack Engineer Intern',
-      org: 'Tech Innovation Lab',
-      desc: 'Architected cloud-native microservices using Next.js and Go. Optimized backend throughput by 40% and implemented automated testing frameworks.',
+      date: '2024 - 2025',
+      title: 'President & Chief Strategist',
+      org: 'AGAPE PH0209',
+      desc: 'Led a youth-led NGO with 200+ members. Orchestrated 15+ community programs impacting 600+ beneficiaries nationwide.',
       icon: Briefcase,
-      color: 'bg-primary'
-    },
-    {
-      date: 'JAN 2024',
-      title: 'Industry Case Study Winner',
-      org: 'National Tech Symposium',
-      desc: 'Awarded first place for developing a decentralized identity verification prototype using Ethereum and IPFS.',
-      icon: Award,
       color: 'bg-amber-500'
     },
     {
-      date: 'AUG 2023',
-      title: 'Technical Project Lead',
-      org: 'Academic Research Council',
-      desc: 'Led a cross-functional team of 5 to build an AI-driven predictive analytics tool for environmental monitoring in urban areas.',
+      date: '2022 - 2023',
+      title: 'Project Manager & Frontend Developer',
+      org: 'PUP - RISFI',
+      desc: 'Managed a team of 6 developers for research-driven software solutions. Developed task roadmaps and ensured high quality assurance.',
       icon: Milestone,
       color: 'bg-emerald-500'
     }
@@ -44,9 +44,9 @@ export function Journey() {
           <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
             Professional Roadmap
           </Badge>
-          <h2 className="text-5xl lg:text-7xl font-black text-white uppercase italic">Growth.</h2>
+          <h2 className="text-5xl lg:text-7xl font-black text-white uppercase italic">Impact.</h2>
           <p className="text-muted-foreground max-w-2xl text-xl font-medium leading-relaxed">
-            A chronological timeline of technical breakthroughs, leadership milestones, and academic milestones.
+            A track record of technological innovation, social leadership, and consistent academic excellence.
           </p>
         </div>
 

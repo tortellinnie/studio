@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ArrowUpRight } from 'lucide-react';
@@ -11,25 +11,25 @@ import { Github, ArrowUpRight } from 'lucide-react';
 export function Projects() {
   const projects = [
     {
-      id: 'project-1',
+      id: 'salayliwa',
+      title: 'Salayliwa',
+      description: 'A gamified literacy engagement platform for Filipino youth, designed to bridge educational gaps through interactive storytelling and AI-driven data modeling.',
+      tags: ['Next.js', 'PostgreSQL', 'UI/UX', 'Agile'],
+      links: { github: '#', live: '/projects/salayliwa' }
+    },
+    {
+      id: 'gabaydiwa',
+      title: 'Gabaydiwa',
+      description: 'A cognitive health monitoring system for dementia home care in the Philippines, focusing on cognitive progression tracking and user-centered design.',
+      tags: ['React', 'Node.js', 'Healthcare', 'AI'],
+      links: { github: '#', live: '/projects/gabaydiwa' }
+    },
+    {
+      id: 'aura-analytics',
       title: 'Aura Data Engine',
-      description: 'A high-throughput data processing engine designed for real-time market sentiment analysis using advanced NLP models and distributed pipelines.',
+      description: 'High-throughput data processing engine designed for real-time market sentiment analysis using advanced NLP models and distributed pipelines.',
       tags: ['Next.js', 'PyTorch', 'AWS', 'Redis'],
       links: { github: '#', live: '/projects/aura-analytics' }
-    },
-    {
-      id: 'project-2',
-      title: 'CloudVault Secure',
-      description: 'Distributed file storage solution leveraging IPFS and cryptographic hashing for immutable data integrity, privacy, and hybrid-cloud sync.',
-      tags: ['Solidity', 'Go', 'Docker', 'Web3'],
-      links: { github: '#', live: '/projects/cloudvault' }
-    },
-    {
-      id: 'project-3',
-      title: 'AgriSense IoT Node',
-      description: 'An end-to-end IoT platform for precision agriculture, featuring real-time soil telemetry and automated low-bandwidth synchronization.',
-      tags: ['IoT', 'C++', 'ESP32', 'Firebase'],
-      links: { github: '#', live: '/projects/agrisense' }
     }
   ];
 
@@ -38,10 +38,10 @@ export function Projects() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-4">
-            <Badge variant="outline" className="text-primary border-primary font-bold">PORTFOLIO</Badge>
-            <h2 className="text-4xl lg:text-5xl font-black text-white italic uppercase">Selected Works.</h2>
+            <Badge variant="outline" className="text-primary border-primary font-bold">CASE STUDIES</Badge>
+            <h2 className="text-4xl lg:text-5xl font-black text-white italic uppercase">Innovations.</h2>
             <p className="text-muted-foreground max-w-xl text-lg">
-              Engineering solutions for complex problems across distributed systems, cloud architectures, and intelligent hardware.
+              Developing technology that is both innovative and socially impactful, from cognitive health to literacy.
             </p>
           </div>
           <Button variant="outline" className="rounded-full h-12 px-8 border-white/10 hover:bg-white/5 font-bold group">
@@ -51,7 +51,7 @@ export function Projects() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project) => {
-            const img = PlaceHolderImages.find(p => p.id === project.id);
+            const img = PlaceHolderImages.find(p => p.id === project.id) || PlaceHolderImages[1];
             return (
               <Link href={project.links.live} key={project.id} className="group">
                 <Card className="glass-card overflow-hidden border-white/10 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
@@ -97,7 +97,7 @@ export function Projects() {
                   </CardContent>
                   <CardFooter className="pt-0 pb-6">
                      <span className="text-sm font-bold text-primary group-hover:underline decoration-2 underline-offset-8">
-                        View Project Detail
+                        View Case Study
                      </span>
                   </CardFooter>
                 </Card>
@@ -108,9 +108,4 @@ export function Projects() {
       </div>
     </section>
   );
-}
-
-// Inline Footer replacement to avoid extra component imports in this scope
-function CardFooter({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <div className={`flex items-center p-6 pt-0 ${className}`}>{children}</div>;
 }

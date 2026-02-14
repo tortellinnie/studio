@@ -1,47 +1,47 @@
-import { Award, ShieldCheck, Trophy, BadgeCheck, Sparkles, Zap } from 'lucide-react';
+import { Award, ShieldCheck, Trophy, BadgeCheck, Sparkles, BookOpen, GraduationCap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 export function Achievements() {
   const data = {
-    awards: [
+    scholarships: [
       {
-        title: "Dean's List for Academic Excellence",
-        org: "School of Computing",
-        year: "2021 - 2024",
+        title: "Department of Science and Technology (DOST) Scholar",
+        org: "DOST Philippines",
+        year: "2023 - Present",
+        icon: GraduationCap
+      },
+      {
+        title: "FEU Tech Financial Academic Scholar",
+        org: "FEU Institute of Technology",
+        year: "2023 - Present",
+        icon: Sparkles
+      },
+      {
+        title: "Datacamp (Data Engineering Pilipinas) Scholar",
+        org: "Data Engineering Pilipinas",
+        year: "2024",
+        icon: BookOpen
+      }
+    ],
+    honors: [
+      {
+        title: "2x Top Performing Student",
+        org: "Computer Science Department",
+        id: "FEU Tech",
         icon: Trophy
       },
       {
-        title: "National Merit Scholarship",
-        org: "Federal Education Board",
-        year: "2021",
+        title: "Industry Case Study Winner",
+        org: "National Tech Symposium",
+        id: "Winner 2024",
         icon: Award
       },
-      {
-        title: "Technological Innovation Finalist",
-        org: "Regional Tech Symposium",
-        year: "2023",
-        icon: Sparkles
-      }
-    ],
-    certs: [
       {
         title: "AWS Certified Developer",
         org: "Amazon Web Services",
         id: "DVA-C02",
         icon: ShieldCheck
-      },
-      {
-        title: "Google Cloud Architect",
-        org: "Google Cloud",
-        id: "GCP-PCA",
-        icon: BadgeCheck
-      },
-      {
-        title: "Meta Front-End Specialization",
-        org: "Meta / Coursera",
-        id: "META-FE-2022",
-        icon: Zap
       }
     ]
   };
@@ -51,21 +51,21 @@ export function Achievements() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-24 space-y-6">
           <Badge variant="outline" className="border-primary text-primary font-bold uppercase tracking-widest px-4 py-1">Recognition</Badge>
-          <h2 className="text-4xl lg:text-6xl font-black text-white uppercase italic">Honors & Achievements.</h2>
+          <h2 className="text-4xl lg:text-6xl font-black text-white uppercase italic">Honors.</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed font-medium">
-            A track record of consistent excellence in both elite academic environments and professional industry-standard certifications.
+            Consistently recognized for academic rigor, innovation in tech symposiums, and multi-sectoral scholarship excellence.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-10">
-          {/* Awards */}
+          {/* Scholarships */}
           <div className="space-y-8">
             <h3 className="text-2xl font-bold flex items-center gap-3 text-white uppercase tracking-tight">
               <Sparkles className="w-6 h-6 text-primary" />
-              Academic Honors
+              Elite Scholarships
             </h3>
             <div className="space-y-4">
-              {data.awards.map((item, idx) => (
+              {data.scholarships.map((item, idx) => (
                 <Card key={idx} className="glass-card border-white/5 hover:border-primary/30 transition-all duration-500 group">
                   <CardContent className="p-8 flex items-start gap-6">
                     <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -81,14 +81,14 @@ export function Achievements() {
             </div>
           </div>
 
-          {/* Certifications */}
+          {/* Academic Honors */}
           <div className="space-y-8">
             <h3 className="text-2xl font-bold flex items-center gap-3 text-white uppercase tracking-tight">
               <ShieldCheck className="w-6 h-6 text-accent" />
-              Professional Certs
+              Academic & Industry Honors
             </h3>
             <div className="space-y-4">
-              {data.certs.map((item, idx) => (
+              {data.honors.map((item, idx) => (
                 <Card key={idx} className="glass-card border-white/5 hover:border-accent/30 transition-all duration-500 group">
                   <CardContent className="p-8 flex items-start gap-6">
                     <div className="w-16 h-16 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -96,8 +96,8 @@ export function Achievements() {
                     </div>
                     <div className="flex-1">
                       <h4 className="text-xl font-bold text-white mb-1">{item.title}</h4>
-                      <p className="text-muted-foreground font-medium mb-4">{item.org} • ID: {item.id}</p>
-                      <button className="text-[10px] font-black uppercase tracking-[0.2em] text-accent hover:underline decoration-2 underline-offset-8 transition-all">Verify Credential</button>
+                      <p className="text-muted-foreground font-medium mb-4">{item.org} • {item.id}</p>
+                      <button className="text-[10px] font-black uppercase tracking-[0.2em] text-accent hover:underline decoration-2 underline-offset-8 transition-all">Verify Rank</button>
                     </div>
                   </CardContent>
                 </Card>

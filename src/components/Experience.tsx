@@ -1,31 +1,47 @@
-import { Users, Code2, Terminal, Zap } from 'lucide-react';
+import { Users, Code2, Terminal, Globe, Megaphone, Library, Microscope } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
   const experiences = [
     {
-      title: 'Executive President',
-      org: 'Computer Science Society',
-      period: '2023 - Present',
-      description: 'Orchestrating technical development initiatives and high-stakes hackathons for a student body of 1,000+. Managing a diverse executive board to bridge the gap between academic theory and industry-scale engineering.',
+      title: 'Executive Lead',
+      org: 'NERDS 2.0',
+      period: 'Apr 2025 - Present',
+      description: 'Directing full-cycle development for Salayliwa and Gabaydiwa. Leading 3 cross-functional teams of developers and researchers through Agile Scrum to deliver socially impactful prototypes.',
+      icon: Microscope,
+      skills: ['Agile Scrum', 'Project Management', 'UI/UX Design', 'Data Modeling']
+    },
+    {
+      title: 'Chief Strategist / President',
+      org: 'AGAPE PH0209',
+      period: 'Feb 2024 - Present',
+      description: 'Orchestrating operations for a youth NGO with 200+ members. Organized 15+ community programs focusing on digital literacy and education for 600+ beneficiaries.',
       icon: Users,
-      skills: ['Strategic Leadership', 'Project Management', 'Public Speaking', 'Community Building']
+      skills: ['Strategic Planning', 'Leadership', 'Resource Management', 'Community Outreach']
     },
     {
-      title: 'Advanced DSA Peer Mentor',
-      org: 'University Tech Academy',
-      period: '2022 - 2023',
-      description: 'Guided 50+ students through complex algorithmic challenges and competitive programming logic. Developed custom technical assessments and optimized learning paths for Data Structures and Algorithms.',
-      icon: Terminal,
-      skills: ['Algorithms', 'Mentorship', 'C++', 'Java', 'Problem Solving']
+      title: 'Chief Marketing Officer',
+      org: 'C-RAM Solutions',
+      period: 'Dec 2024 - Nov 2025',
+      description: 'Positioned the startup for major competitive grants. Boosted investor engagement by 30% through strategic presentation and media outreach in key industry publications.',
+      icon: Megaphone,
+      skills: ['Digital Marketing', 'Pitching', 'UX Insights', 'Stakeholder Relations']
     },
     {
-      title: 'Software Development Associate',
-      org: 'Student Tech Collective',
-      period: '2021 - 2022',
-      description: 'Collaborated on internal university portal improvements and open-source automation scripts. Authored highly accessible UI components and streamlined CI/CD workflows using Python and React.',
-      icon: Code2,
-      skills: ['Full Stack', 'CI/CD', 'Git Workflow', 'Accessibility']
+      title: 'University Representative',
+      org: 'NCR Alliance of DOST Scholars (NADS)',
+      period: 'Mar 2024 - Mar 2025',
+      description: 'Primary delegate to the DOST-NCR Alliance. Coordinated regional development projects for tens of thousands of active NCR scholars.',
+      icon: Globe,
+      skills: ['Strategic Partnerships', 'Policy Shaping', 'Event Coordination', 'Public Speaking']
+    },
+    {
+      title: 'Involvement & Leadership',
+      org: 'FEU Institute of Technology',
+      period: '2023 - 2027',
+      description: 'President at FEU Tech Library, Podcast Host at ACM Diaries, Senior Writer at The Innovator, and Committee Officer at GDSC.',
+      icon: Library,
+      skills: ['Technical Writing', 'Podcast Hosting', 'Event Planning', 'Journalism']
     }
   ];
 
@@ -41,7 +57,7 @@ export function Experience() {
               <h2 className="text-5xl lg:text-7xl font-black text-white italic uppercase">Footprint.</h2>
             </div>
             <p className="text-muted-foreground text-xl leading-relaxed max-w-sm font-medium">
-              Transforming technical expertise into collective impact through leadership and mentorship.
+              A comprehensive record of building organizations and leading technical innovation.
             </p>
           </div>
 
