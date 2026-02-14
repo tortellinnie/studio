@@ -1,77 +1,88 @@
-
-import { Calendar, GraduationCap, Briefcase, Award } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, Milestone } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 export function Journey() {
   const milestones = [
     {
-      date: 'Aug 2024 - Present',
+      date: '2024 - Present',
       title: 'Senior Year CS',
-      organization: 'Tech University',
-      description: 'Focusing on Advanced Algorithms, Cloud Computing, and Machine Learning. Working on a capstone project for AI-driven cybersecurity.',
+      org: 'Tech University',
+      desc: 'Advancing research in AI-driven cybersecurity and cloud distribution.',
       icon: GraduationCap,
-      category: 'Education'
+      color: 'bg-blue-500'
     },
     {
-      date: 'May 2024 - Aug 2024',
-      title: 'Software Engineering Intern',
-      organization: 'Innovate Systems',
-      description: 'Optimized backend microservices using Node.js and AWS, reducing latency by 30%. Implemented automated CI/CD pipelines.',
+      date: 'SUMMER 2024',
+      title: 'Software Engineer Intern',
+      org: 'Innovate Systems',
+      desc: 'Optimized microservices architecture reducing server latency by 30%.',
       icon: Briefcase,
-      category: 'Work'
+      color: 'bg-primary'
     },
     {
-      date: 'Feb 2024',
-      title: 'Hackathon Grand Prize',
-      organization: 'CodeFest 2024',
-      description: 'Led a team of four to build a real-time carbon footprint tracker. Awarded "Most Innovative Tech Stack".',
+      date: 'FEB 2024',
+      title: 'Global Hackathon Winner',
+      org: 'CodeFest International',
+      desc: 'First prize for building an AI carbon-credit marketplace on blockchain.',
       icon: Award,
-      category: 'Achievement'
+      color: 'bg-amber-500'
     },
     {
-      date: 'Sep 2022',
-      title: 'Open Source Contributor',
-      organization: 'React Ecosystem',
-      description: 'Started contributing to major open-source UI libraries. Authored 15+ merged pull requests focused on accessibility.',
-      icon: Briefcase,
-      category: 'Growth'
+      date: 'SEP 2022',
+      title: 'OSS Contributor',
+      org: 'React Ecosystem',
+      desc: 'Engineered accessibility features for top-tier UI component libraries.',
+      icon: Milestone,
+      color: 'bg-emerald-500'
     }
   ];
 
   return (
-    <section id="journey" className="py-24 bg-secondary/30">
+    <section id="journey" className="py-32 relative bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl font-bold">My Journey</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A chronological look at my growth, from my first line of code to professional internships and leadership roles.
+        <div className="flex flex-col items-center text-center mb-32 space-y-6">
+          <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
+            The Road So Far
+          </Badge>
+          <h2 className="text-5xl lg:text-7xl font-black text-white">PROFESSIONAL JOURNEY</h2>
+          <p className="text-muted-foreground max-w-2xl text-xl font-medium leading-relaxed">
+            A chronological timeline of milestones, engineering challenges, and continuous growth.
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Vertical line for desktop */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" />
-          
-          <div className="space-y-12">
-            {milestones.map((item, index) => (
-              <div key={index} className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                <div className="flex-1 w-full md:w-auto mb-8 md:mb-0">
-                  <div className={`p-6 bg-white rounded-xl shadow-sm border transition-all hover:shadow-md ${index % 2 === 0 ? 'md:ml-12' : 'md:mr-12'}`}>
-                    <div className="flex items-center gap-2 mb-2 text-primary">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-xs font-semibold">{item.date}</span>
-                    </div>
-                    <h3 className="text-lg font-bold mb-1">{item.title}</h3>
-                    <p className="text-sm text-primary font-medium mb-3">{item.organization}</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Decorative vertical line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2 hidden lg:block" />
+
+          <div className="space-y-24">
+            {milestones.map((item, i) => (
+              <div key={i} className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-0 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                <div className={`flex-1 w-full lg:px-20 ${i % 2 === 0 ? 'text-center lg:text-right' : 'text-center lg:text-left'}`}>
+                  <div className="inline-block p-8 glass-card rounded-[2.5rem] border-white/[0.05] hover:border-primary/20 transition-all duration-500 group">
+                    <span className="text-primary font-black tracking-[0.2em] text-[10px] uppercase mb-4 block">
+                      {item.date}
+                    </span>
+                    <h3 className="text-2xl font-black text-white mb-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/60 font-bold uppercase tracking-widest text-xs mb-6">
+                      {item.org}
+                    </p>
+                    <p className="text-muted-foreground text-lg leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
 
-                {/* Central Circle */}
-                <div className="absolute left-1/2 -translate-x-1/2 w-10 h-10 bg-white border-2 border-primary rounded-full flex items-center justify-center z-10 shadow-sm md:flex hidden">
-                  <item.icon className="w-5 h-5 text-primary" />
+                {/* Central Connector */}
+                <div className="relative flex items-center justify-center z-10 w-16 h-16">
+                  <div className={`absolute inset-0 ${item.color} blur-[20px] opacity-20 rounded-full`} />
+                  <div className="w-14 h-14 rounded-2xl glass-card flex items-center justify-center border-white/20 shadow-2xl">
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
                 </div>
 
-                <div className="flex-1 hidden md:block" />
+                <div className="flex-1 hidden lg:block" />
               </div>
             ))}
           </div>

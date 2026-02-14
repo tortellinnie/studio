@@ -5,29 +5,33 @@ export function Navbar() {
   const navItems = [
     { label: 'Journey', href: '/#journey' },
     { label: 'Projects', href: '/#projects' },
-    { label: 'Achievements', href: '/#achievements' },
     { label: 'Experience', href: '/#experience' },
+    { label: 'Achievements', href: '/#achievements' },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/60 backdrop-blur-xl">
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-headline font-black tracking-tighter">
-          ASCENSION<span className="text-primary">.</span>
-        </Link>
-        <div className="hidden md:flex items-center gap-10">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-muted-foreground hover:text-white transition-all hover:scale-105"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <Button asChild className="rounded-full bg-primary hover:bg-primary/90 px-8 shadow-[0_0_20px_rgba(139,92,246,0.3)]">
-            <Link href="/#contact">Let's Talk</Link>
-          </Button>
+    <nav className="fixed top-0 z-[100] w-full pt-6">
+      <div className="container mx-auto px-6">
+        <div className="h-20 glass-card rounded-[2rem] px-10 flex items-center justify-between border-white/[0.08] shadow-2xl">
+          <Link href="/" className="text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group">
+            SHANN<span className="text-primary group-hover:animate-pulse">.</span>
+          </Link>
+          
+          <div className="hidden md:flex items-center gap-12">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-[10px] uppercase font-black tracking-[0.2em] text-muted-foreground hover:text-white transition-all hover:translate-y-[-2px]"
+              >
+                {item.label}
+              </Link>
+            ))}
+            
+            <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-10 font-black tracking-widest text-[10px] uppercase h-12 shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all hover:scale-105">
+              <Link href="/#contact">Let's Talk</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </nav>

@@ -1,65 +1,80 @@
-import { Users, Zap } from 'lucide-react';
+import { Users, Zap, Terminal, Globe } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
   const experiences = [
     {
-      title: 'President',
+      title: 'Executive President',
       org: 'Computer Science Society',
       period: '2023 - Present',
-      description: 'Managing a team of 12 executive members to organize workshops, hackathons, and guest lectures for 500+ student members.',
+      description: 'Orchestrating large-scale hackathons and technical symposiums for a student body of 500+.',
       icon: Users,
-      highlights: ['Increased membership by 40%', 'Secured $5k in sponsorships']
+      skills: ['Leadership', 'Event Arch', 'Community']
     },
     {
-      title: 'Peer Mentor',
-      org: 'University Tutoring Center',
+      title: 'Senior Peer Mentor',
+      org: 'Advanced Algorithm Lab',
       period: '2022 - 2023',
-      description: 'Assisted 30+ students weekly in Data Structures and Algorithms. Developed custom study guides and practice problems.',
-      icon: Zap,
-      highlights: ['Average student grade improved by 15%', 'Voted Mentor of the Term']
+      description: 'Mentoring 30+ students in complex data structures and competitive programming patterns.',
+      icon: Terminal,
+      skills: ['DSA', 'Technical Mentorship', 'C++']
+    },
+    {
+      title: 'Lead Developer',
+      org: 'University Tech Hub',
+      period: '2021 - 2022',
+      description: 'Pioneered the redesign of the university internal portal using modern web technologies.',
+      icon: Globe,
+      skills: ['React', 'Next.js', 'Team Lead']
     }
   ];
 
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-32 relative bg-white/[0.01]">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-5xl font-black text-white">LEADERSHIP & IMPACT</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed font-medium">
-              Beyond code, I am passionate about building communities and mentoring others to foster a collaborative engineering culture.
+        <div className="max-w-5xl mx-auto space-y-24">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 border-b border-white/5 pb-16">
+            <div className="space-y-6">
+              <Badge className="bg-white/5 text-white/60 border-white/10 px-4 py-1 rounded-full font-black uppercase text-[10px] tracking-widest">
+                Impact & Leadership
+              </Badge>
+              <h2 className="text-5xl lg:text-7xl font-black text-white">PROFESSIONAL FOOTPRINT.</h2>
+            </div>
+            <p className="text-muted-foreground text-xl leading-relaxed max-w-sm font-medium">
+              Beyond engineering, I focus on building collaborative cultures and leading technical communities.
             </p>
           </div>
 
-          <div className="grid gap-8">
+          <div className="grid gap-12">
             {experiences.map((exp, idx) => (
-              <div key={idx} className="group p-8 glass-card border-white/5 rounded-2xl shadow-sm hover:border-primary/20 transition-all duration-500">
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-all duration-500">
-                    <exp.icon className="w-7 h-7 text-primary group-hover:text-white" />
+              <div key={idx} className="group grid md:grid-cols-12 gap-12 p-12 glass-card rounded-[3rem] border-white/5 hover:border-primary/20 transition-all duration-700">
+                <div className="md:col-span-1">
+                  <div className="w-16 h-16 rounded-[1.25rem] bg-white/[0.02] border border-white/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500 shadow-2xl">
+                    <exp.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
                   </div>
-                  <div className="space-y-4 flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                      <div>
-                        <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                        <p className="text-primary font-bold uppercase tracking-widest text-[10px]">{exp.org}</p>
-                      </div>
-                      <span className="text-xs font-black uppercase tracking-widest text-muted-foreground px-3 py-1 bg-white/5 rounded-full w-fit border border-white/5">
-                        {exp.period}
+                </div>
+                
+                <div className="md:col-span-8 space-y-6">
+                  <div>
+                    <h3 className="text-3xl font-black text-white group-hover:text-primary transition-colors">{exp.title}</h3>
+                    <p className="text-primary font-bold uppercase tracking-[0.2em] text-xs mt-2">{exp.org}</p>
+                  </div>
+                  <p className="text-muted-foreground text-xl font-medium leading-relaxed">
+                    {exp.description}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {exp.skills.map(skill => (
+                      <span key={skill} className="px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/5 text-xs font-bold text-white/40 uppercase tracking-widest">
+                        {skill}
                       </span>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed font-medium">
-                      {exp.description}
-                    </p>
-                    <div className="flex flex-wrap gap-x-8 gap-y-2">
-                      {exp.highlights.map((h, i) => (
-                        <div key={i} className="flex items-center gap-2 text-sm font-bold text-white/70">
-                           <div className="w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_rgba(139,92,246,0.5)]" />
-                           {h}
-                        </div>
-                      ))}
-                    </div>
+                    ))}
                   </div>
+                </div>
+
+                <div className="md:col-span-3 text-right">
+                  <span className="text-sm font-black uppercase tracking-widest text-muted-foreground px-6 py-2 bg-white/[0.02] border border-white/10 rounded-full">
+                    {exp.period}
+                  </span>
                 </div>
               </div>
             ))}

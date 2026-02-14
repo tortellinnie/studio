@@ -4,15 +4,15 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 240 10% 2%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 240 10% 4%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 240 10% 4%;
     --popover-foreground: 0 0% 98%;
     --primary: 263.4 70% 50.4%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 240 3.7% 10%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
@@ -20,10 +20,10 @@
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --border: 240 3.7% 12%;
+    --input: 240 3.7% 12%;
     --ring: 263.4 70% 50.4%;
-    --radius: 1rem;
+    --radius: 1.25rem;
   }
 }
 
@@ -32,30 +32,57 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased selection:bg-primary/30 selection:text-white;
     background-image: 
-      radial-gradient(at 0% 0%, hsla(263, 70%, 50%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(190, 80%, 50%, 0.1) 0px, transparent 50%);
+      radial-gradient(circle at 0% 0%, hsla(263, 70%, 50%, 0.08) 0px, transparent 50%),
+      radial-gradient(circle at 100% 100%, hsla(190, 80%, 50%, 0.05) 0px, transparent 50%);
     background-attachment: fixed;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline font-bold tracking-tight text-white;
+    @apply font-headline font-black tracking-tight text-white;
   }
 }
 
+/* Premium Noise Texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
+
 .glass-card {
-  @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl;
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.8)];
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-primary/50;
 }
 
-.timeline-dot::after {
-  content: '';
-  @apply absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary shadow-[0_0_10px_rgba(139,92,246,0.5)];
+.hero-glow {
+  filter: blur(120px);
+  @apply absolute rounded-full opacity-30 pointer-events-none;
 }
 
-.timeline-line {
-  @apply absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/10;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full border-4 border-background hover:bg-white/20 transition-all;
+}
+
+/* Section Divider Gradient */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsla(0,0%,100%,0.1), transparent);
 }
