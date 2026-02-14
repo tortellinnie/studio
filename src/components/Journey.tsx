@@ -5,33 +5,33 @@ export function Journey() {
   const milestones = [
     {
       date: '2024 - Present',
-      title: 'Senior Year CS',
-      org: 'Tech University',
-      desc: 'Advancing research in AI-driven cybersecurity and cloud distribution.',
+      title: 'Senior Software Engineering Student',
+      org: 'Far Eastern University - Institute of Technology',
+      desc: 'Specializing in high-performance computing and distributed systems. Maintaining a consistent Top Performing Student ranking.',
       icon: GraduationCap,
       color: 'bg-blue-500'
     },
     {
       date: 'SUMMER 2024',
-      title: 'Software Engineer Intern',
-      org: 'Innovate Systems',
-      desc: 'Optimized microservices architecture reducing server latency by 30%.',
+      title: 'Full Stack Engineer Intern',
+      org: 'Tech Innovation Lab',
+      desc: 'Optimized cloud-native microservices architecture, improving data processing efficiency by 40% using Next.js and Go.',
       icon: Briefcase,
       color: 'bg-primary'
     },
     {
-      date: 'FEB 2024',
-      title: 'Global Hackathon Winner',
-      org: 'CodeFest International',
-      desc: 'First prize for building an AI carbon-credit marketplace on blockchain.',
+      date: 'JAN 2024',
+      title: 'Industry Case Study Winner',
+      org: 'Tech Symposium 2024',
+      desc: 'Awarded first place for architecting a decentralized identity verification system using blockchain technology.',
       icon: Award,
       color: 'bg-amber-500'
     },
     {
-      date: 'SEP 2022',
-      title: 'OSS Contributor',
-      org: 'React Ecosystem',
-      desc: 'Engineered accessibility features for top-tier UI component libraries.',
+      date: 'AUG 2023',
+      title: 'Technical Project Lead',
+      org: 'Academic Research Group',
+      desc: 'Led a team of 5 in developing an AI-driven predictive analytics tool for local environmental monitoring.',
       icon: Milestone,
       color: 'bg-emerald-500'
     }
@@ -42,16 +42,15 @@ export function Journey() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-32 space-y-6">
           <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
-            The Road So Far
+            Professional Roadmap
           </Badge>
-          <h2 className="text-5xl lg:text-7xl font-black text-white">PROFESSIONAL JOURNEY</h2>
+          <h2 className="text-5xl lg:text-7xl font-black text-white uppercase italic">Growth.</h2>
           <p className="text-muted-foreground max-w-2xl text-xl font-medium leading-relaxed">
-            A chronological timeline of milestones, engineering challenges, and continuous growth.
+            A chronological timeline of technical milestones and academic excellence.
           </p>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* Decorative vertical line */}
           <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2 hidden lg:block" />
 
           <div className="space-y-24">
@@ -74,7 +73,6 @@ export function Journey() {
                   </div>
                 </div>
 
-                {/* Central Connector */}
                 <div className="relative flex items-center justify-center z-10 w-16 h-16">
                   <div className={`absolute inset-0 ${item.color} blur-[20px] opacity-20 rounded-full`} />
                   <div className="w-14 h-14 rounded-2xl glass-card flex items-center justify-center border-white/20 shadow-2xl">

@@ -1,4 +1,4 @@
-import { Users, Zap, Terminal, Globe } from 'lucide-react';
+import { Users, Code2, Terminal, Globe } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -7,25 +7,25 @@ export function Experience() {
       title: 'Executive President',
       org: 'Computer Science Society',
       period: '2023 - Present',
-      description: 'Orchestrating large-scale hackathons and technical symposiums for a student body of 500+.',
+      description: 'Orchestrating technical development initiatives and hackathons for a student body of 1,000+. Focused on bridging the gap between academia and industry.',
       icon: Users,
-      skills: ['Leadership', 'Event Arch', 'Community']
+      skills: ['Strategic Leadership', 'Public Speaking', 'Community Building']
     },
     {
-      title: 'Senior Peer Mentor',
-      org: 'Advanced Algorithm Lab',
+      title: 'Advanced DSA Peer Mentor',
+      org: 'University Tech Academy',
       period: '2022 - 2023',
-      description: 'Mentoring 30+ students in complex data structures and competitive programming patterns.',
+      description: 'Guided 50+ students through complex algorithmic challenges and competitive programming logic. Developed custom technical assessments.',
       icon: Terminal,
-      skills: ['DSA', 'Technical Mentorship', 'C++']
+      skills: ['Algorithms', 'Mentorship', 'C++', 'Java']
     },
     {
-      title: 'Lead Developer',
-      org: 'University Tech Hub',
+      title: 'Software Development Associate',
+      org: 'Student Tech Collective',
       period: '2021 - 2022',
-      description: 'Pioneered the redesign of the university internal portal using modern web technologies.',
-      icon: Globe,
-      skills: ['React', 'Next.js', 'Team Lead']
+      description: 'Collaborated on internal university portal improvements and open-source automation scripts using Python and React.',
+      icon: Code2,
+      skills: ['Full Stack', 'CI/CD', 'Git Workflow']
     }
   ];
 
@@ -38,10 +38,10 @@ export function Experience() {
               <Badge className="bg-white/5 text-white/60 border-white/10 px-4 py-1 rounded-full font-black uppercase text-[10px] tracking-widest">
                 Impact & Leadership
               </Badge>
-              <h2 className="text-5xl lg:text-7xl font-black text-white">PROFESSIONAL FOOTPRINT.</h2>
+              <h2 className="text-5xl lg:text-7xl font-black text-white italic uppercase">Footprint.</h2>
             </div>
             <p className="text-muted-foreground text-xl leading-relaxed max-w-sm font-medium">
-              Beyond engineering, I focus on building collaborative cultures and leading technical communities.
+              Transforming technical expertise into collective impact through leadership and mentorship.
             </p>
           </div>
 

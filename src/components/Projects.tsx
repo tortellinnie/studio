@@ -12,22 +12,22 @@ export function Projects() {
   const projects = [
     {
       id: 'project-1',
-      title: 'Aura Analytics',
-      description: 'An AI-powered dashboard that visualizes real-time market sentiment using NLP on financial news feeds. Built with a focus on high-throughput data processing.',
+      title: 'Aura Data Engine',
+      description: 'A high-throughput data processing engine designed for real-time market sentiment analysis using advanced NLP models.',
       tags: ['Next.js', 'PyTorch', 'AWS', 'Redis'],
       links: { github: '#', live: '/projects/aura-analytics' }
     },
     {
       id: 'project-2',
-      title: 'CloudVault',
-      description: 'A decentralized file storage system using IPFS and blockchain for immutable audit trails. Implemented custom encryption protocols for data privacy.',
+      title: 'CloudVault Secure',
+      description: 'Distributed file storage solution leveraging IPFS and cryptographic hashing for immutable data integrity and privacy.',
       tags: ['Solidity', 'Go', 'Docker', 'Web3'],
       links: { github: '#', live: '/projects/cloudvault' }
     },
     {
       id: 'project-3',
-      title: 'AgriSense IoT',
-      description: 'Comprehensive smart farming platform that collects sensor data to automate irrigation. Includes a React Native app for remote monitoring and control.',
+      title: 'AgriSense IoT Node',
+      description: 'An end-to-end IoT platform for precision agriculture, featuring real-time soil telemetry and automated irrigation control.',
       tags: ['IoT', 'C++', 'ESP32', 'Firebase'],
       links: { github: '#', live: '/projects/agrisense' }
     }
@@ -39,9 +39,9 @@ export function Projects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-4">
             <Badge variant="outline" className="text-primary border-primary font-bold">PORTFOLIO</Badge>
-            <h2 className="text-4xl lg:text-5xl font-black text-white">SELECTED WORKS</h2>
+            <h2 className="text-4xl lg:text-5xl font-black text-white italic uppercase">Selected Works.</h2>
             <p className="text-muted-foreground max-w-xl text-lg">
-              A curated list of engineering challenges I've tackled, from distributed systems to decentralized architectures.
+              Engineering solutions for complex problems across distributed systems and cloud architectures.
             </p>
           </div>
           <Button variant="outline" className="rounded-full h-12 px-8 border-white/10 hover:bg-white/5 font-bold group">
