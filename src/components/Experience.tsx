@@ -14,36 +14,25 @@ export function Experience() {
       icon: Microscope,
       details: [
         'Directed full-cycle project development for Salayliwa (gamified literacy) and Gabaydiwa (cognitive monitoring).',
-        'Led 3 cross-functional teams using Agile Scrum to ensure research alignment and culturally grounded design.',
+        'Led 3 cross-functional teams of developers, researchers, and designers using Agile Scrum.',
         'Currently architecting Proxygen (aquaculture DO management) and Birdseye (poultry monitoring).',
         'Earned national and regional recognition, presenting to 1000+ attendees at major innovation fairs.'
       ],
       skills: ['Agile Scrum', 'Data Modeling', 'UI/UX Design', 'Program Management']
     },
     {
-      title: 'Chief Strategist',
+      title: 'Chief Strategist & President',
       org: 'AGAPE PH0209 Child Development Center',
-      period: 'Nov 2025 - Present',
+      period: 'Feb 2024 - Present',
       description: 'Directing operations and strategic foresight for a 200+ member NGO.',
       icon: Rocket,
       details: [
-        'Directing strategic planning and foresight for youth-led community programs.',
-        'Orchestrating meetings with stakeholders for resource planning and innovative proposals.'
+        'Directed strategic planning and foresight for youth-led community programs.',
+        'Organized 15+ community programs impacting 600+ beneficiaries nationwide.',
+        'Managed cross-functional volunteer teams ensuring success within strict budgets.',
+        'Strengthened partnerships with local government and NGOs through city-wide forums.'
       ],
-      skills: ['Strategic Planning', 'Strategic Foresight', 'Resource Management']
-    },
-    {
-      title: 'President',
-      org: 'AGAPE PH0209 Child Development Center',
-      period: 'Feb 2024 - Nov 2025',
-      description: 'Led 15+ nationwide community programs impacting 600+ beneficiaries.',
-      icon: Users,
-      details: [
-        'Managed cross-functional volunteer teams ensuring program success within strict budgets.',
-        'Strengthened partnerships with local government and NGOs through city-wide forums.',
-        'Focused on education, leadership, and digital literacy for youth nationwide.'
-      ],
-      skills: ['Organizational Leadership', 'Community Outreach', 'Crisis Management']
+      skills: ['Organizational Leadership', 'Strategic Planning', 'Strategic Foresight', 'Community Outreach']
     },
     {
       title: 'President',

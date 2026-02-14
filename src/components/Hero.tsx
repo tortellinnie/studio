@@ -11,7 +11,7 @@ export function Hero() {
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-headshot');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-64 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-80 pb-20 overflow-hidden">
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
       
@@ -61,6 +61,7 @@ export function Hero() {
               className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
               priority
               data-ai-hint="professional headshot portrait"
+              unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
