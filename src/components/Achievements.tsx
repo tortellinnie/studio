@@ -12,6 +12,12 @@ export function Achievements() {
         icon: GraduationCap
       },
       {
+        title: "Quezon City Youth Development Office (QCYDO) Scholar",
+        org: "QC Government",
+        year: "2023 - Present",
+        icon: BadgeCheck
+      },
+      {
         title: "FEU Tech Financial Academic Scholar",
         org: "FEU Institute of Technology",
         year: "2023 - Present",
@@ -38,10 +44,10 @@ export function Achievements() {
         icon: Award
       },
       {
-        title: "AWS Certified Developer",
-        org: "Amazon Web Services",
-        id: "DVA-C02",
-        icon: ShieldCheck
+        title: "Campus Journalist",
+        org: "UAAP / The Innovator",
+        id: "Senior Writer",
+        icon: BookOpen
       }
     ]
   };

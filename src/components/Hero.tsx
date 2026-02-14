@@ -10,7 +10,7 @@ export function Hero() {
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-headshot');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-48 pb-20 overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />

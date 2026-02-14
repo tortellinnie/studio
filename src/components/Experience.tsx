@@ -1,4 +1,4 @@
-import { Users, Code2, Terminal, Globe, Megaphone, Library, Microscope } from 'lucide-react';
+import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -7,41 +7,83 @@ export function Experience() {
       title: 'Executive Lead',
       org: 'NERDS 2.0',
       period: 'Apr 2025 - Present',
-      description: 'Directing full-cycle development for Salayliwa and Gabaydiwa. Leading 3 cross-functional teams of developers and researchers through Agile Scrum to deliver socially impactful prototypes.',
+      description: 'Spearheading award-winning innovation startups. Directed full-cycle development for Salayliwa (literacy) and Gabaydiwa (dementia care). Currently architecting Proxygen (Fish Pond Risk Assessment) and Birdseye (Poultry Health Monitoring).',
       icon: Microscope,
-      skills: ['Agile Scrum', 'Project Management', 'UI/UX Design', 'Data Modeling']
+      details: [
+        'Directed full-cycle project development from research integration to prototype deployment.',
+        'Led 3 cross-functional teams using Agile Scrum to ensure research alignment.',
+        'Presented to 1000+ attendees, translating complex research into results-driven solutions.',
+        'Collaborated with DOST-PCHRD, EAMC Dept. of Neurosciences, and ADAP for validation.'
+      ],
+      skills: ['Agile Scrum', 'Data Modeling', 'Product Management', 'Stakeholder Relations']
     },
     {
-      title: 'Chief Strategist / President',
-      org: 'AGAPE PH0209',
+      title: 'President',
+      org: 'AGAPE PH0209 Child Development Center',
       period: 'Feb 2024 - Present',
-      description: 'Orchestrating operations for a youth NGO with 200+ members. Organized 15+ community programs focusing on digital literacy and education for 600+ beneficiaries.',
+      description: 'Directing operations for a youth-led NGO with 200+ members. Focusing on education, leadership, and digital literacy.',
       icon: Users,
-      skills: ['Strategic Planning', 'Leadership', 'Resource Management', 'Community Outreach']
+      details: [
+        'Organized 15+ community programs impacting over 600 beneficiaries nationwide.',
+        'Managed cross-functional volunteer teams, ensuring success within strict budgets.',
+        'Represented the org in city-wide forums, strengthening local government partnerships.',
+        'Led strategic foresight and innovative proposal reports for stakeholders.'
+      ],
+      skills: ['Organizational Leadership', 'Strategic Planning', 'Resource Management']
+    },
+    {
+      title: 'President',
+      org: 'FEU Tech Student Library Committee',
+      period: 'Oct 2025 - Present',
+      description: 'Overseeing operations and strategic initiatives for the campus library.',
+      icon: Library,
+      details: [
+        'Leading a team of 20+ officers and volunteers for engagement programs.',
+        'Boosted library engagement by 35% through targeted digital campaigns.',
+        'Developed 4 new programs enhancing student access to research tools.',
+        'Mentored officers in leadership and project execution.'
+      ],
+      skills: ['Digital Marketing', 'Team Mentorship', 'Engagement Strategy']
     },
     {
       title: 'Chief Marketing Officer',
       org: 'C-RAM Solutions',
       period: 'Dec 2024 - Nov 2025',
-      description: 'Positioned the startup for major competitive grants. Boosted investor engagement by 30% through strategic presentation and media outreach in key industry publications.',
+      description: 'Positioned the startup for high-value competitive grants and boosted investor relations.',
       icon: Megaphone,
-      skills: ['Digital Marketing', 'Pitching', 'UX Insights', 'Stakeholder Relations']
+      details: [
+        'Drove campaigns that secured grants worth hundreds of thousands in PHP.',
+        'Provided UX/UI insights to the Scrum team to shape the product roadmap.',
+        'Boosted investor engagement by 30% through strategic competition representation.',
+        'Secured 4 positive media mentions in key industry publications.'
+      ],
+      skills: ['Innovation Development', 'UX Insights', 'Strategic Growth']
     },
     {
       title: 'University Representative',
       org: 'NCR Alliance of DOST Scholars (NADS)',
       period: 'Mar 2024 - Mar 2025',
-      description: 'Primary delegate to the DOST-NCR Alliance. Coordinated regional development projects for tens of thousands of active NCR scholars.',
+      description: 'Primary delegate to the DOST-NCR Alliance, representing tens of thousands of scholars.',
       icon: Globe,
-      skills: ['Strategic Partnerships', 'Policy Shaping', 'Event Coordination', 'Public Speaking']
+      details: [
+        'Secured institutional support to sustain the on-campus scholar community.',
+        'Shaped regional policy through direct collaboration with 10+ universities.',
+        'Coordinated regional development projects maximizing collective scholar impact.'
+      ],
+      skills: ['Strategic Partnerships', 'Policy Shaping', 'Event Coordination']
     },
     {
-      title: 'Involvement & Leadership',
-      org: 'FEU Institute of Technology',
-      period: '2023 - 2027',
-      description: 'President at FEU Tech Library, Podcast Host at ACM Diaries, Senior Writer at The Innovator, and Committee Officer at GDSC.',
-      icon: Library,
-      skills: ['Technical Writing', 'Podcast Hosting', 'Event Planning', 'Journalism']
+      title: 'Project Manager & Frontend Developer',
+      org: 'PUP - RISFI',
+      period: 'Feb 2022 - Jun 2023',
+      description: 'Technical lead for research-driven software solutions.',
+      icon: Terminal,
+      details: [
+        'Managed a team of six developers, overseeing all delivery and QA metrics.',
+        'Executed agile strategic plans meeting strict research institute deadlines.',
+        'Liaised between the dev team and business stakeholders to align technical goals.'
+      ],
+      skills: ['Agile Development', 'Quality Assurance', 'Stakeholder Management']
     }
   ];
 
@@ -75,9 +117,14 @@ export function Experience() {
                     <h3 className="text-3xl font-black text-white group-hover:text-primary transition-colors">{exp.title}</h3>
                     <p className="text-primary font-bold uppercase tracking-[0.2em] text-xs mt-2">{exp.org}</p>
                   </div>
-                  <p className="text-muted-foreground text-xl font-medium leading-relaxed">
-                    {exp.description}
-                  </p>
+                  <ul className="space-y-3">
+                    {exp.details.map((detail, i) => (
+                      <li key={i} className="flex gap-3 text-muted-foreground font-medium">
+                        <Zap className="w-4 h-4 text-primary shrink-0 mt-1" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <div className="flex flex-wrap gap-3">
                     {exp.skills.map(skill => (
                       <span key={skill} className="px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/5 text-xs font-bold text-white/40 uppercase tracking-widest">

@@ -36,6 +36,28 @@ export default function ProjectDetail() {
       ],
       imageId: 'project-2'
     },
+    'proxygen': {
+      title: 'Proxygen',
+      tags: ['IoT', 'Data Science', 'Python'],
+      description: 'Dissolved Oxygen Risk Assessment and Decision Support System for commercial fish ponds in the Philippines.',
+      challenges: [
+        'Developing real-time sensor data pipelines',
+        'Implementing predictive risk assessment models',
+        'Building a decision support interface for pond managers'
+      ],
+      imageId: 'project-3'
+    },
+    'birdseye': {
+      title: 'Birdseye',
+      tags: ['IoT', 'Firebase', 'Cloud'],
+      description: 'Real-time poultry litter health and welfare monitoring system using distributed IoT sensors.',
+      challenges: [
+        'Deploying distributed sensor nodes in industrial environments',
+        'Optimizing real-time telemetry for low-bandwidth scenarios',
+        'Creating an automated welfare alert system'
+      ],
+      imageId: 'project-1'
+    },
     'aura-analytics': {
       title: 'Aura Data Engine',
       tags: ['Next.js', 'PyTorch', 'AWS'],
@@ -122,7 +144,7 @@ export default function ProjectDetail() {
                 </div>
                 <div className="p-4 glass-card rounded-xl text-center">
                   <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Impact</p>
-                  <p className="font-bold text-white">600+ Users</p>
+                  <p className="font-bold text-white">Scale-Ready</p>
                 </div>
               </div>
             </div>

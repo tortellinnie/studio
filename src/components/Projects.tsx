@@ -25,6 +25,20 @@ export function Projects() {
       links: { github: '#', live: '/projects/gabaydiwa' }
     },
     {
+      id: 'proxygen',
+      title: 'Proxygen',
+      description: 'Dissolved Oxygen Risk Assessment and Decision Support System for commercial fish ponds, utilizing real-time sensor data and predictive analytics.',
+      tags: ['IoT', 'Data Science', 'Python', 'AWS'],
+      links: { github: '#', live: '/projects/proxygen' }
+    },
+    {
+      id: 'birdseye',
+      title: 'Birdseye',
+      description: 'A real-time poultry litter health and welfare monitoring system using distributed IoT sensors to optimize yield and animal welfare.',
+      tags: ['IoT', 'Cloud', 'React Native', 'Firebase'],
+      links: { github: '#', live: '/projects/birdseye' }
+    },
+    {
       id: 'aura-analytics',
       title: 'Aura Data Engine',
       description: 'High-throughput data processing engine designed for real-time market sentiment analysis using advanced NLP models and distributed pipelines.',
@@ -41,7 +55,7 @@ export function Projects() {
             <Badge variant="outline" className="text-primary border-primary font-bold">CASE STUDIES</Badge>
             <h2 className="text-4xl lg:text-5xl font-black text-white italic uppercase">Innovations.</h2>
             <p className="text-muted-foreground max-w-xl text-lg">
-              Developing technology that is both innovative and socially impactful, from cognitive health to literacy.
+              Developing technology that is both innovative and socially impactful, from cognitive health to precision agriculture.
             </p>
           </div>
           <Button variant="outline" className="rounded-full h-12 px-8 border-white/10 hover:bg-white/5 font-bold group">
