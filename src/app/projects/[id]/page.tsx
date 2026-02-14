@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useParams } from 'next/navigation';
@@ -16,63 +17,68 @@ export default function ProjectDetail() {
   const projectDetails: Record<string, any> = {
     'salayliwa': {
       title: 'Salayliwa',
-      tags: ['Next.js', 'PostgreSQL', 'UI/UX'],
-      description: 'A gamified reading engagement platform for Filipino youth. Developed to address literacy challenges through a culturally grounded digital experience.',
+      tags: ['Next.js', 'AI', 'Cultural UX', 'EduTech'],
+      description: 'National award-winning edu-cultural project focused on revitalizing reading engagement among Filipino youth through adaptive digital experiences and culturally resonant stories. Designed to merge technology, inclusivity, and creativity.',
       challenges: [
-        'Designing a culturally resonant UX for Filipino children',
-        'Implementing real-time progress tracking for literacy metrics',
-        'Scaling the platform for national competition deployment'
+        'Recognized at NARA Con 2025 at the National Library',
+        'Revitalizing literacy through community-driven habits',
+        'Designing culturally grounded digital storytelling interfaces'
       ],
-      imageId: 'project-1'
+      imageId: 'project-salayliwa',
+      status: 'National Award'
     },
     'gabaydiwa': {
-      title: 'Gabaydiwa',
-      tags: ['React', 'Node.js', 'Healthcare'],
-      description: 'A comprehensive cognitive health and progression monitoring system for dementia home care. Recognized for social innovation and technological impact.',
+      title: 'GabayDiwa',
+      tags: ['React', 'AI Modeling', 'Healthcare', 'Startup'],
+      description: 'A Cognitive Health and Progression Monitoring System empowering caregivers with data-driven insights through cognitive trend maps and structured health tracking.',
       challenges: [
-        'Ensuring accessibility for senior citizens and caregivers',
-        'Collaborating with neuroscientists for medical validation',
-        'Developing predictive data models for cognitive health'
+        '1st Runner-Up in Philippine Startup Challenge X',
+        'Bridging the gap between clinical insight and home care',
+        'Developing proactive risk indicators for dementia care'
       ],
-      imageId: 'project-2'
+      imageId: 'project-gabaydiwa',
+      status: 'Award-Winning'
     },
     'proxygen': {
       title: 'Proxygen',
-      tags: ['IoT', 'Data Science', 'Python'],
-      description: 'Dissolved Oxygen Risk Assessment and Decision Support System for commercial fish ponds in the Philippines.',
+      tags: ['IoT', 'Fuzzy Logic', 'Data Science', 'AWS'],
+      description: 'Proactive dissolved oxygen (DO) management system for Filipino pond aquaculture. Integrates sensor data and weather forecasts through a fuzzy logic-based decision engine.',
       challenges: [
-        'Developing real-time sensor data pipelines',
-        'Implementing predictive risk assessment models',
-        'Building a decision support interface for pond managers'
+        '30–40% improvement in DO maintenance achieved',
+        'Preventing mass fish kills through predictive alerts',
+        'Aligning with SDGs 2, 9, 12, and 14 for sustainability'
       ],
-      imageId: 'project-3'
+      imageId: 'project-proxygen',
+      status: 'Industrial Grade'
     },
     'birdseye': {
       title: 'Birdseye',
-      tags: ['IoT', 'Firebase', 'Cloud'],
-      description: 'Real-time poultry litter health and welfare monitoring system using distributed IoT sensors.',
+      tags: ['Computer Vision', 'Edge AI', 'IoT', 'Agriculture'],
+      description: 'Transforming poultry farm management using computer vision on edge devices to detect wet zones in litter in real-time, improving bird welfare and reducing ammonia emissions.',
       challenges: [
-        'Deploying distributed sensor nodes in industrial environments',
-        'Optimizing real-time telemetry for low-bandwidth scenarios',
-        'Creating an automated welfare alert system'
+        'Real-time computer vision deployment on edge hardware',
+        'Successful pilot testing in commercial Luzon farms',
+        'Designing actionable dashboards for farm managers'
       ],
-      imageId: 'project-1'
+      imageId: 'project-birdseye',
+      status: 'Pilot Ready'
     },
-    'aura-analytics': {
-      title: 'Aura Data Engine',
-      tags: ['Next.js', 'PyTorch', 'AWS'],
-      description: 'A high-throughput sentiment analysis engine that processes over 1M events daily. Utilizes NLP models to visualize market volatility.',
+    'video-automation': {
+      title: 'Video Automation Engine',
+      tags: ['Docker', 'n8n', 'Gemini AI', 'FFmpeg'],
+      description: 'End-to-end short-form video automation engine that processes media via FFmpeg and handles motivational video generation and upload using Gemini 2.5 Flash.',
       challenges: [
-        'Scaling WebSocket connections for 10k+ concurrent users',
-        'Optimizing PyTorch inference for sub-100ms latency',
-        'Implementing a fault-tolerant Redis caching layer'
+        'Containerized architecture using Docker and n8n',
+        'Autonomous content production via local LLM logic',
+        'Secure OAuth2 management for multi-service authentication'
       ],
-      imageId: 'project-1'
+      imageId: 'project-video-automation',
+      status: 'Autonomous'
     }
   };
 
   const project = projectDetails[id] || projectDetails['salayliwa'];
-  const img = PlaceHolderImages.find(p => p.id === id) || PlaceHolderImages[1];
+  const img = PlaceHolderImages.find(p => p.id === project.imageId) || PlaceHolderImages[1];
 
   return (
     <main className="min-h-screen bg-background">
@@ -136,11 +142,11 @@ export default function ProjectDetail() {
               <div className="mt-8 grid grid-cols-3 gap-4">
                 <div className="p-4 glass-card rounded-xl text-center">
                   <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Status</p>
-                  <p className="font-bold text-white">Award-Winning</p>
+                  <p className="font-bold text-white">{project.status}</p>
                 </div>
                 <div className="p-4 glass-card rounded-xl text-center">
                   <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Role</p>
-                  <p className="font-bold text-white">Exec Lead</p>
+                  <p className="font-bold text-white">Project Lead</p>
                 </div>
                 <div className="p-4 glass-card rounded-xl text-center">
                   <p className="text-xs text-muted-foreground font-bold uppercase mb-1">Impact</p>

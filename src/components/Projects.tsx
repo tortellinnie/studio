@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -13,37 +14,42 @@ export function Projects() {
     {
       id: 'salayliwa',
       title: 'Salayliwa',
-      description: 'A gamified literacy engagement platform for Filipino youth, designed to bridge educational gaps through interactive storytelling and AI-driven data modeling.',
-      tags: ['Next.js', 'PostgreSQL', 'UI/UX', 'Agile'],
-      links: { github: '#', live: '/projects/salayliwa' }
+      description: 'National award-winning edu-cultural project revitalizing reading engagement through adaptive digital experiences and culturally resonant stories.',
+      tags: ['Next.js', 'AI', 'Cultural UX', 'EduTech'],
+      links: { github: '#', live: '/projects/salayliwa' },
+      imageId: 'project-salayliwa'
     },
     {
       id: 'gabaydiwa',
-      title: 'Gabaydiwa',
-      description: 'A cognitive health monitoring system for dementia home care in the Philippines, focusing on cognitive progression tracking and user-centered design.',
-      tags: ['React', 'Node.js', 'Healthcare', 'AI'],
-      links: { github: '#', live: '/projects/gabaydiwa' }
+      title: 'GabayDiwa',
+      description: 'Revolutionizing Filipino Dementia Home Care with a Cognitive Health Monitoring System. 1st Runner-Up in Philippine Startup Challenge X.',
+      tags: ['React', 'AI Modeling', 'Healthcare', 'Startup'],
+      links: { github: '#', live: '/projects/gabaydiwa' },
+      imageId: 'project-gabaydiwa'
     },
     {
       id: 'proxygen',
       title: 'Proxygen',
-      description: 'Dissolved Oxygen Risk Assessment and Decision Support System for commercial fish ponds, utilizing real-time sensor data and predictive analytics.',
-      tags: ['IoT', 'Data Science', 'Python', 'AWS'],
-      links: { github: '#', live: '/projects/proxygen' }
+      description: 'Proactive, weather-aware dissolved oxygen management system for pond aquaculture using fuzzy logic to prevent fish kills.',
+      tags: ['IoT', 'Fuzzy Logic', 'Data Science', 'AWS'],
+      links: { github: '#', live: '/projects/proxygen' },
+      imageId: 'project-proxygen'
     },
     {
       id: 'birdseye',
       title: 'Birdseye',
-      description: 'A real-time poultry litter health and welfare monitoring system using distributed IoT sensors to optimize yield and animal welfare.',
-      tags: ['IoT', 'Cloud', 'React Native', 'Firebase'],
-      links: { github: '#', live: '/projects/birdseye' }
+      description: 'Computer vision on edge devices detecting wet zones in poultry litter in real-time to improve bird welfare and reduce emissions.',
+      tags: ['Computer Vision', 'Edge AI', 'IoT', 'Agriculture'],
+      links: { github: '#', live: '/projects/birdseye' },
+      imageId: 'project-birdseye'
     },
     {
-      id: 'aura-analytics',
-      title: 'Aura Data Engine',
-      description: 'High-throughput data processing engine designed for real-time market sentiment analysis using advanced NLP models and distributed pipelines.',
-      tags: ['Next.js', 'PyTorch', 'AWS', 'Redis'],
-      links: { github: '#', live: '/projects/aura-analytics' }
+      id: 'video-automation',
+      title: 'Video Automation Engine',
+      description: 'End-to-end motivational video generation engine built on n8n and Docker, powered by local LLMs (Gemini) and FFmpeg.',
+      tags: ['Docker', 'n8n', 'Gemini AI', 'FFmpeg'],
+      links: { github: '#', live: '/projects/video-automation' },
+      imageId: 'project-video-automation'
     }
   ];
 
@@ -52,10 +58,10 @@ export function Projects() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-4">
-            <Badge variant="outline" className="text-primary border-primary font-bold">CASE STUDIES</Badge>
-            <h2 className="text-4xl lg:text-5xl font-black text-white italic uppercase">Innovations.</h2>
+            <Badge variant="outline" className="text-primary border-primary font-bold">PORTFOLIO</Badge>
+            <h2 className="text-4xl lg:text-5xl font-black text-white italic uppercase">Selected Works.</h2>
             <p className="text-muted-foreground max-w-xl text-lg">
-              Developing technology that is both innovative and socially impactful, from cognitive health to precision agriculture.
+              Engineering solutions for complex problems across distributed systems, AI, and social innovation.
             </p>
           </div>
           <Button variant="outline" className="rounded-full h-12 px-8 border-white/10 hover:bg-white/5 font-bold group">
@@ -65,7 +71,7 @@ export function Projects() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project) => {
-            const img = PlaceHolderImages.find(p => p.id === project.id) || PlaceHolderImages[1];
+            const img = PlaceHolderImages.find(p => p.id === project.imageId) || PlaceHolderImages[1];
             return (
               <Link href={project.links.live} key={project.id} className="group">
                 <Card className="glass-card overflow-hidden border-white/10 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
@@ -111,7 +117,7 @@ export function Projects() {
                   </CardContent>
                   <CardFooter className="pt-0 pb-6">
                      <span className="text-sm font-bold text-primary group-hover:underline decoration-2 underline-offset-8">
-                        View Case Study
+                        View Project Detail
                      </span>
                   </CardFooter>
                 </Card>
