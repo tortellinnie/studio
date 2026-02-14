@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-64 pb-32 overflow-hidden px-6">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-80 pb-32 overflow-hidden px-6">
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
       
@@ -18,9 +18,8 @@ export function Hero() {
               <span>Available for Software Engineering & PM Roles</span>
             </div>
             
-            <h1 className="text-7xl lg:text-[10rem] font-black text-white leading-[0.8] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-              <span className="text-gradient uppercase block">TECHNO</span>
-              <span className="text-gradient uppercase block">LEADER</span>
+            <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white leading-tight tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase">
+              <span className="text-gradient">TECHNOLEADER</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
