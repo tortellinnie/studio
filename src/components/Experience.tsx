@@ -1,4 +1,4 @@
-import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap } from 'lucide-react';
+import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap, Rocket, Briefcase, Milestone } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -11,23 +11,23 @@ export function Experience() {
       icon: Microscope,
       details: [
         'Directed full-cycle project development from research integration to prototype deployment.',
-        'Led 3 cross-functional teams using Agile Scrum to ensure research alignment.',
-        'Presented to 1000+ attendees, translating complex research into results-driven solutions.',
-        'Collaborated with DOST-PCHRD, EAMC Dept. of Neurosciences, and ADAP for validation.'
+        'Led 3 cross-functional teams of developers and researchers using Agile Scrum.',
+        'Earned national recognition and presented to 1000+ attendees at innovation fairs.',
+        'Collaborated with DOST-PCHRD and Dept. of Neurosciences for validation.'
       ],
-      skills: ['Agile Scrum', 'Data Modeling', 'Product Management', 'Stakeholder Relations']
+      skills: ['Program Management', 'Agile Scrum', 'Data Modeling', 'Product Strategy']
     },
     {
-      title: 'President',
+      title: 'President & Chief Strategist',
       org: 'AGAPE PH0209 Child Development Center',
       period: 'Feb 2024 - Present',
-      description: 'Directing operations for a youth-led NGO with 200+ members. Focusing on education, leadership, and digital literacy.',
+      description: 'Directing operations for a youth-led NGO with 200+ active members. Focusing on nationwide community impact and strategic foresight.',
       icon: Users,
       details: [
         'Organized 15+ community programs impacting over 600 beneficiaries nationwide.',
-        'Managed cross-functional volunteer teams, ensuring success within strict budgets.',
-        'Represented the org in city-wide forums, strengthening local government partnerships.',
-        'Led strategic foresight and innovative proposal reports for stakeholders.'
+        'Managed cross-functional volunteer teams ensuring success within strict budgets.',
+        'Strengthened local government partnerships through city-wide forum representation.',
+        'In-charge of strategic foresight reports and innovative proposals for stakeholders.'
       ],
       skills: ['Organizational Leadership', 'Strategic Planning', 'Resource Management']
     },
@@ -35,15 +35,15 @@ export function Experience() {
       title: 'President',
       org: 'FEU Tech Student Library Committee',
       period: 'Oct 2025 - Present',
-      description: 'Overseeing operations and strategic initiatives for the campus library.',
+      description: 'Overseeing operations and strategic initiatives for the campus library system.',
       icon: Library,
       details: [
         'Leading a team of 20+ officers and volunteers for engagement programs.',
-        'Boosted library engagement by 35% through targeted digital campaigns.',
-        'Developed 4 new programs enhancing student access to research tools.',
-        'Mentored officers in leadership and project execution.'
+        'Increased library engagement by 35% through targeted digital campaigns.',
+        'Developed four new library programs enhancing student resource access.',
+        'Mentored officers in leadership and organizational management.'
       ],
-      skills: ['Digital Marketing', 'Team Mentorship', 'Engagement Strategy']
+      skills: ['Team Mentorship', 'Engagement Strategy', 'Project Execution']
     },
     {
       title: 'Chief Marketing Officer',
@@ -55,9 +55,9 @@ export function Experience() {
         'Drove campaigns that secured grants worth hundreds of thousands in PHP.',
         'Provided UX/UI insights to the Scrum team to shape the product roadmap.',
         'Boosted investor engagement by 30% through strategic competition representation.',
-        'Secured 4 positive media mentions in key industry publications.'
+        'Secured positive media mentions in key industry publications.'
       ],
-      skills: ['Innovation Development', 'UX Insights', 'Strategic Growth']
+      skills: ['Marketing', 'Innovation Development', 'UX Insights']
     },
     {
       title: 'University Representative',
@@ -66,7 +66,7 @@ export function Experience() {
       description: 'Primary delegate to the DOST-NCR Alliance, representing tens of thousands of scholars.',
       icon: Globe,
       details: [
-        'Secured institutional support to sustain the on-campus scholar community.',
+        'Secured institutional support to formalize the on-campus scholar community.',
         'Shaped regional policy through direct collaboration with 10+ universities.',
         'Coordinated regional development projects maximizing collective scholar impact.'
       ],
@@ -76,14 +76,14 @@ export function Experience() {
       title: 'Project Manager & Frontend Developer',
       org: 'PUP - RISFI',
       period: 'Feb 2022 - Jun 2023',
-      description: 'Technical lead for research-driven software solutions.',
+      description: 'Technical lead for research-driven software solutions at the Research Institute.',
       icon: Terminal,
       details: [
         'Managed a team of six developers, overseeing all delivery and QA metrics.',
         'Executed agile strategic plans meeting strict research institute deadlines.',
         'Liaised between the dev team and business stakeholders to align technical goals.'
       ],
-      skills: ['Agile Development', 'Quality Assurance', 'Stakeholder Management']
+      skills: ['Web Development', 'Project Management', 'Agile Strategic Planning']
     }
   ];
 
@@ -99,7 +99,7 @@ export function Experience() {
               <h2 className="text-5xl lg:text-7xl font-black text-white italic uppercase">Footprint.</h2>
             </div>
             <p className="text-muted-foreground text-xl leading-relaxed max-w-sm font-medium">
-              A comprehensive record of building organizations and leading technical innovation.
+              Transforming technical expertise into collective impact through leadership and mentorship.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export function Experience() {
                   <ul className="space-y-3">
                     {exp.details.map((detail, i) => (
                       <li key={i} className="flex gap-3 text-muted-foreground font-medium">
-                        <Zap className="w-4 h-4 text-primary shrink-0 mt-1" />
+                        <Rocket className="w-4 h-4 text-primary shrink-0 mt-1" />
                         <span>{detail}</span>
                       </li>
                     ))}

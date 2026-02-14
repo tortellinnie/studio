@@ -10,7 +10,7 @@ export function Hero() {
   const profileImage = PlaceHolderImages.find(img => img.id === 'profile-headshot');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-60 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-72 pb-20 overflow-hidden">
       {/* Dynamic Background Elements */}
       <div className="hero-glow top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary" />
       <div className="hero-glow bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent" />
@@ -41,10 +41,10 @@ export function Hero() {
               </Link>
             </Button>
             <div className="flex items-center gap-6">
-              <a href="#" className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary hover:border-primary transition-all text-muted-foreground hover:text-white group">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary hover:border-primary transition-all text-muted-foreground hover:text-white group">
                 <Github className="w-7 h-7 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary hover:border-primary transition-all text-muted-foreground hover:text-white group">
+              <a href="https://linkedin.com/in/shann-karl-felipe/" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-primary hover:border-primary transition-all text-muted-foreground hover:text-white group">
                 <Linkedin className="w-7 h-7 group-hover:scale-110 transition-transform" />
               </a>
             </div>

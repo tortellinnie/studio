@@ -1,5 +1,4 @@
-import { GraduationCap, BookOpen, Mic, PenTool, Code, Users } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { GraduationCap, BookOpen, Mic, PenTool, Code, Users, Newspaper, Award } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Education() {
@@ -11,10 +10,11 @@ export function Education() {
       grade: 'Grade: 3.6 (GPA)',
       activities: [
         { label: 'Senior Writer', sub: 'The Innovator', icon: PenTool },
-        { label: 'Campus Journalist', sub: 'UAAP', icon: Users },
+        { label: 'Campus Journalist', sub: 'UAAP', icon: Newspaper },
         { label: 'Junior Officer', sub: 'ACM', icon: Code },
         { label: 'Podcast Host', sub: 'ACM Diaries', icon: Mic },
-        { label: 'Committee Officer', sub: 'GDSC', icon: Users }
+        { label: 'Committee Officer', sub: 'GDSC', icon: Users },
+        { label: 'President', sub: 'FEU Tech Library', icon: BookOpen }
       ],
       skills: ['Software Solution Development', 'Technical Writing', 'Computational Logic']
     },
@@ -83,7 +83,7 @@ export function Education() {
 
                   <div className="space-y-6">
                     <h4 className="text-xs font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3">
-                      <BookOpen className="w-4 h-4" />
+                      <Award className="w-4 h-4" />
                       Core Competencies
                     </h4>
                     <div className="flex flex-wrap gap-3">
