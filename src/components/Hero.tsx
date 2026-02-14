@@ -15,7 +15,7 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-md text-[10px] font-bold uppercase tracking-[0.2em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <Sparkles className="w-3 h-3" />
-              <span>Available for 2026 Software Engineering & PM Roles</span>
+              <span>Available for 2026 Software Engineering & IT Roles</span>
             </div>
             
             <div className="overflow-hidden py-4">
@@ -25,7 +25,7 @@ export function Hero() {
             </div>
             
             <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
-              Innovator and Executive Lead at <span className="text-white font-black italic">NERDS 2.0</span>. Leveraging AI, data systems, and user-centered design for socially impactful technology in Manila.
+              Innovator and Executive Lead at <span className="text-white font-black italic">NERDS 2.0</span>. Leveraging AI, data systems, and user-centered design in Manila.
             </p>
           </div>
 

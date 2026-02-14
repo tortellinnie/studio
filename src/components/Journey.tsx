@@ -5,9 +5,9 @@ export function Journey() {
   const milestones = [
     {
       date: 'March 2026 - Present',
-      title: 'Incoming Product Supply Intern',
+      title: 'Incoming IT Intern',
       org: 'Procter & Gamble (P&G)',
-      desc: 'Selected for the prestigious P&G internship program. Focusing on high-scale supply chain optimization and operational excellence within a global FMCG leader.',
+      desc: 'Selected for the prestigious P&G IT internship program. Focusing on high-scale technology optimization and digital transformation within a global FMCG leader.',
       icon: Building2,
       color: 'bg-blue-600'
     },

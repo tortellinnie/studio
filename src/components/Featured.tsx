@@ -9,10 +9,10 @@ export function Featured() {
     {
       id: 'pg-intern',
       type: 'Mission',
-      title: 'Incoming P&G Intern',
+      title: 'Incoming P&G IT Intern',
       location: 'Manila, PH',
       date: 'March 2026',
-      description: 'Joining Procter & Gamble for a high-impact internship in Product Supply, focusing on operational excellence and global supply chain systems.',
+      description: 'Joining Procter & Gamble as an IT Intern, focusing on high-impact technology systems, data strategy, and operational excellence within a global leader.',
       icon: Building2
     },
     {
