@@ -1,4 +1,4 @@
-import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap, Rocket, Briefcase, Milestone } from 'lucide-react';
+import { Users, CodeXml, Terminal, Globe, Megaphone, Library, Microscope, Zap, Rocket, Briefcase } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -18,7 +18,7 @@ export function Experience() {
       skills: ['Program Management', 'Agile Scrum', 'Data Modeling', 'Product Strategy']
     },
     {
-      title: 'President & Chief Strategist',
+      title: 'President',
       org: 'AGAPE PH0209 Child Development Center',
       period: 'Feb 2024 - Present',
       description: 'Directing operations for a youth-led NGO with 200+ active members. Focusing on nationwide community impact and strategic foresight.',
