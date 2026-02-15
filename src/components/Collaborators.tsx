@@ -54,7 +54,7 @@ export function Collaborators() {
   ];
 
   return (
-    <section className="py-24 relative bg-white/[0.01]">
+    <section className="py-24 relative bg-transparent">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center mb-20 space-y-6">
