@@ -80,7 +80,6 @@ export function Contact() {
         <div className="mt-16 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground font-medium">
           <p>© 2026 TECHNOLEADER. Engineering Excellence in Manila.</p>
           <div className="flex gap-10">
-            <Link href="/resume" className="hover:text-primary transition-colors">Resume</Link>
             <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
           </div>
