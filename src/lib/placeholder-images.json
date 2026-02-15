@@ -55,27 +55,39 @@
       "imageHint": "tokyo city"
     },
     {
-      "id": "logo-dost",
-      "description": "DOST Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1675855545571-2859b0de5a02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxnb3Zlcm5tZW50JTIwbG9nb3xlbnwwfHx8fDE3NzExMzM3NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "government logo"
+      "id": "logo-aws",
+      "description": "AWS Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1675855545571-2859b0de5a02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "aws logo"
     },
     {
-      "id": "logo-dict",
-      "description": "DICT Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1760138270903-d95903188730?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwbG9nb3xlbnwwfHx8fDE3NzExMjQxOTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "technology logo"
+      "id": "logo-google-cloud",
+      "description": "Google Cloud Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1760138270903-d95903188730?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "google cloud"
     },
     {
-      "id": "logo-pg",
+      "id": "logo-vercel",
+      "description": "Vercel Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "vercel logo"
+    },
+    {
+      "id": "logo-github",
+      "description": "GitHub Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1563126072-6457fc59c1cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageHint": "github logo"
+    },
+    {
+      "id": "logo-p&g",
       "description": "P&G Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1563126072-6457fc59c1cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBjb21wYW55fGVufDB8fHx8MTc3MTE4MTgyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1563126072-6457fc59c1cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "global company"
     },
     {
       "id": "logo-microsoft",
       "description": "Microsoft Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0ZWNoJTIwY29tcGFueXxlbnwwfHx8fDE3NzExODE4MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "tech company"
     }
   ]
