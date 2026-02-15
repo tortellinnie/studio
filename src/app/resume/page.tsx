@@ -1,23 +1,8 @@
 'use client';
 
 import { Navbar } from '@/components/Navbar';
-import { Contact } from '@/components/Contact';
 import { Button } from '@/components/ui/button';
-import { 
-  Download, 
-  Mail, 
-  MapPin, 
-  Linkedin, 
-  Github, 
-  ArrowLeft,
-  GraduationCap,
-  Briefcase,
-  Code2,
-  Award,
-  Terminal,
-  Cpu,
-  Star
-} from 'lucide-react';
+import { ArrowLeft, Download, Printer } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ResumePage() {
@@ -26,223 +11,214 @@ export default function ResumePage() {
   };
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-900">
       <Navbar />
       
-      <section className="py-20 pt-40 print:pt-0">
+      <section className="py-20 pt-40 print:pt-0 print:py-0">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-[8.5in] mx-auto">
             {/* Header Controls */}
-            <div className="flex justify-between items-center mb-12 print:hidden">
+            <div className="flex justify-between items-center mb-8 print:hidden">
               <Button variant="ghost" asChild className="text-muted-foreground hover:text-white -ml-4">
                 <Link href="/">
                   <ArrowLeft className="w-4 h-4 mr-2" /> Back to Portfolio
                 </Link>
               </Button>
-              <Button onClick={handlePrint} className="rounded-full bg-primary hover:bg-primary/90 font-black uppercase tracking-widest text-[10px] h-12 px-8">
-                <Download className="w-4 h-4 mr-2" /> Download PDF / Print
-              </Button>
+              <div className="flex gap-4">
+                <Button onClick={handlePrint} variant="outline" className="rounded-full border-white/10">
+                  <Printer className="w-4 h-4 mr-2" /> Print
+                </Button>
+                <Button onClick={handlePrint} className="rounded-full bg-primary hover:bg-primary/90 font-bold uppercase tracking-widest text-[10px] h-11 px-8">
+                  <Download className="w-4 h-4 mr-2" /> Download PDF
+                </Button>
+              </div>
             </div>
 
-            {/* Resume Content */}
-            <div className="glass-card rounded-[3rem] p-12 md:p-20 border-white/5 shadow-2xl space-y-16 print:border-none print:shadow-none print:bg-white print:text-black print:p-0">
+            {/* Formal Resume Document */}
+            <div className="bg-white text-black shadow-2xl p-[0.75in] font-serif leading-tight print:shadow-none print:p-0 min-h-[11in] mx-auto border border-slate-200 print:border-none">
               
-              {/* Header */}
-              <div className="text-center space-y-6">
-                <h1 className="text-5xl md:text-7xl font-black text-white uppercase italic tracking-tighter print:text-black">
-                  SHANN KARL <span className="text-primary">FELIPE</span>
-                </h1>
-                <div className="flex flex-wrap justify-center gap-4 text-primary font-black uppercase tracking-[0.2em] text-xs">
-                  <span>Software Engineer</span>
-                  <span className="text-white/20">•</span>
-                  <span>Project Manager</span>
+              {/* Name and Contact */}
+              <div className="text-center mb-6">
+                <h1 className="text-3xl font-bold uppercase tracking-tight mb-1">SHANN KARL FELIPE</h1>
+                <div className="text-[11pt] flex justify-center gap-2 items-center flex-wrap">
+                  <span className="font-semibold italic">SOFTWARE ENGINEER | PROJECT MANAGER</span>
                 </div>
-                <div className="flex flex-wrap justify-center gap-6 pt-4 text-muted-foreground font-medium text-sm print:text-black">
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-primary" />
-                    felipeshannkarl@gmail.com
+                <div className="text-[10pt] mt-1">
+                  <span>felipeshannkarl@gmail.com</span>
+                </div>
+              </div>
+
+              {/* Summary */}
+              <div className="mb-4">
+                <h2 className="text-[11pt] font-bold border-b border-black uppercase mb-1">Summary</h2>
+                <p className="text-[10pt] text-justify leading-snug">
+                  3rd Year Computer Science student (FEU Tech, 3.6 GPA) specializing in Software Engineering, recognized as a global delegate and national awardee. Experienced in AI-powered innovation, startup leadership, and cross-functional project delivery, with a proven record of pitching, execution, and scalable software solutions.
+                </p>
+              </div>
+
+              {/* Technical Skills */}
+              <div className="mb-4">
+                <h2 className="text-[11pt] font-bold border-b border-black uppercase mb-1">Technical Skills</h2>
+                <div className="text-[10pt] space-y-0.5">
+                  <div className="grid grid-cols-[120px_1fr]">
+                    <span className="font-bold">Languages</span>
+                    <span>C, C++, Java, Python, SQL</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-primary" />
-                    Manila, Philippines
+                  <div className="grid grid-cols-[120px_1fr]">
+                    <span className="font-bold">Certifications</span>
+                    <span>CCNA Linux Essentials, CCNA Introduction to Networks, ITSC Python</span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <a href="https://github.com/tortellinnie" target="_blank" className="hover:text-primary"><Github className="w-5 h-5" /></a>
-                    <a href="https://www.linkedin.com/in/shann-karl-felipe/" target="_blank" className="hover:text-primary"><Linkedin className="w-5 h-5" /></a>
+                  <div className="grid grid-cols-[120px_1fr]">
+                    <span className="font-bold">Methodologies</span>
+                    <span>Scrum, Kanban, Lean Software Development</span>
                   </div>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-12 gap-16">
-                {/* Main Column */}
-                <div className="md:col-span-8 space-y-16">
-                  {/* Summary */}
-                  <section className="space-y-6">
-                    <h2 className="text-xl font-black text-white uppercase tracking-widest flex items-center gap-3 print:text-black">
-                      <Star className="w-5 h-5 text-primary" />
-                      Summary
-                    </h2>
-                    <p className="text-muted-foreground leading-relaxed font-medium text-lg print:text-black">
-                      3rd Year Computer Science student at FEU Tech (3.6 GPA) specializing in Software Engineering, recognized as a global delegate and national awardee. Experienced in AI-powered innovation, startup leadership, and cross-functional project delivery, with a proven record of pitching, execution, and scalable software solutions.
-                    </p>
-                  </section>
-
-                  {/* Experience */}
-                  <section className="space-y-8">
-                    <h2 className="text-xl font-black text-white uppercase tracking-widest flex items-center gap-3 print:text-black">
-                      <Briefcase className="w-5 h-5 text-primary" />
-                      Experience
-                    </h2>
-                    <div className="space-y-12">
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <h3 className="text-2xl font-black text-white print:text-black">Executive Lead</h3>
-                            <p className="text-primary font-bold uppercase tracking-widest text-[10px]">NERDS 2.0 • August 2025 - Present</p>
-                          </div>
-                        </div>
-                        <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-2 font-medium print:text-black">
-                          <li>Coordinated and collaborated with 20+ organizations, including national agencies and private firms.</li>
-                          <li>Overseeing R&D leading to award-winning initiatives and a total of ₱150K in grants.</li>
-                        </ul>
-                      </div>
-
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <h3 className="text-2xl font-black text-white print:text-black">President</h3>
-                            <p className="text-primary font-bold uppercase tracking-widest text-[10px]">AGAPE PH0209 (Youth NGO) • February 2024 - Present</p>
-                          </div>
-                        </div>
-                        <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-2 font-medium print:text-black">
-                          <li>Directed operations and strategic planning for a youth-led NGO with 200+ active members.</li>
-                          <li>Organized and led 15+ community programs and workshops impacting over 600 beneficiaries.</li>
-                          <li>Managed 5 cross-functional teams of 40+ volunteers, ensuring program success within budget.</li>
-                          <li>Represented the organization in 20+ inter-church and city-wide forums.</li>
-                        </ul>
-                      </div>
-
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <h3 className="text-2xl font-black text-white print:text-black">Lead Marketing Officer</h3>
-                            <p className="text-primary font-bold uppercase tracking-widest text-[10px]">C-RAM Solutions • Dec 2024 - Dec 2025</p>
-                          </div>
-                        </div>
-                        <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-2 font-medium print:text-black">
-                          <li>Provided UX/UI insights in Scrum team, shaping the product roadmap.</li>
-                          <li>Drove marketing campaigns that positioned the startup to secure ₱600K in total capital.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </section>
-
-                  {/* Projects */}
-                  <section className="space-y-8">
-                    <h2 className="text-xl font-black text-white uppercase tracking-widest flex items-center gap-3 print:text-black">
-                      <Terminal className="w-5 h-5 text-primary" />
-                      Projects
-                    </h2>
-                    <div className="space-y-10">
-                      <div className="space-y-4">
-                        <h3 className="text-2xl font-black text-white print:text-black">Salayliwa (Glicko-2 Algorithm)</h3>
-                        <p className="text-primary font-bold text-[10px] uppercase tracking-widest">September 2025</p>
-                        <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-2 font-medium print:text-black">
-                          <li>Led a Scrum team to develop a personalized mobile reading app to combat the reading crisis.</li>
-                          <li>Integrated Adaptive Reading Score and Two Tower Neural Network Architecture.</li>
-                          <li>Clinched Top 2 in the National Book Development Board's Readers Rising Hackathon 2025.</li>
-                        </ul>
-                      </div>
-
-                      <div className="space-y-4">
-                        <h3 className="text-2xl font-black text-white print:text-black">YT Shorts Automation Engine</h3>
-                        <p className="text-primary font-bold text-[10px] uppercase tracking-widest">March 2025</p>
-                        <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-2 font-medium print:text-black">
-                          <li>Automated content generation producing 100+ YouTube Shorts monthly.</li>
-                          <li>Achieved 100% reduction in manual effort through a fully autonomous content pipeline.</li>
-                          <li>Integrated Docker, n8n, Google Cloud APIs, and Gemini AI.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </section>
+              {/* Experience */}
+              <div className="mb-4">
+                <h2 className="text-[11pt] font-bold border-b border-black uppercase mb-1">Experience</h2>
+                
+                {/* NERDS 2.0 */}
+                <div className="mb-3">
+                  <div className="flex justify-between items-baseline">
+                    <span className="font-bold underline">Executive Lead</span>
+                    <span className="text-[10pt]">August 2025 - Present</span>
+                  </div>
+                  <div className="flex justify-between items-baseline italic text-[10pt]">
+                    <span>NERDS 2.0</span>
+                    <span>Hybrid</span>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 text-[10pt] mt-1 space-y-0.5">
+                    <li>Coordinated and collaborated with <span className="font-bold">20+ organizations</span>, including national agencies and private firms, overseeing R&D, leading to award-winning initiatives and a total of <span className="font-bold">P150K</span> in grants.</li>
+                  </ul>
                 </div>
 
-                {/* Sidebar Column */}
-                <div className="md:col-span-4 space-y-16">
-                  {/* Skills */}
-                  <section className="space-y-8">
-                    <h2 className="text-xl font-black text-white uppercase tracking-widest flex items-center gap-3 print:text-black">
-                      <Code2 className="w-5 h-5 text-primary" />
-                      Skills
-                    </h2>
-                    <div className="space-y-6">
-                      <div className="space-y-3">
-                        <p className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] print:text-black">Languages</p>
-                        <div className="flex flex-wrap gap-2">
-                          {['C', 'C++', 'Java', 'Python', 'SQL'].map(s => (
-                            <span key={s} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white print:text-black">{s}</span>
-                          ))}
-                        </div>
-                      </div>
-                      <div className="space-y-3">
-                        <p className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] print:text-black">Methodologies</p>
-                        <div className="flex flex-wrap gap-2">
-                          {['Scrum', 'Kanban', 'Lean Software Development'].map(s => (
-                            <span key={s} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white print:text-black">{s}</span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-
-                  {/* Education */}
-                  <section className="space-y-8">
-                    <h2 className="text-xl font-black text-white uppercase tracking-widest flex items-center gap-3 print:text-black">
-                      <GraduationCap className="w-5 h-5 text-primary" />
-                      Education
-                    </h2>
-                    <div className="space-y-4">
-                      <h3 className="font-black text-white text-lg leading-tight print:text-black">FEU Institute of Technology</h3>
-                      <p className="text-primary font-bold uppercase tracking-widest text-[10px]">BS in Computer Science</p>
-                      <p className="text-muted-foreground text-sm font-bold print:text-black">Expected July 2027</p>
-                      <div className="inline-block px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-black text-white print:text-black">GPA: 3.6</div>
-                      <div className="pt-2 text-xs text-muted-foreground space-y-1 print:text-black">
-                        <p>• FEU Tech Academic Scholar</p>
-                        <p>• DOST Scholar</p>
-                        <p>• QCYDO Scholar</p>
-                      </div>
-                    </div>
-                  </section>
-
-                  {/* Awards */}
-                  <section className="space-y-8">
-                    <h2 className="text-xl font-black text-white uppercase tracking-widest flex items-center gap-3 print:text-black">
-                      <Award className="w-5 h-5 text-primary" />
-                      Awards
-                    </h2>
-                    <div className="space-y-6">
-                      {[
-                        { title: "EMC Global Summit Winner", org: "Musashino Uni" },
-                        { title: "Most Outstanding Youth", org: "QC Government" },
-                        { title: "1st Runner-Up PSC X", org: "DICT Regional" },
-                        { title: "1st Runner-Up Readers Rising", org: "NBDB" },
-                        { title: "2x Top Student", org: "FEU Tech" }
-                      ].map((award, i) => (
-                        <div key={i} className="space-y-1">
-                          <p className="text-sm font-bold text-white leading-tight print:text-black">{award.title}</p>
-                          <p className="text-[10px] font-black text-primary uppercase tracking-widest">{award.org}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </section>
+                {/* AGAPE */}
+                <div className="mb-3">
+                  <div className="flex justify-between items-baseline">
+                    <span className="font-bold underline">President</span>
+                    <span className="text-[10pt]">February 2024 - Present</span>
+                  </div>
+                  <div className="flex justify-between items-baseline italic text-[10pt]">
+                    <span>AGAPE PH0209 Child Development Center (Youth Non-Governmental Organization)</span>
+                    <span>Quezon City, PH</span>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 text-[10pt] mt-1 space-y-0.5">
+                    <li>Directed operations and strategic planning for a youth-led NGO with <span className="font-bold">200+ active members</span>.</li>
+                    <li>Organized and led 15+ community programs, outreach initiatives, and workshops, impacting over <span className="font-bold">600 beneficiaries</span>.</li>
+                    <li>Managed <span className="font-bold">5 cross-functional teams of 40+ volunteers</span>, delegating responsibilities and ensuring program success within budget and deadlines.</li>
+                    <li>Represented the organization in <span className="font-bold">20+ inter-church and city-wide forums</span>, strengthening partnerships with local government and NGOs.</li>
+                  </ul>
                 </div>
+
+                {/* C-RAM */}
+                <div className="mb-3">
+                  <div className="flex justify-between items-baseline">
+                    <span className="font-bold underline">Lead Marketing Officer</span>
+                    <span className="text-[10pt]">December 2024 - December 2025</span>
+                  </div>
+                  <div className="flex justify-between items-baseline italic text-[10pt]">
+                    <span>C-RAM Solutions</span>
+                    <span>Hybrid</span>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 text-[10pt] mt-1 space-y-0.5">
+                    <li>Provided UX/UI insights in Scrum team, shaping product roadmap.</li>
+                    <li>Drove marketing campaigns that positioned the startup to secure <span className="font-bold">P600K</span> in total capital.</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Projects */}
+              <div className="mb-4">
+                <h2 className="text-[11pt] font-bold border-b border-black uppercase mb-1">Projects</h2>
+                
+                {/* Salayliwa */}
+                <div className="mb-3">
+                  <div className="flex justify-between items-baseline">
+                    <span className="font-bold underline">Salayliwa (Glicko-2 Algorithm)</span>
+                    <span className="text-[10pt]">September 2025</span>
+                  </div>
+                  <ul className="list-disc list-outside ml-5 text-[10pt] mt-1 space-y-0.5">
+                    <li>Led a Scrum team to develop a personalized mobile reading app to help combat the nation's reading crisis.</li>
+                    <li>Integrated Adaptive Reading Score and Two Tower Neural Network Architecture.</li>
+                    <li>Led the team as the presenter, clinching <span className="font-bold">Top 2</span> in the National Book Development Board's Readers Rising Hackathon 2025.</li>
+                  </ul>
+                </div>
+
+                {/* YT Shorts */}
+                <div className="mb-3">
+                  <div className="flex justify-between items-baseline">
+                    <span className="font-bold underline">YT Shorts Automation Engine</span>
+                    <span className="text-[10pt]">March 2025</span>
+                  </div>
+                  <div className="text-[9pt] italic mb-1">(Docker, n8n, ngrok, Google Cloud APIs, Local LLMs (Gemini))</div>
+                  <ul className="list-disc list-outside ml-5 text-[10pt] mt-1 space-y-0.5">
+                    <li>Automated content generation and publishing 24/7, producing 100+ YouTube Shorts monthly.</li>
+                    <li>Achieved 100% reduction in manual effort through a fully autonomous content pipeline.</li>
+                    <li>Integrated multiple services for seamless story creation, video rendering, and cloud distribution.</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Education */}
+              <div className="mb-4">
+                <h2 className="text-[11pt] font-bold border-b border-black uppercase mb-1">Education</h2>
+                <div className="flex justify-between items-baseline">
+                  <span className="font-bold">Far Eastern University - Institute of Technology</span>
+                  <span className="text-[10pt]">July 2027 (Expected)</span>
+                </div>
+                <div className="flex justify-between items-baseline text-[10pt]">
+                  <span>Bachelor of Science in Computer Science, with specialization in Software Engineering</span>
+                  <span className="font-bold">GPA: 3.6</span>
+                </div>
+                <ul className="list-disc list-outside ml-5 text-[10pt] mt-1 space-y-0.5">
+                  <li><span className="font-bold">Courseworks:</span> Data Structure and Algorithms, Object-Oriented Programming, Software Engineering, Database Management Systems, Distributed and Parallel Computing</li>
+                  <li>Recommended 8x by FEU Tech Professors</li>
+                  <li>FEU Tech Academic Scholar, DOST Scholar, QCYDO Scholar</li>
+                </ul>
+              </div>
+
+              {/* Awards */}
+              <div className="mb-2">
+                <h2 className="text-[11pt] font-bold border-b border-black uppercase mb-1">Awards</h2>
+                <ul className="list-disc list-outside ml-5 text-[10pt] space-y-1.5">
+                  <li className="relative pr-24">
+                    <span className="font-bold">Winner - EMC Global Summit</span> (SwineScan, Agricultural)
+                    <div className="italic ml-0 text-[9pt]">Musashino University, EMC Global</div>
+                    <span className="absolute right-0 top-0 text-[10pt]">February 2026</span>
+                  </li>
+                  <li className="relative pr-24">
+                    <span className="font-bold">Most Outstanding Youth Award</span> (Technology-Driven Innovation)
+                    <div className="italic ml-0 text-[9pt]">Quezon City Government, Sangguniang Kabataan Commonwealth Council</div>
+                    <span className="absolute right-0 top-0 text-[10pt]">January 2026</span>
+                  </li>
+                  <li className="relative pr-24">
+                    <span className="font-bold">1st Runner-Up - Philippine Startup Challenge X NCR Leg</span> (GabayDiwa, Healthcare)
+                    <div className="italic ml-0 text-[9pt]">Department of Information Communications Technology</div>
+                    <span className="absolute right-0 top-0 text-[10pt]">October 2025</span>
+                  </li>
+                  <li className="relative pr-24">
+                    <span className="font-bold">1st Runner-Up - Readers Rising Hackathon 2025</span> (Salayliwa, Edu-Cultural)
+                    <div className="italic ml-0 text-[9pt]">National Book Development Board - Philippines</div>
+                    <span className="absolute right-0 top-0 text-[10pt]">September 2025</span>
+                  </li>
+                  <li className="relative pr-24">
+                    <span className="font-bold">2x Top Performing Student - Annual Student Recognition 2025</span> (2024, 2025)
+                    <div className="italic ml-0 text-[9pt]">FEU Institute of Technology</div>
+                    <span className="absolute right-0 top-0 text-[10pt]"></span>
+                  </li>
+                  <li className="relative pr-24">
+                    <span className="font-bold">2nd Runner-Up - Startup QC</span> (SwineScan, Agricultural)
+                    <div className="italic ml-0 text-[9pt]">Quezon City Government</div>
+                    <span className="absolute right-0 top-0 text-[10pt]">May 2025</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <Contact />
     </main>
   );
 }
