@@ -26,7 +26,7 @@ export function Metrics() {
       { name: "C-RAM & NERDS 2.0 Projects", detail: "Tech-driven Community Solutions" }
     ],
     speakerships: [
-      { name: "AGAPE PH0209 Youth Program", detail: "Community Event" },
+      { name: "AGAPE PH0209 Youth Program", detail: "Community Event Host" },
       { name: "Musashinova Pitching Event", detail: "Tokyo, Japan" },
       { name: "Philippine Startup Challenge X", detail: "DICT Regional Stage" },
       { name: "NBDB Readers Rising Hackathon", detail: "National Library of PH" },

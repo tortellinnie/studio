@@ -12,14 +12,12 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-24 bg-transparent overflow-visible">
-      {/* Background Glows */}
-      <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-primary/20 hero-glow animate-pulse" />
-      <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-amber-500/15 hero-glow animate-pulse delay-1000" />
+      <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-primary/20 hero-glow animate-pulse pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-amber-500/15 hero-glow animate-pulse delay-1000 pointer-events-none" />
       
       <div className="container mx-auto z-10 max-w-7xl overflow-visible">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center overflow-visible">
           
-          {/* Column 1: Typography Branding */}
           <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 animate-in fade-in slide-in-from-left-12 duration-1000 overflow-visible">
             <div className="space-y-4 overflow-visible w-full">
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[40px] text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-xl">
@@ -27,16 +25,14 @@ export function Hero() {
                 <span>Open for Engineering Roles</span>
               </div>
               
-              <div className="relative overflow-visible">
-                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.85] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible pb-4 w-max">
-                  <span className="inline-block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125 pr-16 lg:pr-24 whitespace-nowrap overflow-visible">
+              <div className="relative overflow-visible w-full">
+                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.85] tracking-tighter uppercase overflow-visible pb-4 w-fit px-4">
+                  <span className="italic inline-block bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125 pr-12 lg:pr-20 overflow-visible">
                     TECHNO
                   </span>
-                  <div className="relative overflow-visible">
-                    <span className="inline-block text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)] pr-24 lg:pr-36 whitespace-nowrap overflow-visible">
-                      LEADER
-                    </span>
-                  </div>
+                  <span className="italic inline-block text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)] pr-20 lg:pr-48 overflow-visible">
+                    LEADER
+                  </span>
                 </h1>
               </div>
             </div>
@@ -67,14 +63,11 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Column 2: Vertical Rectangle Portrait with Overlapping Badge */}
           <div className="order-2 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-12 duration-1000 delay-200 overflow-visible">
             {profileImage && (
               <div className="relative w-full max-w-[420px] aspect-[3/4] group overflow-visible">
-                {/* Outer Glow */}
                 <div className="absolute inset-0 bg-primary/30 rounded-[4rem] blur-3xl group-hover:blur-[5rem] transition-all opacity-40 -z-10" />
                 
-                {/* Premium Vertical Card */}
                 <div className="relative w-full h-full rounded-[4rem] border border-white/10 overflow-hidden premium-glass shadow-[0_32px_120px_-20px_rgba(0,0,0,0.8)] premium-gradient-border">
                   <Image 
                     src={profileImage.imageUrl} 
@@ -84,11 +77,7 @@ export function Hero() {
                     data-ai-hint={profileImage.imageHint}
                     priority
                   />
-                  
-                  {/* Glass Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
-                  
-                  {/* Bottom Right Info */}
                   <div className="absolute bottom-12 right-12 text-right">
                     <div className="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md mb-4 inline-block">
                       <p className="text-[8px] font-black text-white uppercase tracking-[0.3em]">Identity 2026</p>
@@ -100,8 +89,7 @@ export function Hero() {
                   </div>
                 </div>
 
-                {/* Overlapping GPA Badge - Positioned farther lower left, halfway out */}
-                <div className="absolute -bottom-12 -left-24 animate-float z-20 overflow-visible">
+                <div className="absolute -bottom-10 -left-20 animate-float z-20 overflow-visible">
                   <div className="px-6 py-4 rounded-[2rem] bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col items-start gap-1 group/gpa hover:bg-white/20 transition-all cursor-default scale-110">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
