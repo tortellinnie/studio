@@ -28,10 +28,12 @@ export function Hero() {
               </div>
               
               <div className="relative group overflow-visible">
-                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible pb-4 pr-16 lg:pr-24">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125">TECHNO</span>
-                  <div className="relative pr-48 lg:pr-64 overflow-visible">
-                    <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)] pr-12 lg:pr-20">
+                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.9] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible pb-4 w-max max-w-full">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125 pr-12 lg:pr-20">
+                    TECHNO
+                  </span>
+                  <div className="relative overflow-visible">
+                    <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)] pr-20 lg:pr-32">
                       LEADER
                     </span>
                   </div>
@@ -98,8 +100,8 @@ export function Hero() {
                   </div>
                 </div>
 
-                {/* Overlapping GPA Badge - Positioned halfway out of the photo */}
-                <div className="absolute -bottom-6 -left-12 animate-float z-20">
+                {/* Overlapping GPA Badge - Positioned farther lower left, halfway out */}
+                <div className="absolute -bottom-8 -left-20 animate-float z-20">
                   <div className="px-6 py-4 rounded-[2rem] bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col items-start gap-1 group/gpa hover:bg-white/20 transition-all cursor-default scale-110">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
