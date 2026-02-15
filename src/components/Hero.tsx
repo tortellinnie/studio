@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -19,7 +18,7 @@ export function Hero() {
       <div className="container mx-auto z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           
-          {/* Column 1: Balanced Branding & Copy (Now on the Left) */}
+          {/* Column 1: Balanced Branding & Copy */}
           <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 animate-in fade-in slide-in-from-left-12 duration-1000">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[40px] text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-xl">
@@ -27,13 +26,17 @@ export function Hero() {
                 <span>Open for Engineering Roles</span>
               </div>
               
-              <div className="relative group">
+              <div className="relative group px-4 lg:px-0">
                 {/* Subtle glass reflection backdrop for the title */}
                 <div className="absolute -inset-10 bg-white/[0.01] backdrop-blur-[2px] rounded-[3rem] -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
-                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic pr-12 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                  <span className="text-gradient brightness-125">TECHNO</span>
-                  <span className="text-primary text-gradient bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)]">LEADER</span>
+                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125">TECHNO</span>
+                  <div className="relative pr-16 lg:pr-24"> {/* Extra padding for the 'R' */}
+                    <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)]">
+                      LEADER
+                    </span>
+                  </div>
                 </h1>
               </div>
             </div>
@@ -64,7 +67,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Column 2: Vertical Rectangle Portrait (Now on the Right) */}
+          {/* Column 2: Vertical Rectangle Portrait */}
           <div className="order-2 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
             {profileImage && (
               <div className="relative w-full max-w-[420px] aspect-[3/4] group">
@@ -82,11 +85,11 @@ export function Hero() {
                     priority
                   />
                   
-                  {/* Glass Overlay & Badge */}
+                  {/* Glass Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
                   
-                  {/* Bottom Info */}
-                  <div className="absolute bottom-12 left-12">
+                  {/* Bottom Right Info */}
+                  <div className="absolute bottom-12 right-12 text-right">
                     <div className="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md mb-4 inline-block">
                       <p className="text-[8px] font-black text-white uppercase tracking-[0.3em]">Identity 2026</p>
                     </div>
@@ -96,9 +99,9 @@ export function Hero() {
                     <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mt-1">Digital Architect</p>
                   </div>
 
-                  {/* Top Right Floating Badge (GPA) */}
-                  <div className="absolute top-10 right-10 animate-float">
-                    <div className="px-5 py-3 rounded-2xl bg-white/[0.08] backdrop-blur-xl border border-white/20 shadow-2xl flex flex-col items-center gap-1 group/gpa hover:bg-white/20 transition-all cursor-default">
+                  {/* Lower Left GPA Badge (Requested Position) */}
+                  <div className="absolute bottom-10 left-10 animate-float">
+                    <div className="px-5 py-3 rounded-2xl bg-white/[0.08] backdrop-blur-xl border border-white/20 shadow-2xl flex flex-col items-start gap-1 group/gpa hover:bg-white/20 transition-all cursor-default">
                       <div className="flex items-center gap-2">
                         <GraduationCap className="w-4 h-4 text-primary" />
                         <span className="text-2xl font-black text-white tracking-tighter">3.6</span>
