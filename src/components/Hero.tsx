@@ -15,21 +15,21 @@ export function Hero() {
       <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-primary/20 hero-glow animate-pulse" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-amber-500/15 hero-glow animate-pulse delay-1000" />
       
-      <div className="container mx-auto z-10 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+      <div className="container mx-auto z-10 max-w-7xl overflow-visible">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center overflow-visible">
           
           {/* Column 1: Balanced Branding & Copy */}
-          <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 animate-in fade-in slide-in-from-left-12 duration-1000">
-            <div className="space-y-4">
+          <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 animate-in fade-in slide-in-from-left-12 duration-1000 overflow-visible">
+            <div className="space-y-4 overflow-visible">
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[40px] text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-xl">
                 <Sparkles className="w-3 h-3 fill-primary" />
                 <span>Open for Engineering Roles</span>
               </div>
               
               <div className="relative group px-4 lg:px-0 overflow-visible">
-                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible pb-4">
                   <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125">TECHNO</span>
-                  <div className="relative pr-16 lg:pr-24">
+                  <div className="relative pr-20 lg:pr-32 overflow-visible">
                     <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)]">
                       LEADER
                     </span>
@@ -65,9 +65,9 @@ export function Hero() {
           </div>
 
           {/* Column 2: Vertical Rectangle Portrait with Overlapping Badge */}
-          <div className="order-2 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
+          <div className="order-2 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-12 duration-1000 delay-200 overflow-visible">
             {profileImage && (
-              <div className="relative w-full max-w-[420px] aspect-[3/4] group">
+              <div className="relative w-full max-w-[420px] aspect-[3/4] group overflow-visible">
                 {/* Outer Glow */}
                 <div className="absolute inset-0 bg-primary/30 rounded-[4rem] blur-3xl group-hover:blur-[5rem] transition-all opacity-40 -z-10" />
                 
