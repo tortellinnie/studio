@@ -16,7 +16,7 @@ export function Collaborators() {
     { id: 'logo-dost', label: 'DOST' },
   ];
 
-  // Distribute collaborators around the hub
+  // Hub nodes for the neural map
   const hubNodes = [
     { id: 'logo-aws', label: 'AWS', angle: 0 },
     { id: 'logo-google-cloud', label: 'Google Cloud', angle: 45 },
@@ -65,7 +65,7 @@ export function Collaborators() {
             })}
           </div>
 
-          {/* Strategic Ecosystem (Neural Web with Logo Nodes) */}
+          {/* Strategic Ecosystem (Neural Web) */}
           <div className="mt-24 py-24 px-8 glass-card rounded-[4rem] border-white/5 overflow-hidden group">
             <div className="flex flex-col items-center text-center space-y-12">
               <div className="space-y-4">
@@ -80,7 +80,7 @@ export function Collaborators() {
               
               <div className="relative h-[600px] w-full max-w-5xl flex items-center justify-center scale-75 lg:scale-100">
                  {/* Neural Connection Lines (SVG) */}
-                 <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 600">
+                 <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" viewBox="0 0 1000 600">
                     <defs>
                       <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="white" stopOpacity="0" />
@@ -89,17 +89,13 @@ export function Collaborators() {
                       </linearGradient>
                     </defs>
                     
-                    {/* Dynamic Connections between nodes */}
                     {hubNodes.map((node, i) => {
                       const angle = (node.angle * Math.PI) / 180;
                       const radius = 240;
                       const x = 500 + Math.cos(angle) * radius;
                       const y = 300 + Math.sin(angle) * radius;
                       
-                      // Connect each node to the center
                       const pathCenter = `M500,300 L${x},${y}`;
-                      
-                      // Connect each node to the next node in the circle
                       const nextNode = hubNodes[(i + 1) % hubNodes.length];
                       const nextAngle = (nextNode.angle * Math.PI) / 180;
                       const nextX = 500 + Math.cos(nextAngle) * radius;
@@ -114,13 +110,12 @@ export function Collaborators() {
                       );
                     })}
 
-                    {/* Outer decorative ring */}
                     <circle cx="500" cy="300" r="280" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="1,20" className="animate-[spin_120s_linear_infinite]" />
                     <circle cx="500" cy="300" r="240" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="5,15" className="animate-[spin_60s_linear_infinite]" />
                  </svg>
 
                  {/* Center Hub */}
-                 <div className="relative z-10 w-40 h-40 rounded-full glass-card border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.05)] animate-pulse">
+                 <div className="relative z-20 w-40 h-40 rounded-full glass-card border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.05)] animate-pulse bg-[#02040a]/80 backdrop-blur-xl">
                     <div className="text-center">
                        <p className="text-[10px] font-black text-white/40 uppercase tracking-widest leading-tight">Impact</p>
                        <p className="text-primary font-black text-2xl italic leading-tight">2026</p>
@@ -139,10 +134,12 @@ export function Collaborators() {
                     return (
                       <div 
                         key={node.id}
-                        className="absolute w-28 h-20 rounded-2xl overflow-hidden glass-card border-white/10 shadow-2xl group/node hover:scale-110 transition-transform duration-500 bg-white/[0.02]"
+                        className="absolute w-28 h-20 rounded-2xl overflow-hidden glass-card border-white/10 shadow-2xl group/node hover:scale-110 transition-all duration-500 bg-white/[0.02] z-10"
                         style={{
-                          transform: `translate(${x}px, ${y}px)`,
-                          animation: `float ${8 + i}s ease-in-out infinite alternate`
+                          left: `calc(50% + ${x}px)`,
+                          top: `calc(50% + ${y}px)`,
+                          transform: 'translate(-50%, -50%)',
+                          animation: `float-node ${8 + i}s ease-in-out infinite alternate`
                         }}
                       >
                         {imageData && (
@@ -169,9 +166,9 @@ export function Collaborators() {
       </div>
       
       <style jsx global>{`
-        @keyframes float {
-          from { transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 15px)); }
-          to { transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 15px)); }
+        @keyframes float-node {
+          0% { transform: translate(-50%, -55%); }
+          100% { transform: translate(-50%, -45%); }
         }
       `}</style>
     </section>
