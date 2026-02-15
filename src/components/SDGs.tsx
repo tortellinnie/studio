@@ -35,19 +35,23 @@ export function SDGs() {
               href={`https://sdgs.un.org/goals/goal${goal.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-square glass-card rounded-[2.5rem] p-8 flex flex-col items-center border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40"
+              className="group relative glass-card rounded-[2.5rem] p-8 flex flex-col items-center border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40 min-h-[280px]"
             >
-              {/* Top Section: Fixed Icon Position */}
-              <div className="flex-none mb-6">
+              {/* Top Section: Fixed Icon Container */}
+              <div className="h-20 flex items-center justify-center mb-4">
                 <div className={`w-14 h-14 rounded-2xl ${goal.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
                   <goal.icon className="w-8 h-8 text-white" />
                 </div>
               </div>
 
-              {/* Middle Section: Center-aligned Goal & Title with Fixed Vertical Relationship */}
-              <div className="flex-1 flex flex-col items-center justify-center gap-2">
+              {/* Middle Section: Goal Label - Locked Position */}
+              <div className="h-8 flex items-center justify-center mb-2">
                 <span className="text-[10px] font-black text-primary uppercase tracking-[0.25em] block">Goal {goal.id}</span>
-                <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors text-center max-w-[120px]">
+              </div>
+              
+              {/* Bottom Section: Title - Top Aligned */}
+              <div className="flex-1 flex items-start justify-center">
+                <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors text-center max-w-[140px]">
                   {goal.title}
                 </p>
               </div>

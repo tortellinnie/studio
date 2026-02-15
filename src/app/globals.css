@@ -33,7 +33,6 @@
   }
   body {
     @apply bg-[#030303] text-foreground font-body antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden;
-    /* High-vibrancy mesh effect with Purple and Amber/Orange */
     background-image: 
       radial-gradient(circle at 5% 5%, hsla(263, 70%, 50%, 0.4) 0%, transparent 45%),
       radial-gradient(circle at 95% 5%, hsla(38, 92%, 50%, 0.3) 0%, transparent 45%),

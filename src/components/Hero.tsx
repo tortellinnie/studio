@@ -19,8 +19,8 @@ export function Hero() {
               <span>Available for 2026 Engineering Roles</span>
             </div>
             
-            <div className="relative overflow-visible px-12">
-              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11rem] font-black text-white leading-[0.95] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-6 block whitespace-nowrap">
+            <div className="relative overflow-visible px-4 md:px-8 lg:px-12">
+              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11rem] font-black text-white leading-[0.95] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-6 block whitespace-nowrap pr-8 md:pr-16 xl:pr-24">
                 TECHNOLEADER
               </h1>
             </div>
