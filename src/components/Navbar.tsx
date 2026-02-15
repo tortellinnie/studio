@@ -8,18 +8,25 @@ import { cn } from '@/lib/utils';
 
 export function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
+  const [isShortened, setIsShortened] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down - Hide
+      // Handle visibility (Hide on scroll down, show on scroll up)
+      if (currentScrollY > lastScrollY && currentScrollY > 150) {
         setIsVisible(false);
       } else {
-        // Scrolling up - Show
         setIsVisible(true);
+      }
+
+      // Handle "shortening" contraction
+      if (currentScrollY > 50) {
+        setIsShortened(true);
+      } else {
+        setIsShortened(false);
       }
       
       setLastScrollY(currentScrollY);
@@ -40,23 +47,32 @@ export function Navbar() {
 
   return (
     <nav className={cn(
-      "fixed top-0 z-[100] w-full pt-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+      "fixed top-0 z-[100] w-full pt-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center",
       isVisible 
-        ? "translate-y-0 opacity-100 scale-100" 
-        : "-translate-y-32 opacity-0 scale-95 pointer-events-none"
+        ? "translate-y-0 opacity-100" 
+        : "-translate-y-32 opacity-0 pointer-events-none"
     )}>
-      <div className="container mx-auto px-6">
-        <div className="h-16 lg:h-20 glass-card rounded-[2.5rem] px-6 lg:px-10 flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03]">
+      <div className={cn(
+        "container px-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+        isShortened ? "max-w-4xl" : "max-w-full"
+      )}>
+        <div className={cn(
+          "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03] transition-all duration-700",
+          isShortened ? "px-6 lg:px-8" : "px-6 lg:px-10"
+        )}>
           <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0 text-white">
             TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
           </Link>
           
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 transition-all duration-700">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[9px] uppercase font-black tracking-[0.25em] text-white/50 hover:text-white transition-all hover:translate-y-[-2px] whitespace-nowrap"
+                className={cn(
+                  "text-[9px] uppercase font-black tracking-[0.25em] text-white/50 hover:text-white transition-all hover:translate-y-[-2px] whitespace-nowrap",
+                  isShortened ? "opacity-100 translate-x-0" : "opacity-100"
+                )}
               >
                 {item.label}
               </Link>
