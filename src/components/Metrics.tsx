@@ -10,6 +10,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Badge } from '@/components/ui/badge';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 export function Metrics() {
   const data = {
@@ -75,56 +76,63 @@ export function Metrics() {
   ];
 
   return (
-    <section className="relative z-20 py-24">
+    <section className="relative z-20 py-24 bg-transparent">
       <div className="container mx-auto px-6">
-        <TooltipProvider delayDuration={0}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {stats.map((stat, i) => (
-              <Dialog key={i}>
-                <DialogTrigger asChild>
-                  <button className="flex flex-col h-full w-full text-left glass-card p-10 rounded-[2.5rem] border-white/10 group relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
+        <div className="max-w-6xl mx-auto">
+          <TooltipProvider delayDuration={0}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+              {stats.map((stat, i) => (
+                <Dialog key={i}>
+                  <DialogTrigger asChild>
+                    <button className="flex flex-col h-full w-full text-left glass-card p-10 rounded-[2.5rem] border-white/10 group relative overflow-hidden transition-all duration-500">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
+                      
+                      <div className="flex items-start justify-between h-14 mb-12 relative z-10">
+                        <div className="w-14 h-14 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
+                          <stat.icon className={`w-7 h-7 ${stat.color} group-hover:text-white transition-colors`} />
+                        </div>
+                      </div>
+
+                      <div className="absolute top-8 right-10 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[9px] font-black text-primary uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 pointer-events-none">
+                        Details
+                      </div>
+
+                      <div className="space-y-2 relative z-10">
+                        <h3 className="text-5xl font-black text-white tracking-tighter mb-2">{stat.value}</h3>
+                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">{stat.label}</p>
+                        <p className="text-sm text-white/50 font-medium leading-relaxed pt-4">
+                          {stat.description}
+                        </p>
+                      </div>
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="glass-card border-white/20 text-white max-w-lg rounded-[3rem] p-0 overflow-hidden backdrop-blur-[60px] bg-black/60">
+                    <div className="p-12 pb-6">
+                      <DialogHeader className="mb-4">
+                        <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
+                          {stat.title}<span className="text-primary">.</span>
+                        </DialogTitle>
+                      </DialogHeader>
+                    </div>
                     
-                    <div className="flex items-start justify-between h-14 mb-12 relative z-10">
-                      <div className="w-14 h-14 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
-                        <stat.icon className={`w-7 h-7 ${stat.color} group-hover:text-white transition-colors`} />
+                    <ScrollArea className="max-h-[50vh] px-12 pb-12">
+                      <div className="grid gap-4">
+                        {stat.details.map((item, idx) => (
+                          <div key={idx} className="flex items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.08] transition-colors group">
+                            <span className="font-bold text-white/90 text-sm md:text-base pr-4">{item.name}</span>
+                            <Badge variant="outline" className="shrink-0 border-primary/40 text-primary text-[10px] font-black uppercase group-hover:bg-primary group-hover:text-white transition-all">
+                              {item.detail}
+                            </Badge>
+                          </div>
+                        ))}
                       </div>
-                    </div>
-
-                    <div className="absolute top-8 right-10 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[9px] font-black text-primary uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 pointer-events-none">
-                      Details
-                    </div>
-
-                    <div className="space-y-2 relative z-10">
-                      <h3 className="text-5xl font-black text-white tracking-tighter mb-2">{stat.value}</h3>
-                      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">{stat.label}</p>
-                      <p className="text-sm text-white/50 font-medium leading-relaxed pt-4">
-                        {stat.description}
-                      </p>
-                    </div>
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="glass-card border-white/20 text-white max-w-lg rounded-[3rem] p-12 backdrop-blur-[60px] bg-black/40">
-                  <DialogHeader className="mb-8">
-                    <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
-                      {stat.title}<span className="text-primary">.</span>
-                    </DialogTitle>
-                  </DialogHeader>
-                  <div className="grid gap-4">
-                    {stat.details.map((item, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.08] transition-colors group">
-                        <span className="font-bold text-white/90 text-base">{item.name}</span>
-                        <Badge variant="outline" className="border-primary/40 text-primary text-[10px] font-black uppercase group-hover:bg-primary group-hover:text-white transition-all">
-                          {item.detail}
-                        </Badge>
-                      </div>
-                    ))}
-                  </div>
-                </DialogContent>
-              </Dialog>
-            ))}
-          </div>
-        </TooltipProvider>
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
+              ))}
+            </div>
+          </TooltipProvider>
+        </div>
       </div>
     </section>
   );
