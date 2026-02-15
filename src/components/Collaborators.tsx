@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -34,55 +33,46 @@ export function Collaborators() {
   };
 
   return (
-    <section id="collaborators" className="py-24 relative bg-transparent overflow-hidden border-t border-white/5">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+    <section id="collaborators" className="py-16 relative bg-transparent overflow-hidden border-t border-white/5">
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', 
-             backgroundSize: '80px 80px' 
+             backgroundSize: '60px 60px' 
            }} />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-7xl mx-auto space-y-24">
+        <div className="max-w-6xl mx-auto space-y-16">
           
-          <div className="flex flex-col items-center text-center space-y-4">
-            <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[9px]">
+          <div className="flex flex-col items-center text-center space-y-3">
+            <Badge className="bg-white/5 text-white/40 border-white/10 px-3 py-1 rounded-full font-black tracking-widest uppercase text-[8px]">
               Institutional Infrastructure
             </Badge>
-            <h2 className="text-4xl lg:text-6xl font-black text-white italic uppercase tracking-tighter">Strategic Ecosystem.</h2>
-            <p className="text-white/40 text-[10px] font-black uppercase tracking-[0.4em]">
-              Professional collaboration with the following institutions
-            </p>
+            <h2 className="text-3xl lg:text-4xl font-black text-white italic uppercase tracking-tighter">Strategic Ecosystem.</h2>
           </div>
 
-          <div className="space-y-20">
+          <div className="space-y-12">
             {/* Government Cluster */}
-            <div className="space-y-10">
-              <div className="flex items-center gap-4 border-b border-white/5 pb-6">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-black text-white uppercase tracking-widest">Government</h3>
-                  <p className="text-[10px] text-white/30 font-bold uppercase tracking-widest">Public Policy & R&D Partners</p>
-                </div>
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 border-b border-white/5 pb-4">
+                <Globe className="w-4 h-4 text-primary/60" />
+                <h3 className="text-xs font-black text-white/60 uppercase tracking-[0.3em]">Government</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
                 {ecosystem.government.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group glass-card rounded-[2rem] p-6 border-white/5 hover:border-primary/30 transition-all duration-500 flex flex-col items-center text-center space-y-4">
-                      <div className="relative w-full aspect-[2/1] bg-white/[0.02] rounded-2xl overflow-hidden border border-white/5 p-4 flex items-center justify-center">
+                    <div key={i} className="group flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity duration-500">
+                      <div className="relative w-full aspect-square grayscale group-hover:grayscale-0 transition-all duration-500">
                         {logo && (
                           <Image 
                             src={logo.imageUrl} 
                             alt={org.name}
                             fill
-                            className="object-contain p-4 filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                            className="object-contain"
                             data-ai-hint={logo.imageHint}
                           />
                         )}
                       </div>
-                      <p className="text-[10px] font-black text-white/40 group-hover:text-white transition-colors uppercase leading-tight tracking-wider">{org.name}</p>
                     </div>
                   );
                 })}
@@ -90,33 +80,27 @@ export function Collaborators() {
             </div>
 
             {/* Industry Cluster */}
-            <div className="space-y-10">
-              <div className="flex items-center gap-4 border-b border-white/5 pb-6">
-                <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20">
-                  <Building2 className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-black text-white uppercase tracking-widest">Industry & Global</h3>
-                  <p className="text-[10px] text-white/30 font-bold uppercase tracking-widest">Commercial & Enterprise Infrastructure</p>
-                </div>
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 border-b border-white/5 pb-4">
+                <Building2 className="w-4 h-4 text-accent/60" />
+                <h3 className="text-xs font-black text-white/60 uppercase tracking-[0.3em]">Industry & Global</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
                 {ecosystem.industry.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group glass-card rounded-[2rem] p-6 border-white/5 hover:border-accent/30 transition-all duration-500 flex flex-col items-center text-center space-y-4">
-                      <div className="relative w-full aspect-square bg-white/[0.02] rounded-2xl overflow-hidden border border-white/5 p-4 flex items-center justify-center">
+                    <div key={i} className="group flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity duration-500">
+                      <div className="relative w-full aspect-square grayscale group-hover:grayscale-0 transition-all duration-500">
                         {logo && (
                           <Image 
                             src={logo.imageUrl} 
                             alt={org.name}
                             fill
-                            className="object-contain p-4 filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                            className="object-contain"
                             data-ai-hint={logo.imageHint}
                           />
                         )}
                       </div>
-                      <p className="text-[9px] font-black text-white/40 group-hover:text-white transition-colors uppercase leading-tight tracking-wider">{org.name}</p>
                     </div>
                   );
                 })}
@@ -124,33 +108,27 @@ export function Collaborators() {
             </div>
 
             {/* Academia Cluster */}
-            <div className="space-y-10">
-              <div className="flex items-center gap-4 border-b border-white/5 pb-6">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 flex items-center justify-center border border-indigo-500/20">
-                  <GraduationCap className="w-6 h-6 text-indigo-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-black text-white uppercase tracking-widest">Academia & Clinical</h3>
-                  <p className="text-[10px] text-white/30 font-bold uppercase tracking-widest">Research & Scientific Development</p>
-                </div>
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 border-b border-white/5 pb-4">
+                <GraduationCap className="w-4 h-4 text-white/30" />
+                <h3 className="text-xs font-black text-white/60 uppercase tracking-[0.3em]">Academia & Clinical</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
                 {ecosystem.academia.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group glass-card rounded-[2rem] p-8 border-white/5 hover:border-indigo-400/30 transition-all duration-500 flex flex-col items-center text-center space-y-6">
-                      <div className="relative w-full aspect-[3/1] bg-white/[0.02] rounded-2xl overflow-hidden border border-white/5 p-4 flex items-center justify-center">
+                    <div key={i} className="group flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity duration-500">
+                      <div className="relative w-full aspect-square grayscale group-hover:grayscale-0 transition-all duration-500">
                         {logo && (
                           <Image 
                             src={logo.imageUrl} 
                             alt={org.name}
                             fill
-                            className="object-contain p-6 filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                            className="object-contain"
                             data-ai-hint={logo.imageHint}
                           />
                         )}
                       </div>
-                      <p className="text-xs font-black text-white/40 group-hover:text-white transition-colors uppercase leading-tight tracking-widest">{org.name}</p>
                     </div>
                   );
                 })}
