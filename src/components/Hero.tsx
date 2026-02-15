@@ -7,21 +7,22 @@ import Link from 'next/link';
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-20">
-      {/* Dynamic Animated Glows */}
-      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/20 hero-glow animate-pulse" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-accent/20 hero-glow animate-pulse delay-1000" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.1)_0%,transparent_70%)] pointer-events-none" />
+      {/* Dynamic Animated Glows with Purple and Orange */}
+      <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-primary/20 hero-glow animate-pulse" />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-amber-500/10 hero-glow animate-pulse delay-1000" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.08)_0%,transparent_70%)] pointer-events-none" />
       
       <div className="container mx-auto z-10 text-center flex flex-col items-center">
         <div className="space-y-12 w-full max-w-screen-2xl px-4">
           <div className="space-y-8 lg:space-y-10">
-            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-[40px] text-[11px] font-black uppercase tracking-[0.3em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
+            <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[40px] text-[11px] font-black uppercase tracking-[0.3em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <Sparkles className="w-3.5 h-3.5 fill-primary" />
               <span>Available for 2026 Engineering Roles</span>
             </div>
             
-            <div className="relative">
-              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11.5rem] font-black text-white leading-[0.85] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-4">
+            <div className="relative px-4">
+              {/* Increased leading and added padding to prevent character clipping (the 'R') */}
+              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11.5rem] font-black text-white leading-[0.95] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-6">
                 TECHNOLEADER
               </h1>
             </div>
