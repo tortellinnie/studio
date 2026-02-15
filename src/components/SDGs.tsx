@@ -16,7 +16,7 @@ export function SDGs() {
   ];
 
   return (
-    <section className="py-24 relative bg-transparent">
+    <section className="py-24 relative bg-transparent overflow-visible">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16 space-y-6">
           <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
@@ -28,7 +28,7 @@ export function SDGs() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {goals.map((goal) => (
             <a 
               key={goal.id} 

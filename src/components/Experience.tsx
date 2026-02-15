@@ -66,9 +66,9 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-24 relative bg-white/[0.01]">
+    <section id="experience" className="py-24 relative bg-transparent overflow-visible">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto space-y-20">
+        <div className="max-w-6xl mx-auto space-y-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 border-b border-white/5 pb-16">
             <div className="space-y-6">
               <Badge className="bg-white/5 text-white/60 border-white/10 px-4 py-1 rounded-full font-black uppercase text-[10px] tracking-widest">

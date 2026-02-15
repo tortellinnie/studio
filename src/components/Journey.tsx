@@ -46,7 +46,7 @@ export function Journey() {
   ];
 
   return (
-    <section id="journey" className="py-16 relative bg-transparent">
+    <section id="journey" className="py-24 relative bg-transparent overflow-visible">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16 space-y-6">
           <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
@@ -58,7 +58,7 @@ export function Journey() {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2 hidden lg:block" />
 
           <div className="space-y-10">

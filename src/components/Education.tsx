@@ -34,7 +34,7 @@ export function Education() {
   ];
 
   return (
-    <section id="education" className="py-16 relative bg-white/[0.01]">
+    <section id="education" className="py-24 relative bg-transparent overflow-visible">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16 space-y-6">
           <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
@@ -46,7 +46,7 @@ export function Education() {
           </p>
         </div>
 
-        <div className="grid gap-10 max-w-5xl mx-auto">
+        <div className="grid gap-10 max-w-6xl mx-auto">
           {education.map((edu, idx) => (
             <div key={idx} className="group p-8 lg:p-10 glass-card rounded-[2.5rem] border-white/5 hover:border-primary/20 transition-all duration-700">
               <div className="grid md:grid-cols-12 gap-10">

@@ -76,7 +76,7 @@ export function Metrics() {
   ];
 
   return (
-    <section className="relative z-20 py-24 bg-transparent overflow-visible">
+    <section className="relative z-20 pb-24 bg-transparent overflow-visible">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <TooltipProvider delayDuration={0}>
@@ -84,7 +84,7 @@ export function Metrics() {
               {stats.map((stat, i) => (
                 <Dialog key={i}>
                   <DialogTrigger asChild>
-                    <button className="flex flex-col h-full w-full text-left glass-card p-10 rounded-[2.5rem] border-white/10 group relative transition-all duration-500 hover:scale-[1.02]">
+                    <button className="flex flex-col h-full w-full text-left glass-card p-10 rounded-[2.5rem] border-white/10 group relative transition-all duration-500">
                       <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
                       
                       <div className="flex items-start justify-between h-14 mb-12 relative z-10">
