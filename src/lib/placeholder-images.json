@@ -7,6 +7,12 @@
       "imageHint": "professional portrait"
     },
     {
+      "id": "resume-image",
+      "description": "Professional Engineering Resume - Shann Karl Felipe",
+      "imageUrl": "/assets/images/resume.png",
+      "imageHint": "resume document"
+    },
+    {
       "id": "project-salayliwa",
       "description": "Salayliwa mobile app interface",
       "imageUrl": "/assets/images/salayliwa.png",
