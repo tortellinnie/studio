@@ -34,16 +34,10 @@ export function Collaborators() {
 
   return (
     <section id="collaborators" className="py-20 relative bg-transparent overflow-hidden border-t border-white/5">
-      <div className="absolute inset-0 opacity-[0.01] pointer-events-none" 
-           style={{ 
-             backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', 
-             backgroundSize: '40px 40px' 
-           }} />
-      
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-12 text-center md:text-left">
-             <Badge className="bg-white/5 text-white/30 border-white/10 px-3 py-1 rounded-full font-black tracking-widest uppercase text-[8px] mb-2">
+          <div className="mb-12">
+            <Badge className="bg-white/5 text-white/30 border-white/10 px-3 py-1 rounded-full font-black tracking-widest uppercase text-[8px] mb-2">
               Institutional Network
             </Badge>
             <h2 className="text-xl font-black text-white italic uppercase tracking-tighter">Strategic Partnerships.</h2>
@@ -66,7 +60,7 @@ export function Collaborators() {
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain"
+                          className="object-contain grayscale-0 group-hover:grayscale-0 transition-all"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
@@ -92,7 +86,7 @@ export function Collaborators() {
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain"
+                          className="object-contain grayscale-0 group-hover:grayscale-0 transition-all"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
@@ -118,7 +112,7 @@ export function Collaborators() {
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain"
+                          className="object-contain grayscale-0 group-hover:grayscale-0 transition-all"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
