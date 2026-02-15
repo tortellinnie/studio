@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Badge } from '@/components/ui/badge';
@@ -16,9 +17,9 @@ export function SDGs() {
   ];
 
   return (
-    <section className="py-24 relative bg-transparent overflow-visible">
+    <section id="sdgs" className="py-24 relative bg-transparent overflow-visible">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-20 space-y-6">
+        <div className="flex flex-col items-center text-center mb-20 space-y-6 max-w-6xl mx-auto">
           <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
             Social Impact Alignment
           </Badge>
@@ -35,28 +36,28 @@ export function SDGs() {
               href={`https://sdgs.un.org/goals/goal${goal.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative glass-card rounded-[2.5rem] p-8 flex flex-col items-center border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40 min-h-[280px]"
+              className="group relative glass-card rounded-[2.5rem] p-8 flex flex-col border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40 h-full"
             >
-              {/* Top Section: Fixed Icon Container */}
-              <div className="h-20 flex items-center justify-center mb-4">
+              {/* Icon Slot - Fixed Height for Alignment */}
+              <div className="h-20 flex items-center justify-center mb-4 shrink-0">
                 <div className={`w-14 h-14 rounded-2xl ${goal.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
                   <goal.icon className="w-8 h-8 text-white" />
                 </div>
               </div>
 
-              {/* Middle Section: Goal Label - Locked Position */}
-              <div className="h-8 flex items-center justify-center mb-2">
+              {/* Goal ID Slot - Fixed Height for Alignment */}
+              <div className="h-8 flex items-center justify-center mb-2 shrink-0">
                 <span className="text-[10px] font-black text-primary uppercase tracking-[0.25em] block">Goal {goal.id}</span>
               </div>
               
-              {/* Bottom Section: Title - Top Aligned */}
-              <div className="flex-1 flex items-start justify-center">
-                <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors text-center max-w-[140px]">
+              {/* Title Slot - Flex grow with items-start for consistent top-alignment */}
+              <div className="flex-1 flex items-start justify-center min-h-[60px]">
+                <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors text-center max-w-[150px]">
                   {goal.title}
                 </p>
               </div>
               
-              {/* Subtle Indicator */}
+              {/* Subtle Decorative Element */}
               <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-40 transition-opacity">
                 <div className="w-1.5 h-1.5 rounded-full bg-white" />
               </div>
