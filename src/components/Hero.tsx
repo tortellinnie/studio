@@ -11,9 +11,9 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-24 bg-transparent overflow-visible">
-      {/* Refined Atmospheric Background */}
-      <div className="absolute top-0 left-0 w-[50%] h-[50%] bg-primary/5 hero-glow pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-primary/2 opacity-30 hero-glow pointer-events-none" />
+      {/* Refined Atmospheric Background Glows */}
+      <div className="absolute top-0 left-0 w-[50%] h-[50%] bg-white/5 hero-glow pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-primary/2 opacity-20 hero-glow pointer-events-none" />
       
       <div className="container mx-auto z-10 max-w-7xl overflow-visible">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center overflow-visible">
@@ -82,7 +82,7 @@ export function Hero() {
                     <p className="text-white text-xl font-black italic uppercase tracking-tighter">
                       Shann Karl Felipe<span className="text-primary">.</span>
                     </p>
-                    <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest mt-1">Digital Architect</p>
+                    <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest mt-1">AI Automation | Leader | Speaker</p>
                   </div>
                 </div>
 
