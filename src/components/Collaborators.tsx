@@ -33,46 +33,43 @@ export function Collaborators() {
   };
 
   return (
-    <section id="collaborators" className="py-16 relative bg-transparent overflow-hidden border-t border-white/5">
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
+    <section id="collaborators" className="py-20 relative bg-transparent overflow-hidden border-t border-white/5">
+      <div className="absolute inset-0 opacity-[0.01] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', 
-             backgroundSize: '60px 60px' 
+             backgroundSize: '40px 40px' 
            }} />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto space-y-16">
-          
-          <div className="flex flex-col items-center text-center space-y-3">
-            <Badge className="bg-white/5 text-white/40 border-white/10 px-3 py-1 rounded-full font-black tracking-widest uppercase text-[8px]">
-              Institutional Infrastructure
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-12 text-center md:text-left">
+             <Badge className="bg-white/5 text-white/30 border-white/10 px-3 py-1 rounded-full font-black tracking-widest uppercase text-[8px] mb-2">
+              Institutional Network
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-black text-white italic uppercase tracking-tighter">Strategic Ecosystem.</h2>
+            <h2 className="text-xl font-black text-white italic uppercase tracking-tighter">Strategic Partnerships.</h2>
           </div>
 
-          <div className="space-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
             {/* Government Cluster */}
             <div className="space-y-6">
-              <div className="flex items-center gap-3 border-b border-white/5 pb-4">
-                <Globe className="w-4 h-4 text-primary/60" />
-                <h3 className="text-xs font-black text-white/60 uppercase tracking-[0.3em]">Government</h3>
+              <div className="flex items-center gap-3 border-b border-white/5 pb-3">
+                <Globe className="w-3 h-3 text-primary/40" />
+                <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Government</h3>
               </div>
-              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+              <div className="grid grid-cols-4 gap-4">
                 {ecosystem.government.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity duration-500">
-                      <div className="relative w-full aspect-square grayscale group-hover:grayscale-0 transition-all duration-500">
-                        {logo && (
-                          <Image 
-                            src={logo.imageUrl} 
-                            alt={org.name}
-                            fill
-                            className="object-contain"
-                            data-ai-hint={logo.imageHint}
-                          />
-                        )}
-                      </div>
+                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110">
+                      {logo && (
+                        <Image 
+                          src={logo.imageUrl} 
+                          alt={org.name}
+                          fill
+                          className="object-contain"
+                          data-ai-hint={logo.imageHint}
+                        />
+                      )}
                     </div>
                   );
                 })}
@@ -81,26 +78,24 @@ export function Collaborators() {
 
             {/* Industry Cluster */}
             <div className="space-y-6">
-              <div className="flex items-center gap-3 border-b border-white/5 pb-4">
-                <Building2 className="w-4 h-4 text-accent/60" />
-                <h3 className="text-xs font-black text-white/60 uppercase tracking-[0.3em]">Industry & Global</h3>
+              <div className="flex items-center gap-3 border-b border-white/5 pb-3">
+                <Building2 className="w-3 h-3 text-accent/40" />
+                <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Industry & Global</h3>
               </div>
-              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+              <div className="grid grid-cols-4 gap-4">
                 {ecosystem.industry.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity duration-500">
-                      <div className="relative w-full aspect-square grayscale group-hover:grayscale-0 transition-all duration-500">
-                        {logo && (
-                          <Image 
-                            src={logo.imageUrl} 
-                            alt={org.name}
-                            fill
-                            className="object-contain"
-                            data-ai-hint={logo.imageHint}
-                          />
-                        )}
-                      </div>
+                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110">
+                      {logo && (
+                        <Image 
+                          src={logo.imageUrl} 
+                          alt={org.name}
+                          fill
+                          className="object-contain"
+                          data-ai-hint={logo.imageHint}
+                        />
+                      )}
                     </div>
                   );
                 })}
@@ -109,26 +104,24 @@ export function Collaborators() {
 
             {/* Academia Cluster */}
             <div className="space-y-6">
-              <div className="flex items-center gap-3 border-b border-white/5 pb-4">
-                <GraduationCap className="w-4 h-4 text-white/30" />
-                <h3 className="text-xs font-black text-white/60 uppercase tracking-[0.3em]">Academia & Clinical</h3>
+              <div className="flex items-center gap-3 border-b border-white/5 pb-3">
+                <GraduationCap className="w-3 h-3 text-white/20" />
+                <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Academia & Clinical</h3>
               </div>
-              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+              <div className="grid grid-cols-4 gap-4">
                 {ecosystem.academia.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity duration-500">
-                      <div className="relative w-full aspect-square grayscale group-hover:grayscale-0 transition-all duration-500">
-                        {logo && (
-                          <Image 
-                            src={logo.imageUrl} 
-                            alt={org.name}
-                            fill
-                            className="object-contain"
-                            data-ai-hint={logo.imageHint}
-                          />
-                        )}
-                      </div>
+                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110">
+                      {logo && (
+                        <Image 
+                          src={logo.imageUrl} 
+                          alt={org.name}
+                          fill
+                          className="object-contain"
+                          data-ai-hint={logo.imageHint}
+                        />
+                      )}
                     </div>
                   );
                 })}
