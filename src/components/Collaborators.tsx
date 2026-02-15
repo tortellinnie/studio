@@ -25,17 +25,20 @@ export function Collaborators() {
 
   return (
     <section className="py-24 relative bg-transparent overflow-hidden">
+      {/* Subtle Grid Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
+          {/* Header */}
           <div className="flex flex-col items-center text-center mb-16 space-y-4">
             <p className="text-white/40 text-xs font-bold uppercase tracking-[0.3em]">
               In collaboration with the following Leading Global and Local Organizations
             </p>
           </div>
 
+          {/* Logo Grid (List Form) */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12 items-center justify-items-center opacity-40 hover:opacity-100 transition-all duration-1000">
             {organizations.map((org) => {
               const imageData = PlaceHolderImages.find(img => img.id === org.id);
@@ -57,6 +60,7 @@ export function Collaborators() {
             })}
           </div>
 
+          {/* Strategic Ecosystem (Neural Web) */}
           <div className="mt-24 py-24 px-8 glass-card rounded-[4rem] border-white/5 overflow-hidden group">
             <div className="flex flex-col items-center text-center space-y-12">
               <div className="space-y-4">
@@ -70,7 +74,7 @@ export function Collaborators() {
               </div>
               
               <div className="relative h-[500px] w-full max-w-4xl flex items-center justify-center">
-                 {/* Connection Lines */}
+                 {/* Neural Connection Lines (SVG) */}
                  <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 800 500">
                     <defs>
                       <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -83,6 +87,7 @@ export function Collaborators() {
                     <path d="M400,250 L600,100" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
                     <path d="M400,250 L200,400" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
                     <path d="M400,250 L600,400" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
+                    {/* Pulsing ring */}
                     <circle cx="400" cy="250" r="150" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="5,10" className="animate-[spin_60s_linear_infinite]" />
                  </svg>
 
@@ -97,6 +102,7 @@ export function Collaborators() {
                  {/* Floating Nodes */}
                  {hubNodes.map((node, i) => {
                     const imageData = PlaceHolderImages.find(img => img.id === node.id);
+                    // Calculate positions based on angle
                     const angle = (node.angle * Math.PI) / 180;
                     const radius = 220;
                     const x = Math.cos(angle) * radius;
