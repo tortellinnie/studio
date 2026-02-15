@@ -16,8 +16,8 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 export function Metrics() {
   const data = {
     beneficiaries: [
+      { name: "SK Commonwealth Council", detail: "300,000+ Impacted Youth" },
       { name: "AGAPE PH0209 Youth Network", detail: "600+ Direct Beneficiaries" },
-      { name: "SK Commonwealth Council", detail: "10,000+ Impacted Youth" },
       { name: "DOST-NCR Alliance (NADS)", detail: "Regional Scholar Community" },
       { name: "FEU Institute of Technology", detail: "Student Body & Library Committee" },
       { name: "QCYDO Scholarship Network", detail: "City-wide Economic Support" },
@@ -26,6 +26,7 @@ export function Metrics() {
       { name: "C-RAM & NERDS 2.0 Projects", detail: "Tech-driven Community Solutions" }
     ],
     speakerships: [
+      { name: "AGAPE PH0209 Youth Program", detail: "Community Event" },
       { name: "Musashinova Pitching Event", detail: "Tokyo, Japan" },
       { name: "Philippine Startup Challenge X", detail: "DICT Regional Stage" },
       { name: "NBDB Readers Rising Hackathon", detail: "National Library of PH" },
@@ -34,11 +35,11 @@ export function Metrics() {
       { name: "NARA Con 2025", detail: "Literacy Advocate Session" }
     ],
     capital: [
-      { name: "C-RAM Solutions Seed Funding", detail: "₱600,000" },
-      { name: "NERDS 2.0 R&D Grants", detail: "₱150,000" },
-      { name: "Startup QC Prize Capital", detail: "₱50,000+" },
-      { name: "NBDB Innovation Grant", detail: "₱50,000+" },
-      { name: "DICT NCR Regional Award", detail: "Project Funding" },
+      { name: "C-RAM Solutions Seed Funding", detail: "Venture Capital" },
+      { name: "NERDS 2.0 R&D Grants", detail: "Institutional Funding" },
+      { name: "Startup QC Prize Capital", detail: "Awarded Capital" },
+      { name: "NBDB Innovation Grant", detail: "Innovation Support" },
+      { name: "DICT NCR Regional Award", detail: "Project Grant" },
       { name: "DOST Merit Scholarships", detail: "Academic Support" }
     ]
   };
