@@ -2,49 +2,49 @@
   "placeholderImages": [
     {
       "id": "profile-headshot",
-      "description": "Professional portrait",
+      "description": "Professional portrait of Shann Karl Felipe",
       "imageUrl": "/assets/images/profile.jpg",
       "imageHint": "professional portrait"
     },
     {
       "id": "project-salayliwa",
-      "description": "Salayliwa Project",
+      "description": "Salayliwa mobile app interface",
       "imageUrl": "/assets/images/salayliwa.jpg",
       "imageHint": "reading culture"
     },
     {
       "id": "project-video-automation",
-      "description": "Video Automation Engine",
+      "description": "Technical diagram of the video automation engine",
       "imageUrl": "/assets/images/video-automation.jpg",
       "imageHint": "automation workflow"
     },
     {
       "id": "project-gabaydiwa",
-      "description": "GabayDiwa Healthcare",
+      "description": "Healthcare dashboard for GabayDiwa",
       "imageUrl": "/assets/images/gabaydiwa.jpg",
       "imageHint": "healthcare data"
     },
     {
       "id": "project-birdseye",
-      "description": "Birdseye Poultry AI",
+      "description": "Birdseye computer vision deployment in a farm",
       "imageUrl": "/assets/images/birdseye.jpg",
       "imageHint": "poultry vision"
     },
     {
       "id": "project-proxygen",
-      "description": "Proxygen Aquaculture",
+      "description": "Proxygen hardware sensor in aquaculture pond",
       "imageUrl": "/assets/images/proxygen.jpg",
       "imageHint": "aquaculture sensor"
     },
     {
       "id": "featured-pg-intern",
-      "description": "P&G Internship",
+      "description": "Procter & Gamble headquarters in Manila",
       "imageUrl": "/assets/images/pg-intern.jpg",
       "imageHint": "corporate office"
     },
     {
       "id": "featured-speaking-tokyo",
-      "description": "Tokyo Delegation",
+      "description": "Musashino University campus in Tokyo",
       "imageUrl": "/assets/images/speaking-tokyo.jpg",
       "imageHint": "tokyo city"
     }
