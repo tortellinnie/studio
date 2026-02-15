@@ -7,30 +7,17 @@ export function Education() {
   const education = [
     {
       school: 'FEU Institute of Technology',
-      degree: "Bachelor's degree, Computer Science",
-      period: 'Sep 2023 – Jul 2027',
-      grade: '3.6 GPA • Top Performing Student',
+      degree: "BS in Computer Science (Software Engineering)",
+      period: 'Expected July 2027',
+      grade: '3.6 GPA • FEU Tech Academic Scholar',
       activities: [
         { label: 'President', sub: 'Student Library Committee', icon: BookOpen },
         { label: 'Junior Officer', sub: 'ACM Tech Publicity', icon: Radio },
         { label: 'Senior Writer', sub: 'The Innovator', icon: PenTool },
-        { label: 'Campus Journalist', sub: 'UAAP', icon: Laptop },
-        { label: 'Podcast Host', sub: 'ACM Diaries', icon: Mic },
         { label: 'Committee Officer', sub: 'GDSC', icon: Terminal }
       ],
-      skills: ['Software Solution Development', 'Technical Writing', 'Computational Logic'],
-      honors: ['DOST Scholar', 'QCYDO Scholar', 'FEU Tech Financial Scholar', 'Datacamp Scholar']
-    },
-    {
-      school: 'Polytechnic University of the Philippines',
-      degree: 'Information & Communications Technology (ICT)',
-      period: 'Sep 2021 – Jul 2023',
-      grade: 'Academic Excellence',
-      activities: [
-        { label: 'ICT Rep', sub: 'PUPSHS COMELEC', icon: Users }
-      ],
-      skills: ['Information Technology', 'Systems Management'],
-      honors: ['Academic Distinction']
+      skills: ['Data Structures & Algorithms', 'Distributed & Parallel Computing', 'Software Engineering'],
+      honors: ['DOST Scholar', 'QCYDO Scholar', 'FEU Tech Academic Scholar', 'Recommended by 8x Professors']
     }
   ];
 
@@ -43,7 +30,7 @@ export function Education() {
           </Badge>
           <h2 className="text-5xl lg:text-7xl font-black text-white uppercase italic">Education.</h2>
           <p className="text-muted-foreground max-w-2xl text-xl font-medium leading-relaxed">
-            Combining rigorous computer science theory with high-impact campus leadership and technical journalism.
+            Combining rigorous computer science theory with high-impact campus leadership and software engineering specialization.
           </p>
         </div>
 

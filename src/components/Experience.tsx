@@ -7,75 +7,47 @@ export function Experience() {
   const experiences = [
     {
       title: 'Executive Lead',
-      org: 'NERDS 2.0 · Freelance',
-      period: 'Apr 2025 - Present',
-      description: 'Spearheading award-winning startups and leading multidisciplinary teams.',
+      org: 'NERDS 2.0 · Hybrid',
+      period: 'Aug 2025 - Present',
+      description: 'Coordinated and collaborated with 20+ organizations, overseeing R&D and securing ₱150K in grants.',
       icon: Microscope,
       details: [
-        'Directed full-cycle project development for Salayliwa (gamified literacy) and Gabaydiwa (cognitive monitoring).',
+        'Coordinated with 20+ organizations, including national agencies and private firms.',
+        'Directed R&D operations leading to award-winning initiatives and high-value project grants.',
         'Led 3 cross-functional teams of developers, researchers, and designers using Agile Scrum.',
         'Earned national and regional recognition, presenting to 1000+ attendees at major innovation fairs.',
-        'Collaborated with DOST-PCHRD, EAMC Dept. of Neurosciences, and NBDB-Philippines to validate system functionality.',
         'Architecting Proxygen (aquaculture DO) and Birdseye (poultry monitoring).'
       ],
-      skills: ['Program Management', 'Agile Scrum', 'Data Modeling', 'UI/UX Design']
+      skills: ['Program Management', 'Agile Scrum', 'R&D Leadership', 'UI/UX Design']
     },
     {
-      title: 'Chief Strategist',
-      org: 'AGAPE PH0209 · Freelance',
-      period: 'Nov 2025 - Present',
-      description: 'Directing operations and strategic foresight for a 200+ member NGO.',
-      icon: Rocket,
+      title: 'President',
+      org: 'AGAPE PH0209 · Quezon City, PH',
+      period: 'Feb 2024 - Present',
+      description: 'Directing operations and strategic planning for a youth-led NGO with 200+ members.',
+      icon: Users,
       details: [
         'Directed operations and strategic planning for a youth-led NGO with 200+ active members.',
-        'Organized 15+ community programs impacting 600+ beneficiaries nationwide.',
-        'Managed cross-functional volunteer teams ensuring success within strict budgets.',
-        'Strengthened partnerships with local government and NGOs through city-wide forums.',
-        'Leading resource planning, strategic foresight, and innovative proposals for stakeholders.'
+        'Organized 15+ community programs impacting over 600 beneficiaries nationwide.',
+        'Managed 5 cross-functional teams of 40+ volunteers, delegating responsibilities and ensuring program success.',
+        'Represented the organization in 20+ inter-church and city-wide forums, strengthening institutional partnerships.',
+        'Leading resource planning and innovative proposals for stakeholders.'
       ],
       skills: ['Organizational Leadership', 'Strategic Planning', 'Community Outreach']
     },
     {
-      title: 'President',
-      org: 'AGAPE PH0209 Child Development Center',
-      period: 'Feb 2024 - Nov 2025',
-      description: 'Led community impact programs and organizational growth.',
-      icon: Users,
-      details: [
-        'Orchestrated outreach initiatives and workshops for over 600 beneficiaries.',
-        'Delegated responsibilities across volunteer teams ensuring on-time program delivery.',
-        'Represented the organization in inter-church and city-wide forums.'
-      ],
-      skills: ['Team Management', 'Public Relations']
-    },
-    {
-      title: 'President',
-      org: 'FEU Tech Student Library Committee · Contract',
-      period: 'Oct 2025 - Present',
-      description: 'Overseeing operations and strategic initiatives for the campus library.',
-      icon: Library,
-      details: [
-        'Led a team of 20+ officers and volunteers, overseeing operations and strategic initiatives.',
-        'Increased library engagement by an estimated 35% through digital campaigns and workshops.',
-        'Developed four new library programs enhancing student access to research tools.',
-        'Coordinated faculty and student organization collaborations to expand library reach.',
-        'Mentored officers in leadership, organizational management, and project execution.'
-      ],
-      skills: ['Engagement Strategy', 'Team Mentorship', 'Organizational Management']
-    },
-    {
-      title: 'Chief Marketing Officer',
-      org: 'C-RAM Solutions · Freelance',
-      period: 'Dec 2024 - Nov 2025',
-      description: 'Positioned the startup for high-value competitive grants and boosted investor relations.',
+      title: 'Lead Marketing Officer',
+      org: 'C-RAM Solutions · Hybrid',
+      period: 'Dec 2024 - Dec 2025',
+      description: 'Secured grants and shaped the product roadmap for innovation-driven solutions.',
       icon: Megaphone,
       details: [
-        'Drove campaigns securing grants worth hundreds of thousands in Philippine Peso.',
-        'Provided UX/UI insights to the Scrum team to shape the product roadmap.',
+        'Drove marketing campaigns that positioned the startup to secure ₱600K in total capital.',
+        'Provided UX/UI insights within the Scrum team to shape the product roadmap and user experience.',
         'Boosted investor engagement by 30% and directly led to four new qualified opportunities.',
-        'Secured four positive media mentions in key industry publications.'
+        'Secured positive media mentions in key industry publications for technical innovation.'
       ],
-      skills: ['Marketing', 'Innovation Development', 'Investor Relations']
+      skills: ['Marketing Strategy', 'Innovation Development', 'Investor Relations']
     },
     {
       title: 'University Representative',
@@ -90,20 +62,6 @@ export function Experience() {
         'Elevated the institution\'s voice among peer universities in NCR.'
       ],
       skills: ['Strategic Partnerships', 'Policy Shaping', 'Regional Coordination']
-    },
-    {
-      title: 'Project Manager & Frontend Developer',
-      org: 'PUP - RISFI',
-      period: 'Feb 2022 - Jun 2023',
-      description: 'Technical lead for research-driven software solutions.',
-      icon: Terminal,
-      details: [
-        'Managed a team of six developers, serving as the Technical Project Lead responsible for delivery.',
-        'Developed and executed agile strategic plans and task roadmaps meeting strict deadlines.',
-        'Liaised between development team and business stakeholders to align technical goals.',
-        'Ensured high quality assurance and performance metrics for research-driven software.'
-      ],
-      skills: ['Web Development', 'Project Management', 'Agile Strategic Planning']
     }
   ];
 

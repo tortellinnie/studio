@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { FileText } from 'lucide-react';
 
 export function Navbar() {
   const navItems = [
@@ -30,13 +31,24 @@ export function Navbar() {
               </Link>
             ))}
             
-            <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-8 font-black tracking-widest text-[10px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all hover:scale-105 shrink-0">
-              <Link href="/#contact">Let's Talk</Link>
-            </Button>
+            <div className="flex items-center gap-3">
+              <Button variant="ghost" asChild className="rounded-full border border-white/10 text-white hover:bg-white/5 px-6 font-black tracking-widest text-[10px] uppercase h-11 transition-all hover:scale-105 shrink-0">
+                <Link href="/resume">
+                  <FileText className="w-3 h-3 mr-2" />
+                  Resume
+                </Link>
+              </Button>
+              <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-8 font-black tracking-widest text-[10px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-all hover:scale-105 shrink-0">
+                <Link href="/#contact">Let's Talk</Link>
+              </Button>
+            </div>
           </div>
 
-          <div className="lg:hidden">
-             <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-6 font-black tracking-widest text-[10px] uppercase h-10">
+          <div className="lg:hidden flex gap-2">
+            <Button variant="ghost" asChild className="rounded-full border border-white/10 text-white px-4 h-10">
+              <Link href="/resume"><FileText className="w-4 h-4" /></Link>
+            </Button>
+            <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-6 font-black tracking-widest text-[10px] uppercase h-10">
               <Link href="/#contact">Talk</Link>
             </Button>
           </div>

@@ -9,44 +9,44 @@ import { ArrowUpRight, CheckCircle2, Eye, Zap, Brain, Fish, BookOpen } from 'luc
 export function Projects() {
   const projects = [
     {
-      id: 'birdseye',
-      title: 'Birdseye',
-      description: 'Transforming poultry farm management using computer vision on edge devices to detect wet zones in litter in real-time, improving bird welfare and ammonia emissions.',
-      tags: ['Computer Vision', 'Edge AI', 'IoT'],
-      impact: 'Pilot tested in commercial Luzon farms.',
-      icon: Eye
+      id: 'salayliwa',
+      title: 'Salayliwa',
+      description: 'Led a Scrum team to develop a personalized mobile reading app using Glicko-2 and Two Tower Neural Networks to combat the national reading crisis.',
+      tags: ['AI Modeling', 'Glicko-2', 'EduTech'],
+      impact: 'Top 2, NBDB Readers Rising Hackathon 2025.',
+      icon: BookOpen
     },
     {
       id: 'video-automation',
-      title: 'Video Automation Engine',
-      description: 'Autonomous content production workflow built on n8n and Docker. Automates media processing via FFmpeg and motivational video generation using Gemini 2.5 Flash.',
-      tags: ['Docker', 'n8n', 'Gemini AI', 'FFmpeg'],
-      impact: 'End-to-end autonomous YouTube delivery.',
+      title: 'YT Automation Engine',
+      description: 'Fully autonomous content generation pipeline using Docker, n8n, and Gemini AI, producing 100+ high-quality YouTube Shorts monthly.',
+      tags: ['Docker', 'n8n', 'Gemini AI', 'Cloud'],
+      impact: '100% reduction in manual content effort.',
       icon: Zap
     },
     {
       id: 'gabaydiwa',
       title: 'GabayDiwa',
-      description: 'A Cognitive Health and Progression Monitoring System empowering caregivers with data-driven insights through cognitive trend maps and structured health tracking.',
-      tags: ['AI Modeling', 'Healthcare', 'Startup'],
+      description: 'Healthcare innovation system empowering caregivers with cognitive trend maps and structured progression tracking for dementia care.',
+      tags: ['Healthcare', 'Data Science', 'Startup'],
       impact: '1st Runner-Up, Philippine Startup Challenge X.',
       icon: Brain
     },
     {
-      id: 'proxygen',
-      title: 'Proxygen',
-      description: 'Proactive, diurnal- and weather-aware dissolved oxygen management system for pond aquaculture preventing fish kills and optimizing feeding via fuzzy logic.',
-      tags: ['IoT', 'Fuzzy Logic', 'Data Science'],
-      impact: '30-40% improvement in DO maintenance.',
-      icon: Fish
+      id: 'birdseye',
+      title: 'Birdseye',
+      description: 'Computer vision on edge devices detecting wet zones in litter to improve bird welfare and reduce emissions in commercial farms.',
+      tags: ['Computer Vision', 'Edge AI', 'IoT'],
+      impact: 'Pilot tested in Luzon commercial farms.',
+      icon: Eye
     },
     {
-      id: 'salayliwa',
-      title: 'Salayliwa',
-      description: 'National award-winning edu-cultural project focused on revitalizing reading engagement among Filipino youth through adaptive digital experiences.',
-      tags: ['AI', 'EduTech', 'Cultural UX'],
-      impact: 'Recognized at NLP NARA Con 2025.',
-      icon: BookOpen
+      id: 'proxygen',
+      title: 'Proxygen',
+      description: 'Proactive dissolved oxygen management system for pond aquaculture preventing mass fish kills through fuzzy logic and weather forecasting.',
+      tags: ['Fuzzy Logic', 'IoT', 'Agri-Tech'],
+      impact: '30-40% improvement in DO maintenance.',
+      icon: Fish
     }
   ];
 
