@@ -1,34 +1,34 @@
 'use client';
 
-import { GraduationCap, BookOpen, PenTool, Radio, Users, Award, CheckCircle2, Terminal } from 'lucide-react';
+import { GraduationCap, BookOpen, PenTool, Radio, Users, Award, CheckCircle2, Terminal, Mic2, Newspaper } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Education() {
   const education = [
     {
       school: 'FEU Institute of Technology',
-      degree: "BS in Computer Science (Software Engineering)",
-      period: 'Expected July 2027',
+      degree: "Bachelor's degree, Computer Science",
+      period: 'Sep 2023 – Jul 2027',
       grade: '3.6 GPA • FEU Tech Academic Scholar',
       activities: [
-        { label: 'President', sub: 'Student Library Committee', icon: BookOpen },
-        { label: 'Junior Officer', sub: 'ACM Tech Publicity', icon: Radio },
         { label: 'Senior Writer', sub: 'The Innovator', icon: PenTool },
-        { label: 'Committee Officer', sub: 'GDSC', icon: Terminal }
+        { label: 'Campus Journalist', sub: 'UAAP', icon: Newspaper },
+        { label: 'Junior Officer', sub: 'ACM Publicity & Externals', icon: Radio },
+        { label: 'Podcast Host', sub: 'ACM Diaries', icon: Mic2 },
+        { label: 'Committee Officer', sub: 'FEU Tech GDSC', icon: Terminal }
       ],
-      skills: ['Data Structures & Algorithms', 'Distributed & Parallel Computing', 'Software Engineering'],
-      honors: ['DOST Scholar', 'QCYDO Scholar', 'FEU Tech Academic Scholar', 'Recommended by 8x Professors']
+      skills: ['Software Solution Development', 'Technical Writing', 'Software Engineering'],
+      honors: ['FEU Tech Academic Scholar', 'DOST Scholar', 'QCYDO Scholar']
     },
     {
       school: 'Polytechnic University of the Philippines',
-      degree: "Senior High School (STEM Strand)",
-      period: 'Graduated 2023',
+      degree: "Senior High School (ICT Strand)",
+      period: 'Sep 2021 – Jul 2023',
       grade: 'With High Honors',
       activities: [
-        { label: 'Project Manager', sub: 'PUP - RISFI', icon: Terminal },
-        { label: 'Academic Lead', sub: 'STEM Excellence', icon: BookOpen }
+        { label: 'ICT Representative', sub: 'PUPSHS COMELEC', icon: Users }
       ],
-      skills: ['Advanced Mathematics', 'Research & Development', 'Leadership'],
+      skills: ['Information & Communications Tech', 'Leadership', 'Database Management'],
       honors: ['With High Honors', 'Research Excellence Award']
     }
   ];
@@ -42,7 +42,7 @@ export function Education() {
           </Badge>
           <h2 className="text-4xl lg:text-6xl font-black text-white uppercase italic">Education.</h2>
           <p className="text-muted-foreground max-w-2xl text-lg font-medium leading-relaxed">
-            Combining rigorous computer science theory with high-impact campus leadership and software engineering specialization.
+            Combining rigorous computer science theory with high-impact campus leadership and technical journalism.
           </p>
         </div>
 
@@ -86,13 +86,13 @@ export function Education() {
                   <div className="space-y-6">
                     <h4 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-3">
                       <Award className="w-3.5 h-3.5" />
-                      Honors & Scholarship
+                      Skills & Focus
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {edu.honors.map((honor, i) => (
+                      {edu.skills.map((skill, i) => (
                         <span key={i} className="flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-[9px] font-black text-accent uppercase tracking-widest">
                           <CheckCircle2 className="w-3 h-3" />
-                          {honor}
+                          {skill}
                         </span>
                       ))}
                     </div>
