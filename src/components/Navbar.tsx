@@ -15,15 +15,15 @@ export function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Handle visibility (Hide on scroll down, show on scroll up)
-      if (currentScrollY > lastScrollY && currentScrollY > 150) {
+      // Hiding logic: Only hide if we've scrolled down significantly
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
 
-      // Handle "shortening" contraction
-      if (currentScrollY > 50) {
+      // Shortening logic: Contract the bar after initial scroll
+      if (currentScrollY > 60) {
         setIsShortened(true);
       } else {
         setIsShortened(false);
@@ -47,22 +47,22 @@ export function Navbar() {
 
   return (
     <nav className={cn(
-      "fixed top-0 z-[100] w-full pt-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center",
+      "fixed top-0 z-[100] w-full pt-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-none",
       isVisible 
         ? "translate-y-0 opacity-100" 
-        : "-translate-y-32 opacity-0 pointer-events-none"
+        : "-translate-y-32 opacity-0"
     )}>
       <div className={cn(
-        "px-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        isShortened ? "max-w-fit" : "container max-w-7xl"
+        "w-full px-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-auto",
+        isShortened ? "max-w-[800px]" : "max-w-7xl"
       )}>
         <div className={cn(
-          "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03] transition-all duration-700",
-          isShortened ? "px-6 gap-x-8" : "px-10"
+          "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03] transition-all duration-700 w-full",
+          isShortened ? "px-6 lg:px-8" : "px-10"
         )}>
           <div className={cn(
             "flex items-center transition-all duration-700",
-            isShortened ? "gap-x-4 lg:gap-x-6" : "gap-10"
+            isShortened ? "gap-x-4 lg:gap-x-8" : "gap-10"
           )}>
             <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0 text-white">
               TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
@@ -78,7 +78,7 @@ export function Navbar() {
                   href={item.href}
                   className={cn(
                     "text-[9px] uppercase font-black tracking-[0.25em] text-white/50 hover:text-white transition-all hover:translate-y-[-2px] whitespace-nowrap",
-                    isShortened ? "tracking-[0.15em]" : "tracking-[0.25em]"
+                    isShortened ? "tracking-[0.1em]" : "tracking-[0.25em]"
                   )}
                 >
                   {item.label}
@@ -88,13 +88,13 @@ export function Navbar() {
           </div>
 
           <div className={cn(
-            "flex items-center transition-all duration-700",
+            "flex items-center transition-all duration-700 shrink-0",
             isShortened ? "gap-x-3" : "gap-3"
           )}>
             <div className="hidden lg:flex items-center gap-3">
               <Button variant="ghost" asChild className={cn(
                 "rounded-full border border-white/10 bg-white/[0.02] text-white/80 hover:bg-white/10 font-black tracking-widest text-[9px] uppercase h-11 transition-all hover:scale-105 shrink-0 backdrop-blur-xl",
-                isShortened ? "px-4" : "px-6"
+                isShortened ? "w-0 p-0 overflow-hidden border-none opacity-0" : "px-6 opacity-100"
               )}>
                 <Link href="/resume">
                   <FileText className="w-3.5 h-3.5 mr-2" />
@@ -105,14 +105,11 @@ export function Navbar() {
                 "rounded-full bg-white text-black hover:bg-white/90 font-black tracking-widest text-[9px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all hover:scale-105 shrink-0",
                 isShortened ? "px-6" : "px-10"
               )}>
-                <Link href="/#contact">Connect</Link>
+                <Link href="/#contact">{isShortened ? 'Talk' : 'Connect'}</Link>
               </Button>
             </div>
 
             <div className="lg:hidden flex gap-2">
-              <Button variant="ghost" asChild className="rounded-full border border-white/10 text-white px-3 h-10 backdrop-blur-xl">
-                <Link href="/resume"><FileText className="w-4 h-4" /></Link>
-              </Button>
               <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-6 font-black tracking-widest text-[9px] uppercase h-10">
                 <Link href="/#contact">Talk</Link>
               </Button>
