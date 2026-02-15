@@ -31,7 +31,7 @@ export function Metrics() {
   ];
 
   return (
-    <section className="relative z-20 py-24 bg-background">
+    <section className="relative z-20 py-16 bg-background">
       <div className="container mx-auto px-6">
         <TooltipProvider delayDuration={0}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

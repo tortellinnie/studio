@@ -25,7 +25,7 @@ export function Hero() {
             </div>
             
             <p className="text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
-              Innovator and Executive Lead at <span className="text-white font-black italic">NERDS 2.0</span>. Leveraging AI, data systems, and user-centered design in Manila.
+              Innovator and Executive Lead at <span className="text-white font-black italic">NERDS 2.0</span>. Leveraging AI and distributed systems in Manila.
             </p>
           </div>
 
