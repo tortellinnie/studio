@@ -35,14 +35,14 @@
     @apply bg-[#030303] text-foreground font-body antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden;
     /* High-vibrancy mesh effect with Purple and Amber/Orange */
     background-image: 
-      radial-gradient(circle at 0% 0%, hsla(263, 70%, 50%, 0.35) 0%, transparent 50%),
-      radial-gradient(circle at 100% 0%, hsla(38, 92%, 50%, 0.25) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsla(280, 70%, 50%, 0.2) 0%, transparent 60%),
-      radial-gradient(circle at 10% 80%, hsla(35, 95%, 50%, 0.25) 0%, transparent 40%),
-      radial-gradient(circle at 90% 90%, hsla(263, 70%, 50%, 0.35) 0%, transparent 50%);
+      radial-gradient(circle at 5% 5%, hsla(263, 70%, 50%, 0.4) 0%, transparent 45%),
+      radial-gradient(circle at 95% 5%, hsla(38, 92%, 50%, 0.3) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, hsla(280, 70%, 50%, 0.25) 0%, transparent 60%),
+      radial-gradient(circle at 15% 85%, hsla(35, 95%, 50%, 0.3) 0%, transparent 45%),
+      radial-gradient(circle at 85% 95%, hsla(263, 70%, 50%, 0.4) 0%, transparent 45%);
     background-attachment: fixed;
     background-size: 200% 200%;
-    animation: mesh-flow 20s ease-in-out infinite alternate;
+    animation: mesh-flow 25s ease-in-out infinite alternate;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline font-black tracking-tighter text-white;
@@ -60,7 +60,7 @@
 }
 
 .glass-card:hover {
-  @apply bg-white/[0.06] border-white/[0.18] shadow-[0_20px_80px_-12px_rgba(0,0,0,0.7)] -translate-y-1;
+  @apply bg-white/[0.06] border-white/[0.18] shadow-[0_20px_80px_-12px_rgba(0,0,0,0.7)];
 }
 
 .premium-glass {
