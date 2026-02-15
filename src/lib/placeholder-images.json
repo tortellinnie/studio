@@ -75,7 +75,7 @@
     {
       "id": "logo-nbdb",
       "description": "NBDB Philippines Logo",
-      "imageUrl": "/assets/images/nbdb.ong",
+      "imageUrl": "/assets/images/nbdb.png",
       "imageHint": "government logo"
     },
     {
@@ -87,7 +87,7 @@
     {
       "id": "logo-sk",
       "description": "SK Commonwealth Logo",
-      "imageUrl": "/assets/images/skcommonwealth.ong",
+      "imageUrl": "/assets/images/skcommonwealth.png",
       "imageHint": "government logo"
     },
     {
