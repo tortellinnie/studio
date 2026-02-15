@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Badge } from '@/components/ui/badge';
@@ -38,21 +37,18 @@ export function SDGs() {
               rel="noopener noreferrer"
               className="group relative glass-card rounded-[2.5rem] p-8 flex flex-col border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40 h-full text-center"
             >
-              {/* FIXED HEIGHT ICON CONTAINER */}
-              <div className="h-16 flex items-center justify-center mb-6">
-                <div className={`w-14 h-14 rounded-2xl ${goal.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+              <div className="h-20 flex items-center justify-center mb-6">
+                <div className={`w-16 h-16 rounded-2xl ${goal.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
                   <goal.icon className="w-8 h-8 text-white" />
                 </div>
               </div>
 
-              {/* FIXED HEIGHT GOAL LABEL CONTAINER */}
-              <div className="h-6 flex items-center justify-center mb-2">
+              <div className="h-8 flex items-center justify-center mb-2">
                 <span className="text-[10px] font-black text-primary uppercase tracking-[0.25em]">Goal {goal.id}</span>
               </div>
               
-              {/* FIXED HEIGHT TITLE CONTAINER FOR PERFECT HORIZONTAL ALIGNMENT */}
-              <div className="h-12 flex items-start justify-center overflow-hidden">
-                <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors max-w-[150px]">
+              <div className="h-16 flex items-start justify-center text-center overflow-hidden">
+                <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors max-w-[160px]">
                   {goal.title}
                 </p>
               </div>
