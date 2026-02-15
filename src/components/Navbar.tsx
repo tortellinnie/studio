@@ -24,7 +24,7 @@ export function Navbar() {
       }
 
       // Shortening logic (unified contraction)
-      if (currentScrollY > 60) {
+      if (currentScrollY > 80) {
         setIsShortened(true);
       } else {
         setIsShortened(false);
