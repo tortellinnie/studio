@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Navbar } from '@/components/Navbar';
@@ -11,8 +12,7 @@ export default function ResumePage() {
   const resumeImage = PlaceHolderImages.find(img => img.id === 'resume-image');
 
   const handleDownload = () => {
-    // Assuming you might upload a PDF version at the same path
-    // If not, this can point to the PNG for now
+    // Downloads the resume PNG. If you later upload a PDF, you can update this to '/assets/resume.pdf'
     const link = document.createElement('a');
     link.href = '/assets/images/resume.png';
     link.download = 'SHANN_KARL_FELIPE_RESUME.png';
