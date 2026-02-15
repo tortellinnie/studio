@@ -1,8 +1,34 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FileText } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export function Navbar() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down - Hide
+        setIsVisible(false);
+      } else {
+        // Scrolling up - Show
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   const navItems = [
     { label: 'Journey', href: '/#journey' },
     { label: 'Impact', href: '/#featured' },
@@ -13,10 +39,15 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 z-[100] w-full pt-6">
+    <nav className={cn(
+      "fixed top-0 z-[100] w-full pt-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+      isVisible 
+        ? "translate-y-0 opacity-100 scale-100" 
+        : "-translate-y-32 opacity-0 scale-95 pointer-events-none"
+    )}>
       <div className="container mx-auto px-6">
         <div className="h-16 lg:h-20 glass-card rounded-[2.5rem] px-6 lg:px-10 flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03]">
-          <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0">
+          <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0 text-white">
             TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
           </Link>
           
