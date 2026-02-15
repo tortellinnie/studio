@@ -2,7 +2,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, ChevronRight, Sparkles, MoveDown } from 'lucide-react';
+import { Github, Linkedin, ChevronRight, Sparkles, MoveDown, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -19,52 +19,23 @@ export function Hero() {
       <div className="container mx-auto z-10 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           
-          {/* Column 1: Vertical Rectangle Portrait */}
-          <div className="order-2 lg:order-1 flex justify-center lg:justify-start animate-in fade-in slide-in-from-left-12 duration-1000">
-            {profileImage && (
-              <div className="relative w-full max-w-[400px] aspect-[3/4] group">
-                {/* Outer Glow */}
-                <div className="absolute inset-0 bg-primary/30 rounded-[3rem] blur-3xl group-hover:blur-[4rem] transition-all opacity-40 -z-10" />
-                
-                {/* Premium Vertical Card */}
-                <div className="relative w-full h-full rounded-[3.5rem] border border-white/10 overflow-hidden premium-glass shadow-[0_32px_120px_-20px_rgba(0,0,0,0.8)] premium-gradient-border">
-                  <Image 
-                    src={profileImage.imageUrl} 
-                    alt={profileImage.description}
-                    fill
-                    className="object-cover scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out"
-                    data-ai-hint={profileImage.imageHint}
-                    priority
-                  />
-                  
-                  {/* Glass Overlay & Badge */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
-                  <div className="absolute bottom-10 left-10">
-                    <div className="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md mb-4 inline-block">
-                      <p className="text-[8px] font-black text-white uppercase tracking-[0.3em]">Identity 2026</p>
-                    </div>
-                    <p className="text-white text-xl font-black italic uppercase tracking-tighter">
-                      Shann Karl Felipe<span className="text-primary">.</span>
-                    </p>
-                    <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest mt-1">Digital Architect</p>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Column 2: Balanced Branding & Copy */}
-          <div className="order-1 lg:order-2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
+          {/* Column 1: Balanced Branding & Copy (Now on the Left) */}
+          <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 animate-in fade-in slide-in-from-left-12 duration-1000">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[40px] text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-xl">
                 <Sparkles className="w-3 h-3 fill-primary" />
                 <span>Open for Engineering Roles</span>
               </div>
               
-              <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic text-gradient pr-8">
-                <span>TECHNO</span>
-                <span className="text-primary">LEADER</span>
-              </h1>
+              <div className="relative group">
+                {/* Subtle glass reflection backdrop for the title */}
+                <div className="absolute -inset-10 bg-white/[0.01] backdrop-blur-[2px] rounded-[3rem] -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                
+                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic pr-12 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <span className="text-gradient brightness-125">TECHNO</span>
+                  <span className="text-primary text-gradient bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)]">LEADER</span>
+                </h1>
+              </div>
             </div>
 
             <div className="space-y-8 max-w-xl">
@@ -91,6 +62,53 @@ export function Hero() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Column 2: Vertical Rectangle Portrait (Now on the Right) */}
+          <div className="order-2 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
+            {profileImage && (
+              <div className="relative w-full max-w-[420px] aspect-[3/4] group">
+                {/* Outer Glow */}
+                <div className="absolute inset-0 bg-primary/30 rounded-[4rem] blur-3xl group-hover:blur-[5rem] transition-all opacity-40 -z-10" />
+                
+                {/* Premium Vertical Card */}
+                <div className="relative w-full h-full rounded-[4rem] border border-white/10 overflow-hidden premium-glass shadow-[0_32px_120px_-20px_rgba(0,0,0,0.8)] premium-gradient-border">
+                  <Image 
+                    src={profileImage.imageUrl} 
+                    alt={profileImage.description}
+                    fill
+                    className="object-cover scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out"
+                    data-ai-hint={profileImage.imageHint}
+                    priority
+                  />
+                  
+                  {/* Glass Overlay & Badge */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
+                  
+                  {/* Bottom Info */}
+                  <div className="absolute bottom-12 left-12">
+                    <div className="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md mb-4 inline-block">
+                      <p className="text-[8px] font-black text-white uppercase tracking-[0.3em]">Identity 2026</p>
+                    </div>
+                    <p className="text-white text-2xl font-black italic uppercase tracking-tighter">
+                      Shann Karl Felipe<span className="text-primary">.</span>
+                    </p>
+                    <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mt-1">Digital Architect</p>
+                  </div>
+
+                  {/* Top Right Floating Badge (GPA) */}
+                  <div className="absolute top-10 right-10 animate-float">
+                    <div className="px-5 py-3 rounded-2xl bg-white/[0.08] backdrop-blur-xl border border-white/20 shadow-2xl flex flex-col items-center gap-1 group/gpa hover:bg-white/20 transition-all cursor-default">
+                      <div className="flex items-center gap-2">
+                        <GraduationCap className="w-4 h-4 text-primary" />
+                        <span className="text-2xl font-black text-white tracking-tighter">3.6</span>
+                      </div>
+                      <span className="text-[8px] font-black text-white/60 uppercase tracking-widest">Cumulative GPA</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
         </div>
