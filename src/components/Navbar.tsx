@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -15,14 +16,14 @@ export function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Hiding logic: Glide out on scroll down, show on scroll up
+      // Hiding logic
       if (currentScrollY > lastScrollY && currentScrollY > 200) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
 
-      // Shortening logic: Contract the bar when scrolling away from top
+      // Shortening logic
       if (currentScrollY > 80) {
         setIsShortened(true);
       } else {
@@ -54,11 +55,11 @@ export function Navbar() {
     )}>
       <div className={cn(
         "w-full px-6 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-auto",
-        isShortened ? "max-w-[1100px]" : "max-w-7xl"
+        isShortened ? "max-w-[1000px]" : "max-w-7xl"
       )}>
         <div className={cn(
           "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] w-full overflow-hidden",
-          isShortened ? "px-6 lg:px-8" : "px-10"
+          isShortened ? "px-8" : "px-10"
         )}>
           {/* Brand and Nav Items */}
           <div className={cn(
@@ -88,7 +89,7 @@ export function Navbar() {
           {/* Action Buttons */}
           <div className={cn(
             "flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] shrink-0",
-            isShortened ? "gap-3" : "gap-4"
+            isShortened ? "gap-4" : "gap-4"
           )}>
             <div className="hidden lg:flex items-center gap-3">
               <Button 
@@ -104,7 +105,7 @@ export function Navbar() {
               
               <Button asChild className={cn(
                 "rounded-full bg-white text-black hover:bg-white/90 font-black tracking-widest text-[9px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] shrink-0",
-                isShortened ? "px-6" : "px-10"
+                isShortened ? "px-8" : "px-10"
               )}>
                 <Link href="/#contact">
                   {isShortened ? 'Talk' : 'Connect'}

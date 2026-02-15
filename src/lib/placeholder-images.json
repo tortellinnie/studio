@@ -57,85 +57,85 @@
     {
       "id": "logo-dost",
       "description": "DOST Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1732721093836-637fb75ae237?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxnb3Zlcm5tZW50JTIwYWdlbmN5fGVufDB8fHx8MTc3MTE4Mjk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/assets/images/dost.png",
       "imageHint": "government agency"
     },
     {
       "id": "logo-dict",
       "description": "DICT Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1702047109910-43af92894dc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNoJTIwYWdlbmN5fGVufDB8fHx8MTc3MTE4Mjk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/assets/images/dict.png",
       "imageHint": "tech agency"
     },
     {
       "id": "logo-qc",
       "description": "Quezon City Government Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1721559032993-3f09cf25a386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaXR5JTIwc2VhbHxlbnwwfHx8fDE3NzExODI5ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/assets/images/qc.png",
       "imageHint": "city seal"
     },
     {
       "id": "logo-nbdb",
       "description": "NBDB Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1722706731912-dde6e451e59f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxib29rJTIwZGV2ZWxvcG1lbnR8ZW58MHx8fHwxNzcxMTgyOTg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/assets/images/nbdb.png",
       "imageHint": "book development"
     },
     {
       "id": "logo-dti",
       "description": "DTI Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=200&h=100&q=80",
+      "imageUrl": "/assets/images/dti.png",
       "imageHint": "business logo"
     },
     {
       "id": "logo-p&g",
       "description": "P&G Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1760776166616-dd939861e94d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxnbG9iYWwlMjBjb21wYW55fGVufDB8fHx8MTc3MTE4MTgyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/assets/images/png.png",
       "imageHint": "global company"
     },
     {
       "id": "logo-microsoft",
       "description": "Microsoft Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1531973576160-7125cd663d86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwY29tcGFueXxlbnwwfHx8fDE3NzExODE4MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/assets/images/microsoft.png",
       "imageHint": "tech company"
     },
     {
       "id": "logo-feu",
       "description": "FEU Tech Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1689686610856-3bcf921eb1f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc3MTE4Mjk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/assets/images/feu.png",
       "imageHint": "university campus"
     },
     {
       "id": "logo-pldt",
       "description": "PLDT Logo",
-      "imageUrl": "https://picsum.photos/seed/pldt/200/100",
+      "imageUrl": "/assets/images/pldt.png",
       "imageHint": "telecommunications giant"
     },
     {
       "id": "logo-smart",
       "description": "Smart Communications Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1548668486-b554d9d443d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWxlY29tJTIwbG9nb3xlbnwwfHx8fDE3NzExNjA0NTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/assets/images/smart.png",
       "imageHint": "telecom logo"
     },
     {
       "id": "logo-emc",
       "description": "EMC Global Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&w=200&h=100&q=80",
+      "imageUrl": "/assets/images/emc.png",
       "imageHint": "global tech"
     },
     {
       "id": "logo-cram",
       "description": "C-RAM Solutions Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=200&h=100&q=80",
+      "imageUrl": "/assets/images/cram.png",
       "imageHint": "startup logo"
     },
     {
       "id": "logo-eamc",
       "description": "EAMC Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=200&h=100&q=80",
+      "imageUrl": "/assets/images/eamc.png",
       "imageHint": "medical logo"
     },
     {
       "id": "logo-pchrd",
       "description": "DOST-PCHRD Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1532187875302-1df92d700d1a?auto=format&fit=crop&w=200&h=100&q=80",
+      "imageUrl": "/assets/images/pchrd.png",
       "imageHint": "science research"
     }
   ]
