@@ -3,50 +3,50 @@
     {
       "id": "profile-headshot",
       "description": "Professional profile headshot",
-      "imageUrl": "https://drive.google.com/file/d/1Vc5JOEVk5UVlqlnFWYtzDFXrzQ2yAGM2/view?usp=share_link",
+      "imageUrl": "https://images.unsplash.com/photo-1655249481446-25d575f1c054?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvZmVzc2lvbmFsJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcxMTE3ODAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional portrait"
     },
     {
       "id": "project-salayliwa",
       "description": "Salayliwa - Edu-cultural literacy project",
-      "imageUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1647463569404-718feed9b35b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZWFkaW5nJTIwY3VsdHVyZXxlbnwwfHx8fDE3NzExNjE0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "reading culture"
-    },
-    {
-      "id": "project-gabaydiwa",
-      "description": "GabayDiwa - Dementia cognitive monitoring",
-      "imageUrl": "https://images.unsplash.com/photo-1547027072-332f09bd6bb3?auto=format&fit=crop&q=80&w=1080",
-      "imageHint": "healthcare data"
-    },
-    {
-      "id": "project-proxygen",
-      "description": "Proxygen - Aquaculture DO management",
-      "imageUrl": "https://images.unsplash.com/photo-1623824204241-f851d3bcfaf5?auto=format&fit=crop&q=80&w=1080",
-      "imageHint": "aquaculture sensor"
-    },
-    {
-      "id": "project-birdseye",
-      "description": "Birdseye Poultry Monitoring System",
-      "imageUrl": "https://drive.google.com/file/d/1Vc5JOEVk5UVlqlnFWYtzDFXrzQ2yAGM2/view?usp=share_link",
-      "imageHint": "poultry vision"
     },
     {
       "id": "project-video-automation",
       "description": "Video Automation Engine Thumbnail",
-      "imageUrl": "https://drive.google.com/file/d/1Vc5JOEVk5UVlqlnFWYtzDFXrzQ2yAGM2/view?usp=share_link",
+      "imageUrl": "https://images.unsplash.com/photo-1764664281859-c5bd20adfbb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhdXRvbWF0aW9uJTIwd29ya2Zsb3d8ZW58MHx8fHwxNzcxMTYxNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "automation workflow"
     },
     {
-      "id": "featured-travel-1",
-      "description": "Travel highlight - Global delegate",
-      "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1080",
-      "imageHint": "global delegate"
+      "id": "project-gabaydiwa",
+      "description": "GabayDiwa - Dementia cognitive monitoring",
+      "imageUrl": "https://images.unsplash.com/photo-1758691463110-697a814b2033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoZWFsdGhjYXJlJTIwZGF0YXxlbnwwfHx8fDE3NzExNjE0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "healthcare data"
     },
     {
-      "id": "featured-speaking-1",
-      "description": "Speaking highlight - Innovation pitch",
-      "imageUrl": "https://images.unsplash.com/photo-1475721027185-4038e0588f03?auto=format&fit=crop&q=80&w=1080",
-      "imageHint": "tech pitch"
+      "id": "project-birdseye",
+      "description": "Birdseye Poultry Monitoring System",
+      "imageUrl": "https://images.unsplash.com/photo-1769952830261-0f1c9e33f62f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwb3VsdHJ5JTIwdmlzaW9ufGVufDB8fHx8MTc3MTE2MTQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "poultry vision"
+    },
+    {
+      "id": "project-proxygen",
+      "description": "Proxygen - Aquaculture DO management",
+      "imageUrl": "https://images.unsplash.com/photo-1598963946779-66fab47f1757?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhcXVhY3VsdHVyZSUyMHNlbnNvcnxlbnwwfHx8fDE3NzExNjE0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "aquaculture sensor"
+    },
+    {
+      "id": "featured-pg-intern",
+      "description": "P&G Internship highlight",
+      "imageUrl": "https://images.unsplash.com/photo-1549637642-90187f64f420?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb3Jwb3JhdGUlMjBvZmZpY2V8ZW58MHx8fHwxNzcxMDcwNDI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "corporate office"
+    },
+    {
+      "id": "featured-speaking-tokyo",
+      "description": "Global delegate in Tokyo",
+      "imageUrl": "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0b2t5byUyMGNpdHl8ZW58MHx8fHwxNzcxMTU3NzI5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tokyo city"
     }
   ]
 }

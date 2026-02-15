@@ -1,11 +1,14 @@
+
 'use client';
 
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Contact } from '@/components/Contact';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Building2, Plane, Calendar, MapPin, CheckCircle2, Shield, Zap, Globe, Cpu } from 'lucide-react';
 import Link from 'next/link';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function ImpactDetail() {
   const params = useParams();
@@ -41,7 +44,8 @@ export default function ImpactDetail() {
         'Focusing on Supply Chain Digitization and Data Analytics',
         'Leading cross-functional digital transformation initiatives',
         'Mentored by global IT directors and engineering architects'
-      ]
+      ],
+      imageId: 'featured-pg-intern'
     },
     'speaking-1': {
       title: 'Global Delegate in Tokyo',
@@ -72,11 +76,13 @@ export default function ImpactDetail() {
         'Delegate at Musashino University, Tokyo',
         'Represented Filipino tech startups to Japanese investors',
         'Focus on UN SDGs through technical innovation'
-      ]
+      ],
+      imageId: 'featured-speaking-tokyo'
     }
   };
 
   const impact = impactDetails[id] || impactDetails['pg-intern'];
+  const imageData = PlaceHolderImages.find(img => img.id === impact.imageId);
 
   return (
     <main className="min-h-screen bg-background">
@@ -132,14 +138,27 @@ export default function ImpactDetail() {
               </div>
 
               <div className="sticky top-32 space-y-12">
-                <div className="aspect-square glass-card rounded-[4rem] p-16 flex flex-col items-center justify-center text-center space-y-10 border-primary/20 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                  <div className="w-40 h-40 rounded-[2.5rem] bg-primary/20 flex items-center justify-center border border-primary/30 relative z-10 group-hover:scale-110 transition-transform duration-500">
-                    <impact.icon className="w-20 h-20 text-primary" />
-                  </div>
-                  <div className="space-y-4 relative z-10">
-                    <h2 className="text-3xl font-black text-white uppercase italic tracking-tighter">Impact Summary</h2>
-                    <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px]">2026 Professional Milestone</p>
+                <div className="glass-card rounded-[4rem] overflow-hidden border-primary/20 relative group">
+                  <div className="relative aspect-square">
+                    {imageData && (
+                      <Image 
+                        src={imageData.imageUrl} 
+                        alt={imageData.description}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        data-ai-hint={imageData.imageHint}
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-primary/20 backdrop-blur-[2px] group-hover:backdrop-blur-none transition-all" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-12 space-y-8">
+                       <div className="w-32 h-32 rounded-[2.5rem] bg-background/40 backdrop-blur-xl flex items-center justify-center border border-white/20 shadow-2xl">
+                          <impact.icon className="w-12 h-12 text-white" />
+                       </div>
+                       <div className="space-y-2">
+                         <h2 className="text-3xl font-black text-white uppercase italic tracking-tighter">Impact Summary</h2>
+                         <p className="text-primary font-black uppercase tracking-[0.3em] text-[10px]">2026 Professional Milestone</p>
+                       </div>
+                    </div>
                   </div>
                 </div>
 

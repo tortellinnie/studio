@@ -1,11 +1,14 @@
+
 'use client';
 
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { Contact } from '@/components/Contact';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Github, Globe, CheckCircle2, Server, Layout, Shield, Workflow, Eye, Zap, Brain, Fish, BookOpen } from 'lucide-react';
+import { ArrowLeft, Github, Globe, CheckCircle2, Workflow, Zap, Brain, Fish, BookOpen, Eye } from 'lucide-react';
 import Link from 'next/link';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -24,7 +27,8 @@ export default function ProjectDetail() {
       ],
       status: 'Pilot Ready',
       icon: Eye,
-      skills: ['Edge Computing', 'TensorFlow', 'Agile']
+      skills: ['Edge Computing', 'TensorFlow', 'Agile'],
+      imageId: 'project-birdseye'
     },
     'video-automation': {
       title: 'Video Automation Engine',
@@ -38,7 +42,8 @@ export default function ProjectDetail() {
       ],
       status: 'Autonomous',
       icon: Zap,
-      skills: ['Docker', 'n8n', 'Google Cloud']
+      skills: ['Docker', 'n8n', 'Google Cloud'],
+      imageId: 'project-video-automation'
     },
     'gabaydiwa': {
       title: 'GabayDiwa',
@@ -52,7 +57,8 @@ export default function ProjectDetail() {
       ],
       status: 'Award-Winning',
       icon: Brain,
-      skills: ['Healthcare UX', 'Data Modeling']
+      skills: ['Healthcare UX', 'Data Modeling'],
+      imageId: 'project-gabaydiwa'
     },
     'proxygen': {
       title: 'Proxygen',
@@ -66,7 +72,8 @@ export default function ProjectDetail() {
       ],
       status: 'Industrial Grade',
       icon: Fish,
-      skills: ['Fuzzy Logic', 'Sensor Fusion']
+      skills: ['Fuzzy Logic', 'Sensor Fusion'],
+      imageId: 'project-proxygen'
     },
     'salayliwa': {
       title: 'Salayliwa',
@@ -80,11 +87,13 @@ export default function ProjectDetail() {
       ],
       status: 'National Award',
       icon: BookOpen,
-      skills: ['Social Innovation', 'Adaptive UI']
+      skills: ['Social Innovation', 'Adaptive UI'],
+      imageId: 'project-salayliwa'
     }
   };
 
   const project = projectDetails[id] || projectDetails['birdseye'];
+  const imageData = PlaceHolderImages.find(img => img.id === project.imageId);
 
   return (
     <main className="min-h-screen bg-background">
@@ -140,18 +149,32 @@ export default function ProjectDetail() {
             </div>
 
             <div className="sticky top-32 space-y-8">
-              <div className="aspect-[4/3] glass-card rounded-[3rem] flex flex-col items-center justify-center p-12 text-center space-y-8 border-primary/20">
-                <div className="w-32 h-32 rounded-[2rem] bg-primary/10 flex items-center justify-center border border-primary/20">
-                  <project.icon className="w-16 h-16 text-primary" />
-                </div>
-                <div className="space-y-4">
-                  <h2 className="text-4xl font-black text-white uppercase">{project.title}</h2>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {project.skills.map((skill: string) => (
-                      <span key={skill} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-white/60">
-                        {skill}
-                      </span>
-                    ))}
+              <div className="glass-card rounded-[3rem] overflow-hidden border-primary/20">
+                <div className="relative aspect-[4/3]">
+                  {imageData && (
+                    <Image 
+                      src={imageData.imageUrl} 
+                      alt={imageData.description}
+                      fill
+                      className="object-cover"
+                      data-ai-hint={imageData.imageHint}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                  <div className="absolute bottom-8 left-8 flex items-center gap-6">
+                    <div className="w-20 h-20 rounded-2xl bg-primary/20 backdrop-blur-xl border border-primary/20 flex items-center justify-center">
+                      <project.icon className="w-10 h-10 text-primary" />
+                    </div>
+                    <div className="space-y-1">
+                      <h2 className="text-3xl font-black text-white uppercase">{project.title}</h2>
+                      <div className="flex flex-wrap gap-2">
+                        {project.skills.map((skill: string) => (
+                          <span key={skill} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[8px] font-black uppercase tracking-widest text-white/60">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
