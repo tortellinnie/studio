@@ -10,20 +10,20 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 263.4 70% 50.4%;
+    --primary: 221 72% 50%; /* #2663D9 - Professional Blue */
     --primary-foreground: 210 40% 98%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 263.4 70% 50.4%;
+    --accent: 190 82% 60%; /* #47D0EB - Cyan Accent */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 263.4 70% 50.4%;
-    --radius: 1.25rem;
+    --ring: 221 72% 50%;
+    --radius: 1rem;
   }
 }
 
@@ -32,81 +32,55 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#030303] text-foreground font-body antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden;
+    @apply bg-[#02040a] text-foreground font-body antialiased selection:bg-primary/30 selection:text-white overflow-x-hidden;
     background-image: 
-      radial-gradient(circle at 5% 5%, hsla(263, 70%, 50%, 0.4) 0%, transparent 45%),
-      radial-gradient(circle at 95% 5%, hsla(38, 92%, 50%, 0.3) 0%, transparent 45%),
-      radial-gradient(circle at 50% 50%, hsla(280, 70%, 50%, 0.25) 0%, transparent 60%),
-      radial-gradient(circle at 15% 85%, hsla(35, 95%, 50%, 0.3) 0%, transparent 45%),
-      radial-gradient(circle at 85% 95%, hsla(263, 70%, 50%, 0.4) 0%, transparent 45%);
+      radial-gradient(circle at 0% 0%, hsla(221, 72%, 50%, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, hsla(190, 82%, 60%, 0.05) 0%, transparent 50%);
     background-attachment: fixed;
-    background-size: 200% 200%;
-    animation: mesh-flow 25s ease-in-out infinite alternate;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline font-black tracking-tighter text-white;
+    @apply font-headline font-bold tracking-tight text-white;
   }
-}
-
-@keyframes mesh-flow {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
 }
 
 .glass-card {
-  @apply bg-white/[0.03] backdrop-blur-[40px] border border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.5)];
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  @apply bg-white/[0.02] backdrop-blur-md border border-white/[0.08] shadow-xl;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover {
-  @apply bg-white/[0.06] border-white/[0.18] shadow-[0_20px_80px_-12px_rgba(0,0,0,0.7)];
+  @apply bg-white/[0.04] border-white/[0.12] shadow-2xl;
 }
 
 .premium-glass {
-  @apply bg-white/[0.02] backdrop-blur-[70px] border border-white/[0.12] shadow-2xl;
+  @apply bg-white/[0.01] backdrop-blur-2xl border border-white/[0.05] shadow-2xl;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white/90 to-white/40;
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60;
 }
 
 .hero-glow {
-  filter: blur(160px);
-  @apply absolute rounded-full opacity-30 pointer-events-none mix-blend-screen animate-pulse;
+  filter: blur(120px);
+  @apply absolute rounded-full opacity-20 pointer-events-none mix-blend-screen;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   @apply bg-transparent;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-white/10 rounded-full hover:bg-white/20 transition-all;
-}
-
-.premium-gradient-border {
-  position: relative;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-}
-
-.premium-gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  z-index: -1;
-  background: linear-gradient(to bottom right, rgba(255,255,255,0.3), transparent, rgba(139,92,246,0.5), rgba(245,158,11,0.3));
-  border-radius: inherit;
-  opacity: 0.5;
+  @apply bg-white/5 rounded-full hover:bg-white/10 transition-all;
 }
 
 @keyframes float {
   0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(1deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
   100% { transform: translateY(0px) rotate(0deg); }
 }
 
 .animate-float {
-  animation: float 10s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }

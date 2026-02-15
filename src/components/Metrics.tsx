@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Users, Mic, Landmark } from 'lucide-react';
@@ -26,7 +25,7 @@ export function Metrics() {
       { name: "C-RAM & NERDS 2.0 Projects", detail: "Tech-driven Community Solutions" }
     ],
     speakerships: [
-      { name: "AGAPE PH0209 Youth Program", detail: "Community Event Host" },
+      { name: "AGAPE PH0209 Community Event", detail: "Youth Program Host" },
       { name: "Musashinova Pitching Event", detail: "Tokyo, Japan" },
       { name: "Philippine Startup Challenge X", detail: "DICT Regional Stage" },
       { name: "NBDB Readers Rising Hackathon", detail: "National Library of PH" },
@@ -49,7 +48,7 @@ export function Metrics() {
       id: 'beneficiaries',
       label: 'Direct Beneficiaries',
       value: '300,000+',
-      description: 'Impacted across community initiatives',
+      description: 'Impacted across community initiatives in Manila.',
       icon: Users,
       color: 'text-primary',
       details: data.beneficiaries,
@@ -59,7 +58,7 @@ export function Metrics() {
       id: 'speakership',
       label: 'Speakership Reach',
       value: '2,000+',
-      description: 'Audience at major innovation fairs',
+      description: 'Audience engaged at major innovation fairs.',
       icon: Mic,
       color: 'text-accent',
       details: data.speakerships,
@@ -67,13 +66,13 @@ export function Metrics() {
     },
     {
       id: 'capital',
-      label: 'Total Capital',
-      value: '₱1.2M+',
-      description: 'Secured for startup initiatives',
+      label: 'Capital Initiatives',
+      value: 'Secured',
+      description: 'Institutional grants for startup innovation.',
       icon: Landmark,
-      color: 'text-emerald-400',
+      color: 'text-white/60',
       details: data.capital,
-      title: 'Capital Initiatives'
+      title: 'Funding & Support'
     }
   ];
 
@@ -81,47 +80,44 @@ export function Metrics() {
     <section id="metrics" className="relative z-20 pb-24 bg-transparent overflow-visible">
       <div className="container mx-auto px-6 max-w-6xl">
         <TooltipProvider delayDuration={0}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {stats.map((stat, i) => (
               <Dialog key={i}>
                 <DialogTrigger asChild>
-                  <button className="flex flex-col h-full w-full text-left glass-card p-10 rounded-[2.5rem] border-white/10 group relative transition-all duration-300 pointer-events-auto cursor-pointer shadow-xl">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-                    
-                    <div className="flex items-start justify-between h-14 mb-12 relative z-10">
-                      <div className="w-14 h-14 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                        <stat.icon className={`w-7 h-7 ${stat.color} group-hover:text-white transition-colors`} />
+                  <button className="flex flex-col h-full w-full text-left glass-card p-10 rounded-[2rem] border-white/5 group relative transition-all duration-300 pointer-events-auto cursor-pointer shadow-lg">
+                    <div className="flex items-start justify-between h-12 mb-8 relative z-10">
+                      <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+                        <stat.icon className={`w-6 h-6 ${stat.color} group-hover:text-white transition-colors`} />
+                      </div>
+                      <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[8px] font-black text-white/40 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">
+                        View Log
                       </div>
                     </div>
 
-                    <div className="absolute top-8 right-10 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[9px] font-black text-primary uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all pointer-events-none">
-                      Details
-                    </div>
-
-                    <div className="space-y-2 relative z-10">
-                      <h3 className="text-5xl font-black text-white tracking-tighter mb-2">{stat.value}</h3>
-                      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">{stat.label}</p>
-                      <p className="text-sm text-white/50 font-medium leading-relaxed pt-4">
+                    <div className="space-y-1 relative z-10">
+                      <h3 className="text-4xl font-black text-white tracking-tighter mb-1">{stat.value}</h3>
+                      <p className="text-[9px] font-black uppercase tracking-[0.2em] text-primary">{stat.label}</p>
+                      <p className="text-xs text-white/40 font-medium leading-relaxed pt-3">
                         {stat.description}
                       </p>
                     </div>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="premium-glass border-white/20 text-white max-w-lg rounded-[3rem] p-0 overflow-hidden backdrop-blur-[60px] bg-black/80 focus:outline-none shadow-3xl">
-                  <div className="p-12 pb-6">
-                    <DialogHeader className="mb-4">
-                      <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
+                <DialogContent className="premium-glass border-white/10 text-white max-w-lg rounded-[2rem] p-0 overflow-hidden backdrop-blur-3xl bg-[#02040a]/90 focus:outline-none">
+                  <div className="p-10 pb-4">
+                    <DialogHeader className="mb-2">
+                      <DialogTitle className="text-3xl font-black uppercase italic tracking-tighter">
                         {stat.title}<span className="text-primary">.</span>
                       </DialogTitle>
                     </DialogHeader>
                   </div>
                   
-                  <ScrollArea className="max-h-[50vh] px-12 pb-12">
-                    <div className="grid gap-4">
+                  <ScrollArea className="max-h-[50vh] px-10 pb-10">
+                    <div className="grid gap-3">
                       {stat.details.map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:bg-white/[0.08] transition-colors group">
-                          <span className="font-bold text-white/90 text-sm md:text-base pr-4">{item.name}</span>
-                          <Badge variant="outline" className="shrink-0 border-primary/40 text-primary text-[10px] font-black uppercase group-hover:bg-primary group-hover:text-white transition-all">
+                        <div key={idx} className="flex items-center justify-between p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors group">
+                          <span className="font-bold text-white/80 text-sm pr-4">{item.name}</span>
+                          <Badge variant="outline" className="shrink-0 border-primary/20 text-primary text-[9px] font-black uppercase">
                             {item.detail}
                           </Badge>
                         </div>

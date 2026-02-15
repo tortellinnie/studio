@@ -35,67 +35,62 @@ export function Featured() {
     <section id="featured" className="py-24 relative overflow-visible bg-transparent">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-16 space-y-6">
-            <Badge className="bg-accent/10 text-accent border-accent/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px] backdrop-blur-md">
-              Highlights 2026
+          <div className="flex flex-col items-center text-center mb-16 space-y-4">
+            <Badge className="bg-white/5 text-white/40 border-white/10 px-4 py-1 rounded-full font-bold tracking-widest uppercase text-[9px]">
+              Strategic Milestones
             </Badge>
-            <h2 className="text-4xl lg:text-6xl font-black text-white uppercase italic tracking-tighter">CORE IMPACT.</h2>
-            <p className="text-muted-foreground max-w-xl text-lg font-medium leading-relaxed">
-              Strategic milestones driving my engineering philosophy.
+            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase italic tracking-tighter">Core Impact.</h2>
+            <p className="text-white/50 max-w-xl text-lg font-medium leading-relaxed">
+              Pioneering technical solutions that drive professional excellence.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {highlights.map((item) => {
               const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
               return (
                 <Link href={`/impact/${item.id}`} key={item.id} className="group">
-                  <Card className="glass-card border-white/5 overflow-hidden rounded-[3rem] h-full flex flex-col premium-gradient-border">
+                  <Card className="glass-card border-white/[0.05] overflow-hidden rounded-[2.5rem] h-full flex flex-col">
                     <div className="relative aspect-video overflow-hidden">
                       {imageData && (
                         <Image 
                           src={imageData.imageUrl} 
                           alt={imageData.description}
                           fill
-                          className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
                           data-ai-hint={imageData.imageHint}
                         />
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#02040a]/90 via-[#02040a]/20 to-transparent" />
                     </div>
-                    <CardContent className="p-10 space-y-6 flex-grow relative">
+                    <CardContent className="p-8 space-y-6 flex-grow relative">
                       <div className="flex items-center justify-between">
-                        <Badge className="bg-primary/20 text-primary border-primary/20 backdrop-blur-xl font-black uppercase text-[8px] tracking-widest h-7 px-3">
-                          <item.icon className="w-3.5 h-3.5 mr-2" />
+                        <Badge className="bg-white/5 text-white/60 border-white/10 font-bold uppercase text-[8px] tracking-widest px-3">
+                          <item.icon className="w-3 h-3 mr-2" />
                           {item.type}
                         </Badge>
-                        <div className="flex items-center gap-2 text-muted-foreground font-bold">
-                          <Calendar className="w-3.5 h-3.5 text-primary" />
-                          <span className="text-[10px] uppercase tracking-tight">{item.date}</span>
+                        <div className="flex items-center gap-2 text-white/40 font-bold">
+                          <Calendar className="w-3 h-3 text-primary" />
+                          <span className="text-[9px] uppercase tracking-tight">{item.date}</span>
                         </div>
                       </div>
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         <div className="flex items-start justify-between gap-4">
-                          <h3 className="text-2xl lg:text-3xl font-black text-white group-hover:text-primary transition-colors leading-tight tracking-tight uppercase italic">
+                          <h3 className="text-2xl font-black text-white group-hover:text-primary transition-colors leading-tight uppercase italic">
                             {item.title}
                           </h3>
-                          <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all shrink-0">
-                            <ArrowUpRight className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                          <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary transition-all shrink-0">
+                            <ArrowUpRight className="w-4 h-4 text-white" />
                           </div>
                         </div>
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <MapPin className="w-4 h-4 text-primary" />
-                          <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{item.location}</span>
+                        <div className="flex items-center gap-2 text-white/40">
+                          <MapPin className="w-3.5 h-3.5 text-primary" />
+                          <span className="text-[9px] font-bold uppercase tracking-widest">{item.location}</span>
                         </div>
                       </div>
-                      <p className="text-sm lg:text-base text-muted-foreground leading-relaxed italic font-medium opacity-80 group-hover:opacity-100 transition-opacity">
-                        "{item.description}"
+                      <p className="text-sm text-white/50 leading-relaxed font-medium line-clamp-2">
+                        {item.description}
                       </p>
-                      <div className="pt-4">
-                        <div className="inline-flex items-center gap-2 text-[8px] font-black uppercase tracking-[0.4em] text-primary border-b border-primary/0 group-hover:border-primary transition-all pb-1">
-                          Read Story
-                        </div>
-                      </div>
                     </CardContent>
                   </Card>
                 </Link>
