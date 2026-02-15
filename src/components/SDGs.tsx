@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Badge } from '@/components/ui/badge';
@@ -37,16 +38,19 @@ export function SDGs() {
               rel="noopener noreferrer"
               className="group relative glass-card rounded-[2.5rem] p-8 flex flex-col border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40 h-full text-center"
             >
-              <div className="h-20 flex items-center justify-center mb-6">
+              {/* Icon Container with fixed height for row alignment */}
+              <div className="h-24 flex items-center justify-center mb-6">
                 <div className={`w-16 h-16 rounded-2xl ${goal.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
                   <goal.icon className="w-8 h-8 text-white" />
                 </div>
               </div>
 
-              <div className="h-8 flex items-center justify-center mb-2">
+              {/* Goal ID Label with fixed height for row alignment */}
+              <div className="h-10 flex items-center justify-center mb-2">
                 <span className="text-[10px] font-black text-primary uppercase tracking-[0.25em]">Goal {goal.id}</span>
               </div>
               
+              {/* Title with fixed height to ensure perfectly aligned rows */}
               <div className="h-16 flex items-start justify-center text-center overflow-hidden">
                 <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors max-w-[160px]">
                   {goal.title}

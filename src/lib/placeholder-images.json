@@ -15,7 +15,7 @@
     {
       "id": "project-video-automation",
       "description": "Technical diagram of the video automation engine",
-      "imageUrl": "/assets/images/video-automation.jpg",
+      "imageUrl": "/assets/images/automation.png",
       "imageHint": "automation workflow"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "project-birdseye",
       "description": "Birdseye computer vision deployment in a farm",
-      "imageUrl": "/assets/images/birdseye.jpg",
+      "imageUrl": "/assets/images/birdseye.png",
       "imageHint": "poultry vision"
     },
     {

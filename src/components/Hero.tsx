@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -18,7 +19,7 @@ export function Hero() {
       <div className="container mx-auto z-10 max-w-7xl overflow-visible">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center overflow-visible">
           
-          {/* Column 1: Balanced Branding & Copy */}
+          {/* Column 1: Typography Branding */}
           <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 animate-in fade-in slide-in-from-left-12 duration-1000 overflow-visible">
             <div className="space-y-4 overflow-visible w-full">
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[40px] text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-xl">
@@ -27,10 +28,10 @@ export function Hero() {
               </div>
               
               <div className="relative group overflow-visible">
-                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible pb-4 pr-16">
+                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible pb-4 pr-16 lg:pr-24">
                   <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125">TECHNO</span>
-                  <div className="relative pr-32 lg:pr-48 overflow-visible">
-                    <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)] pr-8">
+                  <div className="relative pr-48 lg:pr-64 overflow-visible">
+                    <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)] pr-12 lg:pr-20">
                       LEADER
                     </span>
                   </div>
