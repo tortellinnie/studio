@@ -58,85 +58,91 @@
       "id": "logo-dost",
       "description": "DOST Philippines Logo",
       "imageUrl": "/assets/images/dost.png",
-      "imageHint": "government agency"
+      "imageHint": "government logo"
     },
     {
       "id": "logo-dict",
       "description": "DICT Philippines Logo",
       "imageUrl": "/assets/images/dict.png",
-      "imageHint": "tech agency"
+      "imageHint": "government logo"
     },
     {
       "id": "logo-qc",
       "description": "Quezon City Government Logo",
-      "imageUrl": "/assets/images/qc.png",
-      "imageHint": "city seal"
+      "imageUrl": "/assets/images/qcgov.png",
+      "imageHint": "government logo"
     },
     {
       "id": "logo-nbdb",
       "description": "NBDB Philippines Logo",
-      "imageUrl": "/assets/images/nbdb.png",
-      "imageHint": "book development"
+      "imageUrl": "/assets/images/nbdb.ong",
+      "imageHint": "government logo"
     },
     {
       "id": "logo-dti",
       "description": "DTI Philippines Logo",
       "imageUrl": "/assets/images/dti.png",
-      "imageHint": "business logo"
+      "imageHint": "government logo"
     },
     {
-      "id": "logo-p&g",
-      "description": "P&G Logo",
-      "imageUrl": "/assets/images/png.png",
-      "imageHint": "global company"
+      "id": "logo-sk",
+      "description": "SK Commonwealth Logo",
+      "imageUrl": "/assets/images/skcommonwealth.ong",
+      "imageHint": "government logo"
     },
     {
-      "id": "logo-microsoft",
-      "description": "Microsoft Philippines Logo",
-      "imageUrl": "/assets/images/microsoft.png",
-      "imageHint": "tech company"
+      "id": "logo-nads",
+      "description": "NCR Alliance of DOST Scholars Logo",
+      "imageUrl": "/assets/images/nads.png",
+      "imageHint": "government logo"
     },
     {
-      "id": "logo-feu",
-      "description": "FEU Tech Logo",
-      "imageUrl": "/assets/images/feu.png",
-      "imageHint": "university campus"
+      "id": "logo-da",
+      "description": "Department of Agriculture Logo",
+      "imageUrl": "/assets/images/da.png",
+      "imageHint": "government logo"
     },
     {
-      "id": "logo-pldt",
-      "description": "PLDT Logo",
-      "imageUrl": "/assets/images/pldt.png",
-      "imageHint": "telecommunications giant"
+      "id": "logo-psa",
+      "description": "Philippine Statistics Authority Logo",
+      "imageUrl": "/assets/images/psa.png",
+      "imageHint": "government logo"
     },
     {
-      "id": "logo-smart",
-      "description": "Smart Communications Logo",
-      "imageUrl": "/assets/images/smart.png",
-      "imageHint": "telecom logo"
+      "id": "logo-png",
+      "description": "Procter & Gamble Logo",
+      "imageUrl": "/assets/images/pandg.png",
+      "imageHint": "industry logo"
+    },
+    {
+      "id": "logo-pldtsmart",
+      "description": "PLDT-Smart Communications Logo",
+      "imageUrl": "/assets/images/pldtsmart.png",
+      "imageHint": "industry logo"
     },
     {
       "id": "logo-emc",
       "description": "EMC Global Logo",
-      "imageUrl": "/assets/images/emc.png",
-      "imageHint": "global tech"
+      "imageUrl": "/assets/images/emcg.png",
+      "imageHint": "industry logo"
     },
     {
-      "id": "logo-cram",
-      "description": "C-RAM Solutions Logo",
-      "imageUrl": "/assets/images/cram.png",
-      "imageHint": "startup logo"
+      "id": "logo-nara",
+      "description": "NARA Logo",
+      "imageUrl": "/assets/images/nara.png",
+      "imageHint": "industry logo"
     },
     {
       "id": "logo-eamc",
-      "description": "EAMC Logo",
+      "description": "EAMC Neurosciences Logo",
       "imageUrl": "/assets/images/eamc.png",
-      "imageHint": "medical logo"
+      "imageHint": "academia logo"
     },
     {
-      "id": "logo-pchrd",
-      "description": "DOST-PCHRD Logo",
-      "imageUrl": "/assets/images/pchrd.png",
-      "imageHint": "science research"
+      "id": "logo-lib",
+      "description": "FEU Tech Library Logo",
+      "imageUrl": "/assets/images/lib.png",
+      "imageHint": "academia logo"
     }
   ]
 }

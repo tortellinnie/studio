@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -12,23 +13,21 @@ export function Collaborators() {
       { name: "DICT Philippines", logoId: "logo-dict" },
       { name: "Quezon City Government", logoId: "logo-qc" },
       { name: "NBDB-Philippines", logoId: "logo-nbdb" },
-      { name: "National Library of the Philippines", logoId: "logo-nbdb" },
       { name: "DTI Philippines", logoId: "logo-dti" },
-      { name: "SK Commonwealth", logoId: "logo-qc" },
-      { name: "NCR Alliance of DOST Scholars", logoId: "logo-dost" }
+      { name: "SK Commonwealth", logoId: "logo-sk" },
+      { name: "NCR Alliance of DOST Scholars", logoId: "logo-nads" },
+      { name: "Department of Agriculture", logoId: "logo-da" },
+      { name: "Philippine Statistics Authority", logoId: "logo-psa" }
     ],
     industry: [
-      { name: "Procter & Gamble (P&G)", logoId: "logo-p&g" },
-      { name: "PLDT", logoId: "logo-pldt" },
-      { name: "Smart Communications", logoId: "logo-smart" },
-      { name: "Microsoft Philippines", logoId: "logo-microsoft" },
+      { name: "Procter & Gamble (P&G)", logoId: "logo-png" },
+      { name: "PLDT-Smart Communications", logoId: "logo-pldtsmart" },
       { name: "EMC Global (Japan)", logoId: "logo-emc" },
-      { name: "C-RAM Solutions", logoId: "logo-cram" }
+      { name: "National Alliance of Reading Advocates (NARA)", logoId: "logo-nara" }
     ],
     academia: [
-      { name: "FEU Institute of Technology", logoId: "logo-feu" },
       { name: "EAMC Dept. of Neurosciences", logoId: "logo-eamc" },
-      { name: "DOST-PCHRD", logoId: "logo-pchrd" }
+      { name: "FEU Tech Library", logoId: "logo-lib" }
     ]
   };
 
@@ -50,7 +49,7 @@ export function Collaborators() {
                 <Globe className="w-3 h-3 text-primary/40" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Government</h3>
               </div>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 {ecosystem.government.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
@@ -60,7 +59,7 @@ export function Collaborators() {
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain grayscale-0 group-hover:grayscale-0 transition-all"
+                          className="object-contain"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
@@ -76,7 +75,7 @@ export function Collaborators() {
                 <Building2 className="w-3 h-3 text-accent/40" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Industry & Global</h3>
               </div>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 {ecosystem.industry.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
@@ -86,7 +85,7 @@ export function Collaborators() {
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain grayscale-0 group-hover:grayscale-0 transition-all"
+                          className="object-contain"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
@@ -102,7 +101,7 @@ export function Collaborators() {
                 <GraduationCap className="w-3 h-3 text-white/20" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Academia & Clinical</h3>
               </div>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {ecosystem.academia.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
@@ -112,7 +111,7 @@ export function Collaborators() {
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain grayscale-0 group-hover:grayscale-0 transition-all"
+                          className="object-contain"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
