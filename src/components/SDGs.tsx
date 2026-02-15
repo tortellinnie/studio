@@ -30,9 +30,12 @@ export function SDGs() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {goals.map((goal) => (
-            <div 
+            <a 
               key={goal.id} 
-              className="group relative aspect-square glass-card rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 border-white/5 hover:border-primary/20 transition-all duration-500"
+              href={`https://sdgs.un.org/goals/goal${goal.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative aspect-square glass-card rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40"
             >
               <div className={`w-14 h-14 rounded-2xl ${goal.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
                 <goal.icon className="w-8 h-8 text-white" />
@@ -43,7 +46,11 @@ export function SDGs() {
                   {goal.title}
                 </p>
               </div>
-            </div>
+              
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-40 transition-opacity">
+                <div className="w-1.5 h-1.5 rounded-full bg-white" />
+              </div>
+            </a>
           ))}
         </div>
       </div>
