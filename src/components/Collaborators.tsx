@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -43,7 +42,6 @@ export function Collaborators() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
-            {/* Government Cluster */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 border-b border-white/5 pb-3">
                 <Globe className="w-3 h-3 text-primary/40" />
@@ -69,7 +67,6 @@ export function Collaborators() {
               </div>
             </div>
 
-            {/* Industry Cluster */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 border-b border-white/5 pb-3">
                 <Building2 className="w-3 h-3 text-accent/40" />
@@ -95,7 +92,6 @@ export function Collaborators() {
               </div>
             </div>
 
-            {/* Academia Cluster */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 border-b border-white/5 pb-3">
                 <GraduationCap className="w-3 h-3 text-white/20" />
