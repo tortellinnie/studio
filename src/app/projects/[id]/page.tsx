@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useParams } from 'next/navigation';
@@ -96,7 +95,7 @@ export default function ProjectDetail() {
   const imageData = PlaceHolderImages.find(img => img.id === project.imageId);
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-transparent">
       <Navbar />
       
       <section className="py-20 pt-40">
@@ -160,7 +159,7 @@ export default function ProjectDetail() {
                       data-ai-hint={imageData.imageHint}
                     />
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   <div className="absolute bottom-8 left-8 flex items-center gap-6">
                     <div className="w-20 h-20 rounded-2xl bg-primary/20 backdrop-blur-xl border border-primary/20 flex items-center justify-center">
                       <project.icon className="w-10 h-10 text-primary" />

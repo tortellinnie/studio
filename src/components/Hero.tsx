@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-20">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20">
       {/* Dynamic Animated Glows with Purple and Orange */}
       <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-primary/20 hero-glow animate-pulse" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-amber-500/10 hero-glow animate-pulse delay-1000" />
@@ -20,9 +20,9 @@ export function Hero() {
               <span>Available for 2026 Engineering Roles</span>
             </div>
             
-            <div className="relative px-4">
-              {/* Increased leading and added padding to prevent character clipping (the 'R') */}
-              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11.5rem] font-black text-white leading-[0.95] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-6">
+            <div className="relative px-8 overflow-visible">
+              {/* Added horizontal padding to ensure the 'R' is never cut off */}
+              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11.5rem] font-black text-white leading-[0.95] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-6 px-2">
                 TECHNOLEADER
               </h1>
             </div>

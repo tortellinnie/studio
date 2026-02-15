@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useParams } from 'next/navigation';
@@ -85,7 +84,7 @@ export default function ImpactDetail() {
   const imageData = PlaceHolderImages.find(img => img.id === impact.imageId);
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-transparent">
       <Navbar />
       
       <section className="py-20 pt-40">
