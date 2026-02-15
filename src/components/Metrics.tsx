@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Users, Mic, Landmark } from 'lucide-react';
@@ -19,7 +18,7 @@ export function Metrics() {
       { name: "SK Commonwealth Council", detail: "300,000+ Impacted Youth" },
       { name: "AGAPE PH0209 Youth Network", detail: "600+ Direct Beneficiaries" },
       { name: "DOST-NCR Alliance (NADS)", detail: "Regional Scholar Community" },
-      { name: "FEU Institute of Technology", detail: "Student Body & Library Committee" },
+      { name: "FEU Institute of Technology", detail: "Library Committee Presidency" },
       { name: "QCYDO Scholarship Network", detail: "City-wide Economic Support" },
       { name: "NARA (Reading Advocates)", detail: "National Literacy Initiative" },
       { name: "Musashinova Exchange", detail: "Japan-PH Tech Collaboration" },
@@ -35,11 +34,11 @@ export function Metrics() {
       { name: "NARA Con 2025", detail: "Literacy Advocate Session" }
     ],
     capital: [
-      { name: "C-RAM Solutions Seed Funding", detail: "Venture Capital" },
-      { name: "NERDS 2.0 R&D Grants", detail: "Institutional Funding" },
-      { name: "Startup QC Prize Capital", detail: "Awarded Capital" },
-      { name: "NBDB Innovation Grant", detail: "Innovation Support" },
-      { name: "DICT NCR Regional Award", detail: "Project Grant" },
+      { name: "C-RAM Solutions Funding", detail: "Venture Capital Seed" },
+      { name: "NERDS 2.0 R&D Grants", detail: "Institutional R&D Support" },
+      { name: "Startup QC Prize Capital", detail: "Awarded Innovation Grant" },
+      { name: "NBDB Innovation Grant", detail: "Cultural Tech Support" },
+      { name: "DICT NCR Regional Award", detail: "Regional Project Grant" },
       { name: "DOST Merit Scholarships", detail: "Academic Support" }
     ]
   };

@@ -1,6 +1,6 @@
 'use client';
 
-import { Users, Microscope, Rocket, Library, Megaphone, Globe, Terminal, Briefcase, ChevronRight } from 'lucide-react';
+import { Users, Microscope, Rocket, Library, Megaphone, Globe, Terminal, Briefcase, ChevronRight, BookOpen } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Experience() {
@@ -9,16 +9,30 @@ export function Experience() {
       title: 'Executive Lead',
       org: 'NERDS 2.0 · Hybrid',
       period: 'Aug 2025 - Present',
-      description: 'Coordinated and collaborated with 20+ organizations, overseeing R&D and securing ₱150K in grants.',
+      description: 'Coordinated R&D for award-winning initiatives, securing ₱150K in total grants.',
       icon: Microscope,
       details: [
         'Coordinated with 20+ organizations, including national agencies and private firms.',
         'Directed R&D operations leading to award-winning initiatives and high-value project grants.',
         'Led 3 cross-functional teams of developers, researchers, and designers using Agile Scrum.',
-        'Earned national and regional recognition, presenting to 1000+ attendees at major innovation fairs.',
-        'Architecting Proxygen (aquaculture DO) and Birdseye (poultry monitoring).'
+        'Earned national and regional recognition at major innovation fairs.',
+        'Architecting Proxygen and Birdseye AI/IoT solutions.'
       ],
       skills: ['Program Management', 'Agile Scrum', 'R&D Leadership', 'UI/UX Design']
+    },
+    {
+      title: 'President, Library Committee',
+      org: 'FEU Institute of Technology · Manila, PH',
+      period: 'Aug 2024 - Present',
+      description: 'Leading strategic library initiatives and student representation for the academic community.',
+      icon: BookOpen,
+      details: [
+        'Presiding over the Library Committee, representing the student body in academic resource planning.',
+        'Directing initiatives to improve digital literacy and resource accessibility for FEU Tech students.',
+        'Collaborating with faculty and administration to modernize library services and engagement.',
+        'Spearheading the Salayliwa edu-cultural project in collaboration with the National Library.'
+      ],
+      skills: ['Academic Leadership', 'Strategic Planning', 'Technical Advocacy']
     },
     {
       title: 'President',
@@ -27,11 +41,10 @@ export function Experience() {
       description: 'Directing operations and strategic planning for a youth-led NGO with 200+ members.',
       icon: Users,
       details: [
-        'Directed operations and strategic planning for a youth-led NGO with 200+ active members.',
+        'Directed operations for a youth-led NGO with 200+ active members.',
         'Organized 15+ community programs impacting over 600 beneficiaries nationwide.',
-        'Managed 5 cross-functional teams of 40+ volunteers, delegating responsibilities and ensuring program success.',
-        'Represented the organization in 20+ inter-church and city-wide forums, strengthening institutional partnerships.',
-        'Leading resource planning and innovative proposals for stakeholders.'
+        'Managed 5 cross-functional teams of 40+ volunteers ensuring program success.',
+        'Represented the organization in 20+ city-wide and institutional forums.'
       ],
       skills: ['Organizational Leadership', 'Strategic Planning', 'Community Outreach']
     },
@@ -42,10 +55,10 @@ export function Experience() {
       description: 'Secured grants and shaped the product roadmap for innovation-driven solutions.',
       icon: Megaphone,
       details: [
-        'Drove marketing campaigns that positioned the startup to secure ₱600K in total capital.',
-        'Provided UX/UI insights within the Scrum team to shape the product roadmap and user experience.',
-        'Boosted investor engagement by 30% and directly led to four new qualified opportunities.',
-        'Secured positive media mentions in key industry publications for technical innovation.'
+        'Drove marketing campaigns that positioned the startup to secure capital grants.',
+        'Provided UX/UI insights within the Scrum team to shape the product roadmap.',
+        'Boosted investor engagement by 30% through technical storytelling.',
+        'Secured positive media mentions for technical innovation.'
       ],
       skills: ['Marketing Strategy', 'Innovation Development', 'Investor Relations']
     },
@@ -53,11 +66,11 @@ export function Experience() {
       title: 'University Representative',
       org: 'NCR Alliance of DOST Scholars (NADS)',
       period: 'Mar 2024 - Mar 2025',
-      description: 'Primary delegate to the DOST-NCR Alliance, representing tens of thousands of scholars.',
+      description: 'Primary delegate to the DOST-NCR Alliance, representing institutional scholars.',
       icon: Globe,
       details: [
-        'Secured institutional support to formalize and sustain the on-campus scholar community.',
-        'Functioned as the primary delegate to the DOST-NCR Alliance, shaping regional policy.',
+        'Secured institutional support to sustain the on-campus scholar community.',
+        'Functioned as the primary delegate to the DOST-NCR Alliance regional body.',
         'Coordinated regional development projects with representatives from 10+ universities.',
         'Elevated the institution\'s voice among peer universities in NCR.'
       ],

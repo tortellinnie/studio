@@ -1,4 +1,4 @@
-import { GraduationCap, Briefcase, Award, Milestone, Rocket, Building2 } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, Milestone, Rocket, Building2, BookOpen } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export function Journey() {
@@ -21,11 +21,11 @@ export function Journey() {
     },
     {
       date: '2024 - 2026',
-      title: 'Senior Software Engineering Student',
-      org: 'Far Eastern University - Institute of Technology',
-      desc: 'Focused on AI, data systems, and user-centered design. Consistently recognized as a Top Performing Student with a 3.6 GPA.',
-      icon: GraduationCap,
-      color: 'bg-blue-500'
+      title: 'President, Library Committee',
+      org: 'FEU Institute of Technology',
+      desc: 'Leading student representation in academic resource strategy and spearheading cultural innovation projects in collaboration with the National Library.',
+      icon: BookOpen,
+      color: 'bg-indigo-500'
     },
     {
       date: '2024 - 2026',
@@ -36,12 +36,12 @@ export function Journey() {
       color: 'bg-amber-500'
     },
     {
-      date: '2022 - 2023',
-      title: 'Project Manager & Frontend Developer',
-      org: 'PUP - RISFI',
-      desc: 'Managed a team of 6 developers for research-driven software solutions. Developed task roadmaps and ensured high quality assurance.',
-      icon: Milestone,
-      color: 'bg-emerald-500'
+      date: '2024 - 2026',
+      title: 'Senior Software Engineering Student',
+      org: 'FEU Institute of Technology',
+      desc: 'Focused on AI, data systems, and user-centered design. Consistently recognized as a Top Performing Student with a 3.6 GPA.',
+      icon: GraduationCap,
+      color: 'bg-blue-500'
     }
   ];
 

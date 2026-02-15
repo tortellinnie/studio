@@ -28,27 +28,16 @@ export function Collaborators() {
         'Smart Communications',
         'Microsoft Philippines',
         'EMC Global (Japan)',
-        'Urban Youth Academy',
-        'Asia Pacific Youth Exchange',
-        'C-RAM Solutions',
-        'The SecOps Group',
-        'Oracle',
-        'Salesforce',
-        'Databricks'
+        'C-RAM Solutions'
       ]
     },
     {
       title: 'Academia & Clinical',
       icon: GraduationCap,
       partners: [
-        'Musashino University',
         'FEU Institute of Technology',
-        'PUP - RISFI',
         'EAMC Dept. of Neurosciences',
-        'DOST-PCHRD',
-        'ACM Tech Publicity',
-        'GDSC FEU Tech',
-        'Data Engineering Pilipinas'
+        'DOST-PCHRD'
       ]
     }
   ];
@@ -63,7 +52,7 @@ export function Collaborators() {
             </Badge>
             <h2 className="text-4xl lg:text-6xl font-black text-white uppercase italic">Collaborators.</h2>
             <p className="text-muted-foreground max-w-2xl text-lg font-medium">
-              A comprehensive network of institutional partners, global industry leaders, and academic stakeholders.
+              A refined network of institutional partners, global industry leaders, and academic stakeholders.
             </p>
           </div>
 
@@ -95,7 +84,7 @@ export function Collaborators() {
               ))}
             </div>
             <p className="text-white/60 font-medium text-sm">
-              Coordinating with over <span className="text-primary font-black">25+ institutional partners</span> across Manila and global hubs.
+              Coordinating with over <span className="text-primary font-black">15+ key institutional partners</span> across Manila and global hubs.
             </p>
           </div>
         </div>
