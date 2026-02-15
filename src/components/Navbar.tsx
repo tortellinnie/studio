@@ -54,29 +54,26 @@ export function Navbar() {
     )}>
       <div className={cn(
         "w-full px-6 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-auto",
-        isShortened ? "max-w-[1000px]" : "max-w-7xl"
+        isShortened ? "max-w-[600px]" : "max-w-7xl"
       )}>
         <div className={cn(
           "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] w-full overflow-hidden",
           isShortened ? "px-6 lg:px-8" : "px-10"
         )}>
-          <div className="flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] gap-6 lg:gap-10">
+          <div className="flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] gap-4 lg:gap-10">
             <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0 text-white">
               TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
             </Link>
             
             <div className={cn(
               "hidden lg:flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden",
-              isShortened ? "gap-x-4" : "gap-x-8"
+              isShortened ? "max-w-0 opacity-0 pointer-events-none" : "max-w-[800px] opacity-100 gap-x-8"
             )}>
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={cn(
-                    "text-[9px] uppercase font-black transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] text-white/50 hover:text-white hover:translate-y-[-2px] whitespace-nowrap",
-                    isShortened ? "tracking-[0.1em]" : "tracking-[0.25em]"
-                  )}
+                  className="text-[9px] uppercase font-black transition-all duration-500 text-white/50 hover:text-white hover:translate-y-[-2px] whitespace-nowrap tracking-[0.25em]"
                 >
                   {item.label}
                 </Link>
@@ -85,19 +82,13 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-3 shrink-0">
-            <div className="hidden lg:flex items-center">
-              {/* This wrapper handles the 'Resume' button slide-in/out motion */}
-              <div className={cn(
-                "overflow-hidden transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center",
-                isShortened ? "max-w-0 opacity-0 mr-0" : "max-w-[200px] opacity-100 mr-3"
-              )}>
-                <Button variant="ghost" asChild className="rounded-full border border-white/10 bg-white/[0.02] text-white/80 hover:bg-white/10 font-black tracking-widest text-[9px] uppercase h-11 px-6 whitespace-nowrap backdrop-blur-xl">
-                  <Link href="/resume">
-                    <FileText className="w-3.5 h-3.5 mr-2" />
-                    Resume
-                  </Link>
-                </Button>
-              </div>
+            <div className="hidden lg:flex items-center gap-3">
+              <Button variant="ghost" asChild className="rounded-full border border-white/10 bg-white/[0.02] text-white/80 hover:bg-white/10 font-black tracking-widest text-[9px] uppercase h-11 px-6 whitespace-nowrap backdrop-blur-xl transition-all duration-1000">
+                <Link href="/resume">
+                  <FileText className="w-3.5 h-3.5 mr-2" />
+                  Resume
+                </Link>
+              </Button>
               
               <Button asChild className={cn(
                 "rounded-full bg-white text-black hover:bg-white/90 font-black tracking-widest text-[9px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] shrink-0",
