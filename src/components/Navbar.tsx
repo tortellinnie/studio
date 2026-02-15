@@ -15,14 +15,14 @@ export function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Hiding logic: Hide when scrolling down significantly, show immediately on scroll up
+      // Hiding logic: Glide out on scroll down, show on scroll up
       if (currentScrollY > lastScrollY && currentScrollY > 200) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
 
-      // Shortening logic: Contract the bar when scrolling away from the top-of-page hero area
+      // Shortening logic: Contract the bar when scrolling away from top
       if (currentScrollY > 80) {
         setIsShortened(true);
       } else {
@@ -47,27 +47,31 @@ export function Navbar() {
 
   return (
     <nav className={cn(
-      "fixed top-0 z-[100] w-full pt-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-none",
+      "fixed top-0 z-[100] w-full pt-6 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-none",
       isVisible 
         ? "translate-y-0 opacity-100" 
         : "-translate-y-32 opacity-0"
     )}>
       <div className={cn(
         "w-full px-6 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-auto",
-        isShortened ? "max-w-[600px]" : "max-w-7xl"
+        isShortened ? "max-w-[1100px]" : "max-w-7xl"
       )}>
         <div className={cn(
           "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] w-full overflow-hidden",
           isShortened ? "px-6 lg:px-8" : "px-10"
         )}>
-          <div className="flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] gap-4 lg:gap-10">
+          {/* Brand and Nav Items */}
+          <div className={cn(
+            "flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]",
+            isShortened ? "gap-6" : "gap-12"
+          )}>
             <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0 text-white">
               TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
             </Link>
             
             <div className={cn(
-              "hidden lg:flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden",
-              isShortened ? "max-w-0 opacity-0 pointer-events-none" : "max-w-[800px] opacity-100 gap-x-8"
+              "hidden lg:flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]",
+              isShortened ? "gap-x-6" : "gap-x-10"
             )}>
               {navItems.map((item) => (
                 <Link
@@ -81,9 +85,17 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          {/* Action Buttons */}
+          <div className={cn(
+            "flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] shrink-0",
+            isShortened ? "gap-3" : "gap-4"
+          )}>
             <div className="hidden lg:flex items-center gap-3">
-              <Button variant="ghost" asChild className="rounded-full border border-white/10 bg-white/[0.02] text-white/80 hover:bg-white/10 font-black tracking-widest text-[9px] uppercase h-11 px-6 whitespace-nowrap backdrop-blur-xl transition-all duration-1000">
+              <Button 
+                variant="ghost" 
+                asChild 
+                className="rounded-full border border-white/10 bg-white/[0.02] text-white/80 hover:bg-white/10 font-black tracking-widest text-[9px] uppercase h-11 px-6 whitespace-nowrap backdrop-blur-xl transition-all duration-1000"
+              >
                 <Link href="/resume">
                   <FileText className="w-3.5 h-3.5 mr-2" />
                   Resume
@@ -100,6 +112,7 @@ export function Navbar() {
               </Button>
             </div>
 
+            {/* Mobile View Toggle/Button */}
             <div className="lg:hidden flex gap-2">
               <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-6 font-black tracking-widest text-[9px] uppercase h-10">
                 <Link href="/#contact">Talk</Link>
