@@ -44,7 +44,7 @@ export function SDGs() {
                 </div>
               </div>
 
-              {/* Middle Section: Center-aligned Goal & Title */}
+              {/* Middle Section: Center-aligned Goal & Title with Fixed Vertical Relationship */}
               <div className="flex-1 flex flex-col items-center justify-center gap-2">
                 <span className="text-[10px] font-black text-primary uppercase tracking-[0.25em] block">Goal {goal.id}</span>
                 <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors text-center max-w-[120px]">
