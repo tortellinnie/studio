@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -40,7 +41,7 @@ export function Collaborators() {
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-16 md:gap-x-20 md:gap-y-24 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-12 md:gap-x-12 md:gap-y-16 max-w-5xl mx-auto">
             {partners.map((org, i) => {
               const logo = PlaceHolderImages.find(img => img.id === org.logoId);
               return (
