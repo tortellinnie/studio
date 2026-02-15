@@ -9,7 +9,7 @@
     {
       "id": "project-salayliwa",
       "description": "Salayliwa mobile app interface",
-      "imageUrl": "/assets/images/salayliwa.jpg",
+      "imageUrl": "/assets/images/salayliwa.png",
       "imageHint": "reading culture"
     },
     {
@@ -21,7 +21,7 @@
     {
       "id": "project-gabaydiwa",
       "description": "Healthcare dashboard for GabayDiwa",
-      "imageUrl": "/assets/images/gabaydiwa.jpg",
+      "imageUrl": "/assets/images/gabaydiwa.png",
       "imageHint": "healthcare data"
     },
     {
@@ -33,19 +33,19 @@
     {
       "id": "project-proxygen",
       "description": "Proxygen hardware sensor in aquaculture pond",
-      "imageUrl": "/assets/images/proxygen.jpg",
+      "imageUrl": "/assets/images/proxygen.png",
       "imageHint": "aquaculture sensor"
     },
     {
       "id": "featured-pg-intern",
-      "description": "Procter & Gamble headquarters in Manila",
-      "imageUrl": "/assets/images/pg-intern.jpg",
+      "description": "Procter & Gamble mission impact",
+      "imageUrl": "/assets/images/pg-intern.png",
       "imageHint": "corporate office"
     },
     {
       "id": "featured-speaking-tokyo",
-      "description": "Musashino University campus in Tokyo",
-      "imageUrl": "/assets/images/speaking-tokyo.jpg",
+      "description": "Global delegation impact in Tokyo",
+      "imageUrl": "/assets/images/emc.png",
       "imageHint": "tokyo city"
     }
   ]
