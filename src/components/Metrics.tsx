@@ -78,53 +78,51 @@ export function Metrics() {
     <section className="relative z-20 py-16 bg-background">
       <div className="container mx-auto px-6">
         <TooltipProvider delayDuration={0}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {stats.map((stat, i) => (
-              <div key={i}>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <button className="w-full text-left glass-card p-8 rounded-[2rem] border-white/5 hover:border-primary/20 transition-all duration-500 group relative">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className={`w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors`}>
-                          <stat.icon className={`w-6 h-6 ${stat.color}`} />
-                        </div>
-                        <div className="flex items-center gap-2">
-                           <div className="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-[8px] font-black text-primary uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity">
-                             Click to view
-                           </div>
-                           <div className="h-1 w-12 bg-white/5 rounded-full mt-2 overflow-hidden">
-                             <div className="h-full bg-primary w-2/3 group-hover:w-full transition-all duration-700" />
-                           </div>
-                        </div>
+              <Dialog key={i}>
+                <DialogTrigger asChild>
+                  <button className="flex flex-col h-full w-full text-left glass-card p-8 rounded-[2rem] border-white/5 hover:border-primary/20 transition-all duration-500 group relative">
+                    <div className="flex items-start justify-between mb-8">
+                      <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <stat.icon className={`w-6 h-6 ${stat.color}`} />
                       </div>
-                      <div className="space-y-1">
-                        <h3 className="text-4xl font-black text-white tracking-tighter">{stat.value}</h3>
-                        <p className="text-[10px] font-black uppercase tracking-widest text-primary">{stat.label}</p>
-                        <p className="text-sm text-muted-foreground font-medium leading-tight pt-2">
-                          {stat.description}
-                        </p>
+                      <div className="flex flex-col items-end gap-2">
+                         <div className="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-[8px] font-black text-primary uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                           Click to view details
+                         </div>
+                         <div className="h-1 w-12 bg-white/5 rounded-full overflow-hidden">
+                           <div className="h-full bg-primary w-2/3 group-hover:w-full transition-all duration-700" />
+                         </div>
                       </div>
-                    </button>
-                  </DialogTrigger>
-                  <DialogContent className="glass-card border-white/10 text-white max-w-lg rounded-[2.5rem] p-10">
-                    <DialogHeader className="mb-6">
-                      <DialogTitle className="text-3xl font-black uppercase italic tracking-tighter">
-                        {stat.title}<span className="text-primary">.</span>
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div className="grid gap-3">
-                      {stat.details.map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-colors">
-                          <span className="font-bold text-white/90">{item.name}</span>
-                          <Badge variant="outline" className="border-primary/30 text-primary text-[9px] font-black uppercase">
-                            {item.detail}
-                          </Badge>
-                        </div>
-                      ))}
                     </div>
-                  </DialogContent>
-                </Dialog>
-              </div>
+                    <div className="space-y-1 mt-auto">
+                      <h3 className="text-4xl font-black text-white tracking-tighter">{stat.value}</h3>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-primary">{stat.label}</p>
+                      <p className="text-sm text-muted-foreground font-medium leading-tight pt-2">
+                        {stat.description}
+                      </p>
+                    </div>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="glass-card border-white/10 text-white max-w-lg rounded-[2.5rem] p-10">
+                  <DialogHeader className="mb-6">
+                    <DialogTitle className="text-3xl font-black uppercase italic tracking-tighter">
+                      {stat.title}<span className="text-primary">.</span>
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="grid gap-3">
+                    {stat.details.map((item, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-colors">
+                        <span className="font-bold text-white/90 text-sm">{item.name}</span>
+                        <Badge variant="outline" className="border-primary/30 text-primary text-[9px] font-black uppercase">
+                          {item.detail}
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
         </TooltipProvider>
