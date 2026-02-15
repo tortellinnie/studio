@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Badge } from '@/components/ui/badge';
@@ -26,16 +25,16 @@ export function Collaborators() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center mb-16 space-y-4">
             <p className="text-white/40 text-xs font-bold uppercase tracking-[0.3em]">
-              Affiliated with Leading Organizations
+              In collaboration with the following Leading Global and Local Organizations
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center opacity-60 hover:opacity-100 transition-opacity duration-700">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12 items-center justify-items-center opacity-40 hover:opacity-100 transition-all duration-1000">
             {organizations.map((org) => {
               const imageData = PlaceHolderImages.find(img => img.id === org.id);
               return (
-                <div key={org.id} className="group relative grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110">
-                  <div className="w-32 h-16 relative">
+                <div key={org.id} className="group relative grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110">
+                  <div className="w-40 h-16 relative">
                     {imageData && (
                       <Image
                         src={imageData.imageUrl}
@@ -62,10 +61,11 @@ export function Collaborators() {
                  <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 800 300">
                     <path d="M100,150 Q400,50 700,150" stroke="white" strokeWidth="1" fill="none" strokeDasharray="5,5" className="animate-[dash_20s_linear_infinite]" />
                     <circle cx="400" cy="150" r="100" stroke="white" strokeWidth="0.5" fill="none" />
+                    <path d="M150,250 Q400,100 650,250" stroke="white" strokeWidth="1" fill="none" strokeDasharray="5,5" className="animate-[dash_15s_linear_reverse_infinite]" />
                  </svg>
                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full glass-card border-white/10 flex items-center justify-center shadow-2xl animate-pulse">
-                       <span className="text-[10px] font-black text-white">2026</span>
+                    <div className="w-24 h-24 rounded-full glass-card border-white/10 flex items-center justify-center shadow-2xl animate-pulse">
+                       <span className="text-[10px] font-black text-white uppercase tracking-widest">Global 2026</span>
                     </div>
                  </div>
               </div>
