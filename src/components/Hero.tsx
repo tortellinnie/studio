@@ -20,17 +20,17 @@ export function Hero() {
           
           {/* Column 1: Balanced Branding & Copy */}
           <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 animate-in fade-in slide-in-from-left-12 duration-1000 overflow-visible">
-            <div className="space-y-4 overflow-visible">
+            <div className="space-y-4 overflow-visible w-full">
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[40px] text-[10px] font-black uppercase tracking-[0.3em] text-primary shadow-xl">
                 <Sparkles className="w-3 h-3 fill-primary" />
                 <span>Open for Engineering Roles</span>
               </div>
               
-              <div className="relative group px-4 lg:px-0 overflow-visible">
-                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible pb-4">
+              <div className="relative group overflow-visible">
+                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible pb-4 pr-16">
                   <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125">TECHNO</span>
-                  <div className="relative pr-20 lg:pr-32 overflow-visible">
-                    <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)]">
+                  <div className="relative pr-32 lg:pr-48 overflow-visible">
+                    <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)] pr-8">
                       LEADER
                     </span>
                   </div>
@@ -98,7 +98,7 @@ export function Hero() {
                 </div>
 
                 {/* Overlapping GPA Badge - Positioned halfway out of the photo */}
-                <div className="absolute -bottom-6 -left-10 animate-float z-20">
+                <div className="absolute -bottom-6 -left-12 animate-float z-20">
                   <div className="px-6 py-4 rounded-[2rem] bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col items-start gap-1 group/gpa hover:bg-white/20 transition-all cursor-default scale-110">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
