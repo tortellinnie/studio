@@ -53,27 +53,33 @@ export function Navbar() {
         : "-translate-y-32 opacity-0 pointer-events-none"
     )}>
       <div className={cn(
-        "container px-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        isShortened ? "max-w-5xl" : "max-w-full"
+        "px-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+        isShortened ? "max-w-fit" : "container max-w-7xl"
       )}>
         <div className={cn(
           "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-[0_8px_48px_0_rgba(0,0,0,0.6)] backdrop-blur-[48px] bg-white/[0.03] transition-all duration-700",
-          isShortened ? "px-8" : "px-10"
+          isShortened ? "px-6 gap-x-8" : "px-10"
         )}>
-          <div className="flex items-center gap-10">
+          <div className={cn(
+            "flex items-center transition-all duration-700",
+            isShortened ? "gap-x-4 lg:gap-x-6" : "gap-10"
+          )}>
             <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0 text-white">
               TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
             </Link>
             
             <div className={cn(
-              "hidden lg:flex items-center gap-6 xl:gap-8 transition-all duration-700",
-              isShortened ? "opacity-100 translate-x-0" : "opacity-100"
+              "hidden lg:flex items-center transition-all duration-700",
+              isShortened ? "gap-x-4" : "gap-6 xl:gap-8"
             )}>
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-[9px] uppercase font-black tracking-[0.25em] text-white/50 hover:text-white transition-all hover:translate-y-[-2px] whitespace-nowrap"
+                  className={cn(
+                    "text-[9px] uppercase font-black tracking-[0.25em] text-white/50 hover:text-white transition-all hover:translate-y-[-2px] whitespace-nowrap",
+                    isShortened ? "tracking-[0.15em]" : "tracking-[0.25em]"
+                  )}
                 >
                   {item.label}
                 </Link>
@@ -81,15 +87,24 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 transition-all duration-700">
+          <div className={cn(
+            "flex items-center transition-all duration-700",
+            isShortened ? "gap-x-3" : "gap-3"
+          )}>
             <div className="hidden lg:flex items-center gap-3">
-              <Button variant="ghost" asChild className="rounded-full border border-white/10 bg-white/[0.02] text-white/80 hover:bg-white/10 px-6 font-black tracking-widest text-[9px] uppercase h-11 transition-all hover:scale-105 shrink-0 backdrop-blur-xl">
+              <Button variant="ghost" asChild className={cn(
+                "rounded-full border border-white/10 bg-white/[0.02] text-white/80 hover:bg-white/10 font-black tracking-widest text-[9px] uppercase h-11 transition-all hover:scale-105 shrink-0 backdrop-blur-xl",
+                isShortened ? "px-4" : "px-6"
+              )}>
                 <Link href="/resume">
                   <FileText className="w-3.5 h-3.5 mr-2" />
                   Resume
                 </Link>
               </Button>
-              <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-10 font-black tracking-widest text-[9px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all hover:scale-105 shrink-0">
+              <Button asChild className={cn(
+                "rounded-full bg-white text-black hover:bg-white/90 font-black tracking-widest text-[9px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all hover:scale-105 shrink-0",
+                isShortened ? "px-6" : "px-10"
+              )}>
                 <Link href="/#contact">Connect</Link>
               </Button>
             </div>
