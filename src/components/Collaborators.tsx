@@ -35,7 +35,7 @@ export function Collaborators() {
     <section id="collaborators" className="py-20 relative bg-transparent overflow-hidden border-t border-white/5">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
+          <div className="mb-12 text-center lg:text-left">
             <Badge className="bg-white/5 text-white/30 border-white/10 px-3 py-1 rounded-full font-black tracking-widest uppercase text-[8px] mb-2">
               Institutional Network
             </Badge>
@@ -49,7 +49,7 @@ export function Collaborators() {
                 <Globe className="w-3 h-3 text-primary/40" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Government</h3>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-6">
                 {ecosystem.government.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
@@ -75,7 +75,7 @@ export function Collaborators() {
                 <Building2 className="w-3 h-3 text-accent/40" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Industry & Global</h3>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-6">
                 {ecosystem.industry.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
@@ -101,7 +101,7 @@ export function Collaborators() {
                 <GraduationCap className="w-3 h-3 text-white/20" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Academia & Clinical</h3>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-6">
                 {ecosystem.academia.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
