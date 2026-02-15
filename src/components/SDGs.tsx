@@ -18,7 +18,7 @@ export function SDGs() {
   return (
     <section className="py-24 relative bg-transparent overflow-visible">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-16 space-y-6">
+        <div className="flex flex-col items-center text-center mb-20 space-y-6">
           <Badge className="bg-primary/10 text-primary border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
             Social Impact Alignment
           </Badge>
@@ -35,19 +35,25 @@ export function SDGs() {
               href={`https://sdgs.un.org/goals/goal${goal.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-square glass-card rounded-3xl p-6 flex flex-col items-center justify-center text-center gap-4 border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40"
+              className="group relative aspect-square glass-card rounded-[2.5rem] p-8 flex flex-col items-center border-white/5 hover:border-primary/20 transition-all duration-500 outline-none focus:ring-2 focus:ring-primary/40"
             >
-              <div className={`w-14 h-14 rounded-2xl ${goal.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                <goal.icon className="w-8 h-8 text-white" />
+              {/* Top Section: Fixed Icon Position */}
+              <div className="flex-none mb-6">
+                <div className={`w-14 h-14 rounded-2xl ${goal.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+                  <goal.icon className="w-8 h-8 text-white" />
+                </div>
               </div>
-              <div>
-                <span className="text-[10px] font-black text-primary/60 uppercase tracking-widest block mb-1">Goal {goal.id}</span>
-                <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors">
+
+              {/* Middle Section: Center-aligned Goal & Title */}
+              <div className="flex-1 flex flex-col items-center justify-center gap-2">
+                <span className="text-[10px] font-black text-primary uppercase tracking-[0.25em] block">Goal {goal.id}</span>
+                <p className="text-xs lg:text-sm font-black text-white uppercase leading-tight group-hover:text-primary transition-colors text-center max-w-[120px]">
                   {goal.title}
                 </p>
               </div>
               
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-40 transition-opacity">
+              {/* Subtle Indicator */}
+              <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-40 transition-opacity">
                 <div className="w-1.5 h-1.5 rounded-full bg-white" />
               </div>
             </a>

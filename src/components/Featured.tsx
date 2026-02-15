@@ -32,7 +32,7 @@ export function Featured() {
   ];
 
   return (
-    <section id="featured" className="py-24 relative overflow-hidden bg-transparent">
+    <section id="featured" className="py-24 relative overflow-visible bg-transparent">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center mb-16 space-y-6">
@@ -45,12 +45,12 @@ export function Featured() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
             {highlights.map((item) => {
               const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
               return (
                 <Link href={`/impact/${item.id}`} key={item.id} className="group">
-                  <Card className="glass-card border-white/5 overflow-hidden rounded-[2.5rem] h-full flex flex-col premium-gradient-border">
+                  <Card className="glass-card border-white/5 overflow-hidden rounded-[3rem] h-full flex flex-col premium-gradient-border">
                     <div className="relative aspect-video overflow-hidden">
                       {imageData && (
                         <Image 
@@ -61,38 +61,38 @@ export function Featured() {
                           data-ai-hint={imageData.imageHint}
                         />
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                     </div>
-                    <CardContent className="p-8 lg:p-10 space-y-5 flex-grow relative">
+                    <CardContent className="p-10 space-y-6 flex-grow relative">
                       <div className="flex items-center justify-between">
                         <Badge className="bg-primary/20 text-primary border-primary/20 backdrop-blur-xl font-black uppercase text-[8px] tracking-widest h-7 px-3">
-                          <item.icon className="w-3 h-3 mr-2" />
+                          <item.icon className="w-3.5 h-3.5 mr-2" />
                           {item.type}
                         </Badge>
                         <div className="flex items-center gap-2 text-muted-foreground font-bold">
-                          <Calendar className="w-3 h-3 text-primary" />
+                          <Calendar className="w-3.5 h-3.5 text-primary" />
                           <span className="text-[10px] uppercase tracking-tight">{item.date}</span>
                         </div>
                       </div>
-                      <div className="space-y-2">
+                      <div className="space-y-4">
                         <div className="flex items-start justify-between gap-4">
-                          <h3 className="text-xl lg:text-2xl font-black text-white group-hover:text-primary transition-colors leading-tight tracking-tight uppercase italic">
+                          <h3 className="text-2xl lg:text-3xl font-black text-white group-hover:text-primary transition-colors leading-tight tracking-tight uppercase italic">
                             {item.title}
                           </h3>
-                          <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all shrink-0">
-                            <ArrowUpRight className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+                          <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all shrink-0">
+                            <ArrowUpRight className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
                           </div>
                         </div>
                         <div className="flex items-center gap-2 text-muted-foreground">
-                          <MapPin className="w-3.5 h-3.5 text-primary" />
-                          <span className="text-[10px] font-bold uppercase tracking-[0.15em]">{item.location}</span>
+                          <MapPin className="w-4 h-4 text-primary" />
+                          <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{item.location}</span>
                         </div>
                       </div>
                       <p className="text-sm lg:text-base text-muted-foreground leading-relaxed italic font-medium opacity-80 group-hover:opacity-100 transition-opacity">
                         "{item.description}"
                       </p>
-                      <div className="pt-2">
-                        <div className="inline-flex items-center gap-2 text-[8px] font-black uppercase tracking-[0.3em] text-primary border-b border-primary/0 group-hover:border-primary transition-all pb-1">
+                      <div className="pt-4">
+                        <div className="inline-flex items-center gap-2 text-[8px] font-black uppercase tracking-[0.4em] text-primary border-b border-primary/0 group-hover:border-primary transition-all pb-1">
                           Read Story
                         </div>
                       </div>

@@ -12,15 +12,15 @@ export function Hero() {
       <div className="absolute bottom-[-10%] right-[-5%] w-[50%] h-[50%] bg-amber-500/15 hero-glow animate-pulse delay-1000" />
       
       <div className="container mx-auto z-10 text-center flex flex-col items-center overflow-visible">
-        <div className="space-y-12 w-full max-w-screen-2xl">
-          <div className="space-y-8 lg:space-y-10">
+        <div className="space-y-12 w-full max-w-screen-2xl overflow-visible">
+          <div className="space-y-8 lg:space-y-10 overflow-visible">
             <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-[40px] text-[11px] font-black uppercase tracking-[0.3em] text-primary shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
               <Sparkles className="w-3.5 h-3.5 fill-primary" />
               <span>Available for 2026 Engineering Roles</span>
             </div>
             
-            <div className="relative overflow-visible">
-              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11rem] font-black text-white leading-[0.95] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-4 px-4">
+            <div className="relative overflow-visible px-12">
+              <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[11rem] font-black text-white leading-[0.95] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-6 block whitespace-nowrap">
                 TECHNOLEADER
               </h1>
             </div>
