@@ -2,7 +2,7 @@
 
 import { Navbar } from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Download, Printer } from 'lucide-react';
+import { ArrowLeft, Printer } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ResumePage() {
@@ -26,14 +26,11 @@ export default function ResumePage() {
               </Button>
               <div className="flex flex-col items-center md:items-end gap-2">
                 <div className="flex gap-4">
-                  <Button onClick={handlePrint} variant="outline" className="rounded-full border-slate-200 dark:border-white/20">
-                    <Printer className="w-4 h-4 mr-2" /> Print
-                  </Button>
                   <Button onClick={handlePrint} className="rounded-full bg-primary hover:bg-primary/90 font-bold uppercase tracking-widest text-[10px] h-11 px-8">
-                    <Download className="w-4 h-4 mr-2" /> Download PDF
+                    <Printer className="w-4 h-4 mr-2" /> Print / Save as PDF
                   </Button>
                 </div>
-                <p className="text-[10px] text-muted-foreground font-medium italic">Tip: Select "Save as PDF" in the print destination</p>
+                <p className="text-[10px] text-muted-foreground font-medium italic">Tip: Select "Save as PDF" in the print destination to download</p>
               </div>
             </div>
 
