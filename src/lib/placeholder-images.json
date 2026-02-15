@@ -55,64 +55,52 @@
       "imageHint": "tokyo city"
     },
     {
-      "id": "logo-aws",
-      "description": "AWS Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1675855545571-2859b0de5a02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "aws logo"
+      "id": "logo-dost",
+      "description": "DOST Philippines Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1732721093836-637fb75ae237?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxnb3Zlcm5tZW50JTIwYWdlbmN5fGVufDB8fHx8MTc3MTE4Mjk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "government agency"
     },
     {
-      "id": "logo-google-cloud",
-      "description": "Google Cloud Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1760138270903-d95903188730?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "google cloud"
+      "id": "logo-dict",
+      "description": "DICT Philippines Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1702047109910-43af92894dc1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNoJTIwYWdlbmN5fGVufDB8fHx8MTc3MTE4Mjk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tech agency"
     },
     {
-      "id": "logo-vercel",
-      "description": "Vercel Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "vercel logo"
+      "id": "logo-qc",
+      "description": "Quezon City Government Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1721559032993-3f09cf25a386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaXR5JTIwc2VhbHxlbnwwfHx8fDE3NzExODI5ODd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city seal"
     },
     {
-      "id": "logo-github",
-      "description": "GitHub Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1563126072-6457fc59c1cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      "imageHint": "github logo"
+      "id": "logo-nbdb",
+      "description": "NBDB Philippines Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1722706731912-dde6e451e59f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxib29rJTIwZGV2ZWxvcG1lbnR8ZW58MHx8fHwxNzcxMTgyOTg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "book development"
     },
     {
       "id": "logo-p&g",
       "description": "P&G Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1563126072-6457fc59c1cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1760776166616-dd939861e94d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxnbG9iYWwlMjBjb21wYW55fGVufDB8fHx8MTc3MTE4MTgyMXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "global company"
     },
     {
       "id": "logo-microsoft",
       "description": "Microsoft Philippines Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1531973576160-7125cd663d86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0ZWNoJTIwY29tcGFueXxlbnwwfHx8fDE3NzExODE4MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "tech company"
     },
     {
-      "id": "hub-agriculture",
-      "description": "Smart Agriculture Connectivity",
-      "imageUrl": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      "imageHint": "smart farm"
+      "id": "logo-feu",
+      "description": "FEU Tech Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1689686610856-3bcf921eb1f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx1bml2ZXJzaXR5JTIwY2FtcHVzfGVufDB8fHx8MTc3MTE4Mjk4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university campus"
     },
     {
-      "id": "hub-healthcare",
-      "description": "AI Healthcare Connectivity",
-      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      "imageHint": "medical technology"
-    },
-    {
-      "id": "hub-edutech",
-      "description": "EduTech Innovation Connectivity",
-      "imageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      "imageHint": "learning technology"
-    },
-    {
-      "id": "hub-automation",
-      "description": "Industrial Automation Connectivity",
-      "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
-      "imageHint": "electronic engineering"
+      "id": "logo-pldt",
+      "description": "PLDT Logo",
+      "imageUrl": "https://picsum.photos/seed/pldt/200/100",
+      "imageHint": "telecommunications giant"
     }
   ]
 }

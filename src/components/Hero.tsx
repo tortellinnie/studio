@@ -11,17 +11,17 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-24 bg-transparent overflow-visible">
-      <div className="absolute top-0 left-0 w-[50%] h-[50%] bg-white/[0.02] hero-glow pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-white/[0.01] hero-glow pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[50%] h-[50%] bg-white/[0.01] hero-glow pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[40%] h-[40%] bg-white/[0.005] hero-glow pointer-events-none" />
       
       <div className="container mx-auto z-10 max-w-7xl overflow-visible">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center overflow-visible">
           
           <div className="order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-10 animate-in fade-in slide-in-from-left-12 duration-1000 overflow-visible">
             <div className="space-y-6 overflow-visible w-full">
-              <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.01] backdrop-blur-md text-[9px] font-black uppercase tracking-[0.3em] text-white/40 shadow-sm">
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.01] backdrop-blur-md text-[9px] font-black uppercase tracking-[0.3em] text-white/30 shadow-sm">
                 <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                <span>Available for Strategic Partnerships</span>
+                <span>Strategic Partnerships 2026</span>
               </div>
               
               <div className="relative overflow-visible w-fit">
@@ -81,7 +81,7 @@ export function Hero() {
                     <p className="text-white text-xl font-black italic uppercase tracking-tighter">
                       Shann Karl Felipe<span className="text-white">.</span>
                     </p>
-                    <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest mt-1">Leader | Speaker</p>
+                    <p className="text-white/30 text-[9px] font-bold uppercase tracking-widest mt-1">Leader | Speaker</p>
                   </div>
                 </div>
               </div>
