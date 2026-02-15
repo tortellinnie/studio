@@ -16,11 +16,16 @@ export function Collaborators() {
     { id: 'logo-dost', label: 'DOST' },
   ];
 
+  // Distribute collaborators around the hub
   const hubNodes = [
-    { id: 'hub-agriculture', label: 'Agriculture', angle: 45 },
-    { id: 'hub-healthcare', label: 'Healthcare', angle: 135 },
-    { id: 'hub-edutech', label: 'EduTech', angle: 225 },
-    { id: 'hub-automation', label: 'Automation', angle: 315 },
+    { id: 'logo-aws', label: 'AWS', angle: 0 },
+    { id: 'logo-google-cloud', label: 'Google Cloud', angle: 45 },
+    { id: 'logo-p&g', label: 'P&G', angle: 90 },
+    { id: 'logo-microsoft', label: 'Microsoft', angle: 135 },
+    { id: 'logo-github', label: 'GitHub', angle: 180 },
+    { id: 'logo-vercel', label: 'Vercel', angle: 225 },
+    { id: 'logo-dict', label: 'DICT', angle: 270 },
+    { id: 'logo-dost', label: 'DOST', angle: 315 },
   ];
 
   return (
@@ -60,7 +65,7 @@ export function Collaborators() {
             })}
           </div>
 
-          {/* Strategic Ecosystem (Neural Web) */}
+          {/* Strategic Ecosystem (Neural Web with Logo Nodes) */}
           <div className="mt-24 py-24 px-8 glass-card rounded-[4rem] border-white/5 overflow-hidden group">
             <div className="flex flex-col items-center text-center space-y-12">
               <div className="space-y-4">
@@ -69,13 +74,13 @@ export function Collaborators() {
                 </div>
                 <h3 className="text-3xl font-black text-white uppercase italic tracking-tighter">Institutional Connectivity.</h3>
                 <p className="text-muted-foreground text-sm font-medium max-w-lg mx-auto leading-relaxed">
-                  Mapping the intersections between technology, social impact, and global institutional support.
+                  Visualizing the neural connections between technical partners and global impact hubs.
                 </p>
               </div>
               
-              <div className="relative h-[500px] w-full max-w-4xl flex items-center justify-center">
+              <div className="relative h-[600px] w-full max-w-5xl flex items-center justify-center scale-75 lg:scale-100">
                  {/* Neural Connection Lines (SVG) */}
-                 <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 800 500">
+                 <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 600">
                     <defs>
                       <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="white" stopOpacity="0" />
@@ -83,51 +88,74 @@ export function Collaborators() {
                         <stop offset="100%" stopColor="white" stopOpacity="0" />
                       </linearGradient>
                     </defs>
-                    <path d="M400,250 L200,100" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
-                    <path d="M400,250 L600,100" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
-                    <path d="M400,250 L200,400" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
-                    <path d="M400,250 L600,400" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
-                    {/* Pulsing ring */}
-                    <circle cx="400" cy="250" r="150" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="5,10" className="animate-[spin_60s_linear_infinite]" />
+                    
+                    {/* Dynamic Connections between nodes */}
+                    {hubNodes.map((node, i) => {
+                      const angle = (node.angle * Math.PI) / 180;
+                      const radius = 240;
+                      const x = 500 + Math.cos(angle) * radius;
+                      const y = 300 + Math.sin(angle) * radius;
+                      
+                      // Connect each node to the center
+                      const pathCenter = `M500,300 L${x},${y}`;
+                      
+                      // Connect each node to the next node in the circle
+                      const nextNode = hubNodes[(i + 1) % hubNodes.length];
+                      const nextAngle = (nextNode.angle * Math.PI) / 180;
+                      const nextX = 500 + Math.cos(nextAngle) * radius;
+                      const nextY = 300 + Math.sin(nextAngle) * radius;
+                      const pathNext = `M${x},${y} L${nextX},${nextY}`;
+
+                      return (
+                        <g key={`lines-${i}`}>
+                          <path d={pathCenter} stroke="url(#lineGrad)" strokeWidth="0.5" fill="none" className="animate-pulse" />
+                          <path d={pathNext} stroke="white" strokeWidth="0.2" fill="none" strokeDasharray="5,5" className="opacity-30" />
+                        </g>
+                      );
+                    })}
+
+                    {/* Outer decorative ring */}
+                    <circle cx="500" cy="300" r="280" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="1,20" className="animate-[spin_120s_linear_infinite]" />
+                    <circle cx="500" cy="300" r="240" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="5,15" className="animate-[spin_60s_linear_infinite]" />
                  </svg>
 
                  {/* Center Hub */}
-                 <div className="relative z-10 w-32 h-32 rounded-full glass-card border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.05)] animate-pulse">
+                 <div className="relative z-10 w-40 h-40 rounded-full glass-card border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.05)] animate-pulse">
                     <div className="text-center">
-                       <p className="text-[10px] font-black text-white uppercase tracking-widest leading-tight">Global</p>
-                       <p className="text-primary font-black text-xl italic leading-tight">2026</p>
+                       <p className="text-[10px] font-black text-white/40 uppercase tracking-widest leading-tight">Impact</p>
+                       <p className="text-primary font-black text-2xl italic leading-tight">2026</p>
+                       <p className="text-[10px] font-black text-white/40 uppercase tracking-widest leading-tight">Global</p>
                     </div>
                  </div>
 
-                 {/* Floating Nodes */}
+                 {/* Floating Nodes (Collaborator Logos) */}
                  {hubNodes.map((node, i) => {
                     const imageData = PlaceHolderImages.find(img => img.id === node.id);
-                    // Calculate positions based on angle
                     const angle = (node.angle * Math.PI) / 180;
-                    const radius = 220;
+                    const radius = 240;
                     const x = Math.cos(angle) * radius;
                     const y = Math.sin(angle) * radius;
 
                     return (
                       <div 
                         key={node.id}
-                        className="absolute w-24 h-24 rounded-2xl overflow-hidden glass-card border-white/10 shadow-2xl group/node hover:scale-110 transition-transform duration-500"
+                        className="absolute w-28 h-20 rounded-2xl overflow-hidden glass-card border-white/10 shadow-2xl group/node hover:scale-110 transition-transform duration-500 bg-white/[0.02]"
                         style={{
                           transform: `translate(${x}px, ${y}px)`,
-                          animation: `float ${6 + i}s ease-in-out infinite alternate`
+                          animation: `float ${8 + i}s ease-in-out infinite alternate`
                         }}
                       >
                         {imageData && (
-                          <div className="relative w-full h-full">
+                          <div className="relative w-full h-full p-4">
                             <Image
                               src={imageData.imageUrl}
                               alt={node.label}
                               fill
-                              className="object-cover opacity-30 group-hover/node:opacity-60 transition-opacity"
+                              className="object-contain p-4 opacity-40 group-hover/node:opacity-100 transition-opacity duration-500 grayscale group-hover/node:grayscale-0"
                               data-ai-hint={imageData.imageHint}
                             />
-                            <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover/node:bg-transparent transition-colors">
-                              <span className="text-[8px] font-black text-white uppercase tracking-widest">{node.label}</span>
+                            <div className="absolute inset-x-0 bottom-1 flex justify-center opacity-0 group-hover/node:opacity-100 transition-opacity">
+                              <span className="text-[6px] font-black text-white/60 uppercase tracking-widest">{node.label}</span>
                             </div>
                           </div>
                         )}
@@ -142,8 +170,8 @@ export function Collaborators() {
       
       <style jsx global>{`
         @keyframes float {
-          from { transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 10px)); }
-          to { transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 10px)); }
+          from { transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 15px)); }
+          to { transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 15px)); }
         }
       `}</style>
     </section>
