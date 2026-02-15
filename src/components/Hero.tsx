@@ -26,13 +26,10 @@ export function Hero() {
                 <span>Open for Engineering Roles</span>
               </div>
               
-              <div className="relative group px-4 lg:px-0">
-                {/* Subtle glass reflection backdrop for the title */}
-                <div className="absolute -inset-10 bg-white/[0.01] backdrop-blur-[2px] rounded-[3rem] -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
-                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-visible">
+              <div className="relative group px-4 lg:px-0 overflow-visible">
+                <h1 className="flex flex-col text-7xl sm:text-8xl md:text-9xl xl:text-[11rem] font-black text-white leading-[0.8] tracking-tighter uppercase italic drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                   <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white/80 to-white/40 brightness-125">TECHNO</span>
-                  <div className="relative pr-16 lg:pr-24"> {/* Extra padding for the 'R' */}
+                  <div className="relative pr-16 lg:pr-24">
                     <span className="text-primary bg-clip-text text-transparent bg-gradient-to-br from-primary via-white to-primary/60 filter drop-shadow-[0_0_25px_rgba(139,92,246,0.5)]">
                       LEADER
                     </span>
@@ -67,7 +64,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Column 2: Vertical Rectangle Portrait */}
+          {/* Column 2: Vertical Rectangle Portrait with Overlapping Badge */}
           <div className="order-2 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-12 duration-1000 delay-200">
             {profileImage && (
               <div className="relative w-full max-w-[420px] aspect-[3/4] group">
@@ -98,16 +95,18 @@ export function Hero() {
                     </p>
                     <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mt-1">Digital Architect</p>
                   </div>
+                </div>
 
-                  {/* Lower Left GPA Badge (Requested Position) */}
-                  <div className="absolute bottom-10 left-10 animate-float">
-                    <div className="px-5 py-3 rounded-2xl bg-white/[0.08] backdrop-blur-xl border border-white/20 shadow-2xl flex flex-col items-start gap-1 group/gpa hover:bg-white/20 transition-all cursor-default">
-                      <div className="flex items-center gap-2">
-                        <GraduationCap className="w-4 h-4 text-primary" />
-                        <span className="text-2xl font-black text-white tracking-tighter">3.6</span>
+                {/* Overlapping GPA Badge - Positioned halfway out of the photo */}
+                <div className="absolute -bottom-6 -left-10 animate-float z-20">
+                  <div className="px-6 py-4 rounded-[2rem] bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col items-start gap-1 group/gpa hover:bg-white/20 transition-all cursor-default scale-110">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30">
+                        <GraduationCap className="w-5 h-5 text-primary" />
                       </div>
-                      <span className="text-[8px] font-black text-white/60 uppercase tracking-widest">Cumulative GPA</span>
+                      <span className="text-3xl font-black text-white tracking-tighter">3.6</span>
                     </div>
+                    <span className="text-[9px] font-black text-white/60 uppercase tracking-[0.2em] mt-1">Cumulative GPA</span>
                   </div>
                 </div>
               </div>
