@@ -84,7 +84,7 @@ export function Metrics() {
             {stats.map((stat, i) => (
               <Dialog key={i}>
                 <DialogTrigger asChild>
-                  <button className="flex flex-col h-full w-full text-left glass-card p-10 rounded-[2.5rem] border-white/10 group relative transition-all duration-300 transform-gpu hover:scale-[1.02] active:scale-[0.98]">
+                  <button className="flex flex-col h-full w-full text-left glass-card p-10 rounded-[2.5rem] border-white/10 group relative transition-all duration-300 pointer-events-auto cursor-pointer shadow-xl">
                     <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
                     
                     <div className="flex items-start justify-between h-14 mb-12 relative z-10">
@@ -93,7 +93,7 @@ export function Metrics() {
                       </div>
                     </div>
 
-                    <div className="absolute top-8 right-10 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[9px] font-black text-primary uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 pointer-events-none">
+                    <div className="absolute top-8 right-10 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[9px] font-black text-primary uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-all pointer-events-none">
                       Details
                     </div>
 
@@ -106,7 +106,7 @@ export function Metrics() {
                     </div>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="premium-glass border-white/20 text-white max-w-lg rounded-[3rem] p-0 overflow-hidden backdrop-blur-[60px] bg-black/60 focus:outline-none shadow-3xl">
+                <DialogContent className="premium-glass border-white/20 text-white max-w-lg rounded-[3rem] p-0 overflow-hidden backdrop-blur-[60px] bg-black/80 focus:outline-none shadow-3xl">
                   <div className="p-12 pb-6">
                     <DialogHeader className="mb-4">
                       <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
