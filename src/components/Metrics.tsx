@@ -106,7 +106,7 @@ export function Metrics() {
                       </div>
                     </button>
                   </DialogTrigger>
-                  <DialogContent className="glass-card border-white/20 text-white max-w-lg rounded-[3rem] p-0 overflow-hidden backdrop-blur-[60px] bg-black/60">
+                  <DialogContent className="premium-glass border-white/20 text-white max-w-lg rounded-[3rem] p-0 overflow-hidden backdrop-blur-[60px] bg-black/60 focus:outline-none shadow-3xl">
                     <div className="p-12 pb-6">
                       <DialogHeader className="mb-4">
                         <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
