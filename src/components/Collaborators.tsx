@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -13,6 +14,13 @@ export function Collaborators() {
     { id: 'logo-microsoft', label: 'Microsoft' },
     { id: 'logo-dict', label: 'DICT' },
     { id: 'logo-dost', label: 'DOST' },
+  ];
+
+  const hubNodes = [
+    { id: 'hub-agriculture', label: 'Agriculture', angle: 45 },
+    { id: 'hub-healthcare', label: 'Healthcare', angle: 135 },
+    { id: 'hub-edutech', label: 'EduTech', angle: 225 },
+    { id: 'hub-automation', label: 'Automation', angle: 315 },
   ];
 
   return (
@@ -49,24 +57,77 @@ export function Collaborators() {
             })}
           </div>
 
-          <div className="mt-24 py-20 px-8 glass-card rounded-[4rem] border-white/5 overflow-hidden group">
-            <div className="flex flex-col items-center text-center space-y-8">
-              <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.01] text-[9px] font-black uppercase tracking-[0.3em] text-white/40">
-                Strategic Ecosystem
+          <div className="mt-24 py-24 px-8 glass-card rounded-[4rem] border-white/5 overflow-hidden group">
+            <div className="flex flex-col items-center text-center space-y-12">
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/5 bg-white/[0.01] text-[9px] font-black uppercase tracking-[0.3em] text-white/40">
+                  Strategic Ecosystem
+                </div>
+                <h3 className="text-3xl font-black text-white uppercase italic tracking-tighter">Institutional Connectivity.</h3>
+                <p className="text-muted-foreground text-sm font-medium max-w-lg mx-auto leading-relaxed">
+                  Mapping the intersections between technology, social impact, and global institutional support.
+                </p>
               </div>
-              <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter">Institutional Connectivity.</h3>
               
-              <div className="relative h-[300px] w-full max-w-4xl">
-                 <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 800 300">
-                    <path d="M100,150 Q400,50 700,150" stroke="white" strokeWidth="1" fill="none" strokeDasharray="5,5" className="animate-[dash_20s_linear_infinite]" />
-                    <circle cx="400" cy="150" r="100" stroke="white" strokeWidth="0.5" fill="none" />
-                    <path d="M150,250 Q400,100 650,250" stroke="white" strokeWidth="1" fill="none" strokeDasharray="5,5" className="animate-[dash_15s_linear_reverse_infinite]" />
+              <div className="relative h-[500px] w-full max-w-4xl flex items-center justify-center">
+                 {/* Connection Lines */}
+                 <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 800 500">
+                    <defs>
+                      <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="white" stopOpacity="0" />
+                        <stop offset="50%" stopColor="white" stopOpacity="1" />
+                        <stop offset="100%" stopColor="white" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M400,250 L200,100" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
+                    <path d="M400,250 L600,100" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
+                    <path d="M400,250 L200,400" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
+                    <path d="M400,250 L600,400" stroke="url(#lineGrad)" strokeWidth="1" fill="none" className="animate-pulse" />
+                    <circle cx="400" cy="250" r="150" stroke="white" strokeWidth="0.5" fill="none" strokeDasharray="5,10" className="animate-[spin_60s_linear_infinite]" />
                  </svg>
-                 <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full glass-card border-white/10 flex items-center justify-center shadow-2xl animate-pulse">
-                       <span className="text-[10px] font-black text-white uppercase tracking-widest">Global 2026</span>
+
+                 {/* Center Hub */}
+                 <div className="relative z-10 w-32 h-32 rounded-full glass-card border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(255,255,255,0.05)] animate-pulse">
+                    <div className="text-center">
+                       <p className="text-[10px] font-black text-white uppercase tracking-widest leading-tight">Global</p>
+                       <p className="text-primary font-black text-xl italic leading-tight">2026</p>
                     </div>
                  </div>
+
+                 {/* Floating Nodes */}
+                 {hubNodes.map((node, i) => {
+                    const imageData = PlaceHolderImages.find(img => img.id === node.id);
+                    const angle = (node.angle * Math.PI) / 180;
+                    const radius = 220;
+                    const x = Math.cos(angle) * radius;
+                    const y = Math.sin(angle) * radius;
+
+                    return (
+                      <div 
+                        key={node.id}
+                        className="absolute w-24 h-24 rounded-2xl overflow-hidden glass-card border-white/10 shadow-2xl group/node hover:scale-110 transition-transform duration-500"
+                        style={{
+                          transform: `translate(${x}px, ${y}px)`,
+                          animation: `float ${6 + i}s ease-in-out infinite alternate`
+                        }}
+                      >
+                        {imageData && (
+                          <div className="relative w-full h-full">
+                            <Image
+                              src={imageData.imageUrl}
+                              alt={node.label}
+                              fill
+                              className="object-cover opacity-30 group-hover/node:opacity-60 transition-opacity"
+                              data-ai-hint={imageData.imageHint}
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover/node:bg-transparent transition-colors">
+                              <span className="text-[8px] font-black text-white uppercase tracking-widest">{node.label}</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                 })}
               </div>
             </div>
           </div>
@@ -74,8 +135,9 @@ export function Collaborators() {
       </div>
       
       <style jsx global>{`
-        @keyframes dash {
-          to { stroke-dashoffset: 200; }
+        @keyframes float {
+          from { transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) - 10px)); }
+          to { transform: translate(var(--tw-translate-x), calc(var(--tw-translate-y) + 10px)); }
         }
       `}</style>
     </section>

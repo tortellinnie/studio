@@ -89,6 +89,30 @@
       "description": "Microsoft Philippines Logo",
       "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
       "imageHint": "tech company"
+    },
+    {
+      "id": "hub-agriculture",
+      "description": "Smart Agriculture Connectivity",
+      "imageUrl": "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+      "imageHint": "smart farm"
+    },
+    {
+      "id": "hub-healthcare",
+      "description": "AI Healthcare Connectivity",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+      "imageHint": "medical technology"
+    },
+    {
+      "id": "hub-edutech",
+      "description": "EduTech Innovation Connectivity",
+      "imageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+      "imageHint": "learning technology"
+    },
+    {
+      "id": "hub-automation",
+      "description": "Industrial Automation Connectivity",
+      "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+      "imageHint": "electronic engineering"
     }
   ]
 }
