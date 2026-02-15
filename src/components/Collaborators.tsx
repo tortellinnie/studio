@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -47,17 +48,17 @@ export function Collaborators() {
                 <Globe className="w-3 h-3 text-primary/40" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Government</h3>
               </div>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-6 items-center">
                 {ecosystem.government.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110">
+                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110 flex items-center justify-center">
                       {logo && (
                         <Image 
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain"
+                          className="object-contain filter brightness-100 group-hover:brightness-125 transition-all"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
@@ -72,17 +73,17 @@ export function Collaborators() {
                 <Building2 className="w-3 h-3 text-accent/40" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Industry & Global</h3>
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6 items-center">
                 {ecosystem.industry.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110">
+                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110 flex items-center justify-center">
                       {logo && (
                         <Image 
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain"
+                          className="object-contain filter brightness-100 group-hover:brightness-125 transition-all"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
@@ -97,17 +98,17 @@ export function Collaborators() {
                 <GraduationCap className="w-3 h-3 text-white/20" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Academia & Clinical</h3>
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6 items-center">
                 {ecosystem.academia.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (
-                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110">
+                    <div key={i} className="group relative w-full aspect-square transition-all duration-300 hover:scale-110 flex items-center justify-center">
                       {logo && (
                         <Image 
                           src={logo.imageUrl} 
                           alt={org.name}
                           fill
-                          className="object-contain"
+                          className="object-contain filter brightness-100 group-hover:brightness-125 transition-all"
                           data-ai-hint={logo.imageHint}
                         />
                       )}
