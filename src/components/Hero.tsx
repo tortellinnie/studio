@@ -1,7 +1,8 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, ChevronRight, Sparkles, MoveDown, Cpu } from 'lucide-react';
+import { Github, Linkedin, ChevronRight, MoveDown } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -82,18 +83,7 @@ export function Hero() {
                     <p className="text-white text-xl font-black italic uppercase tracking-tighter">
                       Shann Karl Felipe<span className="text-primary">.</span>
                     </p>
-                    <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest mt-1">AI Automation and AI Solutions | Leader | Speaker</p>
-                  </div>
-                </div>
-
-                {/* AI Automation and AI Solutions Badge anchored lower left, halfway off the edge */}
-                <div className="absolute bottom-4 -left-16 animate-float z-20 overflow-visible">
-                  <div className="px-5 py-3 rounded-[1.5rem] bg-white/[0.03] backdrop-blur-2xl border border-white/5 shadow-2xl flex flex-col items-start gap-0.5 hover:bg-white/8 transition-all cursor-default scale-110">
-                    <div className="flex items-center gap-2">
-                      <Cpu className="w-4 h-4 text-primary" />
-                      <span className="text-2xl font-black text-white tracking-tighter">AI</span>
-                    </div>
-                    <span className="text-[8px] font-black text-white/40 uppercase tracking-widest whitespace-nowrap">Automation and AI Solutions</span>
+                    <p className="text-white/40 text-[9px] font-bold uppercase tracking-widest mt-1">Leader | Speaker</p>
                   </div>
                 </div>
               </div>
