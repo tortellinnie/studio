@@ -2,50 +2,50 @@
   "placeholderImages": [
     {
       "id": "profile-headshot",
-      "description": "Professional portrait from GitHub assets",
-      "imageUrl": "https://images.unsplash.com/photo-1655249481446-25d575f1c054?q=80&w=1080",
+      "description": "Professional portrait",
+      "imageUrl": "/assets/images/profile.jpg",
       "imageHint": "professional portrait"
     },
     {
       "id": "project-salayliwa",
-      "description": "Salayliwa project image from GitHub assets",
-      "imageUrl": "https://images.unsplash.com/photo-1647463569404-718feed9b35b?q=80&w=1080",
+      "description": "Salayliwa Project",
+      "imageUrl": "/assets/images/salayliwa.jpg",
       "imageHint": "reading culture"
     },
     {
       "id": "project-video-automation",
-      "description": "Video Automation Engine image from GitHub assets",
-      "imageUrl": "https://images.unsplash.com/photo-1764664281859-c5bd20adfbb6?q=80&w=1080",
+      "description": "Video Automation Engine",
+      "imageUrl": "/assets/images/video-automation.jpg",
       "imageHint": "automation workflow"
     },
     {
       "id": "project-gabaydiwa",
-      "description": "GabayDiwa image from GitHub assets",
-      "imageUrl": "https://images.unsplash.com/photo-1758691463110-697a814b2033?q=80&w=1080",
+      "description": "GabayDiwa Healthcare",
+      "imageUrl": "/assets/images/gabaydiwa.jpg",
       "imageHint": "healthcare data"
     },
     {
       "id": "project-birdseye",
-      "description": "Birdseye Poultry image from GitHub assets",
-      "imageUrl": "https://images.unsplash.com/photo-1769952830261-0f1c9e33f62f?q=80&w=1080",
+      "description": "Birdseye Poultry AI",
+      "imageUrl": "/assets/images/birdseye.jpg",
       "imageHint": "poultry vision"
     },
     {
       "id": "project-proxygen",
-      "description": "Proxygen image from GitHub assets",
-      "imageUrl": "https://images.unsplash.com/photo-1598963946779-66fab47f1757?q=80&w=1080",
+      "description": "Proxygen Aquaculture",
+      "imageUrl": "/assets/images/proxygen.jpg",
       "imageHint": "aquaculture sensor"
     },
     {
       "id": "featured-pg-intern",
-      "description": "P&G Internship image from GitHub assets",
-      "imageUrl": "https://images.unsplash.com/photo-1549637642-90187f64f420?q=80&w=1080",
+      "description": "P&G Internship",
+      "imageUrl": "/assets/images/pg-intern.jpg",
       "imageHint": "corporate office"
     },
     {
       "id": "featured-speaking-tokyo",
-      "description": "Tokyo Delegation image from GitHub assets",
-      "imageUrl": "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?q=80&w=1080",
+      "description": "Tokyo Delegation",
+      "imageUrl": "/assets/images/speaking-tokyo.jpg",
       "imageHint": "tokyo city"
     }
   ]

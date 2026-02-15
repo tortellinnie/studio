@@ -20,8 +20,9 @@ export function Hero() {
               <span>Available for 2026 Engineering Roles</span>
             </div>
             
-            <div className="relative overflow-visible px-4 md:px-20">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[9.5rem] font-black text-white leading-[0.9] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-6 block overflow-visible text-center">
+            {/* ADDED PADDING AND OVERFLOW-VISIBLE TO PREVENT "R" CLIPPING */}
+            <div className="relative overflow-visible px-10 md:px-20">
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[9.5rem] font-black text-white leading-[0.9] tracking-tighter animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase text-gradient pb-6 block overflow-visible text-center italic">
                 TECHNOLEADER
               </h1>
             </div>
