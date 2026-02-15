@@ -16,7 +16,7 @@ export function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Hiding logic with buffer
+      // Hiding logic with a clear buffer
       if (currentScrollY > lastScrollY && currentScrollY > 200) {
         setIsVisible(false);
       } else {

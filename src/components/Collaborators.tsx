@@ -75,7 +75,7 @@ export function Collaborators() {
                 <Building2 className="w-3 h-3 text-accent/40" />
                 <h3 className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em]">Industry & Global</h3>
               </div>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 gap-6">
                 {ecosystem.industry.map((org, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === org.logoId);
                   return (

@@ -34,7 +34,7 @@ export function SDGs() {
           </div>
 
           <TooltipProvider delayDuration={0}>
-            <div className="flex flex-wrap gap-4 justify-center items-center">
+            <div className="flex flex-wrap gap-4 justify-center items-center w-full">
               {goals.map((goal) => (
                 <Tooltip key={goal.id}>
                   <TooltipTrigger asChild>
@@ -42,9 +42,9 @@ export function SDGs() {
                       href={`https://sdgs.un.org/goals/goal${goal.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`group relative w-10 h-10 ${goal.color} rounded-lg shadow-xl transition-all duration-500 hover:scale-[1.8] hover:z-50 cursor-pointer flex items-center justify-center overflow-hidden`}
+                      className={`group relative w-12 h-12 ${goal.color} rounded-lg shadow-xl transition-all duration-500 hover:scale-[1.8] hover:z-50 cursor-pointer flex items-center justify-center overflow-hidden`}
                     >
-                      <goal.icon className="w-5 h-5 text-white transition-all group-hover:scale-110" />
+                      <goal.icon className="w-6 h-6 text-white transition-all group-hover:scale-110" />
                       <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </TooltipTrigger>
