@@ -83,23 +83,28 @@ export function Metrics() {
               <Dialog key={i}>
                 <DialogTrigger asChild>
                   <button className="flex flex-col h-full w-full text-left glass-card p-8 rounded-[2rem] border-white/5 hover:border-primary/20 transition-all duration-500 group relative">
-                    <div className="flex items-start justify-between mb-8">
-                      <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    {/* Header: Fixed Height for consistency */}
+                    <div className="flex items-start justify-between h-14 mb-10">
+                      <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                         <stat.icon className={`w-6 h-6 ${stat.color}`} />
                       </div>
-                      <div className="flex flex-col items-end gap-2">
-                         <div className="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-[8px] font-black text-primary uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                           Click to view details
-                         </div>
+                      <div className="flex flex-col items-end pt-5">
                          <div className="h-1 w-12 bg-white/5 rounded-full overflow-hidden">
                            <div className="h-full bg-primary w-2/3 group-hover:w-full transition-all duration-700" />
                          </div>
                       </div>
                     </div>
-                    <div className="space-y-1 mt-auto">
+
+                    {/* Absolute Hover Hint */}
+                    <div className="absolute top-7 right-8 px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-[8px] font-black text-primary uppercase tracking-tighter opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                      Click to view details
+                    </div>
+
+                    {/* Content: No mt-auto to ensure numbers align from the top of this block */}
+                    <div className="space-y-1">
                       <h3 className="text-4xl font-black text-white tracking-tighter">{stat.value}</h3>
                       <p className="text-[10px] font-black uppercase tracking-widest text-primary">{stat.label}</p>
-                      <p className="text-sm text-muted-foreground font-medium leading-tight pt-2">
+                      <p className="text-sm text-muted-foreground font-medium leading-tight pt-3">
                         {stat.description}
                       </p>
                     </div>
