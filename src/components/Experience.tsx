@@ -9,7 +9,7 @@ export function Experience() {
       title: 'Executive Lead',
       org: 'NERDS 2.0 · Hybrid',
       period: 'Aug 2025 - Present',
-      description: 'Coordinated R&D for award-winning initiatives, securing ₱150K in total grants.',
+      description: 'Coordinated R&D for award-winning initiatives, securing ₱1.2M+ in total grants and startup incentives.',
       icon: Microscope,
       details: [
         'Coordinated with 20+ organizations, including national agencies and private firms.',

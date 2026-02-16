@@ -67,8 +67,8 @@ export function Metrics() {
     {
       id: 'capital',
       label: 'Capital Initiatives',
-      value: 'Secured',
-      description: 'Institutional grants for startup innovation.',
+      value: '₱1.2M+',
+      description: 'Secured institutional grants and startup incentives.',
       icon: Landmark,
       color: 'text-white/60',
       details: data.capital,

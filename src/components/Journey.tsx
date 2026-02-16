@@ -22,7 +22,7 @@ export function Journey() {
     {
       date: '2024 - 2026',
       title: 'President, Library Committee',
-      org: 'FEU Institute of Technology',
+      org: 'FEU Tech Library',
       desc: 'Leading the student body as the President of the FEU Tech Library Committee, directing resource strategy and cultural innovation projects in collaboration with the National Library.',
       icon: BookOpen,
       color: 'bg-indigo-500'
