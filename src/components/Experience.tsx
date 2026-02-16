@@ -24,10 +24,10 @@ export function Experience() {
       title: 'President, Library Committee',
       org: 'FEU Institute of Technology · Manila, PH',
       period: 'Aug 2024 - Present',
-      description: 'Leading strategic library initiatives and student representation for the academic community.',
+      description: 'Presiding over the FEU Tech Library Committee, leading student representation for the academic community.',
       icon: BookOpen,
       details: [
-        'Presiding over the Library Committee, representing the student body in academic resource planning.',
+        'Presiding over the FEU Tech Library Committee, representing the student body in academic resource planning.',
         'Directing initiatives to improve digital literacy and resource accessibility for FEU Tech students.',
         'Collaborating with faculty and administration to modernize library services and engagement.',
         'Spearheading the Salayliwa edu-cultural project in collaboration with the National Library.'

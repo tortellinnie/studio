@@ -40,7 +40,7 @@ export function Collaborators() {
             </h2>
           </div>
 
-          {/* Cloud/Penguin Huddle Layout */}
+          {/* Penguin Huddle Layout - Organic and Overlapping-ish */}
           <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 max-w-4xl mx-auto">
             {partners.map((org, i) => {
               const logo = PlaceHolderImages.find(img => img.id === org.logoId);
