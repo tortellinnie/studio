@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -36,12 +35,13 @@ export function Collaborators() {
             <Badge className="bg-white/5 text-white/40 border-white/10 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px] mb-2">
               Institutional Network
             </Badge>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-white italic uppercase tracking-tighter leading-none animate-in fade-in slide-in-from-bottom-8 duration-1000">
-              Strategic <br className="hidden md:block" /> Partnerships.
+            <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white italic uppercase tracking-tighter leading-none animate-in fade-in slide-in-from-bottom-8 duration-1000">
+              Strategic <br className="hidden md:block" /> Collaborations.
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-12 md:gap-x-12 md:gap-y-16 max-w-5xl mx-auto">
+          {/* Cloud/Penguin Huddle Layout */}
+          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 max-w-4xl mx-auto">
             {partners.map((org, i) => {
               const logo = PlaceHolderImages.find(img => img.id === org.logoId);
               return (
@@ -50,16 +50,16 @@ export function Collaborators() {
                   href={org.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative w-20 h-20 md:w-32 md:h-32 transition-all duration-500 hover:scale-125"
+                  className="group relative w-20 h-20 md:w-28 md:h-28 transition-all duration-500 hover:scale-125 hover:z-20 -m-2 md:-m-3"
                   title={org.name}
                 >
                   {logo && (
-                    <div className="relative w-full h-full flex items-center justify-center">
+                    <div className="relative w-full h-full flex items-center justify-center p-4">
                       <Image 
                         src={`${logo.imageUrl}?v=2`} 
                         alt={org.name}
                         fill
-                        className="object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-500"
+                        className="object-contain filter brightness-90 contrast-125 group-hover:brightness-110 transition-all duration-500"
                         data-ai-hint={logo.imageHint}
                       />
                     </div>

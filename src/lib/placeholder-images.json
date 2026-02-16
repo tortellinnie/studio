@@ -45,13 +45,13 @@
     {
       "id": "featured-pg-intern",
       "description": "Procter & Gamble mission impact",
-      "imageUrl": "/assets/images/pandg.png",
+      "imageUrl": "/assets/images/png.png",
       "imageHint": "corporate office"
     },
     {
       "id": "featured-speaking-tokyo",
       "description": "Global delegation impact in Tokyo",
-      "imageUrl": "/assets/images/emcg.png",
+      "imageUrl": "/assets/images/emc.png",
       "imageHint": "tokyo city"
     },
     {
