@@ -23,7 +23,7 @@ export function Collaborators() {
   ];
 
   return (
-    <section id="collaborators" className="py-10 relative overflow-hidden bg-white">
+    <section id="collaborators" className="py-12 relative overflow-hidden bg-white">
       {/* Subtle Technical Grid Background */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ 
@@ -38,7 +38,7 @@ export function Collaborators() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-10 max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-10 max-w-7xl mx-auto">
           {partners.map((org, i) => {
             const logo = PlaceHolderImages.find(img => img.id === org.logoId);
             return (
@@ -50,12 +50,12 @@ export function Collaborators() {
                 className="group relative flex items-center justify-center transition-all duration-500 hover:scale-110"
               >
                 {logo && (
-                  <div className="relative h-20 md:h-24 w-auto min-w-[180px] flex items-center justify-center filter drop-shadow-sm">
+                  <div className="relative h-24 md:h-32 w-auto min-w-[200px] flex items-center justify-center filter drop-shadow-sm">
                     <Image 
                       src={logo.imageUrl} 
                       alt={org.name}
-                      width={240}
-                      height={120}
+                      width={280}
+                      height={140}
                       className="object-contain h-full w-auto transition-all duration-500"
                       data-ai-hint={logo.imageHint}
                     />

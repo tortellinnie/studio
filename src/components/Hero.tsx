@@ -87,20 +87,23 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
           <div className="space-y-12">
             <div className="space-y-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
 
-              <div className="flex flex-col space-y-2">
-                <span className="text-2xl md:text-4xl font-black uppercase tracking-[0.4em] text-foreground/30">
-                  SHANN KARL FELIPE
-                </span>
-                <div className="flex items-center gap-4">
-                   <div className="w-2 h-2 rounded-full bg-primary/30" />
-                   <span className="text-[12px] font-bold uppercase tracking-[0.4em] text-muted-foreground/30">
-                    AI · LEADERSHIP
+              <div className="flex flex-col space-y-1">
+                <span className="text-sm md:text-xl font-black uppercase tracking-[0.4em] text-foreground/60 leading-tight">
+                  SHANN KARL
+                </span> 
+                <span className="text-sm md:text-xl font-black uppercase tracking-[0.4em] text-foreground/60 leading-tight">
+                  FELIPE
+                </span> 
+                <div className="flex items-center gap-2">
+                   <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                   <span className="text-sm md:text-xl font-black uppercase tracking-[0.4em] text-foreground/60 leading-tight">
+                    AI / LEADERSHIP
                    </span>
                 </div>
               </div>
@@ -161,7 +164,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pt-16 md:pt-24 flex justify-center">
+        <div className="pt-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
             {compactStats.map((stat, i) => (
               <Dialog key={i}>
