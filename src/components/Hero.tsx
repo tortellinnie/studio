@@ -1,58 +1,64 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, ArrowRight, MoveDown } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 import Link from 'next/link';
 
 export function Hero() {
+  const nodes = [
+    { label: 'Software Engineering', color: 'bg-blue-600', position: 'top-[-120px] left-[-160px]' },
+    { label: 'Machine Learning', color: 'bg-red-500', position: 'top-[-120px] right-[-160px]' },
+    { label: 'Leadership', color: 'bg-yellow-500', position: 'bottom-[-120px] left-[-160px]' },
+    { label: 'Cloud Computing', color: 'bg-green-600', position: 'bottom-[-120px] right-[-160px]' },
+  ];
+
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-6 pt-32 pb-16 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none" />
-      
-      <div className="container mx-auto z-10 max-w-7xl">
-        <div className="flex flex-col items-center text-center space-y-12">
+    <section className="relative min-h-screen flex items-center px-6 pt-20">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
           
-          <div className="space-y-4 animate-in fade-in slide-in-from-bottom-12 duration-1000">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/[0.02] text-[9px] font-black uppercase tracking-[0.4em] text-white/40">
-              <span className="w-1 h-1 rounded-full bg-accent animate-pulse" />
-              Strategic Partnerships 2026
-            </div>
-            
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] font-black italic tracking-tighter text-white uppercase">
-              TECHNO<br />
-              <span className="text-outline">LEADER.</span>
+          <div className="space-y-8 max-w-xl">
+            <h1 className="text-6xl md:text-8xl font-black leading-[1.1] tracking-tight text-foreground">
+              Building Intelligent Systems that Scale.
             </h1>
-          </div>
-
-          <div className="max-w-2xl space-y-8 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
-            <p className="text-lg md:text-xl text-white/50 leading-relaxed font-medium">
-              Executive Lead at <span className="text-white">NERDS 2.0</span>. <br />
-              Architecting high-impact systems and strategic technical leadership in Manila.
+            <p className="text-xl text-muted-foreground font-medium">
+              Shann Karl Felipe • <span className="text-foreground">Executive Lead & Engineer</span>
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button size="lg" className="rounded-full bg-white text-black hover:bg-white/90 h-14 px-10 text-base font-black uppercase tracking-widest group" asChild>
-                <Link href="/#projects">
-                  Explore Work
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+            
+            <div className="flex items-center gap-4">
+              <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/80 h-14 px-8 text-base font-bold flex items-center gap-2 group" asChild>
+                <Link href="/#contact">
+                  Let's Talk
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              
-              <div className="flex items-center gap-4">
-                <a href="https://github.com/tortellinnie" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.02] border border-white/5 rounded-full hover:bg-white/[0.1] transition-all text-white/40 hover:text-white">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href="https://www.linkedin.com/in/shann-karl-felipe/" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/[0.02] border border-white/5 rounded-full hover:bg-white/[0.1] transition-all text-white/40 hover:text-white">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              </div>
+              <Button variant="outline" size="lg" className="rounded-full h-14 px-8 text-base font-bold bg-white border-border hover:bg-gray-50 flex items-center gap-2" asChild>
+                <Link href="/resume">
+                  <FileText className="w-4 h-4" />
+                  View Resume
+                </Link>
+              </Button>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
-        <MoveDown className="text-white w-6 h-6" />
+          <div className="hidden lg:flex justify-center items-center relative h-[500px]">
+            <div className="w-32 h-32 rounded-full border border-border bg-white shadow-xl flex items-center justify-center z-10 animate-float">
+              <span className="text-sm font-bold text-muted-foreground">AI/ML</span>
+            </div>
+
+            {/* Diagram Nodes */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-1">
+              {nodes.map((node, i) => (
+                <div key={i} className={`absolute ${node.position} w-40 h-24 rounded-xl ${node.color} p-4 flex items-center justify-center text-center shadow-lg transform transition-transform hover:scale-105 duration-300`}>
+                  <span className="text-white text-xs font-bold leading-tight">{node.label}</span>
+                  {/* Connecting Line - Abstracted representation */}
+                  <div className="absolute top-1/2 left-1/2 w-32 h-px bg-border -z-10 origin-center rotate-45" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

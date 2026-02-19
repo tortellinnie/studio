@@ -3,76 +3,56 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Navbar() {
-  const [isShortened, setIsShortened] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsShortened(window.scrollY > 80);
+      setIsScrolled(window.scrollY > 20);
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { label: 'Journey', href: '/#journey' },
-    { label: 'Impact', href: '/#featured' },
+    { label: 'About', href: '/#journey' },
+    { label: 'Featured', href: '/#featured' },
     { label: 'Projects', href: '/#projects' },
     { label: 'Experience', href: '/#experience' },
+    { label: 'Certifications', href: '/#achievements' },
   ];
 
   return (
-    <nav className="fixed top-0 z-[100] w-full flex justify-center pt-8 pointer-events-none">
+    <nav className="fixed top-8 z-[100] w-full flex justify-center px-6 pointer-events-none">
       <div className={cn(
-        "w-full px-6 transition-all duration-1000 ease-premium flex justify-center pointer-events-auto",
-        isShortened ? "max-w-[1000px]" : "max-w-7xl"
+        "h-16 rounded-full flex items-center justify-between premium-blur px-8 transition-all duration-500 pointer-events-auto shadow-sm",
+        isScrolled ? "max-w-[1000px] w-full" : "max-w-7xl w-full"
       )}>
-        <div className={cn(
-          "h-14 md:h-16 rounded-full flex items-center justify-between border border-white/[0.05] bg-[#02040a]/80 backdrop-blur-3xl shadow-2xl transition-all duration-1000 ease-premium w-full px-8",
-          isShortened ? "bg-white/10" : ""
-        )}>
-          <div className={cn(
-            "flex items-center transition-all duration-1000 ease-premium",
-            isShortened ? "gap-6" : "gap-12"
-          )}>
-            <Link href="/" className="text-xl font-black italic tracking-tighter text-white shrink-0 group">
-              TL<span className="hidden sm:inline">.STUDIO</span>
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <span className="text-xl font-black tracking-tighter">
+            <span className="text-blue-600">Al</span>
+            <span className="text-red-500">ph</span>
+            <span className="text-yellow-500">a</span>
+          </span>
+        </Link>
+        
+        <div className="hidden lg:flex items-center gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="text-[13px] font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {item.label}
             </Link>
-            
-            <div className={cn(
-              "hidden lg:flex items-center transition-all duration-1000 ease-premium",
-              isShortened ? "gap-x-4" : "gap-x-8"
-            )}>
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-[9px] uppercase font-black transition-all duration-500 text-white/40 hover:text-white tracking-[0.4em] whitespace-nowrap"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div className={cn(
-            "flex items-center transition-all duration-1000 ease-premium",
-            isShortened ? "gap-4" : "gap-6"
-          )}>
-            <Link href="/resume" className="hidden sm:flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.4em] text-white/40 hover:text-white transition-colors">
-              <FileText className="w-3 h-3" />
-              Resume
-            </Link>
-            
-            <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 h-10 px-8 text-[10px] font-black uppercase tracking-widest transition-all duration-1000">
-              <Link href="/#contact">Connect</Link>
-            </Button>
-          </div>
+          ))}
         </div>
+
+        <Button asChild className="rounded-full bg-black text-white hover:bg-black/90 h-10 px-6 text-sm font-bold">
+          <Link href="/#contact">Let's Talk</Link>
+        </Button>
       </div>
     </nav>
   );

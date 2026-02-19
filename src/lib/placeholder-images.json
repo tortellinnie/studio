@@ -7,52 +7,10 @@
       "imageHint": "professional portrait"
     },
     {
-      "id": "resume-image",
-      "description": "Official Professional Resume - Shann Karl Felipe",
-      "imageUrl": "/assets/images/resume.png",
-      "imageHint": "resume document"
-    },
-    {
-      "id": "project-salayliwa",
-      "description": "Salayliwa mobile app interface",
-      "imageUrl": "/assets/images/salayliwa.png",
-      "imageHint": "reading culture"
-    },
-    {
-      "id": "project-video-automation",
-      "description": "Technical diagram of the video automation engine",
-      "imageUrl": "/assets/images/automation.png",
-      "imageHint": "automation workflow"
-    },
-    {
-      "id": "project-gabaydiwa",
-      "description": "Healthcare dashboard for GabayDiwa",
-      "imageUrl": "/assets/images/gabaydiwa.png",
-      "imageHint": "healthcare data"
-    },
-    {
-      "id": "project-birdseye",
-      "description": "Birdseye computer vision deployment in a farm",
-      "imageUrl": "/assets/images/birdseye.png",
-      "imageHint": "poultry vision"
-    },
-    {
-      "id": "project-proxygen",
-      "description": "Proxygen hardware sensor in aquaculture pond",
-      "imageUrl": "/assets/images/proxygen.png",
-      "imageHint": "aquaculture sensor"
-    },
-    {
-      "id": "featured-pg-intern",
-      "description": "Procter & Gamble mission impact",
-      "imageUrl": "/assets/images/png.png",
-      "imageHint": "corporate office"
-    },
-    {
-      "id": "featured-speaking-tokyo",
-      "description": "Global delegation impact in Tokyo",
-      "imageUrl": "/assets/images/emc.png",
-      "imageHint": "tokyo city"
+      "id": "logo-aws",
+      "description": "AWS Logo",
+      "imageUrl": "/assets/images/aws.png",
+      "imageHint": "tech logo"
     },
     {
       "id": "logo-dost",

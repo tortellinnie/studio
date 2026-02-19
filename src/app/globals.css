@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --background: 0 0% 98%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
     --accent: 221 72% 50%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --radius: 0.5rem;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.75rem;
   }
 }
 
@@ -32,43 +32,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#02040a] text-foreground font-body antialiased selection:bg-white selection:text-black overflow-x-hidden;
+    @apply bg-[#fcfcfc] text-foreground font-body antialiased selection:bg-black selection:text-white overflow-x-hidden;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 40px 40px;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline font-black tracking-tighter text-white uppercase italic;
+    @apply font-headline font-extrabold tracking-tight text-foreground;
   }
 }
 
-.premium-border {
-  @apply border border-white/[0.05] bg-white/[0.02] backdrop-blur-2xl;
+.premium-blur {
+  @apply backdrop-blur-xl bg-white/70 border border-white/20;
 }
 
-.text-outline {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-  color: transparent;
-}
-
-.nav-blur {
-  @apply bg-[#02040a]/80 backdrop-blur-xl border-b border-white/[0.05];
-}
-
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-::-webkit-scrollbar-thumb {
-  @apply bg-white/10 rounded-full hover:bg-white/20 transition-all;
-}
-
-@keyframes slow-pan {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
-}
-
-.animate-slow-pan {
-  animation: slow-pan 30s linear infinite alternate;
+.node-line {
+  @apply absolute h-px origin-left transition-all duration-1000;
 }
 
 .huddle-container {
@@ -76,11 +54,24 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
+  gap: 2rem;
 }
 
 .huddle-item {
-  @apply transition-all duration-500 hover:scale-125 hover:z-50;
-  margin: -1.5rem;
+  @apply transition-all duration-300 hover:scale-110;
+}
+
+.btn-capsule {
+  @apply rounded-full font-bold transition-all duration-300 px-6 py-2 flex items-center gap-2;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
