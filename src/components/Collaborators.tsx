@@ -40,7 +40,6 @@ export function Collaborators() {
             </h2>
           </div>
 
-          {/* Penguin Huddle Layout - Organic and Overlapping-ish */}
           <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 max-w-4xl mx-auto">
             {partners.map((org, i) => {
               const logo = PlaceHolderImages.find(img => img.id === org.logoId);
@@ -50,7 +49,7 @@ export function Collaborators() {
                   href={org.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative w-20 h-20 md:w-28 md:h-28 transition-all duration-500 hover:scale-125 hover:z-20 -m-2 md:-m-3"
+                  className="group relative w-20 h-20 md:w-28 md:h-28 transition-all duration-500 hover:scale-125 hover:z-20 -m-3 md:-m-4"
                   title={org.name}
                 >
                   {logo && (
@@ -64,7 +63,6 @@ export function Collaborators() {
                       />
                     </div>
                   )}
-                  {/* Subtle Glow Effect on Hover */}
                   <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
                 </a>
               );

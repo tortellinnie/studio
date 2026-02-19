@@ -14,6 +14,9 @@ export default {
         headline: ['"Plus Jakarta Sans"', 'sans-serif'],
         code: ['monospace'],
       },
+      transitionTimingFunction: {
+        'premium': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

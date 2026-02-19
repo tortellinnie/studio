@@ -47,19 +47,19 @@ export function Navbar() {
 
   return (
     <nav className={cn(
-      "fixed top-0 z-[100] w-full pt-6 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-none",
+      "fixed top-0 z-[100] w-full pt-6 transition-all duration-1000 ease-premium flex justify-center pointer-events-none",
       isVisible ? "translate-y-0 opacity-100" : "-translate-y-32 opacity-0"
     )}>
       <div className={cn(
-        "w-full px-6 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center pointer-events-auto",
+        "w-full px-6 transition-all duration-1000 ease-premium flex justify-center pointer-events-auto",
         isShortened ? "max-w-[1100px]" : "max-w-7xl"
       )}>
         <div className={cn(
-          "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-2xl backdrop-blur-3xl bg-white/[0.03] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] w-full overflow-hidden",
+          "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-2xl backdrop-blur-3xl bg-white/[0.03] transition-all duration-1000 ease-premium w-full overflow-hidden",
           isShortened ? "px-8" : "px-10"
         )}>
           <div className={cn(
-            "flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]",
+            "flex items-center transition-all duration-1000 ease-premium",
             isShortened ? "gap-6" : "gap-12"
           )}>
             <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0 text-white">
@@ -67,7 +67,7 @@ export function Navbar() {
             </Link>
             
             <div className={cn(
-              "hidden lg:flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]",
+              "hidden lg:flex items-center transition-all duration-1000 ease-premium",
               isShortened ? "gap-x-4" : "gap-x-8"
             )}>
               {navItems.map((item) => (
@@ -83,7 +83,7 @@ export function Navbar() {
           </div>
 
           <div className={cn(
-            "flex items-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] shrink-0",
+            "flex items-center transition-all duration-1000 ease-premium shrink-0",
             isShortened ? "gap-3" : "gap-4"
           )}>
             <div className="hidden lg:flex items-center gap-3">
@@ -99,7 +99,7 @@ export function Navbar() {
               </Button>
               
               <Button asChild className={cn(
-                "rounded-full bg-white text-black hover:bg-white/90 font-black tracking-widest text-[9px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                "rounded-full bg-white text-black hover:bg-white/90 font-black tracking-widest text-[9px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000 ease-premium",
                 isShortened ? "px-6" : "px-10"
               )}>
                 <Link href="/#contact">
