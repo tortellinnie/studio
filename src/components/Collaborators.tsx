@@ -23,14 +23,14 @@ export function Collaborators() {
   ];
 
   return (
-    <section id="collaborators" className="py-24 relative overflow-hidden">
-      {/* Light Grid Background as per image */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+    <section id="collaborators" className="py-12 pb-24 relative overflow-hidden bg-white">
+      {/* Light Grid Background */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="mb-12">
-          <p className="text-sm font-medium text-muted-foreground/80 tracking-tight">
+          <p className="text-sm font-black text-foreground/60 uppercase tracking-[0.2em]">
             Affiliated with Leading Organizations
           </p>
         </div>
@@ -53,7 +53,7 @@ export function Collaborators() {
                       alt={org.name}
                       width={160}
                       height={60}
-                      className="object-contain h-full w-auto filter-none" // Force full color
+                      className="object-contain h-full w-auto filter-none"
                       data-ai-hint={logo.imageHint}
                     />
                   </div>
