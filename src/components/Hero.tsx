@@ -87,17 +87,23 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
           <div className="space-y-12">
             <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <span className="text-[12px] font-black uppercase tracking-[0.4em] text-foreground">SHANN KARL FELIPE</span>
-                <div className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-[12px] font-bold uppercase tracking-[0.4em] text-muted-foreground/60">AI · LEADERSHIP</span>
-              </div>
-
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
+
+              <div className="flex flex-col space-y-2">
+                <span className="text-2xl md:text-4xl font-black uppercase tracking-[0.4em] text-foreground/30">
+                  SHANN KARL FELIPE
+                </span>
+                <div className="flex items-center gap-4">
+                   <div className="w-2 h-2 rounded-full bg-primary/30" />
+                   <span className="text-[12px] font-bold uppercase tracking-[0.4em] text-muted-foreground/30">
+                    AI · LEADERSHIP
+                   </span>
+                </div>
+              </div>
             </div>
             
             <div className="flex flex-wrap items-center gap-4">
@@ -155,7 +161,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pt-32 md:pt-40 flex justify-center">
+        <div className="pt-16 md:pt-24 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
             {compactStats.map((stat, i) => (
               <Dialog key={i}>
