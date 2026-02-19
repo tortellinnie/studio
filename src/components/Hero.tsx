@@ -90,7 +90,7 @@ export function Hero() {
           {/* Left Column: Mission Typography */}
           <div className="space-y-10">
             <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
@@ -161,14 +161,14 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Centered Metrics Row */}
-        <div className="pt-4 flex justify-center">
+        {/* Centered Metrics Row - Moved downward */}
+        <div className="pt-20 md:pt-24 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
             {compactStats.map((stat, i) => (
               <Dialog key={i}>
                 <DialogTrigger asChild>
                   <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-2 w-full">
-                    <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
+                    <span className="text-5xl lg:text-8xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
                       {stat.value}
                     </span>
                     <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
