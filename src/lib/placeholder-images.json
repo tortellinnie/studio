@@ -7,10 +7,10 @@
       "imageHint": "professional portrait"
     },
     {
-      "id": "logo-aws",
-      "description": "AWS Logo",
-      "imageUrl": "/assets/images/aws.png",
-      "imageHint": "tech logo"
+      "id": "logo-eamc",
+      "description": "EAMC Neurosciences Logo",
+      "imageUrl": "/assets/images/eamc.png",
+      "imageHint": "academia logo"
     },
     {
       "id": "logo-dost",
@@ -89,12 +89,6 @@
       "description": "NARA Logo",
       "imageUrl": "/assets/images/nara.png",
       "imageHint": "industry logo"
-    },
-    {
-      "id": "logo-eamc",
-      "description": "EAMC Neurosciences Logo",
-      "imageUrl": "/assets/images/eamc.png",
-      "imageHint": "academia logo"
     },
     {
       "id": "logo-lib",

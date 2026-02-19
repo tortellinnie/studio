@@ -1,6 +1,5 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { Collaborators } from '@/components/Collaborators';
 import { SDGs } from '@/components/SDGs';
 import { Featured } from '@/components/Featured';
 import { Projects } from '@/components/Projects';
@@ -15,7 +14,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <div className="space-y-0">
-        <Collaborators />
         <Featured />
         <Projects />
         <SDGs />

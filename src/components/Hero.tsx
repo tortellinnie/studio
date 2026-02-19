@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, FileText } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Dialog,
   DialogContent,
@@ -13,8 +14,24 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
+  const partners = [
+    { name: "Procter & Gamble (P&G)", logoId: "logo-png" },
+    { name: "AWS", logoId: "logo-aws" },
+    { name: "DOST Philippines", logoId: "logo-dost" },
+    { name: "DICT Philippines", logoId: "logo-dict" },
+    { name: "Quezon City Government", logoId: "logo-qc" },
+    { name: "NBDB-Philippines", logoId: "logo-nbdb" },
+    { name: "DTI Philippines", logoId: "logo-dti" },
+    { name: "SK Commonwealth", logoId: "logo-sk" },
+    { name: "EMC Global", logoId: "logo-emc" },
+    { name: "PLDT-Smart", logoId: "logo-pldtsmart" },
+    { name: "Department of Agriculture", logoId: "logo-da" },
+    { name: "PSA", logoId: "logo-psa" }
+  ];
+
   const metricData = {
     beneficiaries: [
       { name: "SK Commonwealth Council", detail: "300,000+ Impacted Youth" },
@@ -83,20 +100,18 @@ export function Hero() {
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
+      <div className="container mx-auto max-w-7xl relative z-10 flex flex-col h-full justify-between">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
           <div className="space-y-12">
-            <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
 
-              <div className="flex flex-wrap items-center gap-3 text-[12px] md:text-[13px] font-black uppercase tracking-[0.4em] text-foreground/40">
-                <span>SHANN KARL FELIPE</span>
-                <div className="w-1 h-1 rounded-full bg-primary/40" />
-                <span>AI / LEADERSHIP</span>
+              <div className="flex items-center gap-3 text-[14px] font-black uppercase tracking-[0.4em] text-foreground/40">
+                <span>SHANN KARL FELIPE • AI / LEADERSHIP</span>
               </div>
             </div>
             
@@ -155,44 +170,70 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pt-16 flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
-            {compactStats.map((stat, i) => (
-              <Dialog key={i}>
-                <DialogTrigger asChild>
-                  <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-2 w-full">
-                    <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
-                      {stat.value}
-                    </span>
-                    <p className="text-[9px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
-                      {stat.label}
-                    </p>
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="bg-white border-border text-foreground max-w-lg rounded-[2.5rem] p-0 focus:outline-none shadow-3xl overflow-hidden">
-                  <div className="p-10 border-b border-border bg-gray-50/50">
-                    <DialogHeader>
-                      <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter text-primary">
-                        {stat.title}
-                      </DialogTitle>
-                    </DialogHeader>
-                  </div>
-                  
-                  <ScrollArea className="max-h-[50vh] p-10">
-                    <div className="grid gap-6">
-                      {stat.details.map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-6 last:border-0">
-                          <span className="font-bold text-foreground/80 text-base">{item.name}</span>
-                          <Badge variant="outline" className="border-border text-muted-foreground text-[8px] font-black uppercase tracking-widest px-4 py-1.5">
-                            {item.detail}
-                          </Badge>
-                        </div>
-                      ))}
+        <div className="space-y-12">
+          {/* Metrics */}
+          <div className="flex justify-center pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
+              {compactStats.map((stat, i) => (
+                <Dialog key={i}>
+                  <DialogTrigger asChild>
+                    <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-2 w-full">
+                      <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
+                        {stat.value}
+                      </span>
+                      <p className="text-[9px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
+                        {stat.label}
+                      </p>
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="bg-white border-border text-foreground max-w-lg rounded-[2.5rem] p-0 focus:outline-none shadow-3xl overflow-hidden">
+                    <div className="p-10 border-b border-border bg-gray-50/50">
+                      <DialogHeader>
+                        <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter text-primary">
+                          {stat.title}
+                        </DialogTitle>
+                      </DialogHeader>
                     </div>
-                  </ScrollArea>
-                </DialogContent>
-              </Dialog>
-            ))}
+                    
+                    <ScrollArea className="max-h-[50vh] p-10">
+                      <div className="grid gap-6">
+                        {stat.details.map((item, idx) => (
+                          <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-6 last:border-0">
+                            <span className="font-bold text-foreground/80 text-base">{item.name}</span>
+                            <Badge variant="outline" className="border-border text-muted-foreground text-[8px] font-black uppercase tracking-widest px-4 py-1.5">
+                              {item.detail}
+                            </Badge>
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
+              ))}
+            </div>
+          </div>
+
+          {/* Tightly Packed Partners */}
+          <div className="pt-8 border-t border-black/[0.05]">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 max-w-6xl mx-auto opacity-40 hover:opacity-100 transition-opacity duration-700 grayscale hover:grayscale-0">
+              {partners.map((partner, i) => {
+                const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
+                return (
+                  <div key={i} className="relative h-6 w-auto min-w-[60px] flex items-center justify-center">
+                    {logo && (
+                      <Image 
+                        src={logo.imageUrl} 
+                        alt={partner.name}
+                        width={100}
+                        height={40}
+                        className="object-contain h-full w-auto"
+                        data-ai-hint={logo.imageHint}
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
