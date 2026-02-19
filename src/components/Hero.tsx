@@ -79,16 +79,16 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 overflow-hidden bg-white">
       {/* Light Mesh Background */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
           
           {/* Left Column: Mission Typography */}
-          <div className="space-y-12">
+          <div className="space-y-10">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
@@ -128,7 +128,7 @@ export function Hero() {
             </div>
 
             {/* Bento Specialty Grid */}
-            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[440px]">
+            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[400px]">
               {specialties.map((spec, i) => (
                 <div 
                   key={i} 
@@ -161,13 +161,13 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Stretched Metrics Row (Classy & Intelligent) */}
-        <div className="pt-12 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+        {/* Stretched Metrics Row - Perfectly Centered */}
+        <div className="pt-10 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl mx-auto">
           {compactStats.map((stat, i) => (
             <Dialog key={i}>
               <DialogTrigger asChild>
-                <button className="flex flex-col items-center lg:items-start text-center lg:text-left hover:opacity-70 transition-opacity outline-none group space-y-3 w-full">
-                  <span className="text-5xl lg:text-7xl font-black italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
+                <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-3 w-full">
+                  <span className="text-5xl lg:text-7xl font-bold italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
                     {stat.value}
                   </span>
                   <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
