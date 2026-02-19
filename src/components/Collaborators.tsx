@@ -27,54 +27,49 @@ export function Collaborators() {
   ];
 
   return (
-    <section id="collaborators" className="py-32 relative bg-transparent overflow-hidden border-t border-white/5">
+    <section id="collaborators" className="py-40 relative bg-transparent overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          
-          <div className="mb-24 text-center space-y-4">
-            <Badge className="bg-white/5 text-white/40 border-white/10 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px] mb-2">
-              Institutional Network
-            </Badge>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white italic uppercase tracking-tighter leading-none animate-in fade-in slide-in-from-bottom-8 duration-1000">
-              Strategic <br className="hidden md:block" /> Collaborations.
-            </h2>
-          </div>
+        <div className="text-center space-y-6 mb-32">
+          <Badge className="bg-white/5 text-white/40 border-white/10 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
+            Institutional Network
+          </Badge>
+          <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-black text-white italic uppercase tracking-tighter leading-[0.85]">
+            Strategic<br />Collaborations.
+          </h2>
+        </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-2 md:gap-4 max-w-4xl mx-auto">
-            {partners.map((org, i) => {
-              const logo = PlaceHolderImages.find(img => img.id === org.logoId);
-              return (
-                <a 
-                  key={i} 
-                  href={org.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative w-20 h-20 md:w-28 md:h-28 transition-all duration-500 hover:scale-125 hover:z-20 -m-3 md:-m-4"
-                  title={org.name}
-                >
-                  {logo && (
-                    <div className="relative w-full h-full flex items-center justify-center p-4">
-                      <Image 
-                        src={`${logo.imageUrl}?v=2`} 
-                        alt={org.name}
-                        fill
-                        className="object-contain filter brightness-90 contrast-125 group-hover:brightness-110 transition-all duration-500"
-                        data-ai-hint={logo.imageHint}
-                      />
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
-                </a>
-              );
-            })}
-          </div>
+        <div className="huddle-container">
+          {partners.map((org, i) => {
+            const logo = PlaceHolderImages.find(img => img.id === org.logoId);
+            return (
+              <a 
+                key={i} 
+                href={org.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="huddle-item w-24 h-24 md:w-32 md:h-32 flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-700"
+                title={org.name}
+              >
+                {logo && (
+                  <div className="relative w-full h-full">
+                    <Image 
+                      src={`${logo.imageUrl}?v=2`} 
+                      alt={org.name}
+                      fill
+                      className="object-contain filter brightness-110 contrast-125"
+                      data-ai-hint={logo.imageHint}
+                    />
+                  </div>
+                )}
+              </a>
+            );
+          })}
+        </div>
 
-          <div className="mt-24 text-center">
-            <p className="text-white/20 text-[9px] font-black uppercase tracking-[0.4em]">
-              Global Innovation & Technical Advocacy Ecosystem
-            </p>
-          </div>
-
+        <div className="mt-32 text-center">
+          <p className="text-white/10 text-[9px] font-black uppercase tracking-[0.6em]">
+            Global Innovation & Technical Advocacy Ecosystem
+          </p>
         </div>
       </div>
     </section>

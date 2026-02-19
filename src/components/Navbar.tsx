@@ -7,63 +7,40 @@ import { FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Navbar() {
-  const [isVisible, setIsVisible] = useState(true);
   const [isShortened, setIsShortened] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Visibility logic
-      if (currentScrollY > lastScrollY && currentScrollY > 200) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-
-      // Contraction logic
-      if (currentScrollY > 80) {
-        setIsShortened(true);
-      } else {
-        setIsShortened(false);
-      }
-      
-      setLastScrollY(currentScrollY);
+      setIsShortened(window.scrollY > 80);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const navItems = [
     { label: 'Journey', href: '/#journey' },
     { label: 'Impact', href: '/#featured' },
     { label: 'Projects', href: '/#projects' },
-    { label: 'Education', href: '/#education' },
     { label: 'Experience', href: '/#experience' },
-    { label: 'Honors', href: '/#achievements' },
   ];
 
   return (
-    <nav className={cn(
-      "fixed top-0 z-[100] w-full pt-6 transition-all duration-1000 ease-premium flex justify-center pointer-events-none",
-      isVisible ? "translate-y-0 opacity-100" : "-translate-y-32 opacity-0"
-    )}>
+    <nav className="fixed top-0 z-[100] w-full flex justify-center pt-8 pointer-events-none">
       <div className={cn(
         "w-full px-6 transition-all duration-1000 ease-premium flex justify-center pointer-events-auto",
-        isShortened ? "max-w-[1100px]" : "max-w-7xl"
+        isShortened ? "max-w-[1000px]" : "max-w-7xl"
       )}>
         <div className={cn(
-          "h-16 lg:h-20 glass-card rounded-[2.5rem] flex items-center justify-between border-white/[0.1] shadow-2xl backdrop-blur-3xl bg-white/[0.03] transition-all duration-1000 ease-premium w-full overflow-hidden",
-          isShortened ? "px-8" : "px-10"
+          "h-14 md:h-16 rounded-full flex items-center justify-between border border-white/[0.05] bg-[#02040a]/80 backdrop-blur-3xl shadow-2xl transition-all duration-1000 ease-premium w-full px-8",
+          isShortened ? "bg-white/10" : ""
         )}>
           <div className={cn(
             "flex items-center transition-all duration-1000 ease-premium",
             isShortened ? "gap-6" : "gap-12"
           )}>
-            <Link href="/" className="text-lg md:text-2xl font-headline font-black tracking-tighter hover:scale-105 transition-transform group shrink-0 text-white">
-              TECHNOLEADER<span className="text-primary group-hover:animate-pulse">.</span>
+            <Link href="/" className="text-xl font-black italic tracking-tighter text-white shrink-0 group">
+              TL<span className="hidden sm:inline">.STUDIO</span>
             </Link>
             
             <div className={cn(
@@ -74,7 +51,7 @@ export function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[9px] uppercase font-black transition-all duration-500 text-white/50 hover:text-white whitespace-nowrap tracking-[0.25em]"
+                  className="text-[9px] uppercase font-black transition-all duration-500 text-white/40 hover:text-white tracking-[0.4em] whitespace-nowrap"
                 >
                   {item.label}
                 </Link>
@@ -83,36 +60,17 @@ export function Navbar() {
           </div>
 
           <div className={cn(
-            "flex items-center transition-all duration-1000 ease-premium shrink-0",
-            isShortened ? "gap-3" : "gap-4"
+            "flex items-center transition-all duration-1000 ease-premium",
+            isShortened ? "gap-4" : "gap-6"
           )}>
-            <div className="hidden lg:flex items-center gap-3">
-              <Button 
-                variant="ghost" 
-                asChild 
-                className="rounded-full border border-white/10 bg-white/[0.02] text-white/80 hover:bg-white/10 font-black tracking-widest text-[9px] uppercase h-11 px-6 whitespace-nowrap backdrop-blur-xl transition-all duration-700"
-              >
-                <Link href="/resume">
-                  <FileText className="w-3.5 h-3.5 mr-2" />
-                  Resume
-                </Link>
-              </Button>
-              
-              <Button asChild className={cn(
-                "rounded-full bg-white text-black hover:bg-white/90 font-black tracking-widest text-[9px] uppercase h-11 shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-1000 ease-premium",
-                isShortened ? "px-6" : "px-10"
-              )}>
-                <Link href="/#contact">
-                  {isShortened ? 'Talk' : 'Connect'}
-                </Link>
-              </Button>
-            </div>
-
-            <div className="lg:hidden">
-              <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 px-6 font-black tracking-widest text-[9px] uppercase h-10">
-                <Link href="/#contact">Talk</Link>
-              </Button>
-            </div>
+            <Link href="/resume" className="hidden sm:flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.4em] text-white/40 hover:text-white transition-colors">
+              <FileText className="w-3 h-3" />
+              Resume
+            </Link>
+            
+            <Button asChild className="rounded-full bg-white text-black hover:bg-white/90 h-10 px-8 text-[10px] font-black uppercase tracking-widest transition-all duration-1000">
+              <Link href="/#contact">Connect</Link>
+            </Button>
           </div>
         </div>
       </div>
