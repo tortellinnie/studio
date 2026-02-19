@@ -9,24 +9,6 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 export function Hero() {
   const headshot = PlaceHolderImages.find(img => img.id === 'profile-headshot');
   
-  const partners = [
-    { name: "P&G", logoId: "logo-png" },
-    { name: "AWS", logoId: "logo-aws" },
-    { name: "DOST", logoId: "logo-dost" },
-    { name: "DICT", logoId: "logo-dict" },
-    { name: "QC Gov", logoId: "logo-qc" },
-    { name: "NBDB", logoId: "logo-nbdb" },
-    { name: "DTI", logoId: "logo-dti" },
-    { name: "SK Commonwealth", logoId: "logo-sk" },
-    { name: "NADS", logoId: "logo-nads" },
-    { name: "DA", logoId: "logo-da" },
-    { name: "PSA", logoId: "logo-psa" },
-    { name: "PLDT-Smart", logoId: "logo-pldtsmart" },
-    { name: "EMC Global", logoId: "logo-emc" },
-    { name: "NARA", logoId: "logo-nara" },
-    { name: "FEU Tech Lib", logoId: "logo-lib" },
-  ];
-
   const compactStats = [
     { label: 'BENEFICIARIES', value: '300K+' },
     { label: 'SPEAKERSHIP AUDIENCES', value: '2,000+' },
@@ -83,32 +65,6 @@ export function Hero() {
                   </p>
                 </div>
               ))}
-            </div>
-
-            {/* Strategic Collaborations Wall - Moved Up, Enlarged and Centered */}
-            <div className="pt-6 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
-              <p className="text-[9px] font-black text-muted-foreground/40 uppercase tracking-[0.5em] mb-8 text-center">Strategic Collaborations</p>
-              <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10">
-                {partners.map((partner, i) => {
-                  const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
-                  return (
-                    <div key={i} className="transition-all duration-500 hover:scale-110 active:scale-95 group">
-                      {logo && (
-                        <div className="relative w-40 h-12">
-                          <Image 
-                            src={logo.imageUrl} 
-                            alt={partner.name}
-                            fill
-                            className="object-contain"
-                            data-ai-hint={logo.imageHint}
-                            priority
-                          />
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
             </div>
           </div>
 
