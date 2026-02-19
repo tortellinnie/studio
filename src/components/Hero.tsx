@@ -1,13 +1,19 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight, FileText, Users, Mic, Landmark } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
   const headshot = PlaceHolderImages.find(img => img.id === 'profile-headshot');
+
+  const compactStats = [
+    { label: 'Beneficiaries', value: '300K+', icon: Users },
+    { label: 'Speakerships', value: '2,000+', icon: Mic },
+    { label: 'Capital Secured', value: '₱1.2M+', icon: Landmark },
+  ];
 
   return (
     <section className="relative min-h-[90vh] flex items-center px-6 pt-32 pb-16 overflow-hidden">
@@ -46,6 +52,19 @@ export function Hero() {
                   </Link>
                 </Button>
               </div>
+            </div>
+
+            {/* Integrated Metrics for immediate visibility */}
+            <div className="pt-10 grid grid-cols-3 gap-8 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+              {compactStats.map((stat, i) => (
+                <div key={i} className="space-y-1">
+                  <div className="flex items-center gap-2 text-primary">
+                    <stat.icon className="w-4 h-4" />
+                    <span className="text-2xl font-black italic tracking-tighter text-foreground">{stat.value}</span>
+                  </div>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
 

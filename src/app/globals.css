@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
+    --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#fcfcfc] text-foreground font-body antialiased selection:bg-black selection:text-white overflow-x-hidden;
+    @apply bg-white text-foreground font-body antialiased selection:bg-black selection:text-white overflow-x-hidden;
     background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
     background-size: 40px 40px;
   }
@@ -74,4 +74,12 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600;
+}
+
+.glass-card {
+  @apply backdrop-blur-md bg-white/5 border border-white/10;
 }
