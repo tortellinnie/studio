@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero';
 import { SDGs } from '@/components/SDGs';
 import { Featured } from '@/components/Featured';
 import { Projects } from '@/components/Projects';
+import { Speaking } from '@/components/Speaking';
 import { Achievements } from '@/components/Achievements';
 import { Contact } from '@/components/Contact';
 
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="space-y-0">
         <Featured />
         <Projects />
+        <Speaking />
         <SDGs />
         <Achievements />
         <Contact />
