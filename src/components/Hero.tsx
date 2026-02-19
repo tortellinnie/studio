@@ -68,7 +68,7 @@ export function Hero() {
                 THAT SCALE<span className="text-primary">.</span>
               </h1>
               <p className="text-[11px] font-black text-muted-foreground uppercase tracking-[0.5em]">
-                SHANN KARL FELIPE · AI/LEADERSHIP
+                SHANN KARL FELIPE · LEADERSHIP
               </p>
             </div>
             
@@ -88,54 +88,57 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Huddle Hub (Hub-and-Spoke) */}
+          {/* Right Column: Intelligent Hub Diagram */}
           <div className="relative h-[500px] flex items-center justify-center">
-            {/* SVG Spokes */}
+            {/* SVG Circuit Path Connections */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 500">
               {/* Software (Top Left) */}
-              <line x1="250" y1="250" x2="150" y2="150" stroke="#2563eb" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
-              {/* Computer Vision (Top Right) */}
-              <line x1="250" y1="250" x2="350" y2="150" stroke="#dc2626" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
-              {/* Leadership (Bottom Left) */}
-              <line x1="250" y1="250" x2="150" y2="350" stroke="#f59e0b" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
+              <path d="M250,250 L180,180" stroke="#2563eb" strokeWidth="1.5" strokeDasharray="4 4" fill="none" className="animate-pulse" />
+              {/* AI (Top Right) */}
+              <path d="M250,250 L320,180" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="4 4" fill="none" className="animate-pulse" />
+              {/* Automation (Bottom Left) */}
+              <path d="M250,250 L180,320" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 4" fill="none" className="animate-pulse" />
               {/* Cloud (Bottom Right) */}
-              <line x1="250" y1="250" x2="350" y2="350" stroke="#16a34a" strokeWidth="2" strokeDasharray="4 4" className="animate-pulse" />
+              <path d="M250,250 L320,320" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="4 4" fill="none" className="animate-pulse" />
               
-              {/* Spoke Dots */}
-              <circle cx="150" cy="150" r="4" fill="#2563eb" />
-              <circle cx="350" cy="150" r="4" fill="#dc2626" />
-              <circle cx="150" cy="350" r="4" fill="#f59e0b" />
-              <circle cx="350" cy="350" r="4" fill="#16a34a" />
+              {/* Circuit Nodes */}
+              <circle cx="180" cy="180" r="3" fill="#2563eb" />
+              <circle cx="320" cy="180" r="3" fill="#dc2626" />
+              <circle cx="180" cy="320" r="3" fill="#f59e0b" />
+              <circle cx="320" cy="320" r="3" fill="#16a34a" />
             </svg>
 
-            {/* Central Hub */}
-            <div className="z-10 w-28 h-28 rounded-full bg-white border-2 border-gray-100 shadow-2xl flex items-center justify-center text-center p-4 huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-tight text-foreground leading-tight">
-                AI /<br />LEADERSHIP
+            {/* Central Hub: LEADERSHIP */}
+            <div className="z-10 w-32 h-32 rounded-full bg-white border border-gray-100 shadow-[0_0_50px_rgba(0,0,0,0.05)] flex items-center justify-center text-center p-4 huddle-item">
+              <span className="text-xs font-black uppercase tracking-widest text-foreground leading-tight">
+                LEADERSHIP
               </span>
             </div>
 
-            {/* Satellite Nodes */}
-            {/* Software Engineering */}
-            <div className="absolute top-[100px] left-[40px] w-36 h-20 rounded-xl bg-blue-600 shadow-xl flex items-center justify-center p-4 text-center huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white">Software<br />Solutions</span>
+            {/* Satellite Nodes: Core Domains */}
+            {/* Software Solutions */}
+            <div className="absolute top-[80px] left-[20px] w-40 h-24 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-xl flex items-center justify-center p-6 text-center huddle-item">
+              <span className="text-[10px] font-black uppercase tracking-widest text-white leading-relaxed">Software<br />Solutions</span>
             </div>
-            {/* Machine Learning / CV */}
-            <div className="absolute top-[100px] right-[40px] w-36 h-20 rounded-xl bg-red-600 shadow-xl flex items-center justify-center p-4 text-center huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white">Computer<br />Vision</span>
+            
+            {/* AI */}
+            <div className="absolute top-[80px] right-[20px] w-40 h-24 rounded-2xl bg-gradient-to-br from-red-600 to-red-700 shadow-xl flex items-center justify-center p-6 text-center huddle-item">
+              <span className="text-[10px] font-black uppercase tracking-widest text-white leading-relaxed">Artificial<br />Intelligence</span>
             </div>
-            {/* Leadership */}
-            <div className="absolute bottom-[100px] left-[40px] w-36 h-20 rounded-xl bg-amber-500 shadow-xl flex items-center justify-center p-4 text-center huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white">R&D<br />Leadership</span>
+            
+            {/* Automation */}
+            <div className="absolute bottom-[80px] left-[20px] w-40 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-xl flex items-center justify-center p-6 text-center huddle-item">
+              <span className="text-[10px] font-black uppercase tracking-widest text-white leading-relaxed">Intelligent<br />Automation</span>
             </div>
-            {/* Cloud Computing */}
-            <div className="absolute bottom-[100px] right-[40px] w-36 h-20 rounded-xl bg-green-600 shadow-xl flex items-center justify-center p-4 text-center huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white">Cloud<br />& IoT</span>
+            
+            {/* Cloud & IOT */}
+            <div className="absolute bottom-[80px] right-[20px] w-40 h-24 rounded-2xl bg-gradient-to-br from-green-600 to-emerald-700 shadow-xl flex items-center justify-center p-6 text-center huddle-item">
+              <span className="text-[10px] font-black uppercase tracking-widest text-white leading-relaxed">Cloud<br />& IOT</span>
             </div>
           </div>
         </div>
 
-        {/* Stretched Metrics Row */}
+        {/* Stretched Metrics Row (Prioritized Impact) */}
         <div className="pt-12 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
           {compactStats.map((stat, i) => (
             <Dialog key={i}>
