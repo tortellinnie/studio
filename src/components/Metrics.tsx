@@ -100,8 +100,8 @@ export function Metrics() {
                   </div>
                 </button>
               </DialogTrigger>
-              <DialogContent className="bg-[#02040a] border-white/5 text-white max-w-lg rounded-none p-0 focus:outline-none">
-                <div className="p-8 border-b border-white/5">
+              <DialogContent className="bg-white border-border text-foreground max-w-lg rounded-3xl p-0 focus:outline-none shadow-2xl overflow-hidden">
+                <div className="p-8 border-b border-border bg-gray-50/50">
                   <DialogHeader>
                     <DialogTitle className="text-3xl font-black uppercase italic tracking-tighter">
                       {stat.title}
@@ -112,9 +112,9 @@ export function Metrics() {
                 <ScrollArea className="max-h-[50vh] p-8">
                   <div className="grid gap-4">
                     {stat.details.map((item, idx) => (
-                      <div key={idx} className="flex items-center justify-between group border-b border-white/5 pb-3">
-                        <span className="font-bold text-white/60 text-xs">{item.name}</span>
-                        <Badge variant="outline" className="border-white/10 text-white/40 text-[8px] font-black uppercase">
+                      <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-4 last:border-0">
+                        <span className="font-bold text-foreground/80 text-sm">{item.name}</span>
+                        <Badge variant="outline" className="border-border text-muted-foreground text-[8px] font-black uppercase tracking-widest px-3 py-1">
                           {item.detail}
                         </Badge>
                       </div>

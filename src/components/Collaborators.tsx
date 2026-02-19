@@ -24,9 +24,10 @@ export function Collaborators() {
   return (
     <section id="collaborators" className="py-20 bg-transparent">
       <div className="container mx-auto px-6 text-center">
-        <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-12">
-          Affiliated with Leading Organizations
-        </p>
+        <div className="mb-16 space-y-4">
+          <p className="text-[11px] font-black text-blue-600 uppercase tracking-[0.4em]">Strategic Collaborations</p>
+          <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase italic tracking-tighter">Affiliated Organizations.</h2>
+        </div>
 
         <div className="huddle-container max-w-5xl">
           {partners.map((org, i) => {
@@ -37,7 +38,7 @@ export function Collaborators() {
                 href={org.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="huddle-item w-24 md:w-32 flex items-center justify-center p-4 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                className="huddle-item w-24 md:w-32 flex items-center justify-center p-2 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
               >
                 {logo && (
                   <div className="relative w-full aspect-video">

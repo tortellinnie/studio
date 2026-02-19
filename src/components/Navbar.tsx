@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { FileText } from 'lucide-react';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,9 +51,17 @@ export function Navbar() {
           ))}
         </div>
 
-        <Button asChild className="rounded-full bg-black text-white hover:bg-black/90 h-10 px-6 text-sm font-bold">
-          <Link href="/#contact">Let's Talk</Link>
-        </Button>
+        <div className="flex items-center gap-4">
+          <Button variant="ghost" asChild className="hidden md:flex rounded-full h-10 px-5 text-xs font-bold gap-2">
+            <Link href="/resume">
+              <FileText className="w-3.5 h-3.5" />
+              Resume
+            </Link>
+          </Button>
+          <Button asChild className="rounded-full bg-black text-white hover:bg-black/90 h-10 px-6 text-sm font-bold">
+            <Link href="/#contact">Let's Talk</Link>
+          </Button>
+        </div>
       </div>
     </nav>
   );
