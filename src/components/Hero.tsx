@@ -100,7 +100,7 @@ export function Hero() {
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <div className="container mx-auto max-w-7xl relative z-10 flex flex-col h-full justify-between">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-10">
           <div className="space-y-10">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase">
@@ -170,8 +170,8 @@ export function Hero() {
         </div>
 
         <div className="space-y-6">
-          {/* Metrics - Shifted Up */}
-          <div className="flex justify-center pt-2">
+          {/* Metrics - Shifted Down Slightly */}
+          <div className="flex justify-center pt-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
               {compactStats.map((stat, i) => (
                 <Dialog key={i}>
@@ -212,13 +212,13 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Single Line Colored Partners */}
+          {/* Single Line Colored Partners - Bigger Logos */}
           <div className="pt-6 border-t border-black/[0.05] overflow-hidden">
-            <div className="flex flex-nowrap items-center justify-center gap-x-12 max-w-7xl mx-auto py-2">
+            <div className="flex flex-nowrap items-center justify-center gap-x-14 max-w-[90vw] mx-auto py-2">
               {partners.map((partner, i) => {
                 const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
                 return (
-                  <div key={i} className="relative h-16 w-auto min-w-[120px] flex items-center justify-center transition-all duration-500 hover:scale-110 shrink-0">
+                  <div key={i} className="relative h-20 w-auto min-w-[140px] flex items-center justify-center transition-all duration-500 hover:scale-110 shrink-0">
                     {logo && (
                       <Image 
                         src={logo.imageUrl} 
