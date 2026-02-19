@@ -88,15 +88,15 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pt-24 mt-24 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-32 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700">
+        <div className="pt-16 mt-16 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700">
           {compactStats.map((stat, i) => (
             <Dialog key={i}>
               <DialogTrigger asChild>
-                <button className="flex flex-col items-center lg:items-start text-center lg:text-left hover:opacity-70 transition-opacity outline-none group space-y-6 w-full">
-                  <span className="text-6xl md:text-7xl lg:text-8xl font-black italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
+                <button className="flex flex-col items-center lg:items-start text-center lg:text-left hover:opacity-70 transition-opacity outline-none group space-y-4 w-full">
+                  <span className="text-5xl md:text-6xl lg:text-7xl font-black italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
                     {stat.value}
                   </span>
-                  <p className="text-[11px] font-black uppercase tracking-[0.5em] text-muted-foreground/60 leading-tight whitespace-nowrap">
+                  <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight whitespace-nowrap">
                     {stat.label}
                   </p>
                 </button>
