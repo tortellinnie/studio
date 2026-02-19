@@ -22,18 +22,18 @@ export function SDGs() {
   ];
 
   return (
-    <section id="sdgs" className="py-16 relative bg-white overflow-visible border-t border-gray-100">
+    <section id="sdgs" className="py-24 relative bg-white overflow-visible border-t border-gray-100">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto space-y-10">
-          <div className="flex flex-col items-center text-center space-y-2">
-            <Badge variant="outline" className="text-primary/60 border-primary/20 px-3 py-1 rounded-full font-black tracking-widest uppercase text-[9px]">
-              Impact DNA
+        <div className="max-w-6xl mx-auto space-y-16">
+          <div className="flex flex-col items-center text-center space-y-6">
+            <Badge variant="outline" className="text-primary/60 border-primary/20 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
+              IMPACT DNA
             </Badge>
-            <h2 className="text-xs font-black text-foreground/40 uppercase tracking-[0.3em]">United Nations SDG Alignment</h2>
+            <h2 className="text-[11px] font-black text-foreground/40 uppercase tracking-[0.5em]">UNITED NATIONS SDG ALIGNMENT</h2>
           </div>
 
           <TooltipProvider delayDuration={0}>
-            <div className="flex flex-wrap gap-2 justify-center items-center w-full">
+            <div className="flex flex-wrap gap-4 justify-center items-center w-full">
               {goals.map((goal) => (
                 <Tooltip key={goal.id}>
                   <TooltipTrigger asChild>
@@ -41,28 +41,28 @@ export function SDGs() {
                       href={`https://sdgs.un.org/goals/goal${goal.id}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`group relative w-10 h-10 ${goal.color} rounded shadow-lg transition-all duration-500 hover:scale-[1.8] hover:z-50 cursor-pointer flex items-center justify-center overflow-hidden`}
+                      className={`group relative w-14 h-14 ${goal.color} rounded-lg shadow-xl transition-all duration-500 hover:scale-[1.5] hover:z-50 cursor-pointer flex items-center justify-center overflow-hidden`}
                     >
-                      <goal.icon className="w-5 h-5 text-white transition-all group-hover:scale-110" />
+                      <goal.icon className="w-7 h-7 text-white transition-all group-hover:scale-110" />
                       <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </TooltipTrigger>
                   <TooltipContent 
                     side="top" 
-                    className="premium-blur border-black/5 p-5 max-w-[240px] rounded-2xl backdrop-blur-3xl shadow-2xl bg-white/95"
-                    sideOffset={15}
+                    className="premium-blur border-black/5 p-6 max-w-[280px] rounded-[2rem] backdrop-blur-3xl shadow-3xl bg-white/95"
+                    sideOffset={20}
                   >
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 ${goal.color} rounded-md flex items-center justify-center shrink-0`}>
-                          <goal.icon className="w-4 h-4 text-white" />
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-4">
+                        <div className={`w-10 h-10 ${goal.color} rounded-xl flex items-center justify-center shrink-0`}>
+                          <goal.icon className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                          <p className="text-[10px] font-black text-foreground/40 uppercase tracking-widest leading-none mb-1">Goal {goal.id}</p>
-                          <p className="text-sm font-black text-foreground uppercase italic tracking-tighter leading-none">{goal.title}</p>
+                          <p className="text-[10px] font-black text-foreground/40 uppercase tracking-widest leading-none mb-1.5">Goal {goal.id}</p>
+                          <p className="text-base font-black text-foreground uppercase italic tracking-tighter leading-none">{goal.title}</p>
                         </div>
                       </div>
-                      <p className="text-[11px] text-muted-foreground font-medium leading-relaxed">
+                      <p className="text-xs text-muted-foreground font-medium leading-relaxed">
                         {goal.desc}
                       </p>
                     </div>
