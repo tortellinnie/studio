@@ -33,7 +33,6 @@ export function Navbar() {
   const navItems = [
     { label: 'Impact', href: '/#featured' },
     { label: 'Projects', href: '/#projects' },
-    { label: 'Experience', href: '/#experience' },
     { label: 'Awards', href: '/#achievements' },
   ];
 
