@@ -3,8 +3,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, FileText } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import {
   Dialog,
   DialogContent,
@@ -16,8 +14,6 @@ import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export function Hero() {
-  const headshot = PlaceHolderImages.find(img => img.id === 'profile-headshot');
-  
   const metricData = {
     beneficiaries: [
       { name: "SK Commonwealth Council", detail: "300,000+ Impacted Youth" },
@@ -57,14 +53,15 @@ export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="flex flex-col items-center text-center space-y-16">
           
-          <div className="lg:col-span-8 space-y-12">
+          <div className="space-y-12 max-w-5xl">
             <div className="space-y-6">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100 max-w-4xl">
+              <div className="space-y-6">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
                   TURNING VISION INTO <br />
-                  INTELLIGENT SYSTEMS THAT SCALE<span className="text-primary">.</span>
+                  INTELLIGENT SYSTEMS <br />
+                  THAT SCALE<span className="text-primary">.</span>
                 </h1>
                 <p className="text-[11px] font-black text-muted-foreground uppercase tracking-[0.5em] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
                   SHANN KARL FELIPE · AI/LEADERSHIP
@@ -72,8 +69,8 @@ export function Hero() {
               </div>
             </div>
             
-            <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
-              <div className="flex flex-wrap items-center gap-6 pt-2">
+            <div className="animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
+              <div className="flex flex-wrap justify-center items-center gap-6 pt-2">
                 <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-14 px-12 text-[11px] font-black uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
                   <Link href="/#contact">
                     Let's Talk
@@ -86,28 +83,6 @@ export function Hero() {
                     Resume
                   </Link>
                 </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-4 relative animate-in fade-in zoom-in-95 duration-1000 delay-500">
-            <div className="relative aspect-[4/5] w-full max-w-[400px] ml-auto overflow-hidden rounded-[3rem] border border-border shadow-3xl group bg-white/5">
-              {headshot && (
-                <Image
-                  src={headshot.imageUrl}
-                  alt={headshot.description}
-                  fill
-                  className="object-cover transition-all duration-1000 scale-100 group-hover:scale-110"
-                  data-ai-hint={headshot.imageHint}
-                  priority
-                />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-              
-              <div className="absolute bottom-8 left-8 right-8">
-                <div className="bg-white/10 backdrop-blur-3xl border border-white/20 px-8 py-4 rounded-2xl w-fit shadow-2xl">
-                  <p className="text-lg font-black text-white uppercase italic tracking-tighter leading-none">TECHNOLEADER</p>
-                </div>
               </div>
             </div>
           </div>
