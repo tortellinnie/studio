@@ -212,13 +212,13 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Tightly Packed Colored Partners */}
-          <div className="pt-6 border-t border-black/[0.05]">
-            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 max-w-7xl mx-auto">
+          {/* Single Line Colored Partners */}
+          <div className="pt-6 border-t border-black/[0.05] overflow-hidden">
+            <div className="flex flex-nowrap items-center justify-center gap-x-12 max-w-7xl mx-auto py-2">
               {partners.map((partner, i) => {
                 const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
                 return (
-                  <div key={i} className="relative h-16 w-auto min-w-[120px] flex items-center justify-center transition-all duration-500 hover:scale-110">
+                  <div key={i} className="relative h-16 w-auto min-w-[120px] flex items-center justify-center transition-all duration-500 hover:scale-110 shrink-0">
                     {logo && (
                       <Image 
                         src={logo.imageUrl} 
