@@ -95,6 +95,30 @@
       "description": "FEU Tech Library Logo",
       "imageUrl": "/assets/images/lib.png",
       "imageHint": "academia logo"
+    },
+    {
+      "id": "featured-prompt-challenge",
+      "description": "AI Prompt Design Challenge Winner",
+      "imageUrl": "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhaSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzcxNTMxOTgzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ai technology"
+    },
+    {
+      "id": "featured-tpu-research",
+      "description": "Google TPU Research Cloud",
+      "imageUrl": "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYWNoaW5lJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzcxNDIxNDI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "machine learning"
+    },
+    {
+      "id": "featured-aws-reinvent",
+      "description": "AWS re:Invent Grant Experience",
+      "imageUrl": "https://images.unsplash.com/photo-1685556904888-b16c02e403b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbG91ZCUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NzE1MzE5ODN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud architecture"
+    },
+    {
+      "id": "featured-github-universe",
+      "description": "GitHub Universe Recap",
+      "imageUrl": "https://images.unsplash.com/photo-1631624215749-b10b3dd7bca7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc3MTQ0NDAyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "software development"
     }
   ]
 }

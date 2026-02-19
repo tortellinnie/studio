@@ -1,102 +1,98 @@
+
 'use client';
 
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
-import { MapPin, Plane, Calendar, Building2, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
 
 export function Featured() {
-  const highlights = [
+  const featuredWork = [
     {
-      id: 'pg-intern',
-      type: 'Mission',
-      title: 'Incoming P&G IT Intern',
-      location: 'Manila, PH',
-      date: 'March 2026',
-      description: 'Joining Procter & Gamble as an IT Intern, focusing on high-impact technology systems and data strategy.',
-      icon: Building2,
-      imageId: 'featured-pg-intern'
+      id: 'prompt-challenge',
+      tag: 'Software Engineering',
+      title: 'Crafting the Winning Prompt of National AI Prompt Design Challenge',
+      badgeColor: 'bg-blue-600',
+      textColor: 'text-blue-600',
+      imageId: 'featured-prompt-challenge'
     },
     {
-      id: 'speaking-1',
-      type: 'Recognition',
-      title: 'Global Delegate (Japan)',
-      location: 'Tokyo, Japan',
-      date: 'Sep 2026',
-      description: 'Winner of the Musashinova Pitching Event, representing Filipino innovation at Musashino University.',
-      icon: Plane,
-      imageId: 'featured-speaking-tokyo'
+      id: 'tpu-research',
+      tag: 'Machine Learning',
+      title: 'Supercharge your ML Research with Google TPU Research Cloud',
+      badgeColor: 'bg-red-600',
+      textColor: 'text-red-600',
+      imageId: 'featured-tpu-research'
+    },
+    {
+      id: 'aws-reinvent',
+      tag: 'Leadership',
+      title: 'AWS re:Invent 2025 All Builders Welcome Grant Experience',
+      badgeColor: 'bg-amber-500',
+      textColor: 'text-amber-500',
+      imageId: 'featured-aws-reinvent'
+    },
+    {
+      id: 'github-universe',
+      tag: 'Cloud Computing',
+      title: 'GitHub Universe\'25 Recap from az:Repo at Microsoft Office Philippines',
+      badgeColor: 'bg-green-600',
+      textColor: 'text-green-600',
+      imageId: 'featured-github-universe'
     }
   ];
 
   return (
-    <section id="featured" className="py-16 relative overflow-visible bg-transparent">
+    <section id="featured" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-12 space-y-4">
-            <Badge className="bg-white/5 text-white/40 border-white/10 px-4 py-1 rounded-full font-bold tracking-widest uppercase text-[9px]">
-              Strategic Milestones
-            </Badge>
-            <h2 className="text-4xl lg:text-5xl font-black text-white uppercase italic tracking-tighter">Core Impact.</h2>
-            <p className="text-white/50 max-w-xl text-lg font-medium leading-relaxed">
-              Pioneering technical solutions that drive professional excellence.
-            </p>
-          </div>
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">Featured Work</h2>
+          <p className="text-muted-foreground text-lg">Highlights from my recent projects and research</p>
+        </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {highlights.map((item) => {
-              const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
-              return (
-                <Link href={`/impact/${item.id}`} key={item.id} className="group">
-                  <Card className="glass-card border-white/[0.05] overflow-hidden rounded-[2rem] h-full flex flex-col">
-                    <div className="relative aspect-video overflow-hidden">
-                      {imageData && (
-                        <Image 
-                          src={imageData.imageUrl} 
-                          alt={imageData.description}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          data-ai-hint={imageData.imageHint}
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#02040a]/90 via-[#02040a]/20 to-transparent" />
-                    </div>
-                    <CardContent className="p-6 space-y-4 flex-grow relative">
-                      <div className="flex items-center justify-between">
-                        <Badge className="bg-white/5 text-white/60 border-white/10 font-bold uppercase text-[8px] tracking-widest px-3">
-                          <item.icon className="w-3 h-3 mr-2" />
-                          {item.type}
-                        </Badge>
-                        <div className="flex items-center gap-2 text-white/40 font-bold">
-                          <Calendar className="w-3 h-3 text-primary" />
-                          <span className="text-[9px] uppercase tracking-tight">{item.date}</span>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-start justify-between gap-4">
-                          <h3 className="text-xl font-black text-white group-hover:text-primary transition-colors leading-tight uppercase italic">
-                            {item.title}
-                          </h3>
-                          <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary transition-all shrink-0">
-                            <ArrowUpRight className="w-3 h-3 text-white" />
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 text-white/40">
-                          <MapPin className="w-3.5 h-3.5 text-primary" />
-                          <span className="text-[9px] font-bold uppercase tracking-widest">{item.location}</span>
-                        </div>
-                      </div>
-                      <p className="text-sm text-white/50 leading-relaxed font-medium line-clamp-2">
-                        {item.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              );
-            })}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {featuredWork.map((work) => {
+            const imageData = PlaceHolderImages.find(img => img.id === work.imageId);
+            return (
+              <div key={work.id} className="group flex flex-col bg-white rounded-[2rem] border border-gray-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  {imageData && (
+                    <Image
+                      src={imageData.imageUrl}
+                      alt={imageData.description}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      data-ai-hint={imageData.imageHint}
+                    />
+                  )}
+                  <div className={cn(
+                    "absolute top-4 left-4 px-4 py-1.5 rounded-full text-[10px] font-bold text-white uppercase tracking-wider",
+                    work.badgeColor
+                  )}>
+                    {work.tag}
+                  </div>
+                </div>
+                
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-foreground leading-snug mb-8 flex-grow">
+                    {work.title}
+                  </h3>
+                  
+                  <Link 
+                    href={`/impact/${work.id}`} 
+                    className={cn(
+                      "inline-flex items-center gap-2 text-sm font-bold transition-opacity hover:opacity-80",
+                      work.textColor
+                    )}
+                  >
+                    Read more 
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
