@@ -57,25 +57,23 @@ export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
+        <div className="grid lg:grid-cols-12 gap-16 items-start">
           
-          <div className="lg:col-span-7 space-y-12">
+          <div className="lg:col-span-8 space-y-12">
             <div className="space-y-6">
               <p className="text-[11px] font-black text-primary uppercase tracking-[0.5em] animate-in fade-in slide-in-from-bottom-2 duration-700">
                 SOFTWARE ENGINEERING & R&D
               </p>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
-                ARCHITECTING <br />
-                TECHNICAL <br />
-                SOLUTIONS<span className="text-primary">.</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
+                TURNING <br />
+                VISION INTO <br />
+                INTELLIGENT <br />
+                SYSTEMS <br />
+                THAT SCALE<span className="text-primary">.</span>
               </h1>
             </div>
             
-            <div className="space-y-8 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
-              <p className="text-base text-muted-foreground font-medium leading-relaxed">
-                Turning Vision Into Intelligent Systems That Scale.
-              </p>
-              
+            <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
               <div className="flex flex-wrap items-center gap-6 pt-2">
                 <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-14 px-12 text-[11px] font-black uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
                   <Link href="/#contact">
@@ -93,8 +91,8 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative animate-in fade-in zoom-in-95 duration-1000 delay-500">
-            <div className="relative aspect-[4/5] w-full max-w-[480px] mx-auto overflow-hidden rounded-[4rem] border border-border shadow-[0_64px_96px_-16px_rgba(0,0,0,0.15)] group bg-white/5">
+          <div className="lg:col-span-4 relative animate-in fade-in zoom-in-95 duration-1000 delay-500">
+            <div className="relative aspect-[4/5] w-full max-w-[400px] ml-auto overflow-hidden rounded-[3rem] border border-border shadow-3xl group bg-white/5">
               {headshot && (
                 <Image
                   src={headshot.imageUrl}
@@ -107,9 +105,9 @@ export function Hero() {
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               
-              <div className="absolute bottom-10 left-10 right-10">
-                <div className="bg-white/10 backdrop-blur-3xl border border-white/20 px-10 py-5 rounded-[2rem] w-fit shadow-2xl">
-                  <p className="text-xl font-black text-white uppercase italic tracking-tighter leading-none">AI AUTOMATION ENGINEER</p>
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="bg-white/10 backdrop-blur-3xl border border-white/20 px-8 py-4 rounded-2xl w-fit shadow-2xl">
+                  <p className="text-lg font-black text-white uppercase italic tracking-tighter leading-none">AI AUTOMATION ENGINEER</p>
                 </div>
               </div>
             </div>
