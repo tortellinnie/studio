@@ -23,19 +23,19 @@ export function Collaborators() {
   ];
 
   return (
-    <section id="collaborators" className="py-20 pb-32 relative overflow-hidden bg-white">
+    <section id="collaborators" className="py-10 pb-20 relative overflow-hidden bg-white">
       {/* Light Grid Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
       <div className="container mx-auto px-6 text-center relative z-10">
-        <div className="mb-20">
+        <div className="mb-10">
           <p className="text-[11px] font-black text-foreground/40 uppercase tracking-[0.5em]">
             AFFILIATED WITH LEADING ENTITIES
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-20 max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-10 max-w-6xl mx-auto">
           {partners.map((org, i) => {
             const logo = PlaceHolderImages.find(img => img.id === org.logoId);
             return (
@@ -44,16 +44,16 @@ export function Collaborators() {
                 href={org.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center transition-all duration-500 hover:scale-110"
+                className="group relative flex items-center justify-center transition-all duration-500 hover:scale-105"
               >
                 {logo && (
-                  <div className="relative h-16 md:h-20 w-auto min-w-[160px] flex items-center justify-center">
+                  <div className="relative h-12 md:h-14 w-auto min-w-[120px] flex items-center justify-center">
                     <Image 
                       src={logo.imageUrl} 
                       alt={org.name}
-                      width={200}
-                      height={80}
-                      className="object-contain h-full w-auto filter grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-500"
+                      width={140}
+                      height={60}
+                      className="object-contain h-full w-auto opacity-100 transition-all duration-500"
                       data-ai-hint={logo.imageHint}
                     />
                   </div>
