@@ -2,7 +2,6 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Collaborators } from '@/components/Collaborators';
 import { SDGs } from '@/components/SDGs';
-import { Journey } from '@/components/Journey';
 import { Featured } from '@/components/Featured';
 import { Projects } from '@/components/Projects';
 import { Education } from '@/components/Education';
@@ -17,7 +16,6 @@ export default function Home() {
       <Hero />
       <div className="space-y-0">
         <Collaborators />
-        <Journey />
         <Featured />
         <Projects />
         <SDGs />
