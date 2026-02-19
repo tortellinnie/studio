@@ -72,7 +72,7 @@ export function Hero() {
             </div>
             
             <div className="space-y-8 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
-              <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+              <p className="text-base text-muted-foreground font-medium leading-relaxed">
                 Turning Vision Into Intelligent Systems That Scale.
               </p>
               
