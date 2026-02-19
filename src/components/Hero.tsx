@@ -8,6 +8,17 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
   const headshot = PlaceHolderImages.find(img => img.id === 'profile-headshot');
+  
+  const partners = [
+    { name: "P&G", logoId: "logo-png" },
+    { name: "AWS", logoId: "logo-aws" },
+    { name: "DOST", logoId: "logo-dost" },
+    { name: "DICT", logoId: "logo-dict" },
+    { name: "Google Cloud", logoId: "logo-dict" },
+    { name: "Vercel", logoId: "logo-dict" },
+    { name: "GitHub", logoId: "logo-dict" },
+    { name: "EMC Global", logoId: "logo-emc" },
+  ];
 
   const compactStats = [
     { label: 'BENEFICIARIES', value: '300K+' },
@@ -16,13 +27,13 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-[85vh] flex items-center px-6 pt-32 pb-12 overflow-hidden">
+    <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-32 pb-12 overflow-hidden bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          <div className="lg:col-span-7 space-y-6">
-            <div className="space-y-3">
-              <p className="text-[10px] font-black text-primary uppercase tracking-[0.4em] animate-in fade-in slide-in-from-bottom-2 duration-700">
+          <div className="lg:col-span-7 space-y-8">
+            <div className="space-y-4">
+              <p className="text-[10px] font-black text-primary uppercase tracking-[0.5em] animate-in fade-in slide-in-from-bottom-2 duration-700">
                 SOFTWARE ENGINEERING & R&D
               </p>
               <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold leading-[1] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
@@ -32,20 +43,20 @@ export function Hero() {
               </h1>
             </div>
             
-            <div className="space-y-6 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
-              <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+            <div className="space-y-8 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
+              <p className="text-xl text-muted-foreground font-medium leading-relaxed">
                 <span className="text-foreground font-bold">Shann Karl Felipe</span> • Executive Lead & Engineer. 
-                Focusing on high-impact AI, distributed systems, and technical leadership in Manila.
+                Focusing on high-impact AI automation, distributed systems, and technical leadership in Manila.
               </p>
               
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-12 px-8 text-sm font-bold flex items-center gap-2 group shadow-xl" asChild>
+              <div className="flex flex-wrap items-center gap-4">
+                <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-14 px-10 text-sm font-bold flex items-center gap-2 group shadow-2xl" asChild>
                   <Link href="/#contact">
                     Let's Talk
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="rounded-full h-12 px-8 text-sm font-bold bg-white border-border hover:bg-gray-50 flex items-center gap-2 shadow-sm" asChild>
+                <Button variant="outline" size="lg" className="rounded-full h-14 px-10 text-sm font-bold bg-white border-border hover:bg-gray-50 flex items-center gap-2" asChild>
                   <Link href="/resume">
                     <FileText className="w-4 h-4" />
                     View Resume
@@ -54,11 +65,10 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Metrics integrated into the Hero frame for immediate visibility */}
-            <div className="pt-8 grid grid-cols-3 gap-6 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+            <div className="pt-10 grid grid-cols-3 gap-8 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
               {compactStats.map((stat, i) => (
-                <div key={i} className="space-y-1">
-                  <span className="text-3xl font-black italic tracking-tighter text-foreground leading-none block">
+                <div key={i} className="space-y-2">
+                  <span className="text-4xl font-black italic tracking-tighter text-foreground leading-none block">
                     {stat.value}
                   </span>
                   <p className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/80 leading-tight">
@@ -70,7 +80,7 @@ export function Hero() {
           </div>
 
           <div className="lg:col-span-5 relative animate-in fade-in zoom-in-95 duration-1000 delay-500">
-            <div className="relative aspect-[4/5] w-full max-w-[420px] mx-auto overflow-hidden rounded-[2.5rem] border border-border shadow-2xl group bg-white/5">
+            <div className="relative aspect-[4/5] w-full max-w-[440px] mx-auto overflow-hidden rounded-[3rem] border border-border shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] group bg-white/5">
               {headshot && (
                 <Image
                   src={headshot.imageUrl}
@@ -81,19 +91,39 @@ export function Hero() {
                   priority
                 />
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/10 backdrop-blur-xl border border-white/20 px-5 py-3 rounded-2xl w-fit">
-                  <p className="text-[9px] font-black uppercase text-white/60 tracking-widest leading-none mb-1.5">Status 2026</p>
-                  <p className="text-sm font-bold text-white uppercase italic tracking-tighter leading-none">Incoming P&G IT Intern</p>
+              <div className="absolute bottom-8 left-8 right-8">
+                <div className="bg-white/10 backdrop-blur-3xl border border-white/20 px-6 py-4 rounded-[2rem] w-fit shadow-2xl">
+                  <p className="text-[10px] font-black uppercase text-white/60 tracking-[0.3em] leading-none mb-2">Status 2026</p>
+                  <p className="text-lg font-bold text-white uppercase italic tracking-tighter leading-none">AI Automation Engineer</p>
                 </div>
               </div>
             </div>
-            
-            <div className="absolute -z-10 -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-[80px]" />
           </div>
+        </div>
 
+        {/* Collaborators Wall - Directly in Hero Frame */}
+        <div className="mt-20 pt-10 border-t border-gray-50 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
+          <p className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-[0.4em] w-full text-center mb-4">Strategic Collaborations</p>
+          {partners.map((partner, i) => {
+            const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
+            return (
+              <div key={i} className="grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-help">
+                {logo && (
+                  <div className="relative w-20 h-8">
+                    <Image 
+                      src={logo.imageUrl} 
+                      alt={partner.name}
+                      fill
+                      className="object-contain"
+                      data-ai-hint={logo.imageHint}
+                    />
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
