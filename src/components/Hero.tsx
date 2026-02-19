@@ -88,28 +88,30 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
           
           {/* Left Column: Mission Typography */}
-          <div className="space-y-10">
-            <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase">
-                TURNING VISION INTO <br />
-                INTELLIGENT SYSTEMS <br />
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-foreground italic uppercase">
+                TURNING VISION <br />
+                INTO <br />
+                INTELLIGENT <br />
+                SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
               <div className="flex items-center gap-2 text-muted-foreground/60">
-                <span className="text-[10px] font-black uppercase tracking-[0.4em]">SHANN KARL FELIPE</span>
+                <span className="text-[9px] font-black uppercase tracking-[0.4em]">SHANN KARL FELIPE</span>
                 <div className="w-1 h-1 rounded-full bg-primary" />
-                <span className="text-[10px] font-black uppercase tracking-[0.4em]">AI · LEADERSHIP</span>
+                <span className="text-[9px] font-black uppercase tracking-[0.4em]">AI · LEADERSHIP</span>
               </div>
             </div>
             
-            <div className="flex flex-wrap items-center gap-6">
-              <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-14 px-10 text-[11px] font-black uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
+            <div className="flex flex-wrap items-center gap-4">
+              <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-12 px-8 text-[10px] font-black uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
                 <Link href="/#contact">
                   Initiate Discussion
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="rounded-full h-14 px-10 text-[11px] font-black uppercase tracking-widest bg-white border-border hover:bg-gray-50 flex items-center gap-3" asChild>
+              <Button variant="outline" size="lg" className="rounded-full h-12 px-8 text-[10px] font-black uppercase tracking-widest bg-white border-border hover:bg-gray-50 flex items-center gap-3" asChild>
                 <Link href="/resume">
                   <FileText className="w-4 h-4" />
                   Technical Resume
@@ -123,17 +125,17 @@ export function Hero() {
             {/* Leadership Axis */}
             <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
               <div className="bg-white px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
-                <span className="text-[9px] font-black uppercase tracking-[0.6em] text-primary">STRATEGIC LEADERSHIP</span>
+                <span className="text-[8px] font-black uppercase tracking-[0.6em] text-primary">STRATEGIC LEADERSHIP</span>
               </div>
             </div>
 
             {/* Bento Specialty Grid */}
-            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[400px]">
+            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[350px]">
               {specialties.map((spec, i) => (
                 <div 
                   key={i} 
                   className={cn(
-                    "relative group overflow-hidden rounded-[2rem] p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl shadow-sm border border-black/[0.03]",
+                    "relative group overflow-hidden rounded-[2rem] p-6 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl shadow-sm border border-black/[0.03]",
                     spec.span,
                     "bg-gradient-to-br",
                     spec.color
@@ -146,32 +148,32 @@ export function Hero() {
                   </svg>
 
                   <div className="relative z-10">
-                    <h3 className="text-white text-[11px] font-black uppercase tracking-widest leading-tight mb-2">
+                    <h3 className="text-white text-[10px] font-black uppercase tracking-widest leading-tight mb-2">
                       {spec.title}
                     </h3>
-                    <p className="text-white/40 text-[9px] font-bold uppercase tracking-wider">
+                    <p className="text-white/40 text-[8px] font-bold uppercase tracking-wider">
                       {spec.desc}
                     </p>
                   </div>
 
-                  <div className="absolute bottom-6 right-8 w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-white transition-colors" />
+                  <div className="absolute bottom-6 right-8 w-1 h-1 rounded-full bg-white/20 group-hover:bg-white transition-colors" />
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Centered Metrics Row - Moved downward */}
-        <div className="pt-20 md:pt-24 flex justify-center">
+        {/* Centered Metrics Row */}
+        <div className="pt-24 md:pt-32 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
             {compactStats.map((stat, i) => (
               <Dialog key={i}>
                 <DialogTrigger asChild>
                   <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-2 w-full">
-                    <span className="text-5xl lg:text-8xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
+                    <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
                       {stat.value}
                     </span>
-                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
+                    <p className="text-[9px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
                       {stat.label}
                     </p>
                   </button>
@@ -190,7 +192,7 @@ export function Hero() {
                       {stat.details.map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-6 last:border-0">
                           <span className="font-bold text-foreground/80 text-base">{item.name}</span>
-                          <Badge variant="outline" className="border-border text-muted-foreground text-[9px] font-black uppercase tracking-widest px-4 py-1.5">
+                          <Badge variant="outline" className="border-border text-muted-foreground text-[8px] font-black uppercase tracking-widest px-4 py-1.5">
                             {item.detail}
                           </Badge>
                         </div>
