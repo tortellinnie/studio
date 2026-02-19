@@ -57,7 +57,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
           
           <div className="lg:col-span-8 space-y-12">
             <div className="space-y-6">
