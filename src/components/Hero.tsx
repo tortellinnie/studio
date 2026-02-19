@@ -3,12 +3,8 @@
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, ArrowRight, MoveDown } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
-  const profileImage = PlaceHolderImages.find(img => img.id === 'profile-headshot');
-
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-32 pb-24 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none" />
