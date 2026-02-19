@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { cn } from '@/lib/utils';
 
 export function Hero() {
   const metricData = {
@@ -50,95 +51,117 @@ export function Hero() {
     { label: 'CAPITAL SECURED', value: '₱1.2M+', details: metricData.capital, title: 'Funding & Support' },
   ];
 
+  const specialties = [
+    { 
+      title: 'ARTIFICIAL INTELLIGENCE', 
+      desc: 'Neural Networks & Computer Vision',
+      color: 'from-indigo-600 to-violet-800',
+      span: 'col-span-2 row-span-1'
+    },
+    { 
+      title: 'SOFTWARE SOLUTIONS', 
+      desc: 'Scalable Architecture',
+      color: 'from-slate-800 to-slate-950',
+      span: 'col-span-1 row-span-2'
+    },
+    { 
+      title: 'AUTOMATION', 
+      desc: 'Intelligent Workflows',
+      color: 'from-blue-900 to-indigo-950',
+      span: 'col-span-1 row-span-1'
+    },
+    { 
+      title: 'CLOUD & IOT', 
+      desc: 'Distributed Edge Systems',
+      color: 'from-gray-400 to-gray-600',
+      span: 'col-span-1 row-span-1'
+    }
+  ];
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden bg-white">
-      {/* Light Grid Background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      {/* Light Mesh Background */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           
-          {/* Left Column: Typography & Content */}
-          <div className="space-y-10">
+          {/* Left Column: Mission Typography */}
+          <div className="space-y-12">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
-                THAT SCALE<span className="text-primary">.</span>
+                <span className="text-primary">THAT SCALE.</span>
               </h1>
-              <p className="text-[11px] font-black text-muted-foreground uppercase tracking-[0.5em]">
-                SHANN KARL FELIPE · LEADERSHIP
-              </p>
+              <div className="flex items-center gap-4 text-muted-foreground/60">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em]">SHANN KARL FELIPE</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <span className="text-[10px] font-black uppercase tracking-[0.4em]">AI · LEADERSHIP</span>
+              </div>
             </div>
             
             <div className="flex flex-wrap items-center gap-6">
               <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-14 px-10 text-[11px] font-black uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
                 <Link href="/#contact">
-                  Let's Talk
+                  Initiate Discussion
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" className="rounded-full h-14 px-10 text-[11px] font-black uppercase tracking-widest bg-white border-border hover:bg-gray-50 flex items-center gap-3" asChild>
                 <Link href="/resume">
                   <FileText className="w-4 h-4" />
-                  View Resume
+                  Technical Resume
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Right Column: Intelligent Hub Diagram */}
-          <div className="relative h-[500px] flex items-center justify-center">
-            {/* SVG Circuit Path Connections */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 500">
-              {/* Software (Top Left) */}
-              <path d="M250,250 L180,180" stroke="#2563eb" strokeWidth="1.5" strokeDasharray="4 4" fill="none" className="animate-pulse" />
-              {/* AI (Top Right) */}
-              <path d="M250,250 L320,180" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="4 4" fill="none" className="animate-pulse" />
-              {/* Automation (Bottom Left) */}
-              <path d="M250,250 L180,320" stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="4 4" fill="none" className="animate-pulse" />
-              {/* Cloud (Bottom Right) */}
-              <path d="M250,250 L320,320" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="4 4" fill="none" className="animate-pulse" />
-              
-              {/* Circuit Nodes */}
-              <circle cx="180" cy="180" r="3" fill="#2563eb" />
-              <circle cx="320" cy="180" r="3" fill="#dc2626" />
-              <circle cx="180" cy="320" r="3" fill="#f59e0b" />
-              <circle cx="320" cy="320" r="3" fill="#16a34a" />
-            </svg>
-
-            {/* Central Hub: LEADERSHIP */}
-            <div className="z-10 w-32 h-32 rounded-full bg-white border border-gray-100 shadow-[0_0_50px_rgba(0,0,0,0.05)] flex items-center justify-center text-center p-4 huddle-item">
-              <span className="text-xs font-black uppercase tracking-widest text-foreground leading-tight">
-                LEADERSHIP
-              </span>
+          {/* Right Column: Technical Lattice Diagram */}
+          <div className="relative">
+            {/* Leadership Axis */}
+            <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
+              <div className="bg-white px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
+                <span className="text-[9px] font-black uppercase tracking-[0.6em] text-primary">STRATEGIC LEADERSHIP</span>
+              </div>
             </div>
 
-            {/* Satellite Nodes: Core Domains */}
-            {/* Software Solutions */}
-            <div className="absolute top-[80px] left-[20px] w-40 h-24 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 shadow-xl flex items-center justify-center p-6 text-center huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white leading-relaxed">Software<br />Solutions</span>
-            </div>
-            
-            {/* AI */}
-            <div className="absolute top-[80px] right-[20px] w-40 h-24 rounded-2xl bg-gradient-to-br from-red-600 to-red-700 shadow-xl flex items-center justify-center p-6 text-center huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white leading-relaxed">Artificial<br />Intelligence</span>
-            </div>
-            
-            {/* Automation */}
-            <div className="absolute bottom-[80px] left-[20px] w-40 h-24 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-xl flex items-center justify-center p-6 text-center huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white leading-relaxed">Intelligent<br />Automation</span>
-            </div>
-            
-            {/* Cloud & IOT */}
-            <div className="absolute bottom-[80px] right-[20px] w-40 h-24 rounded-2xl bg-gradient-to-br from-green-600 to-emerald-700 shadow-xl flex items-center justify-center p-6 text-center huddle-item">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white leading-relaxed">Cloud<br />& IOT</span>
+            {/* Bento Specialty Grid */}
+            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[440px]">
+              {specialties.map((spec, i) => (
+                <div 
+                  key={i} 
+                  className={cn(
+                    "relative group overflow-hidden rounded-[2rem] p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl shadow-sm border border-black/[0.03]",
+                    spec.span,
+                    "bg-gradient-to-br",
+                    spec.color
+                  )}
+                >
+                  {/* Decorative Circuit Lines */}
+                  <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" viewBox="0 0 100 100">
+                    <line x1="0" y1="20" x2="100" y2="20" stroke="white" strokeWidth="0.5" />
+                    <line x1="20" y1="0" x2="20" y2="100" stroke="white" strokeWidth="0.5" />
+                  </svg>
+
+                  <div className="relative z-10">
+                    <h3 className="text-white text-[11px] font-black uppercase tracking-widest leading-tight mb-2">
+                      {spec.title}
+                    </h3>
+                    <p className="text-white/40 text-[9px] font-bold uppercase tracking-wider">
+                      {spec.desc}
+                    </p>
+                  </div>
+
+                  <div className="absolute bottom-6 right-8 w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-white transition-colors" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Stretched Metrics Row (Prioritized Impact) */}
+        {/* Stretched Metrics Row (Classy & Intelligent) */}
         <div className="pt-12 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
           {compactStats.map((stat, i) => (
             <Dialog key={i}>
