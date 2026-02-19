@@ -10,13 +10,25 @@ import {
   ExternalLink, 
   ChevronLeft, 
   ChevronRight,
-  Zap,
-  Brain,
-  Eye,
-  Fish,
-  BookOpen
+  Utensils,
+  HeartPulse,
+  BookOpen,
+  TrendingUp,
+  Factory,
+  Recycle,
+  Leaf
 } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+
+const sdgInfo: Record<number, { icon: any, color: string }> = {
+  2: { icon: Utensils, color: 'bg-[#E5243B]' },
+  3: { icon: HeartPulse, color: 'bg-[#4C9F38]' },
+  4: { icon: BookOpen, color: 'bg-[#C5192D]' },
+  8: { icon: TrendingUp, color: 'bg-[#A21942]' },
+  9: { icon: Factory, color: 'bg-[#FD6925]' },
+  12: { icon: Recycle, color: 'bg-[#BF8B2E]' },
+  15: { icon: Leaf, color: 'bg-[#3F7E44]' },
+};
 
 export function Projects() {
   const projects = [
@@ -25,7 +37,7 @@ export function Projects() {
       title: 'Salayliwa',
       description: 'A personalized mobile reading app using Glicko-2 and Two Tower Neural Networks to combat the national reading crisis through adaptive literacy.',
       tags: ['Next.js', 'AI', 'EduTech'],
-      icon: BookOpen,
+      sdgs: [4],
       imageId: 'project-salayliwa',
       demoUrl: '#',
       codeUrl: '#'
@@ -35,7 +47,7 @@ export function Projects() {
       title: 'Video Automation Engine',
       description: 'Fully autonomous content generation pipeline using Docker, n8n, and Gemini AI, producing high-quality content at scale.',
       tags: ['Docker', 'n8n', 'Gemini AI'],
-      icon: Zap,
+      sdgs: [9],
       imageId: 'project-video-automation',
       demoUrl: '#',
       codeUrl: '#'
@@ -45,7 +57,7 @@ export function Projects() {
       title: 'GabayDiwa',
       description: 'Healthcare innovation system empowering caregivers with cognitive trend maps and structured progression tracking for dementia care.',
       tags: ['Healthcare', 'Data Science', 'Startup'],
-      icon: Brain,
+      sdgs: [3],
       imageId: 'project-gabaydiwa',
       demoUrl: '#',
       codeUrl: '#'
@@ -55,7 +67,7 @@ export function Projects() {
       title: 'Birdseye',
       description: 'Computer vision on edge devices detecting wet zones in litter to improve bird welfare and reduce emissions in commercial poultry farms.',
       tags: ['Computer Vision', 'Edge AI', 'IoT'],
-      icon: Eye,
+      sdgs: [2, 9, 12, 15],
       imageId: 'project-birdseye',
       demoUrl: '#',
       codeUrl: '#'
@@ -65,7 +77,7 @@ export function Projects() {
       title: 'Proxygen',
       description: 'Proactive dissolved oxygen management system for pond aquaculture preventing mass fish kills through fuzzy logic and weather forecasting.',
       tags: ['Fuzzy Logic', 'IoT', 'Agri-Tech'],
-      icon: Fish,
+      sdgs: [2, 9, 12, 15],
       imageId: 'project-proxygen',
       demoUrl: '#',
       codeUrl: '#'
@@ -111,8 +123,16 @@ export function Projects() {
                       data-ai-hint={imageData.imageHint}
                     />
                   )}
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-sm">
-                    <project.icon className="w-5 h-5 text-primary" />
+                  {/* SDG Markers */}
+                  <div className="absolute top-4 left-4 flex gap-1.5">
+                    {project.sdgs.map((id) => {
+                      const SdgIcon = sdgInfo[id].icon;
+                      return (
+                        <div key={id} className={`w-8 h-8 rounded-lg ${sdgInfo[id].color} flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300`}>
+                          <SdgIcon className="w-4 h-4 text-white" />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
 
