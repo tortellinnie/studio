@@ -32,10 +32,8 @@ export function Navbar() {
         isScrolled ? "max-w-[1000px] w-full" : "max-w-7xl w-full"
       )}>
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="text-xl font-black tracking-tighter">
-            <span className="text-blue-600">Al</span>
-            <span className="text-red-500">ph</span>
-            <span className="text-yellow-500">a</span>
+          <span className="text-xl font-black tracking-tighter uppercase italic">
+            TECHNO<span className="text-primary">LEADER</span>
           </span>
         </Link>
         
