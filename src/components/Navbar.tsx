@@ -29,11 +29,11 @@ export function Navbar() {
     <nav className="fixed top-8 z-[100] w-full flex justify-center px-6 pointer-events-none">
       <div className={cn(
         "h-14 rounded-full flex items-center justify-between premium-blur px-8 transition-all duration-500 pointer-events-auto shadow-sm border border-black/5",
-        isScrolled ? "max-w-[900px] w-full" : "max-w-7xl w-full"
+        isScrolled ? "max-w-[800px] w-full" : "max-w-7xl w-full"
       )}>
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="text-lg font-black tracking-tighter uppercase italic">
-            TECHNO<span className="text-primary">LEADER</span>
+          <span className="text-sm font-black tracking-tighter uppercase italic">
+            TECHNOLEADER
           </span>
         </Link>
         
@@ -42,7 +42,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[12px] font-bold text-muted-foreground hover:text-foreground transition-colors uppercase tracking-tight"
+              className="text-[11px] font-bold text-muted-foreground hover:text-foreground transition-colors uppercase tracking-tight"
             >
               {item.label}
             </Link>
@@ -50,13 +50,13 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button variant="ghost" asChild className="hidden md:flex rounded-full h-9 px-4 text-[11px] font-bold gap-2">
+          <Button variant="ghost" asChild className="hidden md:flex rounded-full h-8 px-3 text-[10px] font-bold gap-2">
             <Link href="/resume">
               <FileText className="w-3 h-3" />
               Resume
             </Link>
           </Button>
-          <Button asChild className="rounded-full bg-black text-white hover:bg-black/90 h-9 px-5 text-[11px] font-bold">
+          <Button asChild className="rounded-full bg-black text-white hover:bg-black/90 h-8 px-4 text-[10px] font-bold">
             <Link href="/#contact">Let's Talk</Link>
           </Button>
         </div>
