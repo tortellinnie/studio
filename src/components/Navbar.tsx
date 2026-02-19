@@ -29,10 +29,10 @@ export function Navbar() {
     <nav className="fixed top-6 z-[100] w-full flex justify-center px-6 pointer-events-none">
       <div className={cn(
         "h-16 rounded-full flex items-center justify-between premium-blur px-10 transition-all duration-500 pointer-events-auto shadow-sm border border-black/5",
-        isScrolled ? "max-w-[1000px] w-full" : "max-w-7xl w-full"
+        isScrolled ? "max-w-[1100px] w-full" : "max-w-7xl w-full"
       )}>
-        <Link href="/" className="flex items-center gap-2 shrink-0 mr-8">
-          <span className="text-sm md:text-base font-black tracking-tighter uppercase italic text-foreground">
+        <Link href="/" className="flex items-center gap-2 shrink-0 mr-12">
+          <span className="text-base md:text-lg font-black tracking-tighter uppercase italic text-foreground">
             TECHNOLEADER
           </span>
         </Link>
@@ -42,21 +42,21 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[11px] font-black text-muted-foreground hover:text-foreground transition-colors uppercase tracking-[0.2em] whitespace-nowrap"
+              className="text-xs font-black text-muted-foreground hover:text-foreground transition-colors uppercase tracking-[0.2em] whitespace-nowrap"
             >
               {item.label}
             </Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-6 shrink-0 ml-8">
-          <Button variant="ghost" asChild className="hidden md:flex rounded-full h-10 px-6 text-[11px] font-black gap-2 uppercase tracking-widest">
+        <div className="flex items-center gap-8 shrink-0 ml-12">
+          <Button variant="ghost" asChild className="hidden md:flex rounded-full h-11 px-6 text-xs font-black gap-2 uppercase tracking-widest">
             <Link href="/resume">
-              <FileText className="w-4 h-4" />
+              <FileText className="w-5 h-5" />
               Resume
             </Link>
           </Button>
-          <Button asChild className="rounded-full bg-black text-white hover:bg-black/90 h-10 px-8 text-[11px] font-black uppercase tracking-widest">
+          <Button asChild className="rounded-full bg-black text-white hover:bg-black/90 h-11 px-8 text-xs font-black uppercase tracking-widest">
             <Link href="/#contact">Connect</Link>
           </Button>
         </div>

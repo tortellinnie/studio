@@ -71,13 +71,12 @@ export function Hero() {
               </h1>
             </div>
             
-            <div className="space-y-10 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
-              <p className="text-xl text-muted-foreground font-medium leading-relaxed">
-                Turning vision into intelligent systems that scale. <br />
-                <span className="text-foreground/60 italic">Shann Karl Felipe • AI Automation Engineer</span>
+            <div className="space-y-8 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
+              <p className="text-lg text-muted-foreground font-medium leading-relaxed">
+                Turning Vision Into Intelligent Systems That Scale.
               </p>
               
-              <div className="flex flex-wrap items-center gap-6">
+              <div className="flex flex-wrap items-center gap-6 pt-2">
                 <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-14 px-12 text-[11px] font-black uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
                   <Link href="/#contact">
                     Let's Talk
@@ -117,11 +116,11 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pt-24 mt-24 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700">
+        <div className="pt-24 mt-24 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-32 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700">
           {compactStats.map((stat, i) => (
             <Dialog key={i}>
               <DialogTrigger asChild>
-                <button className="flex flex-col items-center lg:items-start text-center lg:text-left hover:opacity-70 transition-opacity outline-none group space-y-6">
+                <button className="flex flex-col items-center lg:items-start text-center lg:text-left hover:opacity-70 transition-opacity outline-none group space-y-6 w-full">
                   <span className="text-6xl md:text-7xl lg:text-8xl font-black italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
                     {stat.value}
                   </span>
