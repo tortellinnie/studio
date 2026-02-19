@@ -103,14 +103,14 @@ export function Hero() {
       <div className="container mx-auto max-w-7xl relative z-10 flex flex-col h-full justify-between">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
           <div className="space-y-12">
-            <div className="space-y-6">
+            <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
 
-              <div className="flex items-center gap-3 text-[14px] font-black uppercase tracking-[0.4em] text-foreground/40">
+              <div className="flex items-center gap-4 text-[13px] font-black uppercase tracking-[0.4em] text-foreground/50">
                 <span>SHANN KARL FELIPE • AI / LEADERSHIP</span>
               </div>
             </div>
@@ -213,19 +213,19 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Tightly Packed Partners */}
+          {/* Tightly Packed Colored Partners */}
           <div className="pt-8 border-t border-black/[0.05]">
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 max-w-6xl mx-auto opacity-40 hover:opacity-100 transition-opacity duration-700 grayscale hover:grayscale-0">
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 max-w-6xl mx-auto">
               {partners.map((partner, i) => {
                 const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
                 return (
-                  <div key={i} className="relative h-6 w-auto min-w-[60px] flex items-center justify-center">
+                  <div key={i} className="relative h-10 w-auto min-w-[80px] flex items-center justify-center transition-all duration-500 hover:scale-110">
                     {logo && (
                       <Image 
                         src={logo.imageUrl} 
                         alt={partner.name}
-                        width={100}
-                        height={40}
+                        width={120}
+                        height={50}
                         className="object-contain h-full w-auto"
                         data-ai-hint={logo.imageHint}
                       />
