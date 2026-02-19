@@ -16,7 +16,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 overflow-hidden bg-white">
+    <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-24 pb-12 overflow-hidden bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-12 gap-12 items-start pt-8">
           
@@ -26,9 +26,9 @@ export function Hero() {
                 SOFTWARE ENGINEERING & R&D
               </p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
-                Architecting <br />
-                Technical <br />
-                Solutions<span className="text-primary">.</span>
+                ARCHITECTING <br />
+                TECHNICAL <br />
+                SOLUTIONS<span className="text-primary">.</span>
               </h1>
             </div>
             
@@ -68,7 +68,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative animate-in fade-in zoom-in-95 duration-1000 delay-500 sticky top-32">
+          <div className="lg:col-span-5 relative animate-in fade-in zoom-in-95 duration-1000 delay-500">
             <div className="relative aspect-[4/5] w-full max-w-[440px] mx-auto overflow-hidden rounded-[3rem] border border-border shadow-[0_48px_80px_-16px_rgba(0,0,0,0.12)] group bg-white/5">
               {headshot && (
                 <Image
