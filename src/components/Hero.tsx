@@ -27,7 +27,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center px-6 pt-32 pb-12 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
@@ -96,22 +96,22 @@ export function Hero() {
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-white/10 backdrop-blur-3xl border border-white/20 px-6 py-4 rounded-[2rem] w-fit shadow-2xl">
                   <p className="text-[10px] font-black uppercase text-white/60 tracking-[0.3em] leading-none mb-2">Status 2026</p>
-                  <p className="text-lg font-bold text-white uppercase italic tracking-tighter leading-none">AI Automation Engineer</p>
+                  <p className="text-lg font-bold text-white uppercase italic tracking-tighter leading-none">AI AUTOMATION ENGINEER</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Collaborators Wall - Directly in Hero Frame */}
-        <div className="mt-20 pt-10 border-t border-gray-50 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
+        {/* Strategic Collaborations - Moved up and Enlarged */}
+        <div className="mt-16 pt-10 border-t border-gray-50 flex flex-wrap items-center justify-center gap-x-12 gap-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
           <p className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-[0.4em] w-full text-center mb-4">Strategic Collaborations</p>
           {partners.map((partner, i) => {
             const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
             return (
-              <div key={i} className="grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-help">
+              <div key={i} className="transition-all duration-500 cursor-help hover:scale-110 active:scale-95">
                 {logo && (
-                  <div className="relative w-20 h-8">
+                  <div className="relative w-28 h-10">
                     <Image 
                       src={logo.imageUrl} 
                       alt={partner.name}
