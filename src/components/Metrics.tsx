@@ -73,48 +73,48 @@ export function Metrics() {
   ];
 
   return (
-    <section id="metrics" className="py-24 bg-transparent">
+    <section id="metrics" className="py-16 bg-transparent border-t border-white/5">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {stats.map((stat, i) => (
             <Dialog key={i}>
               <DialogTrigger asChild>
-                <button className="flex flex-col text-left group space-y-6">
+                <button className="flex flex-col text-left group space-y-4 outline-none">
                   <div className="flex items-center justify-between w-full">
-                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-500">
-                      <stat.icon className="w-5 h-5 text-white/40 group-hover:text-black transition-colors" />
+                    <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-500">
+                      <stat.icon className="w-4 h-4 text-white/40 group-hover:text-black transition-colors" />
                     </div>
                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 group-hover:text-white/60 transition-colors">
                       Log 2026
                     </span>
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="text-5xl lg:text-6xl font-black italic tracking-tighter text-white">{stat.value}</h3>
+                  <div className="space-y-1">
+                    <h3 className="text-4xl lg:text-5xl font-black italic tracking-tighter text-white">{stat.value}</h3>
                     <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 group-hover:text-white transition-colors">
                       {stat.label}
                     </p>
-                    <p className="text-sm text-white/30 font-medium leading-relaxed max-w-[240px]">
+                    <p className="text-xs text-white/30 font-medium leading-relaxed max-w-[200px]">
                       {stat.description}
                     </p>
                   </div>
                 </button>
               </DialogTrigger>
               <DialogContent className="bg-[#02040a] border-white/5 text-white max-w-lg rounded-none p-0 focus:outline-none">
-                <div className="p-10 border-b border-white/5">
+                <div className="p-8 border-b border-white/5">
                   <DialogHeader>
-                    <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
+                    <DialogTitle className="text-3xl font-black uppercase italic tracking-tighter">
                       {stat.title}
                     </DialogTitle>
                   </DialogHeader>
                 </div>
                 
-                <ScrollArea className="max-h-[60vh] p-10">
-                  <div className="grid gap-6">
+                <ScrollArea className="max-h-[50vh] p-8">
+                  <div className="grid gap-4">
                     {stat.details.map((item, idx) => (
-                      <div key={idx} className="flex items-center justify-between group border-b border-white/5 pb-4">
-                        <span className="font-bold text-white/60 text-sm">{item.name}</span>
-                        <Badge variant="outline" className="border-white/10 text-white/40 text-[9px] font-black uppercase">
+                      <div key={idx} className="flex items-center justify-between group border-b border-white/5 pb-3">
+                        <span className="font-bold text-white/60 text-xs">{item.name}</span>
+                        <Badge variant="outline" className="border-white/10 text-white/40 text-[8px] font-black uppercase">
                           {item.detail}
                         </Badge>
                       </div>

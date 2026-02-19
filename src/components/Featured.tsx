@@ -32,10 +32,10 @@ export function Featured() {
   ];
 
   return (
-    <section id="featured" className="py-24 relative overflow-visible bg-transparent">
+    <section id="featured" className="py-16 relative overflow-visible bg-transparent">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-16 space-y-4">
+          <div className="flex flex-col items-center text-center mb-12 space-y-4">
             <Badge className="bg-white/5 text-white/40 border-white/10 px-4 py-1 rounded-full font-bold tracking-widest uppercase text-[9px]">
               Strategic Milestones
             </Badge>
@@ -50,7 +50,7 @@ export function Featured() {
               const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
               return (
                 <Link href={`/impact/${item.id}`} key={item.id} className="group">
-                  <Card className="glass-card border-white/[0.05] overflow-hidden rounded-[2.5rem] h-full flex flex-col">
+                  <Card className="glass-card border-white/[0.05] overflow-hidden rounded-[2rem] h-full flex flex-col">
                     <div className="relative aspect-video overflow-hidden">
                       {imageData && (
                         <Image 
@@ -63,7 +63,7 @@ export function Featured() {
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#02040a]/90 via-[#02040a]/20 to-transparent" />
                     </div>
-                    <CardContent className="p-8 space-y-6 flex-grow relative">
+                    <CardContent className="p-6 space-y-4 flex-grow relative">
                       <div className="flex items-center justify-between">
                         <Badge className="bg-white/5 text-white/60 border-white/10 font-bold uppercase text-[8px] tracking-widest px-3">
                           <item.icon className="w-3 h-3 mr-2" />
@@ -74,13 +74,13 @@ export function Featured() {
                           <span className="text-[9px] uppercase tracking-tight">{item.date}</span>
                         </div>
                       </div>
-                      <div className="space-y-3">
+                      <div className="space-y-2">
                         <div className="flex items-start justify-between gap-4">
-                          <h3 className="text-2xl font-black text-white group-hover:text-primary transition-colors leading-tight uppercase italic">
+                          <h3 className="text-xl font-black text-white group-hover:text-primary transition-colors leading-tight uppercase italic">
                             {item.title}
                           </h3>
                           <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary transition-all shrink-0">
-                            <ArrowUpRight className="w-4 h-4 text-white" />
+                            <ArrowUpRight className="w-3 h-3 text-white" />
                           </div>
                         </div>
                         <div className="flex items-center gap-2 text-white/40">

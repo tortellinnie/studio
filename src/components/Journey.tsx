@@ -41,39 +41,39 @@ export function Journey() {
   ];
 
   return (
-    <section id="journey" className="py-40 bg-transparent">
+    <section id="journey" className="py-24 bg-transparent">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-32 space-y-6">
+        <div className="mb-20 space-y-6">
           <Badge className="bg-white/5 text-white/40 border-white/10 px-4 py-1.5 rounded-full font-black tracking-widest uppercase text-[10px]">
             Professional Roadmap
           </Badge>
-          <h2 className="text-6xl md:text-8xl font-black text-white italic uppercase tracking-tighter leading-none">
+          <h2 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-tighter leading-none">
             Impact.
           </h2>
         </div>
 
-        <div className="space-y-32">
+        <div className="space-y-20">
           {milestones.map((item, i) => (
-            <div key={i} className="group grid md:grid-cols-12 gap-12 items-start">
+            <div key={i} className="group grid md:grid-cols-12 gap-8 items-start">
               <div className="md:col-span-3">
                 <span className="text-sm font-black italic text-white/20 group-hover:text-white transition-colors duration-500">
                   {item.date}
                 </span>
               </div>
-              <div className="md:col-span-6 space-y-6">
+              <div className="md:col-span-6 space-y-4">
                 <div className="space-y-2">
                   <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">{item.org}</p>
-                  <h3 className="text-3xl md:text-5xl font-black text-white italic uppercase group-hover:text-accent transition-colors duration-500">
+                  <h3 className="text-2xl md:text-4xl font-black text-white italic uppercase group-hover:text-accent transition-colors duration-500">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-lg text-white/40 font-medium leading-relaxed group-hover:text-white/60 transition-colors duration-500">
+                <p className="text-base text-white/40 font-medium leading-relaxed group-hover:text-white/60 transition-colors duration-500">
                   {item.desc}
                 </p>
               </div>
               <div className="md:col-span-3 flex justify-end">
-                <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white transition-all duration-500">
-                  <item.icon className="w-6 h-6 text-white/20 group-hover:text-white transition-colors" />
+                <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white transition-all duration-500">
+                  <item.icon className="w-5 h-5 text-white/20 group-hover:text-white transition-colors" />
                 </div>
               </div>
             </div>
