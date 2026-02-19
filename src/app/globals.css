@@ -33,20 +33,14 @@
   }
   body {
     @apply bg-white text-foreground font-body antialiased selection:bg-black selection:text-white overflow-x-hidden;
-    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-    background-size: 40px 40px;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline font-extrabold tracking-tight text-foreground;
+    @apply font-headline tracking-tighter text-foreground;
   }
 }
 
 .premium-blur {
-  @apply backdrop-blur-xl bg-white/70 border border-white/20;
-}
-
-.node-line {
-  @apply absolute h-px origin-left transition-all duration-1000;
+  @apply backdrop-blur-2xl bg-white/80 border border-black/5;
 }
 
 .huddle-container {
@@ -54,26 +48,13 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .huddle-item {
   @apply transition-all duration-300 hover:scale-110;
-}
-
-.btn-capsule {
-  @apply rounded-full font-bold transition-all duration-300 px-6 py-2 flex items-center gap-2;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
 }
 
 .text-gradient {
@@ -81,5 +62,10 @@
 }
 
 .glass-card {
-  @apply backdrop-blur-md bg-white/5 border border-white/10;
+  @apply backdrop-blur-md bg-white border border-gray-100;
+}
+
+/* Tighter vertical spacing for better navigation */
+section {
+  @apply py-16 md:py-20;
 }
