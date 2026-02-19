@@ -64,13 +64,15 @@ export function Hero() {
               <p className="text-[11px] font-black text-primary uppercase tracking-[0.5em] animate-in fade-in slide-in-from-bottom-2 duration-700">
                 SOFTWARE ENGINEERING & R&D
               </p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
-                TURNING <br />
-                VISION INTO <br />
-                INTELLIGENT <br />
-                SYSTEMS <br />
-                THAT SCALE<span className="text-primary">.</span>
-              </h1>
+              <div className="space-y-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100 max-w-4xl">
+                  TURNING VISION INTO <br />
+                  INTELLIGENT SYSTEMS THAT SCALE<span className="text-primary">.</span>
+                </h1>
+                <p className="text-[11px] font-black text-muted-foreground uppercase tracking-[0.5em] animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
+                  SHANN KARL FELIPE · AI/LEADERSHIP
+                </p>
+              </div>
             </div>
             
             <div className="space-y-10 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
@@ -107,7 +109,7 @@ export function Hero() {
               
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-white/10 backdrop-blur-3xl border border-white/20 px-8 py-4 rounded-2xl w-fit shadow-2xl">
-                  <p className="text-lg font-black text-white uppercase italic tracking-tighter leading-none">AI AUTOMATION ENGINEER</p>
+                  <p className="text-lg font-black text-white uppercase italic tracking-tighter leading-none">TECHNOLEADER</p>
                 </div>
               </div>
             </div>
