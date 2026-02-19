@@ -29,27 +29,27 @@ export function Navbar() {
     <nav className="fixed top-6 z-[100] w-full flex justify-center px-6 pointer-events-none">
       <div className={cn(
         "h-16 rounded-full flex items-center justify-between premium-blur px-10 transition-all duration-500 pointer-events-auto shadow-sm border border-black/5",
-        isScrolled ? "max-w-[900px] w-full" : "max-w-7xl w-full"
+        isScrolled ? "max-w-[1000px] w-full" : "max-w-7xl w-full"
       )}>
-        <Link href="/" className="flex items-center gap-2 shrink-0">
+        <Link href="/" className="flex items-center gap-2 shrink-0 mr-8">
           <span className="text-sm md:text-base font-black tracking-tighter uppercase italic text-foreground">
             TECHNOLEADER
           </span>
         </Link>
         
-        <div className="hidden lg:flex items-center gap-12">
+        <div className="hidden lg:flex items-center gap-12 flex-1 justify-center">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="text-[11px] font-black text-muted-foreground hover:text-foreground transition-colors uppercase tracking-[0.2em]"
+              className="text-[11px] font-black text-muted-foreground hover:text-foreground transition-colors uppercase tracking-[0.2em] whitespace-nowrap"
             >
               {item.label}
             </Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 shrink-0 ml-8">
           <Button variant="ghost" asChild className="hidden md:flex rounded-full h-10 px-6 text-[11px] font-black gap-2 uppercase tracking-widest">
             <Link href="/resume">
               <FileText className="w-4 h-4" />

@@ -74,7 +74,7 @@ export function Hero() {
             <div className="space-y-10 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
               <p className="text-xl text-muted-foreground font-medium leading-relaxed">
                 Turning vision into intelligent systems that scale. <br />
-                <span className="text-foreground/60 italic">Shann Karl Felipe • Leadership/AI Automation</span>
+                <span className="text-foreground/60 italic">Shann Karl Felipe • AI Automation Engineer</span>
               </p>
               
               <div className="flex flex-wrap items-center gap-6">
@@ -117,8 +117,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Full width metrics row stretching across the container */}
-        <div className="pt-24 mt-24 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-16 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700">
+        <div className="pt-24 mt-24 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-700">
           {compactStats.map((stat, i) => (
             <Dialog key={i}>
               <DialogTrigger asChild>
@@ -126,7 +125,7 @@ export function Hero() {
                   <span className="text-6xl md:text-7xl lg:text-8xl font-black italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
                     {stat.value}
                   </span>
-                  <p className="text-[11px] font-black uppercase tracking-[0.5em] text-muted-foreground/60 leading-tight">
+                  <p className="text-[11px] font-black uppercase tracking-[0.5em] text-muted-foreground/60 leading-tight whitespace-nowrap">
                     {stat.label}
                   </p>
                 </button>
