@@ -34,19 +34,19 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-12 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 overflow-hidden bg-white">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-12 gap-12 items-start pt-12">
+        <div className="grid lg:grid-cols-12 gap-12 items-start pt-8">
           
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-10">
             <div className="space-y-4">
               <p className="text-[10px] font-black text-primary uppercase tracking-[0.4em] animate-in fade-in slide-in-from-bottom-2 duration-700">
                 SOFTWARE ENGINEERING & R&D
               </p>
-              <h1 className="text-4xl md:text-6xl lg:text-8xl font-black leading-[0.95] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
                 Architecting <br />
-                Technical <br />
-                Solutions<span className="text-primary">.</span>
+                Technical Solutions <br />
+                for Global Impact<span className="text-primary">.</span>
               </h1>
             </div>
             
@@ -84,22 +84,23 @@ export function Hero() {
               ))}
             </div>
 
-            {/* Strategic Collaborations Pull Up */}
-            <div className="pt-10 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
-              <p className="text-[9px] font-black text-muted-foreground/30 uppercase tracking-[0.5em] mb-8">Strategic Collaborations</p>
-              <div className="flex flex-wrap items-center gap-x-12 gap-y-10 justify-start">
+            {/* Strategic Collaborations Wall - Positioned Upwards and Centered */}
+            <div className="pt-12 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
+              <p className="text-[9px] font-black text-muted-foreground/40 uppercase tracking-[0.5em] mb-10 text-center lg:text-left">Strategic Collaborations</p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-14 gap-y-12">
                 {partners.map((partner, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
                   return (
                     <div key={i} className="transition-all duration-500 hover:scale-110 active:scale-95 group">
                       {logo && (
-                        <div className="relative w-28 h-10">
+                        <div className="relative w-32 h-10">
                           <Image 
                             src={logo.imageUrl} 
                             alt={partner.name}
                             fill
                             className="object-contain"
                             data-ai-hint={logo.imageHint}
+                            priority
                           />
                         </div>
                       )}

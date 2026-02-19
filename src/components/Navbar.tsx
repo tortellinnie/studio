@@ -28,11 +28,11 @@ export function Navbar() {
   return (
     <nav className="fixed top-6 z-[100] w-full flex justify-center px-6 pointer-events-none">
       <div className={cn(
-        "h-12 rounded-full flex items-center justify-between premium-blur px-6 transition-all duration-500 pointer-events-auto shadow-sm border border-black/5",
+        "h-12 rounded-full flex items-center justify-between premium-blur px-8 transition-all duration-500 pointer-events-auto shadow-sm border border-black/5",
         isScrolled ? "max-w-[700px] w-full" : "max-w-7xl w-full"
       )}>
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="text-[11px] font-black tracking-tighter uppercase italic text-foreground">
+          <span className="text-[10px] font-black tracking-tighter uppercase italic text-foreground">
             TECHNOLEADER
           </span>
         </Link>
@@ -42,7 +42,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[10px] font-bold text-muted-foreground hover:text-foreground transition-colors uppercase tracking-tight"
+              className="text-[9px] font-bold text-muted-foreground hover:text-foreground transition-colors uppercase tracking-tight"
             >
               {item.label}
             </Link>
