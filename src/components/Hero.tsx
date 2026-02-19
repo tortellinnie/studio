@@ -80,21 +80,16 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 overflow-hidden bg-white">
-      {/* Light Mesh Background */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
-          
-          {/* Left Column: Mission Typography */}
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-foreground italic uppercase">
-                TURNING VISION <br />
-                INTO <br />
-                INTELLIGENT <br />
-                SYSTEMS <br />
+                TURNING VISION INTO <br />
+                INTELLIGENT SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
               <div className="flex items-center gap-2 text-muted-foreground/60">
@@ -120,16 +115,13 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Technical Lattice Diagram */}
           <div className="relative">
-            {/* Leadership Axis */}
             <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
               <div className="bg-white px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
                 <span className="text-[8px] font-black uppercase tracking-[0.6em] text-primary">STRATEGIC LEADERSHIP</span>
               </div>
             </div>
 
-            {/* Bento Specialty Grid */}
             <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[350px]">
               {specialties.map((spec, i) => (
                 <div 
@@ -141,7 +133,6 @@ export function Hero() {
                     spec.color
                   )}
                 >
-                  {/* Decorative Circuit Lines */}
                   <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" viewBox="0 0 100 100">
                     <line x1="0" y1="20" x2="100" y2="20" stroke="white" strokeWidth="0.5" />
                     <line x1="20" y1="0" x2="20" y2="100" stroke="white" strokeWidth="0.5" />
@@ -163,7 +154,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Centered Metrics Row */}
         <div className="pt-24 md:pt-32 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
             {compactStats.map((stat, i) => (
