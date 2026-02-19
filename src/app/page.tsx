@@ -17,10 +17,10 @@ export default function Home() {
       <Hero />
       <div className="space-y-0">
         <Collaborators />
-        <SDGs />
         <Journey />
         <Featured />
         <Projects />
+        <SDGs />
         <Education />
         <Experience />
         <Achievements />
