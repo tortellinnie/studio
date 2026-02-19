@@ -93,7 +93,7 @@ export function Hero() {
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
 
-              <div className="flex flex-wrap items-center gap-3 text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em] text-foreground/40">
+              <div className="flex flex-wrap items-center gap-3 text-[12px] md:text-[13px] font-black uppercase tracking-[0.4em] text-foreground/40">
                 <span>SHANN KARL FELIPE</span>
                 <div className="w-1 h-1 rounded-full bg-primary/40" />
                 <span>AI / LEADERSHIP</span>
@@ -155,7 +155,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pt-20 flex justify-center">
+        <div className="pt-16 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
             {compactStats.map((stat, i) => (
               <Dialog key={i}>
