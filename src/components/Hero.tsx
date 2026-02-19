@@ -85,19 +85,19 @@ export function Hero() {
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-10">
           
           {/* Left Column: Mission Typography */}
           <div className="space-y-10">
-            <div className="space-y-6">
+            <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
-              <div className="flex items-center gap-4 text-muted-foreground/60">
+              <div className="flex items-center gap-2 text-muted-foreground/60">
                 <span className="text-[10px] font-black uppercase tracking-[0.4em]">SHANN KARL FELIPE</span>
-                <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                <div className="w-1 h-1 rounded-full bg-primary" />
                 <span className="text-[10px] font-black uppercase tracking-[0.4em]">AI · LEADERSHIP</span>
               </div>
             </div>
@@ -161,44 +161,46 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Stretched Metrics Row - Perfectly Centered */}
-        <div className="pt-10 border-t border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl mx-auto">
-          {compactStats.map((stat, i) => (
-            <Dialog key={i}>
-              <DialogTrigger asChild>
-                <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-3 w-full">
-                  <span className="text-5xl lg:text-7xl font-bold italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
-                    {stat.value}
-                  </span>
-                  <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
-                    {stat.label}
-                  </p>
-                </button>
-              </DialogTrigger>
-              <DialogContent className="bg-white border-border text-foreground max-w-lg rounded-[2.5rem] p-0 focus:outline-none shadow-3xl overflow-hidden">
-                <div className="p-10 border-b border-border bg-gray-50/50">
-                  <DialogHeader>
-                    <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
-                      {stat.title}
-                    </DialogTitle>
-                  </DialogHeader>
-                </div>
-                
-                <ScrollArea className="max-h-[50vh] p-10">
-                  <div className="grid gap-6">
-                    {stat.details.map((item, idx) => (
-                      <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-6 last:border-0">
-                        <span className="font-bold text-foreground/80 text-base">{item.name}</span>
-                        <Badge variant="outline" className="border-border text-muted-foreground text-[9px] font-black uppercase tracking-widest px-4 py-1.5">
-                          {item.detail}
-                        </Badge>
-                      </div>
-                    ))}
+        {/* Centered Metrics Row */}
+        <div className="pt-6 border-t border-gray-100 flex justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
+            {compactStats.map((stat, i) => (
+              <Dialog key={i}>
+                <DialogTrigger asChild>
+                  <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-3 w-full">
+                    <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
+                      {stat.value}
+                    </span>
+                    <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
+                      {stat.label}
+                    </p>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="bg-white border-border text-foreground max-w-lg rounded-[2.5rem] p-0 focus:outline-none shadow-3xl overflow-hidden">
+                  <div className="p-10 border-b border-border bg-gray-50/50">
+                    <DialogHeader>
+                      <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
+                        {stat.title}
+                      </DialogTitle>
+                    </DialogHeader>
                   </div>
-                </ScrollArea>
-              </DialogContent>
-            </Dialog>
-          ))}
+                  
+                  <ScrollArea className="max-h-[50vh] p-10">
+                    <div className="grid gap-6">
+                      {stat.details.map((item, idx) => (
+                        <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-6 last:border-0">
+                          <span className="font-bold text-foreground/80 text-base">{item.name}</span>
+                          <Badge variant="outline" className="border-border text-muted-foreground text-[9px] font-black uppercase tracking-widest px-4 py-1.5">
+                            {item.detail}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </DialogContent>
+              </Dialog>
+            ))}
+          </div>
         </div>
       </div>
     </section>
