@@ -45,14 +45,15 @@ export function Hero() {
               </p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
                 Architecting <br />
-                Technical Solutions <br />
-                for Global Impact<span className="text-primary">.</span>
+                Technical <br />
+                Solutions<span className="text-primary">.</span>
               </h1>
             </div>
             
             <div className="space-y-8 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
               <p className="text-lg text-muted-foreground font-medium leading-relaxed">
-                <span className="text-foreground font-bold italic uppercase">Shann Karl Felipe</span> • Professional Engineer focusing on AI automation, distributed systems, and strategic leadership in Manila.
+                <span className="text-foreground font-bold italic uppercase block mb-2">Turning vision into intelligent systems that scale.</span>
+                Shann Karl Felipe • Professional Engineer focusing on AI automation and strategic leadership in Manila.
               </p>
               
               <div className="flex flex-wrap items-center gap-4">
@@ -73,7 +74,7 @@ export function Hero() {
 
             <div className="pt-8 grid grid-cols-3 gap-8 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
               {compactStats.map((stat, i) => (
-                <div key={i} className="space-y-2">
+                <div key={i} className="space-y-2 text-center lg:text-left">
                   <span className="text-3xl md:text-4xl font-black italic tracking-tighter text-foreground leading-none block">
                     {stat.value}
                   </span>
@@ -84,16 +85,16 @@ export function Hero() {
               ))}
             </div>
 
-            {/* Strategic Collaborations Wall - Positioned Upwards and Centered */}
-            <div className="pt-12 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
-              <p className="text-[9px] font-black text-muted-foreground/40 uppercase tracking-[0.5em] mb-10 text-center lg:text-left">Strategic Collaborations</p>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-14 gap-y-12">
+            {/* Strategic Collaborations Wall - Moved Up, Enlarged and Centered */}
+            <div className="pt-6 border-t border-gray-100 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-700">
+              <p className="text-[9px] font-black text-muted-foreground/40 uppercase tracking-[0.5em] mb-8 text-center">Strategic Collaborations</p>
+              <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10">
                 {partners.map((partner, i) => {
                   const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
                   return (
                     <div key={i} className="transition-all duration-500 hover:scale-110 active:scale-95 group">
                       {logo && (
-                        <div className="relative w-32 h-10">
+                        <div className="relative w-40 h-12">
                           <Image 
                             src={logo.imageUrl} 
                             alt={partner.name}
