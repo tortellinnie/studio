@@ -23,7 +23,7 @@ export function Collaborators() {
   ];
 
   return (
-    <section id="collaborators" className="py-12 pb-24 relative overflow-hidden bg-white">
+    <section id="collaborators" className="py-12 relative overflow-hidden bg-white">
       {/* Subtle Technical Grid Background */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ 
@@ -50,12 +50,12 @@ export function Collaborators() {
                 className="group relative flex items-center justify-center transition-all duration-500 hover:scale-110"
               >
                 {logo && (
-                  <div className="relative h-10 md:h-12 w-auto min-w-[140px] flex items-center justify-center filter drop-shadow-sm">
+                  <div className="relative h-12 md:h-16 w-auto min-w-[140px] flex items-center justify-center filter drop-shadow-sm">
                     <Image 
                       src={logo.imageUrl} 
                       alt={org.name}
-                      width={160}
-                      height={80}
+                      width={180}
+                      height={90}
                       className="object-contain h-full w-auto transition-all duration-500"
                       data-ai-hint={logo.imageHint}
                     />

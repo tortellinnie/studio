@@ -85,7 +85,7 @@ export function Hero() {
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
           
           {/* Left Column: Mission Typography */}
           <div className="space-y-10">
@@ -162,13 +162,13 @@ export function Hero() {
         </div>
 
         {/* Centered Metrics Row */}
-        <div className="pt-6 border-t border-gray-100 flex justify-center">
+        <div className="pt-4 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
             {compactStats.map((stat, i) => (
               <Dialog key={i}>
                 <DialogTrigger asChild>
-                  <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-3 w-full">
-                    <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-foreground leading-none group-hover:text-primary transition-colors">
+                  <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-2 w-full">
+                    <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
                       {stat.value}
                     </span>
                     <p className="text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
@@ -179,7 +179,7 @@ export function Hero() {
                 <DialogContent className="bg-white border-border text-foreground max-w-lg rounded-[2.5rem] p-0 focus:outline-none shadow-3xl overflow-hidden">
                   <div className="p-10 border-b border-border bg-gray-50/50">
                     <DialogHeader>
-                      <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter">
+                      <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter text-primary">
                         {stat.title}
                       </DialogTitle>
                     </DialogHeader>
