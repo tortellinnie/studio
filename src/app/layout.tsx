@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'TECHNOLEADER | Engineering Portfolio',
+  title: 'Shann Karl Felipe | Portfolio',
   description: 'Premium software engineering portfolio for high-impact developers and architects.',
 };
 
