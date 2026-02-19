@@ -61,9 +61,6 @@ export function Hero() {
           
           <div className="lg:col-span-8 space-y-12">
             <div className="space-y-6">
-              <p className="text-[11px] font-black text-primary uppercase tracking-[0.5em] animate-in fade-in slide-in-from-bottom-2 duration-700">
-                SOFTWARE ENGINEERING & R&D
-              </p>
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100 max-w-4xl">
                   TURNING VISION INTO <br />
