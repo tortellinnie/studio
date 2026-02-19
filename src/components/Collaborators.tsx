@@ -6,7 +6,6 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 export function Collaborators() {
   const partners = [
     { name: "Procter & Gamble (P&G)", logoId: "logo-png", url: "https://ph.pg.com/" },
-    { name: "AWS", logoId: "logo-aws", url: "https://aws.amazon.com/" },
     { name: "DOST Philippines", logoId: "logo-dost", url: "https://www.dost.gov.ph/" },
     { name: "DICT Philippines", logoId: "logo-dict", url: "https://dict.gov.ph/" },
     { name: "Quezon City Government", logoId: "logo-qc", url: "https://quezoncity.gov.ph/" },
@@ -38,7 +37,7 @@ export function Collaborators() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-10 max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-10 max-w-7xl mx-auto">
           {partners.map((org, i) => {
             const logo = PlaceHolderImages.find(img => img.id === org.logoId);
             return (

@@ -19,7 +19,6 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 export function Hero() {
   const partners = [
     { name: "Procter & Gamble (P&G)", logoId: "logo-png" },
-    { name: "AWS", logoId: "logo-aws" },
     { name: "DOST Philippines", logoId: "logo-dost" },
     { name: "DICT Philippines", logoId: "logo-dict" },
     { name: "Quezon City Government", logoId: "logo-qc" },
@@ -110,7 +109,7 @@ export function Hero() {
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
 
-              <div className="flex items-center gap-4 text-[13px] font-black uppercase tracking-[0.4em] text-foreground/50">
+              <div className="flex items-center gap-4 text-[13px] font-black uppercase tracking-[0.4em] text-foreground/40">
                 <span>SHANN KARL FELIPE • AI / LEADERSHIP</span>
               </div>
             </div>
@@ -215,17 +214,17 @@ export function Hero() {
 
           {/* Tightly Packed Colored Partners */}
           <div className="pt-8 border-t border-black/[0.05]">
-            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 max-w-6xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 max-w-7xl mx-auto">
               {partners.map((partner, i) => {
                 const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
                 return (
-                  <div key={i} className="relative h-10 w-auto min-w-[80px] flex items-center justify-center transition-all duration-500 hover:scale-110">
+                  <div key={i} className="relative h-16 w-auto min-w-[120px] flex items-center justify-center transition-all duration-500 hover:scale-110">
                     {logo && (
                       <Image 
                         src={logo.imageUrl} 
                         alt={partner.name}
-                        width={120}
-                        height={50}
+                        width={240}
+                        height={100}
                         className="object-contain h-full w-auto"
                         data-ai-hint={logo.imageHint}
                       />
