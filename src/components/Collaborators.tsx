@@ -31,7 +31,7 @@ export function Collaborators() {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="mb-12">
           <p className="text-sm font-black text-foreground/60 uppercase tracking-[0.2em]">
-            Affiliated with Leading Organizations
+            Affiliated with Leading Entities
           </p>
         </div>
 

@@ -65,16 +65,15 @@ export function Hero() {
                 SOFTWARE ENGINEERING & R&D
               </p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tighter text-foreground italic uppercase animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-100">
-                ARCHITECTING <br />
-                TECHNICAL <br />
-                SOLUTIONS<span className="text-primary">.</span>
+                Turning Vision <br />
+                Into Intelligent Systems <br />
+                That Scale.<span className="text-primary">.</span>
               </h1>
             </div>
             
             <div className="space-y-8 max-w-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-300">
               <p className="text-lg text-muted-foreground font-medium leading-relaxed">
-                <span className="text-foreground font-bold italic uppercase block mb-2">Turning vision into intelligent systems that scale.</span>
-                Shann Karl Felipe • Professional Engineer focusing on AI automation and strategic leadership in Manila.
+                Shann Karl Felipe  •  Leadership/AI Automation
               </p>
               
               <div className="flex flex-wrap items-center gap-4">
