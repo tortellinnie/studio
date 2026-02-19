@@ -95,14 +95,14 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-8 overflow-hidden bg-white">
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <div className="container mx-auto max-w-7xl relative z-10 flex flex-col h-full justify-between">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
-          <div className="space-y-12">
-            <div className="space-y-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-6">
+          <div className="space-y-10">
+            <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
@@ -137,7 +137,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[350px]">
+            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[320px]">
               {specialties.map((spec, i) => (
                 <div 
                   key={i} 
@@ -169,9 +169,9 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="space-y-12">
-          {/* Metrics */}
-          <div className="flex justify-center pt-8">
+        <div className="space-y-6">
+          {/* Metrics - Shifted Up */}
+          <div className="flex justify-center pt-2">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
               {compactStats.map((stat, i) => (
                 <Dialog key={i}>
@@ -213,8 +213,8 @@ export function Hero() {
           </div>
 
           {/* Tightly Packed Colored Partners */}
-          <div className="pt-8 border-t border-black/[0.05]">
-            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 max-w-7xl mx-auto">
+          <div className="pt-6 border-t border-black/[0.05]">
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 max-w-7xl mx-auto">
               {partners.map((partner, i) => {
                 const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
                 return (
