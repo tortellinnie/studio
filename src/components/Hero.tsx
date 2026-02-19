@@ -3,7 +3,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, FileText } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Dialog,
   DialogContent,
@@ -13,7 +12,6 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
   const metricData = {
@@ -52,17 +50,6 @@ export function Hero() {
     { label: 'CAPITAL SECURED', value: '₱1.2M+', details: metricData.capital, title: 'Funding & Support' },
   ];
 
-  const partners = [
-    { id: "logo-png", name: "P&G" },
-    { id: "logo-aws", name: "AWS" },
-    { id: "logo-dost", name: "DOST" },
-    { id: "logo-dict", name: "DICT" },
-    { id: "logo-qc", name: "QC Gov" },
-    { id: "logo-nbdb", name: "NBDB" },
-    { id: "logo-dti", name: "DTI" },
-    { id: "logo-sk", name: "SK Commonwealth" }
-  ];
-
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-16 overflow-hidden bg-white">
       {/* Light Grid Background */}
@@ -98,30 +85,6 @@ export function Hero() {
                   View Resume
                 </Link>
               </Button>
-            </div>
-
-            {/* Affiliated Logos Integration */}
-            <div className="pt-10 space-y-6">
-              <p className="text-[10px] font-black text-muted-foreground/40 uppercase tracking-[0.3em]">
-                Affiliated with Leading Organizations
-              </p>
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-6 opacity-60">
-                {partners.map((org) => {
-                  const logo = PlaceHolderImages.find(img => img.id === org.id);
-                  return logo ? (
-                    <div key={org.id} className="h-6 w-auto flex items-center">
-                      <Image 
-                        src={logo.imageUrl} 
-                        alt={org.name}
-                        width={80}
-                        height={24}
-                        className="object-contain h-full w-auto grayscale hover:grayscale-0 transition-all duration-300"
-                        data-ai-hint={logo.imageHint}
-                      />
-                    </div>
-                  ) : null;
-                })}
-              </div>
             </div>
           </div>
 
