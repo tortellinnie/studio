@@ -1,6 +1,5 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { Journey } from '@/components/Journey';
 import { Featured } from '@/components/Featured';
 import { Projects } from '@/components/Projects';
 import { Speaking } from '@/components/Speaking';
@@ -16,7 +15,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <div className="space-y-0 relative z-10">
-        <Journey />
         <Featured />
         <Projects />
         <Speaking />
