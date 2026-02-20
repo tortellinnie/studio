@@ -8,11 +8,14 @@ import {
   ExternalLink, 
   ChevronLeft, 
   ChevronRight, 
-  Calendar
+  Calendar,
+  Award,
+  Trophy
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const leadershipData = [
   {
@@ -77,12 +80,12 @@ const certificationData = [
 ];
 
 const awardsData = [
-  { title: 'EMC Global Award', issuer: 'EMC Global Summit', year: '2026' },
-  { title: 'Most Outstanding Youth Awardee', issuer: 'QC Gov / SK Commonwealth', year: '2025' },
-  { title: '1st Runner-Up, Startup Challenge X', issuer: 'DICT Regional NCR', year: '2025' },
-  { title: 'Winner, Musashinova Pitching', issuer: 'EMC Global / Musashino Uni', year: '2025' },
-  { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023' },
-  { title: 'QCYDO Economic Scholarship', issuer: 'Quezon City Government', year: '2025' }
+  { title: 'EMC Global Award', issuer: 'EMC Global Summit', year: '2026', imageId: 'featured-prompt-challenge' },
+  { title: 'Most Outstanding Youth Awardee', issuer: 'QC Gov / SK Commonwealth', year: '2025', imageId: 'featured-tpu-research' },
+  { title: '1st Runner-Up, Startup Challenge X', issuer: 'DICT Regional NCR', year: '2025', imageId: 'featured-aws-reinvent' },
+  { title: 'Winner, Musashinova Pitching', issuer: 'EMC Global / Musashino Uni', year: '2025', imageId: 'featured-github-universe' },
+  { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023', imageId: 'featured-prompt-challenge' },
+  { title: 'QCYDO Economic Scholarship', issuer: 'Quezon City Government', year: '2025', imageId: 'featured-tpu-research' }
 ];
 
 const timelineYears = [
@@ -110,7 +113,7 @@ export function AchievementsSection() {
              backgroundSize: '40px 40px' 
            }} />
       
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+      <div className="container mx-auto px-6 max-w-[90rem] relative z-10">
         <div className="text-center mb-16 space-y-3">
           <h2 className="text-4xl md:text-5xl font-medium text-foreground italic uppercase tracking-tighter">
             IMPACT & RECOGNITION
@@ -145,16 +148,16 @@ export function AchievementsSection() {
           </div>
 
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
-            <div className="max-w-6xl mx-auto">
+            <div className="w-full">
               <TooltipProvider delayDuration={0}>
                 <div className="relative pt-12 pb-32 overflow-x-auto custom-scrollbar">
-                  <div className="min-w-[1200px] relative pb-24">
+                  <div className="min-w-[1500px] relative pb-24">
                     {/* Monthly Vertical Lines (72 months from 2021-2026) */}
                     <div className="absolute inset-x-0 top-0 bottom-24 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
-                          "w-px bg-slate-100 h-full",
-                          i % 12 === 0 ? "bg-slate-300 w-[1.5px]" : ""
+                          "w-px h-full",
+                          i % 12 === 0 ? "bg-slate-800/20 w-[1.5px]" : "bg-slate-100"
                         )} />
                       ))}
                     </div>
@@ -166,7 +169,7 @@ export function AchievementsSection() {
                     <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
-                          <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">
+                          <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.3em] text-slate-800">
                             {y.label}
                           </span>
                         </div>
@@ -174,7 +177,7 @@ export function AchievementsSection() {
                     </div>
 
                     {/* Gantt Role Bars */}
-                    <div className="relative space-y-6 px-4 min-h-[420px] pt-4">
+                    <div className="relative space-y-8 px-4 min-h-[420px] pt-4">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
                         const width = (item.duration / 72) * 100;
@@ -227,12 +230,12 @@ export function AchievementsSection() {
           </TabsContent>
 
           <TabsContent value="certs" className="mt-0 focus-visible:outline-none">
-            <div className="space-y-12">
+            <div className="max-w-7xl mx-auto space-y-12">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {paginatedCerts.map((cert, idx) => (
                   <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
                     <CardContent className="p-0 flex flex-col items-center gap-6">
-                      <div className="relative w-16 h-16 grayscale group-hover:grayscale-0 transition-all duration-500">
+                      <div className="relative w-16 h-16 transition-all duration-500">
                         <Image 
                           src="/assets/images/emc.png" 
                           alt="EMC Logo" 
@@ -292,16 +295,46 @@ export function AchievementsSection() {
           </TabsContent>
 
           <TabsContent value="awards" className="mt-0 focus-visible:outline-none">
-            <div className="max-w-4xl mx-auto divide-y divide-slate-100">
-              {awardsData.map((award, idx) => (
-                <div key={idx} className="py-8 first:pt-0 last:pb-0 group transition-all duration-300 hover:px-8 hover:bg-slate-50/50 rounded-2xl flex items-center justify-between">
-                  <div className="space-y-1">
-                    <h4 className="text-lg font-medium text-foreground uppercase italic tracking-tighter leading-none">{award.title}</h4>
-                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{award.issuer}</p>
-                  </div>
-                  <span className="text-xs font-black text-slate-300 group-hover:text-blue-600 transition-colors">{award.year}</span>
-                </div>
-              ))}
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {awardsData.map((award, idx) => {
+                  const imageData = PlaceHolderImages.find(img => img.id === award.imageId);
+                  return (
+                    <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-blue-600/5 hover:-translate-y-1">
+                      <div className="relative aspect-[16/9] overflow-hidden bg-slate-50">
+                        {imageData && (
+                          <Image 
+                            src={imageData.imageUrl} 
+                            alt={award.title}
+                            fill
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            data-ai-hint="award recognition event"
+                          />
+                        )}
+                        <div className="absolute top-4 left-4">
+                          <div className="p-2 rounded-xl bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
+                            <Trophy className="w-4 h-4 text-blue-600" />
+                          </div>
+                        </div>
+                        <div className="absolute top-4 right-4">
+                          <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[9px] font-black text-white uppercase tracking-widest">
+                            {award.year}
+                          </span>
+                        </div>
+                      </div>
+                      <CardContent className="p-8 space-y-3">
+                        <h4 className="text-base font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors">
+                          {award.title}
+                        </h4>
+                        <div className="flex items-center gap-2">
+                          <Award className="w-3 h-3 text-slate-300" />
+                          <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{award.issuer}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
             </div>
           </TabsContent>
         </Tabs>
