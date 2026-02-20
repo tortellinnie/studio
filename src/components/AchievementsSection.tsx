@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -14,7 +13,6 @@ import {
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const leadershipData = [
   {
@@ -150,39 +148,39 @@ export function AchievementsSection() {
             <div className="max-w-6xl mx-auto">
               <TooltipProvider delayDuration={0}>
                 <div className="relative pt-12 pb-32 overflow-x-auto custom-scrollbar">
-                  <div className="min-w-[1200px] relative pb-20">
+                  <div className="min-w-[1200px] relative pb-24">
                     {/* Monthly Vertical Lines (72 months from 2021-2026) */}
-                    <div className="absolute inset-x-0 top-0 bottom-20 flex justify-between pointer-events-none px-4">
+                    <div className="absolute inset-x-0 top-0 bottom-24 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
-                          "w-px bg-slate-100/50 h-full",
-                          i % 12 === 0 ? "bg-slate-200" : ""
+                          "w-px bg-slate-100 h-full",
+                          i % 12 === 0 ? "bg-slate-300 w-[1.5px]" : ""
                         )} />
                       ))}
                     </div>
 
                     {/* Horizontal Baseline */}
-                    <div className="absolute bottom-[80px] left-0 w-full h-px bg-slate-200" />
+                    <div className="absolute bottom-[80px] left-0 w-full h-[1.5px] bg-slate-300" />
 
                     {/* Year Labels */}
                     <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
-                          <span className="whitespace-nowrap text-[9px] font-black uppercase tracking-[0.3em] text-slate-400">
+                          <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">
                             {y.label}
                           </span>
                         </div>
                       ))}
                     </div>
 
-                    {/* Gantt Role Bars with Hover Tooltips */}
-                    <div className="relative space-y-5 px-4 min-h-[400px]">
+                    {/* Gantt Role Bars */}
+                    <div className="relative space-y-6 px-4 min-h-[420px] pt-4">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
                         const width = (item.duration / 72) * 100;
 
                         return (
-                          <div key={item.id} className="relative h-14">
+                          <div key={item.id} className="relative h-12">
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <div
@@ -190,31 +188,30 @@ export function AchievementsSection() {
                                     left: `${left}%`, 
                                     width: `${width}%` 
                                   }}
-                                  className="absolute h-10 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center px-5 transition-all hover:border-blue-600/30 hover:shadow-lg hover:shadow-blue-600/5 group cursor-default"
+                                  className="absolute h-10 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center px-4 transition-all hover:border-blue-600 hover:shadow-lg hover:shadow-blue-600/5 group cursor-default"
                                 >
-                                  <div className="w-1.5 h-1.5 rounded-full mr-4 bg-slate-200 group-hover:bg-blue-600 transition-colors" />
-                                  <span className="text-[10px] font-black uppercase tracking-widest truncate text-slate-400 group-hover:text-foreground transition-colors">
+                                  <span className="text-[10px] font-black uppercase tracking-widest truncate text-slate-500 group-hover:text-foreground transition-colors">
                                     {item.role}
                                   </span>
                                 </div>
                               </TooltipTrigger>
                               <TooltipContent 
                                 side="top" 
-                                sideOffset={15}
-                                className="bg-white border-slate-100 p-6 rounded-[2rem] shadow-3xl max-w-xs animate-in fade-in zoom-in-95 duration-200 z-[100]"
+                                sideOffset={12}
+                                className="bg-white border-slate-200 p-5 rounded-2xl shadow-xl max-w-xs z-[100]"
                               >
-                                <div className="space-y-4">
+                                <div className="space-y-3">
                                   <div className="space-y-1">
-                                    <h4 className="text-xs font-black uppercase italic tracking-tighter text-foreground leading-none">
+                                    <h4 className="text-[11px] font-black uppercase italic tracking-tighter text-foreground leading-none">
                                       {item.role}
                                     </h4>
                                     <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest">
                                       {item.org}
                                     </p>
                                   </div>
-                                  <div className="flex items-center gap-2 pt-1 border-t border-slate-50">
-                                    <Calendar className="w-3.5 h-3.5 text-slate-300" />
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.date}</p>
+                                  <div className="flex items-center gap-2 pt-1.5 border-t border-slate-100">
+                                    <Calendar className="w-3 h-3 text-slate-400" />
+                                    <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest">{item.date}</p>
                                   </div>
                                 </div>
                               </TooltipContent>
@@ -231,7 +228,7 @@ export function AchievementsSection() {
 
           <TabsContent value="certs" className="mt-0 focus-visible:outline-none">
             <div className="space-y-12">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-in fade-in duration-500">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {paginatedCerts.map((cert, idx) => (
                   <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
                     <CardContent className="p-0 flex flex-col items-center gap-6">
