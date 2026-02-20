@@ -4,13 +4,32 @@
 import * as React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
-import { ExternalLink, Briefcase, Trophy, Globe, Code2, Terminal, ShieldCheck, Info, Calendar, ChevronLeft, ChevronRight, Cpu, Layout, Smartphone, Server } from 'lucide-react';
+import { 
+  ExternalLink, 
+  Briefcase, 
+  Trophy, 
+  Globe, 
+  Code2, 
+  Terminal, 
+  ShieldCheck, 
+  Info, 
+  Calendar, 
+  ChevronLeft, 
+  ChevronRight, 
+  Cpu, 
+  Layout, 
+  Smartphone, 
+  Server,
+  BookOpen,
+  Vote,
+  Microscope,
+  Zap
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
 
 // 2021 to 2026 = 6 years = 72 months
-// Index starts at 0 (Jan 2021)
 const leadershipData = [
   {
     id: 'pupshs',
@@ -19,8 +38,9 @@ const leadershipData = [
     org: 'PUPSHS COMELEC · Manila',
     description: 'Served as the primary liaison for the ICT strand during Senior High School, coordinating elections and student initiatives for technical tracks.',
     start: 8, // Sep 2021
-    duration: 22, // 22 months
-    color: 'bg-slate-400'
+    duration: 22,
+    color: 'bg-slate-400',
+    icon: ShieldCheck
   },
   {
     id: 'agape',
@@ -29,8 +49,9 @@ const leadershipData = [
     org: 'AGAPE PH0209 · Quezon City',
     description: 'Directing strategic operations for a youth-led NGO with 200+ members, orchestrating 15+ community programs impacting over 600 beneficiaries nationwide.',
     start: 37, // Feb 2024
-    duration: 34, // to end of 2026
-    color: 'bg-blue-600'
+    duration: 34,
+    color: 'bg-blue-600',
+    icon: Globe
   },
   {
     id: 'library',
@@ -40,7 +61,8 @@ const leadershipData = [
     description: 'Presiding over academic resource planning and digital literacy initiatives, spearheading the Salayliwa edu-cultural project with the National Library.',
     start: 43, // Aug 2024
     duration: 28,
-    color: 'bg-indigo-600'
+    color: 'bg-indigo-600',
+    icon: BookOpen
   },
   {
     id: 'cram',
@@ -50,7 +72,8 @@ const leadershipData = [
     description: 'Drove technical marketing and innovation development, securing capital grants and shaping product roadmaps for IoT solutions.',
     start: 47, // Dec 2024
     duration: 12,
-    color: 'bg-blue-400'
+    color: 'bg-blue-400',
+    icon: Zap
   },
   {
     id: 'nerds',
@@ -60,7 +83,8 @@ const leadershipData = [
     description: 'Directing R&D operations for award-winning initiatives, securing ₱1.2M+ in total grants while leading cross-functional engineering teams.',
     start: 55, // Aug 2025
     duration: 16,
-    color: 'bg-slate-800'
+    color: 'bg-slate-800',
+    icon: Microscope
   }
 ];
 
@@ -108,9 +132,10 @@ export function AchievementsSection() {
   const paginatedCerts = certificationData.slice(certPage * certsPerPage, (certPage + 1) * certsPerPage);
   const totalCertPages = Math.ceil(certificationData.length / certsPerPage);
 
+  const ActiveRoleIcon = activeRole.icon;
+
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-white">
-      {/* Subtle Grid Pattern Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
@@ -153,13 +178,10 @@ export function AchievementsSection() {
 
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
             <div className="max-w-6xl mx-auto space-y-16">
-              {/* Gantt Chart Implementation */}
               <div className="relative pt-12 pb-20 overflow-x-auto custom-scrollbar">
                 <div className="min-w-[1000px] relative">
-                  {/* Horizontal Baseline */}
                   <div className="absolute top-[calc(100%-40px)] left-0 w-full h-px bg-slate-200" />
                   
-                  {/* Monthly Vertical Markers (Ticks) */}
                   <div className="absolute inset-x-0 bottom-[40px] h-full flex justify-between pointer-events-none px-4">
                     {Array.from({ length: 73 }).map((_, i) => (
                       <div key={i} className={cn(
@@ -169,7 +191,6 @@ export function AchievementsSection() {
                     ))}
                   </div>
 
-                  {/* Year Labels */}
                   <div className="absolute inset-x-0 bottom-8 h-4 flex justify-between pointer-events-none px-4">
                     {timelineYears.map((y) => (
                       <div key={y.label} className="relative flex flex-col items-center">
@@ -180,7 +201,6 @@ export function AchievementsSection() {
                     ))}
                   </div>
 
-                  {/* Gantt Bars */}
                   <div className="relative space-y-4 px-4 min-h-[280px]">
                     {leadershipData.map((item) => {
                       const left = (item.start / 72) * 100;
@@ -232,11 +252,10 @@ export function AchievementsSection() {
                 </div>
               </div>
 
-              {/* Active Role Summary Card */}
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-4xl mx-auto">
                 <Card className="bg-white border-slate-100 rounded-[2.5rem] p-10 shadow-sm border overflow-hidden relative group">
                   <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <Briefcase className="w-32 h-32 text-blue-600" />
+                    <ActiveRoleIcon className="w-32 h-32 text-blue-600" />
                   </div>
                   <CardContent className="p-0 space-y-8">
                     <div className="space-y-4">
@@ -288,7 +307,6 @@ export function AchievementsSection() {
                 ))}
               </div>
 
-              {/* Pagination Controls */}
               <div className="flex justify-center items-center gap-4">
                 <Button 
                   variant="outline" 
