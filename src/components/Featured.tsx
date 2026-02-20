@@ -72,34 +72,42 @@ export function Featured() {
 
   return (
     <section id="featured" className="py-24 bg-transparent overflow-hidden">
-      <div className="container mx-auto px-6 max-w-7xl mb-16">
-        <div className="flex flex-col items-center text-center gap-10">
-          <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-medium text-foreground tracking-tighter uppercase italic">
+      <div className="container mx-auto px-6 max-w-7xl mb-12">
+        <div className="flex flex-row justify-between items-end border-b border-gray-100 pb-10">
+          <div className="space-y-2">
+            <h2 className="text-4xl font-medium text-foreground tracking-tighter uppercase italic">
               FEATURED CONTRIBUTIONS<span className="text-primary">.</span>
             </h2>
-            <p className="text-muted-foreground text-sm font-medium max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-sm font-medium">
               Glimpses of my technological contributions in the field and multiple communities.
             </p>
           </div>
           
-          <div className="flex gap-4">
-            <Button 
-              variant="outline" 
-              size="icon" 
-              className="rounded-full w-12 h-12 border-gray-200 transition-all hover:bg-gray-50 shadow-sm"
-              onClick={() => emblaApi?.scrollPrev()}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="icon" 
-              className="rounded-full w-12 h-12 border-gray-200 transition-all hover:bg-gray-50 shadow-sm"
-              onClick={() => emblaApi?.scrollNext()}
-            >
-              <ChevronRight className="w-5 h-5" />
-            </Button>
+          <div className="flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary" />
+              <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest">
+                {selectedIndex + 1} / {featuredItems.length}
+              </span>
+            </div>
+            <div className="flex gap-2">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="rounded-full w-10 h-10 border-gray-200 transition-all hover:bg-gray-50"
+                onClick={() => emblaApi?.scrollPrev()}
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="rounded-full w-10 h-10 border-gray-200 transition-all hover:bg-gray-50"
+                onClick={() => emblaApi?.scrollNext()}
+              >
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -114,7 +122,7 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_75%] md:flex-[0_0_55%] px-1 md:px-2"
+                  className="flex-[0_0_85%] md:flex-[0_0_65%] px-2"
                 >
                   <div className={cn(
                     "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 transition-all duration-700 ease-premium",
@@ -161,14 +169,14 @@ export function Featured() {
         </div>
       </div>
 
-      <div className="flex justify-center gap-3 mt-12">
+      <div className="flex justify-center gap-2 mt-12">
         {featuredItems.map((_, i) => (
           <button
             key={i}
             onClick={() => emblaApi?.scrollTo(i)}
             className={cn(
               "h-1.5 transition-all duration-500 rounded-full",
-              i === selectedIndex ? "w-12 bg-primary" : "w-2 bg-gray-200"
+              i === selectedIndex ? "w-8 bg-primary" : "w-2 bg-gray-200"
             )}
           />
         ))}
