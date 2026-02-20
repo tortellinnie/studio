@@ -229,12 +229,12 @@ export function AchievementsSection() {
                                     <h4 className="text-base font-semibold text-foreground leading-tight tracking-tight">
                                       {item.role}
                                     </h4>
-                                    <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest">
+                                    <p className="text-sm font-semibold text-blue-600 uppercase">
                                       {item.org}
                                     </p>
                                   </div>
                                   <div className="pt-3 border-t border-slate-100">
-                                    <Badge variant="outline" className="text-[10px] font-semibold text-slate-500 px-3 py-1 uppercase tracking-widest">
+                                    <Badge variant="outline" className="text-[10px] font-semibold text-slate-500 px-3 py-1">
                                       {item.date}
                                     </Badge>
                                   </div>
@@ -254,9 +254,9 @@ export function AchievementsSection() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-4">
                       <div className="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
-                         <span className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
+                         <span className="text-[10px] font-semibold text-blue-600 uppercase">{selectedRole.org}</span>
                       </div>
-                      <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
+                      <span className="text-[10px] font-semibold text-slate-400">{selectedRole.date}</span>
                     </div>
                     <h3 className="text-2xl font-semibold text-foreground tracking-tight">
                       {selectedRole.role}
@@ -281,11 +281,11 @@ export function AchievementsSection() {
 
           <TabsContent value="certs" className="mt-0 focus-visible:outline-none">
             <div className="max-w-7xl mx-auto space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {paginatedCerts.map((cert, idx) => (
-                  <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-lg hover:border-blue-600/20 group">
+                  <Card key={idx} className="bg-white border-slate-100 rounded-2xl p-4 transition-all duration-300 hover:shadow-lg hover:border-blue-600/20 group">
                     <CardContent className="p-0 flex items-center gap-6">
-                      <div className="relative w-12 h-12 shrink-0">
+                      <div className="relative w-10 h-10 shrink-0">
                         <Image 
                           src="/assets/images/emcg.png" 
                           alt="EMC Global" 
@@ -294,10 +294,10 @@ export function AchievementsSection() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-semibold text-foreground tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
+                        <h4 className="text-sm font-semibold text-foreground tracking-tight leading-tight truncate mb-1">{cert.name}</h4>
                         <div className="flex items-center justify-between">
-                          <p className="text-[10px] text-slate-400 font-semibold truncate uppercase tracking-widest">{cert.issuer}</p>
-                          <span className="text-[10px] font-semibold text-blue-600 shrink-0 ml-4 uppercase tracking-widest">{cert.date}</span>
+                          <p className="text-[10px] text-slate-400 font-semibold truncate uppercase">{cert.issuer}</p>
+                          <span className="text-[10px] font-semibold text-blue-600 shrink-0 ml-4">{cert.date}</span>
                         </div>
                       </div>
                     </CardContent>
@@ -342,12 +342,12 @@ export function AchievementsSection() {
 
           <TabsContent value="awards" className="mt-0 focus-visible:outline-none">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {awardsData.map((award, idx) => {
                   const imageData = PlaceHolderImages.find(img => img.id === award.imageId);
                   return (
-                    <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-500 hover:shadow-xl">
-                      <div className="relative aspect-square overflow-hidden bg-slate-50">
+                    <Card key={idx} className="bg-white border-slate-100 rounded-[2rem] overflow-hidden group transition-all duration-500 hover:shadow-xl">
+                      <div className="relative aspect-video overflow-hidden bg-slate-50">
                         {imageData && (
                           <Image 
                             src={imageData.imageUrl} 
@@ -357,21 +357,21 @@ export function AchievementsSection() {
                             data-ai-hint={award.type}
                           />
                         )}
-                        <div className="absolute top-6 left-6">
-                          <div className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
-                            <span className="text-[9px] font-semibold text-foreground tracking-widest uppercase">{award.type}</span>
+                        <div className="absolute top-4 left-4">
+                          <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
+                            <span className="text-[8px] font-semibold text-foreground uppercase">{award.type}</span>
                           </div>
                         </div>
                       </div>
-                      <CardContent className="p-8 space-y-4">
+                      <CardContent className="p-5 space-y-2">
                         <div className="flex justify-between items-start gap-4">
-                          <div className="space-y-1">
-                            <h4 className="text-lg font-semibold text-foreground tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
+                          <div className="space-y-0.5">
+                            <h4 className="text-sm font-semibold text-foreground tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
                               {award.title}
                             </h4>
-                            <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-widest">{award.issuer}</p>
+                            <p className="text-[9px] text-slate-400 font-semibold uppercase">{award.issuer}</p>
                           </div>
-                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
+                          <span className="shrink-0 px-2 py-0.5 rounded-full bg-slate-100 text-[9px] font-semibold text-slate-500">
                             {award.year}
                           </span>
                         </div>

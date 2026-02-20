@@ -223,11 +223,11 @@ export function Speaking() {
                           <div className="space-y-2.5">
                             <div className="flex items-center gap-3 text-slate-400">
                               <Calendar className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
-                              <span className="text-[10px] font-medium uppercase tracking-widest">{talk.date}</span>
+                              <span className="text-xs font-medium text-slate-500">{talk.date}</span>
                             </div>
                             <div className="flex items-center gap-3 text-slate-400">
                               <MapPin className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
-                              <span className="text-[10px] font-medium uppercase tracking-widest line-clamp-1">{talk.location}</span>
+                              <span className="text-xs font-medium text-slate-500 line-clamp-1">{talk.location}</span>
                             </div>
                           </div>
                         </div>

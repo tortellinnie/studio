@@ -201,7 +201,7 @@ export function Projects() {
                       {project.tags.map(tag => (
                         <div key={tag} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100">
                           <div className="w-1 h-1 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
-                          <span className="text-[9px] font-semibold uppercase tracking-wider text-slate-500">{tag}</span>
+                          <span className="text-[9px] font-semibold uppercase text-slate-500">{tag}</span>
                         </div>
                       ))}
                     </div>
@@ -217,7 +217,7 @@ export function Projects() {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="h-9 text-[10px] font-semibold uppercase tracking-widest px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
+                        className="h-9 text-[10px] font-semibold uppercase px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
                         asChild
                       >
                         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
@@ -228,7 +228,7 @@ export function Projects() {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="h-9 text-[10px] font-semibold uppercase tracking-widest px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
+                        className="h-9 text-[10px] font-semibold uppercase px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
                         asChild
                       >
                         <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>

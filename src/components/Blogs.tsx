@@ -11,7 +11,7 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 const blogItems = [
   {
     id: 'edge-ai-agri',
-    tag: 'Agriculture',
+    tag: 'AGRICULTURE',
     title: 'The Future of Edge AI in Agriculture',
     excerpt: 'Exploring how real-time computer vision on edge devices is transforming modern farm management.',
     date: 'Oct 2025',
@@ -21,7 +21,7 @@ const blogItems = [
   },
   {
     id: 'video-automation-gemini',
-    tag: 'Automation',
+    tag: 'AUTOMATION',
     title: 'Autonomous Video Production with Gemini',
     excerpt: 'A deep dive into building an end-to-end automation pipeline using n8n, Docker, and Gemini 2.5 Flash.',
     date: 'Sep 2025',
@@ -31,7 +31,7 @@ const blogItems = [
   },
   {
     id: 'tpu-scaling',
-    tag: 'Machine Learning',
+    tag: 'MACHINE LEARNING',
     title: 'Scaling Neural Networks on Cloud TPUs',
     excerpt: 'Technical insights from my research experience with the Google TPU Research Cloud (TRC) program.',
     date: 'Aug 2025',
@@ -41,7 +41,7 @@ const blogItems = [
   },
   {
     id: 'distributed-iot',
-    tag: 'Systems',
+    tag: 'SYSTEMS',
     title: 'Distributed Systems for IoT Edge Nodes',
     excerpt: 'Managing state and reliability in heterogeneous IoT environments using lightweight consensus protocols.',
     date: 'Jul 2025',
@@ -51,7 +51,7 @@ const blogItems = [
   },
   {
     id: 'birdseye-deep-dive',
-    tag: 'Computer Vision',
+    tag: 'COMPUTER VISION',
     title: 'Birdseye: Computer Vision in Poultry',
     excerpt: 'A technical deep dive into the Birdseye architecture, from sensor fusion to real-time inference on the edge.',
     date: 'Jun 2025',
@@ -61,7 +61,7 @@ const blogItems = [
   },
   {
     id: 'prompt-eng-future',
-    tag: 'AI Engineering',
+    tag: 'AI ENGINEERING',
     title: 'The Future of Prompt Engineering',
     excerpt: 'How LLMs are evolving to handle complex, multi-modal reasonings through advanced prompt orchestration.',
     date: 'May 2025',
@@ -85,7 +85,7 @@ export function Blogs() {
           <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
             Insights
           </h2>
-          <p className="text-muted-foreground text-sm font-medium">
+          <p className="text-slate-500 text-sm font-medium">
             Thoughts on technology, engineering, and innovation.
           </p>
         </div>
@@ -125,7 +125,7 @@ export function Blogs() {
                       <div className="space-y-4">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
                            <div className={cn("w-1.5 h-1.5 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.5)]", item.color)} />
-                           <p className="text-xs font-medium text-white">{item.tag}</p>
+                           <p className="text-[10px] font-semibold text-white uppercase">{item.tag}</p>
                         </div>
                         
                         <div className="space-y-2">

@@ -145,7 +145,7 @@ export function Featured() {
                         <div className="space-y-2 flex-1">
                           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 mb-2">
                              <div className={cn("w-1.5 h-1.5 rounded-full", item.color)} />
-                             <p className="text-[10px] font-semibold text-white tracking-widest">{item.tag}</p>
+                             <p className="text-[10px] font-semibold text-white uppercase">{item.tag}</p>
                           </div>
                           <h3 className="text-2xl md:text-3xl font-semibold text-white leading-tight">
                             {item.title}

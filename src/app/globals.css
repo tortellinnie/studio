@@ -35,8 +35,8 @@
     @apply text-foreground font-body antialiased selection:bg-black selection:text-white overflow-x-hidden;
     background-color: white;
     background-image: 
-      linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+      linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 }
