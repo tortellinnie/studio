@@ -3,8 +3,7 @@ import { Hero } from '@/components/Hero';
 import { Featured } from '@/components/Featured';
 import { Projects } from '@/components/Projects';
 import { Speaking } from '@/components/Speaking';
-import { Awards } from '@/components/Awards';
-import { Certifications } from '@/components/Certifications';
+import { AchievementsSection } from '@/components/AchievementsSection';
 import { Blogs } from '@/components/Blogs';
 import { Recommendations } from '@/components/Recommendations';
 import { Contact } from '@/components/Contact';
@@ -18,8 +17,7 @@ export default function Home() {
         <Featured />
         <Projects />
         <Speaking />
-        <Awards />
-        <Certifications />
+        <AchievementsSection />
         <Blogs />
         <Recommendations />
         <Contact />
