@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { Calendar, MapPin, Monitor, ChevronLeft, ChevronRight, MessageSquarePlus } from 'lucide-react';
+import { Calendar, MapPin, ChevronLeft, ChevronRight, MessageSquarePlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -12,40 +12,40 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const speakingData = [
   {
     type: 'Workshop',
-    title: 'Product Building with AI Workshop',
-    event: 'Philippine Innovation Conference 2025',
-    date: 'Nov 21, 2025',
-    location: 'University of Batangas',
+    title: 'PRODUCT BUILDING WITH AI WORKSHOP',
+    event: 'PHILIPPINE INNOVATION CONFERENCE 2025',
+    date: 'NOV 21, 2025',
+    location: 'UNIVERSITY OF BATANGAS',
     color: 'bg-emerald-500',
     tag: 'AI',
     imageId: 'featured-prompt-challenge'
   },
   {
     type: 'Talk',
-    title: "GitHub Universe'25 Recap: AI Edition",
-    event: 'az:Repo: The Agentic Workshop',
-    date: 'Nov 14, 2025',
-    location: 'Microsoft Office Philippines',
+    title: "GITHUB UNIVERSE'25 RECAP: AI EDITION",
+    event: 'AZ:REPO: THE AGENTIC WORKSHOP',
+    date: 'NOV 14, 2025',
+    location: 'MICROSOFT OFFICE PHILIPPINES',
     color: 'bg-blue-500',
     tag: 'Automation',
     imageId: 'featured-github-universe'
   },
   {
     type: 'Talk',
-    title: "G-Trends: Google's Next-Gen Toolkit",
-    event: 'InSession 2025',
-    date: 'Nov 6, 2025',
-    location: 'TUP - Manila',
+    title: "G-TRENDS: GOOGLE'S NEXT-GEN TOOLKIT",
+    event: 'INSESSION 2025',
+    date: 'NOV 6, 2025',
+    location: 'TUP - MANILA',
     color: 'bg-amber-500',
     tag: 'Cloud',
     imageId: 'featured-tpu-research'
   },
   {
     type: 'Talk',
-    title: 'Internship Employability Session',
+    title: 'INTERNSHIP EMPLOYABILITY SESSION',
     event: 'DEPLOY(): 2025',
-    date: 'Nov 5, 2025',
-    location: 'Online Session',
+    date: 'NOV 5, 2025',
+    location: 'ONLINE SESSION',
     color: 'bg-purple-500',
     tag: 'Career',
     imageId: 'featured-aws-reinvent'
@@ -57,8 +57,8 @@ const categories = ['All', 'AI', 'Career', 'Cloud', 'Automation'];
 export function Speaking() {
   const [activeCategory, setActiveCategory] = React.useState('All');
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: false, 
-    align: 'start',
+    loop: true, 
+    align: 'center',
     skipSnaps: false,
     duration: 35
   });
@@ -92,8 +92,8 @@ export function Speaking() {
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         {/* Header Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-end mb-16">
-          <div className="lg:col-span-2 space-y-4">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-10">
+          <div className="space-y-6 text-center md:text-left">
             <h2 className="text-5xl md:text-6xl font-medium text-foreground tracking-tighter italic uppercase">
               SPEAKING
             </h2>
@@ -102,7 +102,7 @@ export function Speaking() {
             </p>
             
             {/* Category Filters */}
-            <div className="flex flex-wrap gap-2 pt-6">
+            <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-4">
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -120,7 +120,7 @@ export function Speaking() {
             </div>
           </div>
           
-          <div className="flex items-center justify-end gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-6">
             <Button className="rounded-2xl bg-blue-600 text-white hover:bg-blue-700 text-[10px] font-black uppercase tracking-widest px-8 h-14 gap-3 shadow-xl shadow-blue-600/20">
               Book me to speak <MessageSquarePlus className="w-4 h-4" />
             </Button>
@@ -155,11 +155,11 @@ export function Speaking() {
                 return (
                   <div 
                     key={idx} 
-                    className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_31%] pl-6"
+                    className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_35%] pl-6"
                   >
-                    <div className="group bg-white rounded-[3rem] border border-slate-100 overflow-hidden flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-slate-200/50">
-                      {/* Image Section */}
-                      <div className="relative aspect-[4/3] w-full overflow-hidden shrink-0">
+                    <div className="group bg-white rounded-[3.5rem] border border-slate-100 overflow-hidden flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-slate-200/50 h-full">
+                      {/* Image Section - Landscape 3:2 */}
+                      <div className="relative aspect-[3/2] w-full overflow-hidden shrink-0">
                         {imageData && (
                           <Image 
                             src={imageData.imageUrl} 
@@ -191,7 +191,7 @@ export function Speaking() {
                           </p>
                         </div>
 
-                        <div className="space-y-3 pt-4 border-t border-slate-50">
+                        <div className="space-y-3 pt-6 border-t border-slate-50 mt-auto">
                           <div className="flex items-center gap-3 text-slate-400">
                             <Calendar className="w-4 h-4 text-blue-600/30 shrink-0" />
                             <span className="text-[10px] font-black uppercase tracking-widest">{talk.date}</span>
