@@ -46,12 +46,6 @@ export function Recommendations() {
 
   return (
     <section id="recommendations" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
-           style={{ 
-             backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
-             backgroundSize: '80px 80px' 
-           }} />
-           
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-10">
           <div className="space-y-4">
@@ -84,19 +78,19 @@ export function Recommendations() {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex -ml-6">
             {testimonials.map((item, idx) => (
-              <div key={idx} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_25%] pl-6">
-                <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-700 group relative flex flex-col justify-between h-full min-h-[340px]">
+              <div key={idx} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] pl-6">
+                <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-700 group relative flex flex-col justify-between h-full min-h-[380px]">
                   <div className="space-y-6">
-                    <div className="text-blue-600 opacity-20 group-hover:opacity-100 transition-opacity">
-                      <Quote className="w-8 h-8" />
+                    <div className="text-blue-600">
+                      <Quote className="w-10 h-10 opacity-20" fill="currentColor" />
                     </div>
-                    <p className="text-base text-slate-500 font-medium leading-relaxed italic">
+                    <p className="text-lg text-slate-500 font-medium leading-relaxed italic">
                       "{item.text}"
                     </p>
                   </div>
                   
-                  <div className="flex items-center gap-4 pt-8 mt-auto border-t border-slate-50">
-                    <Avatar className="w-12 h-12 border border-slate-100">
+                  <div className="flex items-center gap-4 pt-8 mt-auto">
+                    <Avatar className="w-14 h-14 border-2 border-slate-50">
                       <AvatarImage src={item.avatarUrl} alt={item.name} className="object-cover" />
                       <AvatarFallback className="bg-blue-600 text-white font-medium text-xs">
                         {item.initials}
@@ -104,7 +98,7 @@ export function Recommendations() {
                     </Avatar>
                     <div className="min-w-0">
                       <p className="text-sm font-semibold text-foreground tracking-tight truncate">{item.name}</p>
-                      <p className="text-xs font-medium text-blue-600 truncate">{item.role}</p>
+                      <p className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest truncate">{item.role}</p>
                     </div>
                   </div>
                 </div>

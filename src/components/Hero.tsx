@@ -71,25 +71,25 @@ export function Hero() {
     { 
       title: 'Artificial Intelligence', 
       desc: 'Neural Networks & Computer Vision',
-      color: 'from-indigo-600 to-violet-800',
+      color: 'from-blue-600 to-blue-700',
       span: 'col-span-2 row-span-1'
     },
     { 
       title: 'Software Solutions', 
       desc: 'Scalable Architecture',
-      color: 'from-slate-800 to-slate-950',
+      color: 'from-slate-800 to-slate-900',
       span: 'col-span-1 row-span-2'
     },
     { 
       title: 'Automation', 
       desc: 'Intelligent Workflows',
-      color: 'from-blue-900 to-indigo-950',
+      color: 'from-indigo-800 to-indigo-950',
       span: 'col-span-1 row-span-1'
     },
     { 
       title: 'Cloud & IoT', 
       desc: 'Distributed Edge Systems',
-      color: 'from-gray-400 to-gray-600',
+      color: 'from-slate-400 to-slate-500',
       span: 'col-span-1 row-span-1'
     }
   ];
@@ -100,14 +100,14 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-10">
           <div className="space-y-10">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold leading-[1.05] tracking-tight text-foreground">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-foreground">
                 Turning vision into <br />
                 intelligent systems <br />
                 <span className="text-primary">that scale.</span>
               </h1>
 
-              <div className="flex items-center gap-4 text-sm font-medium text-foreground/40">
-                <span>Shann Karl Felipe • AI / Leadership</span>
+              <div className="flex items-center gap-4 text-sm font-medium text-slate-400">
+                <span>Shann Karl Felipe • AI & Leadership</span>
               </div>
             </div>
             
@@ -130,36 +130,31 @@ export function Hero() {
           <div className="relative">
             <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
               <div className="bg-white/50 backdrop-blur-sm px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
-                <span className="text-xs font-medium text-primary">Strategic Leadership</span>
+                <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">Strategic Leadership</span>
               </div>
             </div>
 
-            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[320px]">
+            <div className="grid grid-cols-3 grid-rows-2 gap-4 h-[340px]">
               {specialties.map((spec, i) => (
                 <div 
                   key={i} 
                   className={cn(
-                    "relative group overflow-hidden rounded-[2rem] p-6 flex flex-col justify-between transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl shadow-sm border border-black/[0.03]",
+                    "relative group overflow-hidden rounded-[2.5rem] p-8 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl shadow-sm border border-black/[0.03]",
                     spec.span,
                     "bg-gradient-to-br",
                     spec.color
                   )}
                 >
-                  <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" viewBox="0 0 100 100">
-                    <line x1="0" y1="20" x2="100" y2="20" stroke="white" strokeWidth="0.5" />
-                    <line x1="20" y1="0" x2="20" y2="100" stroke="white" strokeWidth="0.5" />
-                  </svg>
-
-                  <div className="relative z-10">
-                    <h3 className="text-white text-base font-semibold leading-tight mb-2">
+                  <div className="relative z-10 space-y-2">
+                    <h3 className="text-white text-lg font-semibold tracking-tight">
                       {spec.title}
                     </h3>
-                    <p className="text-white/40 text-xs font-medium">
+                    <p className="text-white/60 text-xs font-medium leading-relaxed">
                       {spec.desc}
                     </p>
                   </div>
 
-                  <div className="absolute bottom-6 right-8 w-1 h-1 rounded-full bg-white/20 group-hover:bg-white transition-colors" />
+                  <div className="absolute bottom-8 right-8 w-1 h-1 rounded-full bg-white/20 group-hover:bg-white transition-colors" />
                 </div>
               ))}
             </div>
@@ -173,18 +168,18 @@ export function Hero() {
                 <Dialog key={i}>
                   <DialogTrigger asChild>
                     <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-2 w-full">
-                      <span className="text-5xl lg:text-7xl font-semibold tracking-tighter text-primary leading-none transition-colors">
+                      <span className="text-5xl lg:text-7xl font-semibold tracking-tighter text-primary leading-none">
                         {stat.value}
                       </span>
-                      <p className="text-xs font-medium text-muted-foreground/60 leading-tight">
+                      <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-400">
                         {stat.label}
                       </p>
                     </button>
                   </DialogTrigger>
                   <DialogContent className="bg-white border-border text-foreground max-w-lg rounded-[2.5rem] p-0 focus:outline-none shadow-3xl overflow-hidden">
-                    <div className="p-10 border-b border-border bg-gray-50/50">
+                    <div className="p-10 border-b border-border bg-slate-50">
                       <DialogHeader>
-                        <DialogTitle className="text-3xl font-semibold tracking-tight text-primary">
+                        <DialogTitle className="text-2xl font-semibold tracking-tight text-primary">
                           {stat.title}
                         </DialogTitle>
                       </DialogHeader>
@@ -193,9 +188,9 @@ export function Hero() {
                     <ScrollArea className="max-h-[50vh] p-10">
                       <div className="grid gap-6">
                         {stat.details.map((item, idx) => (
-                          <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-6 last:border-0">
-                            <span className="font-medium text-foreground/80 text-base">{item.name}</span>
-                            <Badge variant="outline" className="border-border text-muted-foreground text-xs font-medium px-4 py-1.5">
+                          <div key={idx} className="flex items-center justify-between group border-b border-slate-100 pb-6 last:border-0">
+                            <span className="font-medium text-foreground/80 text-sm">{item.name}</span>
+                            <Badge variant="outline" className="border-border text-slate-500 text-[9px] font-semibold uppercase tracking-wider px-3 py-1">
                               {item.detail}
                             </Badge>
                           </div>
@@ -213,14 +208,14 @@ export function Hero() {
               {partners.map((partner, i) => {
                 const logo = PlaceHolderImages.find(img => img.id === partner.logoId);
                 return (
-                  <div key={i} className="relative h-20 w-auto min-w-[140px] flex items-center justify-center transition-all duration-500 hover:scale-110 shrink-0">
+                  <div key={i} className="relative h-16 w-auto min-w-[120px] flex items-center justify-center transition-all duration-500 hover:scale-110 shrink-0">
                     {logo && (
                       <Image 
                         src={logo.imageUrl} 
                         alt={partner.name}
-                        width={240}
-                        height={100}
-                        className="object-contain h-full w-auto"
+                        width={200}
+                        height={80}
+                        className="object-contain h-full w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                         data-ai-hint={logo.imageHint}
                       />
                     )}

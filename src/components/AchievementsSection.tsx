@@ -12,6 +12,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const leadershipData = [
@@ -103,12 +104,12 @@ const certificationData = [
 ];
 
 const awardsData = [
-  { title: 'EMC Global Award', issuer: 'EMC Global Summit', year: '2026', type: 'Award', imageId: 'featured-prompt-challenge' },
-  { title: 'Most Outstanding Youth', issuer: 'QC Gov', year: '2025', type: 'Award', imageId: 'featured-tpu-research' },
-  { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023', type: 'Scholarship', imageId: 'featured-aws-reinvent' },
-  { title: 'Winner, Musashinova', issuer: 'EMC Global', year: '2025', type: 'Award', imageId: 'featured-github-universe' },
-  { title: 'Startup Challenge X', issuer: 'DICT NCR', year: '2025', type: 'Award', imageId: 'featured-prompt-challenge' },
-  { title: 'QCYDO Scholarship', issuer: 'Quezon City Gov', year: '2025', type: 'Scholarship', imageId: 'featured-tpu-research' }
+  { title: 'EMC Global Award', issuer: 'EMC Global Summit', year: '2026', type: 'AWARD', imageId: 'featured-prompt-challenge' },
+  { title: 'Most Outstanding Youth', issuer: 'QC Gov', year: '2025', type: 'AWARD', imageId: 'featured-tpu-research' },
+  { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023', type: 'SCHOLARSHIP', imageId: 'featured-aws-reinvent' },
+  { title: 'Winner, Musashinova', issuer: 'EMC Global', year: '2025', type: 'AWARD', imageId: 'featured-github-universe' },
+  { title: 'Startup Challenge X', issuer: 'DICT NCR', year: '2025', type: 'AWARD', imageId: 'featured-prompt-challenge' },
+  { title: 'QCYDO Scholarship', issuer: 'Quezon City Gov', year: '2025', type: 'SCHOLARSHIP', imageId: 'featured-tpu-research' }
 ];
 
 const timelineYears = [
@@ -130,16 +131,10 @@ export function AchievementsSection() {
   const [selectedRole, setSelectedRole] = React.useState(leadershipData[leadershipData.length - 1]);
 
   return (
-    <section id="achievements" className="py-24 relative overflow-hidden bg-white">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ 
-             backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
-             backgroundSize: '40px 40px' 
-           }} />
-      
-      <div className="container mx-auto px-6 max-w-[100rem] relative z-10">
+    <section id="achievements" className="py-24 bg-white relative">
+      <div className="container mx-auto px-6 max-w-[100rem]">
         <div className="text-center mb-16 space-y-3">
-          <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
             Impact & Recognition
           </h2>
           <p className="text-slate-500 text-sm font-medium">
@@ -149,7 +144,7 @@ export function AchievementsSection() {
 
         <Tabs defaultValue="leadership" className="w-full">
           <div className="flex justify-center mb-10">
-            <TabsList className="bg-slate-100/50 p-1.5 rounded-full h-14 border border-slate-200">
+            <TabsList className="bg-slate-50 p-1 rounded-full h-14 border border-slate-100">
               <TabsTrigger 
                 value="leadership" 
                 className="rounded-full px-8 text-sm font-medium data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
@@ -174,9 +169,10 @@ export function AchievementsSection() {
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
             <div className="w-full space-y-6">
               <TooltipProvider delayDuration={0}>
-                <div className="relative pt-8 pb-12 overflow-x-auto custom-scrollbar">
-                  <div className="min-w-[1800px] relative pb-16 px-4">
-                    <div className="absolute inset-x-0 top-0 bottom-16 flex justify-between pointer-events-none px-4">
+                <div className="relative pt-8 pb-10 overflow-x-auto custom-scrollbar">
+                  <div className="min-w-[1800px] relative pb-12 px-4">
+                    {/* Vertical Year Markers */}
+                    <div className="absolute inset-x-0 top-0 bottom-12 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
                           "w-px h-full",
@@ -185,26 +181,29 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
-                    <div className="absolute bottom-[48px] left-0 w-full h-[1.5px] bg-slate-300" />
+                    {/* Timeline Line */}
+                    <div className="absolute bottom-[40px] left-0 w-full h-[1px] bg-slate-200" />
 
+                    {/* Year Labels */}
                     <div className="absolute inset-x-0 bottom-0 h-6 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
-                          <span className="whitespace-nowrap text-xs font-semibold text-slate-900">
+                          <span className="whitespace-nowrap text-[10px] font-semibold text-slate-900">
                             {y.label}
                           </span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="relative space-y-4 pt-4 min-h-[260px]">
+                    {/* Bars Container */}
+                    <div className="relative space-y-2 pt-4">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
                         const width = (item.duration / 72) * 100;
                         const isActive = selectedRole.id === item.id;
 
                         return (
-                          <div key={item.id} className="relative h-8">
+                          <div key={item.id} className="relative h-4">
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <button
@@ -214,13 +213,13 @@ export function AchievementsSection() {
                                     width: `${width}%` 
                                   }}
                                   className={cn(
-                                    "absolute h-5 rounded-full flex items-center px-4 transition-all duration-500 border overflow-hidden",
+                                    "absolute h-3 rounded-full flex items-center px-4 transition-all duration-500 border overflow-hidden",
                                     isActive 
-                                      ? "bg-blue-600 border-blue-600 text-white shadow-xl shadow-blue-600/20 z-10" 
-                                      : "bg-white border-slate-200 text-slate-500 hover:border-blue-600/30 shadow-sm"
+                                      ? "bg-blue-600 border-blue-600 text-white shadow-lg z-10" 
+                                      : "bg-white border-slate-100 text-slate-500 hover:border-blue-600/30 shadow-sm"
                                   )}
                                 >
-                                  <span className="text-xs font-medium truncate">
+                                  <span className="text-[9px] font-medium truncate">
                                     {item.role}
                                   </span>
                                 </button>
@@ -229,17 +228,19 @@ export function AchievementsSection() {
                                 side="top" 
                                 className="bg-white border-slate-200 p-6 rounded-2xl shadow-xl z-[100] min-w-[280px]"
                               >
-                                <div className="space-y-3">
-                                  <h4 className="text-sm font-semibold text-foreground leading-none">
-                                    {item.role}
-                                  </h4>
-                                  <p className="text-xs font-medium text-blue-600">
-                                    {item.org}
-                                  </p>
-                                  <div className="pt-2 border-t border-slate-100">
-                                    <p className="text-xs font-medium text-slate-400 leading-none">
-                                      {item.date}
+                                <div className="space-y-4">
+                                  <div className="space-y-1">
+                                    <h4 className="text-base font-semibold text-foreground leading-tight tracking-tight">
+                                      {item.role}
+                                    </h4>
+                                    <p className="text-sm font-medium text-blue-600 uppercase tracking-wider">
+                                      {item.org}
                                     </p>
+                                  </div>
+                                  <div className="pt-3 border-t border-slate-100">
+                                    <Badge variant="outline" className="text-[10px] font-semibold text-slate-500 px-3 py-1 uppercase tracking-wider">
+                                      {item.date}
+                                    </Badge>
                                   </div>
                                 </div>
                               </TooltipContent>
@@ -253,13 +254,13 @@ export function AchievementsSection() {
               </TooltipProvider>
 
               <div className="max-w-4xl mx-auto">
-                <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 space-y-6">
                   <div className="space-y-3">
                     <div className="flex items-center gap-4">
                       <div className="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
-                         <span className="text-xs font-medium text-blue-600">{selectedRole.org}</span>
+                         <span className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
                       </div>
-                      <span className="text-xs font-medium text-slate-400">{selectedRole.date}</span>
+                      <span className="text-xs font-medium text-slate-400 uppercase">{selectedRole.date}</span>
                     </div>
                     <h3 className="text-2xl font-semibold text-foreground tracking-tight">
                       {selectedRole.role}
@@ -269,7 +270,7 @@ export function AchievementsSection() {
                     </p>
                   </div>
 
-                  <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
                     {selectedRole.highlights.map((highlight, idx) => (
                       <div key={idx} className="flex gap-3">
                         <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
@@ -286,12 +287,12 @@ export function AchievementsSection() {
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedCerts.map((cert, idx) => (
-                  <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group">
+                  <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-lg hover:border-blue-600/20 group">
                     <CardContent className="p-0 flex items-center gap-6">
                       <div className="relative w-12 h-12 shrink-0">
                         <Image 
-                          src="/assets/images/emc.png" 
-                          alt="EMC Logo" 
+                          src="/assets/images/emcg.png" 
+                          alt="EMC Global" 
                           fill 
                           className="object-contain" 
                         />
@@ -299,8 +300,8 @@ export function AchievementsSection() {
                       <div className="flex-1 min-w-0">
                         <h4 className="text-sm font-semibold text-foreground tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
                         <div className="flex items-center justify-between">
-                          <p className="text-xs text-slate-400 font-medium truncate">{cert.issuer}</p>
-                          <span className="text-xs font-medium text-blue-600 shrink-0 ml-4">{cert.date}</span>
+                          <p className="text-xs text-slate-400 font-medium truncate uppercase">{cert.issuer}</p>
+                          <span className="text-xs font-semibold text-blue-600 shrink-0 ml-4 uppercase">{cert.date}</span>
                         </div>
                       </div>
                     </CardContent>
@@ -349,32 +350,32 @@ export function AchievementsSection() {
                 {awardsData.map((award, idx) => {
                   const imageData = PlaceHolderImages.find(img => img.id === award.imageId);
                   return (
-                    <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-700 hover:shadow-2xl hover:shadow-blue-600/5">
-                      <div className="relative aspect-[3/2] overflow-hidden bg-slate-50">
+                    <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-500 hover:shadow-xl">
+                      <div className="relative aspect-[4/5] overflow-hidden bg-slate-50">
                         {imageData && (
                           <Image 
                             src={imageData.imageUrl} 
                             alt={award.title}
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                            data-ai-hint="award ceremony"
+                            data-ai-hint={award.type}
                           />
                         )}
-                        <div className="absolute top-4 left-4">
-                          <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
-                            <span className="text-xs font-medium text-foreground">{award.type}</span>
+                        <div className="absolute top-6 left-6">
+                          <div className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
+                            <span className="text-[10px] font-bold text-foreground tracking-widest uppercase">{award.type}</span>
                           </div>
                         </div>
                       </div>
                       <CardContent className="p-8 space-y-4">
                         <div className="flex justify-between items-start gap-4">
                           <div className="space-y-1">
-                            <h4 className="text-base font-semibold text-foreground tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
+                            <h4 className="text-lg font-semibold text-foreground tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
                               {award.title}
                             </h4>
-                            <p className="text-xs text-slate-400 font-medium">{award.issuer}</p>
+                            <p className="text-xs text-slate-400 font-medium uppercase">{award.issuer}</p>
                           </div>
-                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-xs font-medium text-slate-500">
+                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
                             {award.year}
                           </span>
                         </div>
