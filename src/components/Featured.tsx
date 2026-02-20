@@ -71,7 +71,7 @@ export function Featured() {
 
   return (
     <section id="featured" className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 max-w-[1600px] mb-12">
+      <div className="container mx-auto px-6 max-w-7xl mb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4">
             <h2 className="text-4xl md:text-6xl font-black text-foreground tracking-tighter uppercase italic">
@@ -103,9 +103,9 @@ export function Featured() {
         </div>
       </div>
 
-      <div className="relative overflow-visible">
+      <div className="relative">
         <div className="overflow-visible" ref={emblaRef}>
-          <div className="flex -ml-4 md:-ml-8 items-center">
+          <div className="flex -ml-2 md:-ml-4">
             {featuredItems.map((item, idx) => {
               const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
               const isActive = selectedIndex === idx;
@@ -113,49 +113,53 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_75%] md:flex-[0_0_45%] lg:flex-[0_0_30%] pl-4 md:pl-8 py-10 transition-all duration-700 ease-premium"
+                  className="flex-[0_0_85%] md:flex-[0_0_75%] lg:flex-[0_0_65%] pl-2 md:pl-4 transition-all duration-700 ease-premium"
                   style={{
-                    transform: isActive ? 'scale(1.1)' : 'scale(0.75)',
-                    opacity: isActive ? 1 : 0.3,
+                    transform: isActive ? 'scale(1)' : 'scale(0.85)',
+                    opacity: isActive ? 1 : 0.4,
                   }}
                 >
                   <div className={cn(
-                    "relative group overflow-hidden rounded-[3rem] aspect-[4/5] bg-gray-100 shadow-xl transition-all duration-700",
-                    isActive ? "shadow-primary/20" : "shadow-none"
+                    "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 shadow-2xl transition-all duration-700",
+                    isActive ? "shadow-primary/10" : "shadow-none"
                   )}>
                     {imageData && (
                       <Image
                         src={imageData.imageUrl}
                         alt={item.title}
                         fill
-                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
                         data-ai-hint={imageData.imageHint}
+                        priority={idx === 0}
                       />
                     )}
                     
-                    {/* Dark gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
+                    {/* Dark gradient overlay for legibility - Anchored to bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
                     
-                    <div className="absolute inset-x-0 bottom-0 p-10 flex flex-col items-start">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className={cn("w-2.5 h-2.5 rounded-full", item.color, "animate-pulse")} />
-                        <p className="text-[11px] font-black text-white/60 uppercase tracking-[0.3em]">{item.tag}</p>
+                    <div className="absolute inset-x-0 bottom-0 p-6 md:p-12 flex flex-col items-start">
+                      <div className="flex items-center gap-3 mb-3 md:mb-6">
+                        <div className={cn("w-2 h-2 rounded-full", item.color, "animate-pulse")} />
+                        <p className="text-[10px] md:text-[11px] font-black text-white/60 uppercase tracking-[0.3em]">{item.tag}</p>
                       </div>
                       
-                      <h3 className="text-3xl md:text-5xl font-black text-white leading-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">
-                        {item.title}
-                      </h3>
-                      
-                      <p className="text-white/70 text-base md:text-lg font-medium mb-8 max-w-xs">
-                        {item.desc}
-                      </p>
-                      
-                      <Link href={`/impact/${item.id}`} className="mt-auto">
-                        <button className="h-14 px-10 rounded-full bg-white text-black text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-4 group/btn">
-                          {item.action}
-                          <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
-                        </button>
-                      </Link>
+                      <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 w-full justify-between">
+                        <div className="space-y-2 md:space-y-4 max-w-2xl">
+                          <h3 className="text-2xl md:text-5xl font-black text-white leading-tight uppercase italic tracking-tighter">
+                            {item.title}
+                          </h3>
+                          <p className="text-white/60 text-sm md:text-lg font-medium hidden md:block">
+                            {item.desc}
+                          </p>
+                        </div>
+                        
+                        <Link href={`/impact/${item.id}`} className="shrink-0">
+                          <button className="h-10 md:h-14 px-6 md:px-10 rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3 group/btn">
+                            {item.action}
+                            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover/btn:translate-x-1" />
+                          </button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
