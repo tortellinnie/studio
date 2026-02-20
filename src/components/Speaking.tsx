@@ -3,7 +3,7 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { Calendar, MapPin, Monitor, ArrowRight, ChevronLeft, ChevronRight, MessageSquarePlus } from 'lucide-react';
+import { Calendar, MapPin, Monitor, ChevronLeft, ChevronRight, MessageSquarePlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -49,16 +49,6 @@ const speakingData = [
     color: 'bg-purple-500',
     tag: 'Career',
     imageId: 'featured-aws-reinvent'
-  },
-  {
-    type: 'Talk',
-    title: 'Open Source Licensing & Version Control',
-    event: 'Hacktoberfest Philippines',
-    date: 'Oct 30, 2025',
-    location: 'NU - Las Piñas',
-    color: 'bg-blue-500',
-    tag: 'Automation',
-    imageId: 'featured-github-universe'
   }
 ];
 
@@ -117,7 +107,7 @@ export function Speaking() {
                       : "bg-white/50 border-gray-100 text-muted-foreground hover:border-primary/30"
                   )}
                 >
-                  #{cat}
+                  {cat}
                 </button>
               ))}
             </div>
@@ -164,7 +154,7 @@ export function Speaking() {
                     <div 
                       className={cn(
                         "group bg-white rounded-[3.5rem] border border-gray-100 overflow-hidden aspect-[4/6] flex flex-col transition-all duration-700 ease-premium",
-                        isActive ? "scale-100 opacity-100 shadow-2xl shadow-black/5" : "scale-[0.95] opacity-50 shadow-none"
+                        isActive ? "scale-100 shadow-2xl shadow-black/5" : "scale-[0.95] shadow-none"
                       )}
                     >
                       {/* Landscape Image Section (3:2) */}
@@ -178,13 +168,13 @@ export function Speaking() {
                             data-ai-hint="speaker on stage action shot"
                           />
                         )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
                       </div>
 
                       {/* Content Section */}
                       <div className="flex-1 p-8 md:p-10 flex flex-col justify-between">
                         <div className="space-y-6">
-                          {/* Saturated Tags for Better Contrast */}
+                          {/* Tags Section */}
                           <div className="flex items-center gap-2">
                             <div className={cn(
                               "inline-flex items-center gap-2 px-3 py-1.5 rounded-full border shadow-sm",
@@ -193,7 +183,7 @@ export function Speaking() {
                               <div className={cn("w-1.5 h-1.5 rounded-full", talk.color)} />
                               <span className="text-[9px] font-black uppercase tracking-[0.15em] text-foreground/80">{talk.type}</span>
                             </div>
-                            <span className="text-[8px] font-black text-primary uppercase tracking-[0.2em] opacity-40">#{talk.tag}</span>
+                            <span className="text-[8px] font-black text-primary uppercase tracking-[0.2em] opacity-40">{talk.tag}</span>
                           </div>
                           
                           <div className="space-y-4">
