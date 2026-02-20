@@ -73,7 +73,7 @@ export function Projects() {
     {
       id: 'birdseye',
       title: 'Birdseye',
-      description: 'Computer vision on edge devices detecting wet zones in litter to improve bird welfare and reduce emissions.',
+      description: 'Computer vision on edge devices detecting wet zones in litter to improve bird welfare.',
       tags: ['AI', 'Cloud & IoT'],
       sdgs: [2, 9, 12, 15],
       imageId: 'project-birdseye',
@@ -83,7 +83,7 @@ export function Projects() {
     {
       id: 'video-automation',
       title: 'Video Automation Engine',
-      description: 'Fully autonomous content generation pipeline using Docker, n8n, and Gemini AI for short-form media scale.',
+      description: 'Fully autonomous content generation pipeline using Docker, n8n, and Gemini AI.',
       tags: ['Automation', 'AI'],
       sdgs: [9],
       imageId: 'project-video-automation',
@@ -93,7 +93,7 @@ export function Projects() {
     {
       id: 'gabaydiwa',
       title: 'GabayDiwa',
-      description: 'Healthcare innovation system empowering caregivers with cognitive trend maps and dementia progression tracking.',
+      description: 'Healthcare system empowering caregivers with cognitive trend maps and dementia tracking.',
       tags: ['AI', 'Software Solutions'],
       sdgs: [3],
       imageId: 'project-gabaydiwa',
@@ -103,7 +103,7 @@ export function Projects() {
     {
       id: 'salayliwa',
       title: 'Salayliwa',
-      description: 'A personalized mobile reading app using Glicko-2 and Neural Networks to combat the national reading crisis.',
+      description: 'A personalized adaptive mobile reading app focused on the national literacy crisis.',
       tags: ['Software Solutions', 'AI'],
       sdgs: [4],
       imageId: 'project-salayliwa',
@@ -113,7 +113,7 @@ export function Projects() {
     {
       id: 'proxygen',
       title: 'Proxygen',
-      description: 'Proactive dissolved oxygen management system for pond aquaculture preventing mass fish kills through fuzzy logic.',
+      description: 'Dissolved oxygen management for aquaculture preventing mass fish kills through fuzzy logic.',
       tags: ['Cloud & IoT', 'AI'],
       sdgs: [2, 9, 12, 15],
       imageId: 'project-proxygen',
@@ -130,7 +130,7 @@ export function Projects() {
             <h2 className="text-4xl md:text-5xl font-medium text-foreground tracking-tighter uppercase italic">
               SELECTED PROJECTS
             </h2>
-            <p className="text-muted-foreground text-xs font-medium max-w-xl">
+            <p className="text-slate-500 text-xs font-medium max-w-xl uppercase tracking-widest">
               Architecting solutions at the intersection of AI, hardware, and social impact. 
             </p>
           </div>
@@ -143,11 +143,11 @@ export function Projects() {
               return (
                 <div 
                   key={project.id} 
-                  className="group relative flex flex-col bg-white rounded-[2rem] border border-gray-100 overflow-hidden transition-all duration-700 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1.5"
+                  className="group relative flex flex-col bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-blue-600/5 hover:-translate-y-1.5"
                 >
                   <Link href={`/projects/${project.id}`} className="absolute inset-0 z-0" aria-label={`View ${project.title}`} />
                   
-                  <div className="relative aspect-video overflow-hidden bg-gray-50 z-10 pointer-events-none group-hover:pointer-events-auto">
+                  <div className="relative aspect-video overflow-hidden bg-slate-50 z-10 pointer-events-none group-hover:pointer-events-auto">
                     {imageData && (
                       <Image 
                         src={imageData.imageUrl} 
@@ -177,11 +177,11 @@ export function Projects() {
                                 <SdgIcon className="w-3 h-3 text-white" />
                               </a>
                             </TooltipTrigger>
-                            <TooltipContent className="p-4 rounded-2xl max-w-[240px] bg-white shadow-2xl border-gray-100 z-[100]">
-                              <div className="space-y-1">
-                                <p className="text-[10px] font-black uppercase text-muted-foreground tracking-widest">Goal {id}</p>
-                                <p className="text-sm font-bold text-foreground leading-tight">{sdg.title}</p>
-                                <p className="text-[10px] text-muted-foreground font-medium leading-relaxed pt-1">{sdg.desc}</p>
+                            <TooltipContent className="p-5 rounded-[2rem] max-w-[280px] bg-white shadow-3xl border-slate-100 z-[100] backdrop-blur-xl">
+                              <div className="space-y-2">
+                                <p className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">Goal {id}</p>
+                                <p className="text-sm font-black text-foreground leading-tight uppercase italic tracking-tighter">{sdg.title}</p>
+                                <p className="text-[10px] text-slate-500 font-medium leading-relaxed pt-1">{sdg.desc}</p>
                               </div>
                             </TooltipContent>
                           </Tooltip>
@@ -190,49 +190,49 @@ export function Projects() {
                     </div>
 
                     <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                        <ArrowUpRight className="w-4 h-4 text-white" />
+                      <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                        <ArrowUpRight className="w-5 h-5 text-white" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-6 flex flex-col flex-grow relative z-20 pointer-events-none">
-                    <div className="flex flex-wrap gap-2 mb-3">
+                  <div className="p-8 flex flex-col flex-grow relative z-20 pointer-events-none">
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
-                        <div key={tag} className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/10 backdrop-blur-md border border-black/[0.05] shadow-sm">
-                          <div className="w-1 h-1 rounded-full bg-primary shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
-                          <span className="text-[8px] font-black uppercase tracking-[0.1em] text-foreground/60">{tag}</span>
+                        <div key={tag} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100">
+                          <div className="w-1 h-1 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
+                          <span className="text-[8px] font-black uppercase tracking-[0.15em] text-slate-500">{tag}</span>
                         </div>
                       ))}
                     </div>
 
-                    <h3 className="text-lg font-medium text-foreground uppercase italic tracking-tighter leading-tight mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-medium text-foreground uppercase italic tracking-tighter leading-tight mb-3 group-hover:text-blue-600 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground text-[11px] font-medium leading-relaxed line-clamp-2 mb-4">
+                    <p className="text-slate-500 text-[11px] font-medium leading-relaxed line-clamp-2 mb-6">
                       {project.description}
                     </p>
 
-                    <div className="flex gap-2 pt-2 mt-auto pointer-events-auto">
+                    <div className="flex gap-2 mt-auto pointer-events-auto">
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="h-7 text-[8px] font-black uppercase tracking-[0.2em] px-3 border-gray-100 hover:bg-gray-50 transition-colors"
+                        className="h-8 text-[9px] font-black uppercase tracking-widest px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
                         asChild
                       >
                         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                          <ExternalLink className="w-3 h-3 mr-1" />
+                          <ExternalLink className="w-3.5 h-3.5 mr-2 text-blue-600" />
                           Demo
                         </a>
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="h-7 text-[8px] font-black uppercase tracking-[0.2em] px-3 border-gray-100 hover:bg-gray-50 transition-colors"
+                        className="h-8 text-[9px] font-black uppercase tracking-widest px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
                         asChild
                       >
                         <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                          <Github className="w-3 h-3 mr-1" />
+                          <Github className="w-3.5 h-3.5 mr-2 text-slate-400" />
                           Code
                         </a>
                       </Button>
