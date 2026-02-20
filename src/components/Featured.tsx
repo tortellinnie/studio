@@ -71,7 +71,7 @@ export function Featured() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="featured" className="py-24 bg-white overflow-hidden">
+    <section id="featured" className="py-24 bg-transparent overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl mb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4">
@@ -114,7 +114,7 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_80%] md:flex-[0_0_50%] px-3 md:px-6"
+                  className="flex-[0_0_85%] md:flex-[0_0_65%] px-1 md:px-2"
                 >
                   <div className={cn(
                     "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 transition-all duration-700 ease-premium",
