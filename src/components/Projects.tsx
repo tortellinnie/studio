@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -31,7 +32,7 @@ export function Projects() {
       id: 'birdseye',
       title: 'Birdseye',
       description: 'Computer vision on edge devices detecting wet zones in litter to improve bird welfare and reduce emissions.',
-      tags: ['Computer Vision', 'Edge AI', 'IoT'],
+      tags: ['AI', 'Cloud & IoT'],
       sdgs: [2, 9, 12, 15],
       imageId: 'project-birdseye'
     },
@@ -39,7 +40,7 @@ export function Projects() {
       id: 'video-automation',
       title: 'Video Automation Engine',
       description: 'Fully autonomous content generation pipeline using Docker, n8n, and Gemini AI for short-form media scale.',
-      tags: ['Automation', 'Gemini AI', 'n8n'],
+      tags: ['Automation', 'AI'],
       sdgs: [9],
       imageId: 'project-video-automation'
     },
@@ -47,7 +48,7 @@ export function Projects() {
       id: 'gabaydiwa',
       title: 'GabayDiwa',
       description: 'Healthcare innovation system empowering caregivers with cognitive trend maps and dementia progression tracking.',
-      tags: ['AI', 'Software Solutions', 'Healthcare'],
+      tags: ['AI', 'Software Solutions'],
       sdgs: [3],
       imageId: 'project-gabaydiwa'
     },
@@ -55,7 +56,7 @@ export function Projects() {
       id: 'salayliwa',
       title: 'Salayliwa',
       description: 'A personalized mobile reading app using Glicko-2 and Neural Networks to combat the national reading crisis.',
-      tags: ['Next.js', 'AI', 'EduTech'],
+      tags: ['Software Solutions', 'AI'],
       sdgs: [4],
       imageId: 'project-salayliwa'
     },
@@ -63,14 +64,14 @@ export function Projects() {
       id: 'proxygen',
       title: 'Proxygen',
       description: 'Proactive dissolved oxygen management system for pond aquaculture preventing mass fish kills through fuzzy logic.',
-      tags: ['Fuzzy Logic', 'IoT', 'Cloud & IoT'],
+      tags: ['Cloud & IoT', 'AI'],
       sdgs: [2, 9, 12, 15],
       imageId: 'project-proxygen'
     }
   ];
 
   return (
-    <section id="projects" className="py-24 bg-transparent">
+    <section id="projects" className="py-24 bg-transparent overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <div className="space-y-3">
@@ -79,7 +80,6 @@ export function Projects() {
             </h2>
             <p className="text-muted-foreground text-sm font-medium max-w-xl">
               Architecting solutions at the intersection of AI, hardware, and social impact. 
-              Each project represents a commitment to technical excellence and community benefit.
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -90,7 +90,7 @@ export function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => {
             const imageData = PlaceHolderImages.find(img => img.id === project.imageId);
             return (
@@ -118,15 +118,15 @@ export function Projects() {
                       return (
                         <div 
                           key={id} 
-                          className={`w-9 h-9 rounded-xl ${sdgInfo[id].color} flex items-center justify-center shadow-lg transform group-hover:translate-y-1 transition-transform duration-500`}
+                          className={`w-8 h-8 rounded-xl ${sdgInfo[id].color} flex items-center justify-center shadow-lg transform group-hover:translate-y-1 transition-transform duration-500`}
                         >
-                          <SdgIcon className="w-5 h-5 text-white" />
+                          <SdgIcon className="w-4 h-4 text-white" />
                         </div>
                       );
                     })}
                   </div>
 
-                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500">
+                  <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                     <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
                       <ArrowUpRight className="w-5 h-5 text-white" />
                     </div>
@@ -136,9 +136,9 @@ export function Projects() {
                 <div className="p-10 flex flex-col flex-grow">
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map(tag => (
-                      <div key={tag} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10">
+                      <div key={tag} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-black/[0.05] shadow-sm">
                         <div className="w-1 h-1 rounded-full bg-primary shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
-                        <span className="text-[8px] font-black uppercase tracking-[0.1em] text-primary">{tag}</span>
+                        <span className="text-[8px] font-black uppercase tracking-[0.1em] text-foreground/60">{tag}</span>
                       </div>
                     ))}
                   </div>

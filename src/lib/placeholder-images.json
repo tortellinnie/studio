@@ -119,6 +119,36 @@
       "description": "GitHub Universe Recap",
       "imageUrl": "https://images.unsplash.com/photo-1631624215749-b10b3dd7bca7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50fGVufDB8fHx8MTc3MTQ0NDAyN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "software development"
+    },
+    {
+      "id": "project-birdseye",
+      "description": "Birdseye Poultry Management",
+      "imageUrl": "/assets/images/birdseye.png",
+      "imageHint": "agriculture tech"
+    },
+    {
+      "id": "project-video-automation",
+      "description": "Video Automation Engine",
+      "imageUrl": "/assets/images/automation.png",
+      "imageHint": "automation ai"
+    },
+    {
+      "id": "project-gabaydiwa",
+      "description": "GabayDiwa Healthcare",
+      "imageUrl": "/assets/images/gabaydiwa.png",
+      "imageHint": "healthcare ai"
+    },
+    {
+      "id": "project-salayliwa",
+      "description": "Salayliwa EduTech",
+      "imageUrl": "/assets/images/salayliwa.png",
+      "imageHint": "education tech"
+    },
+    {
+      "id": "project-proxygen",
+      "description": "Proxygen Aquaculture",
+      "imageUrl": "/assets/images/proxygen.png",
+      "imageHint": "aquaculture iot"
     }
   ]
 }
