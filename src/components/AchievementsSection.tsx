@@ -20,7 +20,7 @@ const leadershipData = [
     date: 'Sep 2021 – Jul 2023',
     role: 'ICT REPRESENTATIVE',
     org: 'PUPSHS COMELEC',
-    start: 8, // Months from Jan 2021
+    start: 8,
     duration: 22,
     summary: 'Spearheaded technical logistics for campus-wide elections, ensuring digital integrity and streamlined student representation.',
     highlights: [
@@ -152,19 +152,19 @@ export function AchievementsSection() {
             <TabsList className="bg-slate-100/50 p-1.5 rounded-full h-14 border border-slate-200">
               <TabsTrigger 
                 value="leadership" 
-                className="rounded-full px-8 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[11px] font-semibold uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Leadership
               </TabsTrigger>
               <TabsTrigger 
                 value="certs" 
-                className="rounded-full px-8 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[11px] font-semibold uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Certifications
               </TabsTrigger>
               <TabsTrigger 
                 value="awards" 
-                className="rounded-full px-8 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[11px] font-semibold uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Awards & Scholarships
               </TabsTrigger>
@@ -176,7 +176,6 @@ export function AchievementsSection() {
               <TooltipProvider delayDuration={0}>
                 <div className="relative pt-8 pb-12 overflow-x-auto custom-scrollbar">
                   <div className="min-w-[1800px] relative pb-16 px-4">
-                    {/* Month Vertical Ticks */}
                     <div className="absolute inset-x-0 top-0 bottom-16 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
@@ -186,21 +185,18 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
-                    {/* Base Timeline Line */}
                     <div className="absolute bottom-[48px] left-0 w-full h-[1.5px] bg-slate-300" />
 
-                    {/* Year Labels */}
                     <div className="absolute inset-x-0 bottom-0 h-6 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
-                          <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.4em] text-slate-900">
+                          <span className="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">
                             {y.label}
                           </span>
                         </div>
                       ))}
                     </div>
 
-                    {/* Gantt Bars Area - Thinner Bars */}
                     <div className="relative space-y-4 pt-4 min-h-[260px]">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
@@ -224,7 +220,7 @@ export function AchievementsSection() {
                                       : "bg-white border-slate-200 text-slate-500 hover:border-blue-600/30 shadow-sm"
                                   )}
                                 >
-                                  <span className="text-[9px] font-black uppercase tracking-widest truncate">
+                                  <span className="text-[9px] font-semibold uppercase tracking-widest truncate">
                                     {item.role}
                                   </span>
                                 </button>
@@ -234,14 +230,14 @@ export function AchievementsSection() {
                                 className="bg-white border-slate-200 p-6 rounded-2xl shadow-xl z-[100] min-w-[280px]"
                               >
                                 <div className="space-y-3">
-                                  <h4 className="text-[13px] font-black uppercase tracking-tight text-foreground leading-none">
+                                  <h4 className="text-[13px] font-bold uppercase tracking-tight text-foreground leading-none">
                                     {item.role}
                                   </h4>
-                                  <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">
+                                  <p className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest">
                                     {item.org}
                                   </p>
                                   <div className="pt-2 border-t border-slate-100">
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">
+                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest leading-none">
                                       {item.date}
                                     </p>
                                   </div>
@@ -256,15 +252,14 @@ export function AchievementsSection() {
                 </div>
               </TooltipProvider>
 
-              {/* Selected Role Summary - More Compact and Closer */}
               <div className="max-w-4xl mx-auto">
                 <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
                   <div className="space-y-3">
                     <div className="flex items-center gap-4">
                       <div className="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
-                         <span className="text-[9px] font-black text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
+                         <span className="text-[9px] font-semibold text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
                       </div>
-                      <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
+                      <span className="text-[9px] font-semibold text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
                     </div>
                     <h3 className="text-2xl font-medium text-foreground uppercase italic tracking-tighter">
                       {selectedRole.role}
@@ -302,10 +297,10 @@ export function AchievementsSection() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-[13px] font-black text-foreground uppercase tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
+                        <h4 className="text-[13px] font-semibold text-foreground uppercase tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
                         <div className="flex items-center justify-between">
-                          <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest truncate">{cert.issuer}</p>
-                          <span className="text-[9px] font-black text-blue-600 uppercase shrink-0 ml-4">{cert.date}</span>
+                          <p className="text-[9px] text-slate-400 font-semibold uppercase tracking-widest truncate">{cert.issuer}</p>
+                          <span className="text-[9px] font-semibold text-blue-600 uppercase shrink-0 ml-4">{cert.date}</span>
                         </div>
                       </div>
                     </CardContent>
@@ -367,7 +362,7 @@ export function AchievementsSection() {
                         )}
                         <div className="absolute top-4 left-4">
                           <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
-                            <span className="text-[9px] font-black text-foreground uppercase tracking-widest">{award.type}</span>
+                            <span className="text-[9px] font-semibold text-foreground uppercase tracking-widest">{award.type}</span>
                           </div>
                         </div>
                       </div>
@@ -377,9 +372,9 @@ export function AchievementsSection() {
                             <h4 className="text-base font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors">
                               {award.title}
                             </h4>
-                            <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{award.issuer}</p>
+                            <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-[0.15em]">{award.issuer}</p>
                           </div>
-                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[9px] font-black text-slate-500 uppercase tracking-widest">
+                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[9px] font-semibold text-slate-500 uppercase tracking-widest">
                             {award.year}
                           </span>
                         </div>

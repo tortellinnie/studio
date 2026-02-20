@@ -106,19 +106,19 @@ export function Hero() {
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
 
-              <div className="flex items-center gap-4 text-[13px] font-black uppercase tracking-[0.4em] text-foreground/40">
+              <div className="flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/40">
                 <span>SHANN KARL FELIPE • AI / LEADERSHIP</span>
               </div>
             </div>
             
             <div className="flex flex-wrap items-center gap-4">
-              <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-12 px-8 text-[10px] font-black uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
+              <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-12 px-8 text-[11px] font-bold uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
                 <Link href="/#contact">
                   Initiate Discussion
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="rounded-full h-12 px-8 text-[10px] font-black uppercase tracking-widest bg-white border-border hover:bg-gray-50 flex items-center gap-3" asChild>
+              <Button variant="outline" size="lg" className="rounded-full h-12 px-8 text-[11px] font-bold uppercase tracking-widest bg-white border-border hover:bg-gray-50 flex items-center gap-3" asChild>
                 <Link href="/resume">
                   <FileText className="w-4 h-4" />
                   Technical Resume
@@ -130,7 +130,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
               <div className="bg-white/50 backdrop-blur-sm px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
-                <span className="text-[8px] font-black uppercase tracking-[0.6em] text-primary">STRATEGIC LEADERSHIP</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">STRATEGIC LEADERSHIP</span>
               </div>
             </div>
 
@@ -151,10 +151,10 @@ export function Hero() {
                   </svg>
 
                   <div className="relative z-10">
-                    <h3 className="text-white text-[10px] font-black uppercase tracking-widest leading-tight mb-2">
+                    <h3 className="text-white text-[11px] font-semibold uppercase tracking-widest leading-tight mb-2">
                       {spec.title}
                     </h3>
-                    <p className="text-white/40 text-[8px] font-bold uppercase tracking-wider">
+                    <p className="text-white/40 text-[9px] font-medium uppercase tracking-wider">
                       {spec.desc}
                     </p>
                   </div>
@@ -176,7 +176,7 @@ export function Hero() {
                       <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
                         {stat.value}
                       </span>
-                      <p className="text-[9px] font-black uppercase tracking-[0.4em] text-muted-foreground/60 leading-tight">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/60 leading-tight">
                         {stat.label}
                       </p>
                     </button>
@@ -195,7 +195,7 @@ export function Hero() {
                         {stat.details.map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-6 last:border-0">
                             <span className="font-bold text-foreground/80 text-base">{item.name}</span>
-                            <Badge variant="outline" className="border-border text-muted-foreground text-[8px] font-black uppercase tracking-widest px-4 py-1.5">
+                            <Badge variant="outline" className="border-border text-muted-foreground text-[9px] font-semibold uppercase tracking-widest px-4 py-1.5">
                               {item.detail}
                             </Badge>
                           </div>

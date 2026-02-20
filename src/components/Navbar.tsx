@@ -58,7 +58,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[12px] font-bold text-black/50 hover:text-primary transition-all uppercase tracking-[0.3em] whitespace-nowrap relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary after:transition-all hover:after:w-full"
+              className="text-[11px] font-semibold text-black/60 hover:text-primary transition-all uppercase tracking-[0.12em] whitespace-nowrap relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary after:transition-all hover:after:w-full"
             >
               {item.label}
             </Link>
@@ -68,12 +68,12 @@ export function Navbar() {
         <div className="flex items-center gap-4 md:gap-8 shrink-0">
           <Link 
             href="/resume" 
-            className="hidden md:flex items-center gap-2.5 text-[12px] font-bold uppercase tracking-[0.2em] text-black/80 hover:text-primary transition-colors group"
+            className="hidden md:flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-black/80 hover:text-primary transition-colors group"
           >
-            <FileText className="w-4 h-4 text-black/40 group-hover:text-primary transition-colors" />
+            <FileText className="w-3.5 h-3.5 text-black/30 group-hover:text-primary transition-colors" />
             RESUME
           </Link>
-          <Button asChild className="rounded-full bg-primary text-white hover:bg-primary/90 h-11 px-10 text-[12px] font-black uppercase tracking-[0.3em] shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-primary/30 transition-all duration-300">
+          <Button asChild className="rounded-full bg-primary text-white hover:bg-primary/90 h-10 px-8 text-[11px] font-bold uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:shadow-primary/30 transition-all duration-300">
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0lY_shann_karl_felipe" target="_blank" rel="noopener noreferrer">Connect</a>
           </Button>
         </div>
