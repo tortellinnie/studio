@@ -95,10 +95,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-8 overflow-hidden bg-transparent">
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
-
+    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-8 overflow-hidden bg-transparent hero-glow">
       <div className="container mx-auto max-w-7xl relative z-10 flex flex-col h-full justify-between">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-10">
           <div className="space-y-10">
