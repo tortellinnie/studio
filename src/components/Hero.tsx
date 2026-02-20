@@ -130,7 +130,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
               <div className="bg-white/50 backdrop-blur-sm px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">Strategic Leadership</span>
+                <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">STRATEGIC LEADERSHIP</span>
               </div>
             </div>
 
