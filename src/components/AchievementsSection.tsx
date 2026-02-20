@@ -4,9 +4,10 @@
 import * as React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
-import { ExternalLink, Briefcase, Trophy, Globe, Code2, Terminal, ShieldCheck, Info, Calendar } from 'lucide-react';
+import { ExternalLink, Briefcase, Trophy, Globe, Code2, Terminal, ShieldCheck, Info, Calendar, ChevronLeft, ChevronRight, Cpu, Layout, Smartphone, Server } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Button } from '@/components/ui/button';
 
 // 2021 to 2026 = 6 years = 72 months
 // Index starts at 0 (Jan 2021)
@@ -68,10 +69,18 @@ const certificationData = [
   { name: 'IT Specialist - Python', issuer: 'Certiport', date: '2025', icon: Code2 },
   { name: 'OCI AI Foundations', issuer: 'Oracle', date: '2025', icon: Globe },
   { name: 'AI Associate', issuer: 'Salesforce', date: '2025', icon: ShieldCheck },
-  { name: 'GenAI Fundamentals', issuer: 'Databricks Academy', date: '2025', icon: Briefcase },
+  { name: 'GenAI Fundamentals', issuer: 'Databricks Academy', date: '2025', icon: Layout },
   { name: 'Network Security', issuer: 'The SecOps Group', date: '2025', icon: ShieldCheck },
-  { name: 'Android with Kotlin', issuer: 'LinkedIn Learning', date: '2025', icon: Code2 },
-  { name: 'MATLAB Professional', issuer: 'LinkedIn Learning', date: '2025', icon: Terminal }
+  { name: 'Android with Kotlin', issuer: 'LinkedIn Learning', date: '2025', icon: Smartphone },
+  { name: 'MATLAB Professional', issuer: 'LinkedIn Learning', date: '2025', icon: Terminal },
+  { name: 'Node.js Testing', issuer: 'LinkedIn Learning', date: '2025', icon: Server },
+  { name: 'IT Specialist - Java', issuer: 'Certiport', date: '2025', icon: Code2 },
+  { name: 'MS Summer Bootcamp', issuer: 'Microsoft', date: '2025', icon: Cpu },
+  { name: 'Cloud AI Literacy', issuer: 'Google Cloud', date: '2025', icon: Globe },
+  { name: 'Cybersecurity Ops', issuer: 'Cisco Academy', date: '2025', icon: ShieldCheck },
+  { name: 'Data Engineering', issuer: 'Datacamp', date: '2024', icon: Layout },
+  { name: 'Innovation Dev', issuer: 'Urban Youth Academy', date: '2025', icon: Briefcase },
+  { name: 'Technical Writing', issuer: 'FEU Tech ACM', date: '2024', icon: Terminal }
 ];
 
 const awardsData = [
@@ -93,7 +102,11 @@ const timelineYears = [
 ];
 
 export function AchievementsSection() {
-  const [activeRole, setActiveRole] = React.useState(leadershipData[0]);
+  const [activeRole, setActiveRole] = React.useState(leadershipData[leadershipData.length - 1]);
+  const [certPage, setCertPage] = React.useState(0);
+  const certsPerPage = 8;
+  const paginatedCerts = certificationData.slice(certPage * certsPerPage, (certPage + 1) * certsPerPage);
+  const totalCertPages = Math.ceil(certificationData.length / certsPerPage);
 
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-white">
@@ -141,79 +154,81 @@ export function AchievementsSection() {
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
             <div className="max-w-6xl mx-auto space-y-16">
               {/* Gantt Chart Implementation */}
-              <div className="relative pt-12 pb-20">
-                {/* Horizontal Baseline */}
-                <div className="absolute top-[calc(100%-40px)] left-0 w-full h-px bg-slate-200" />
-                
-                {/* Monthly Vertical Markers (Ticks) */}
-                <div className="absolute inset-x-0 bottom-[40px] h-full flex justify-between pointer-events-none px-4">
-                  {Array.from({ length: 73 }).map((_, i) => (
-                    <div key={i} className={cn(
-                      "w-px bg-slate-100/50",
-                      i % 12 === 0 ? "h-6 bg-slate-300" : "h-3"
-                    )} />
-                  ))}
-                </div>
+              <div className="relative pt-12 pb-20 overflow-x-auto custom-scrollbar">
+                <div className="min-w-[1000px] relative">
+                  {/* Horizontal Baseline */}
+                  <div className="absolute top-[calc(100%-40px)] left-0 w-full h-px bg-slate-200" />
+                  
+                  {/* Monthly Vertical Markers (Ticks) */}
+                  <div className="absolute inset-x-0 bottom-[40px] h-full flex justify-between pointer-events-none px-4">
+                    {Array.from({ length: 73 }).map((_, i) => (
+                      <div key={i} className={cn(
+                        "w-px bg-slate-100/50",
+                        i % 12 === 0 ? "h-6 bg-slate-300" : "h-3"
+                      )} />
+                    ))}
+                  </div>
 
-                {/* Year Labels */}
-                <div className="absolute inset-x-0 bottom-8 h-4 flex justify-between pointer-events-none px-4">
-                  {timelineYears.map((y) => (
-                    <div key={y.label} className="relative flex flex-col items-center">
-                      <span className="absolute top-4 whitespace-nowrap text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
-                        {y.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Gantt Bars */}
-                <div className="relative space-y-4 px-4 min-h-[280px]">
-                  {leadershipData.map((item) => {
-                    const left = (item.start / 72) * 100;
-                    const width = (item.duration / 72) * 100;
-                    const isActive = activeRole.id === item.id;
-
-                    return (
-                      <div key={item.id} className="relative h-12">
-                        <TooltipProvider delayDuration={0}>
-                          <Tooltip>
-                            <TooltipTrigger asChild>
-                              <button
-                                onClick={() => setActiveRole(item)}
-                                style={{ 
-                                  left: `${left}%`, 
-                                  width: `${width}%` 
-                                }}
-                                className={cn(
-                                  "absolute h-8 rounded-xl transition-all duration-500 border shadow-sm group overflow-hidden flex items-center px-4",
-                                  isActive 
-                                    ? cn(item.color, "border-white/20 shadow-xl shadow-blue-600/10 scale-[1.02] z-20") 
-                                    : "bg-slate-50 border-slate-100 hover:border-slate-300 z-10"
-                                )}
-                              >
-                                <div className={cn(
-                                  "w-1.5 h-1.5 rounded-full mr-3 shrink-0",
-                                  isActive ? "bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" : cn(item.color, "opacity-40")
-                                )} />
-                                <span className={cn(
-                                  "text-[9px] font-black uppercase tracking-widest truncate",
-                                  isActive ? "text-white" : "text-slate-400"
-                                )}>
-                                  {item.role}
-                                </span>
-                              </button>
-                            </TooltipTrigger>
-                            <TooltipContent 
-                              side="top" 
-                              className="bg-white border-slate-100 rounded-xl px-4 py-2 shadow-xl mb-2"
-                            >
-                              <p className="text-[10px] font-black uppercase tracking-widest text-blue-600">{item.date}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
+                  {/* Year Labels */}
+                  <div className="absolute inset-x-0 bottom-8 h-4 flex justify-between pointer-events-none px-4">
+                    {timelineYears.map((y) => (
+                      <div key={y.label} className="relative flex flex-col items-center">
+                        <span className="absolute top-4 whitespace-nowrap text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
+                          {y.label}
+                        </span>
                       </div>
-                    );
-                  })}
+                    ))}
+                  </div>
+
+                  {/* Gantt Bars */}
+                  <div className="relative space-y-4 px-4 min-h-[280px]">
+                    {leadershipData.map((item) => {
+                      const left = (item.start / 72) * 100;
+                      const width = (item.duration / 72) * 100;
+                      const isActive = activeRole.id === item.id;
+
+                      return (
+                        <div key={item.id} className="relative h-12">
+                          <TooltipProvider delayDuration={0}>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <button
+                                  onClick={() => setActiveRole(item)}
+                                  style={{ 
+                                    left: `${left}%`, 
+                                    width: `${width}%` 
+                                  }}
+                                  className={cn(
+                                    "absolute h-8 rounded-xl transition-all duration-500 border shadow-sm group overflow-hidden flex items-center px-4",
+                                    isActive 
+                                      ? cn(item.color, "border-white/20 shadow-xl shadow-blue-600/10 scale-[1.02] z-20") 
+                                      : "bg-slate-50 border-slate-100 hover:border-slate-300 z-10"
+                                  )}
+                                >
+                                  <div className={cn(
+                                    "w-1.5 h-1.5 rounded-full mr-3 shrink-0",
+                                    isActive ? "bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" : cn(item.color, "opacity-40")
+                                  )} />
+                                  <span className={cn(
+                                    "text-[9px] font-black uppercase tracking-widest truncate",
+                                    isActive ? "text-white" : "text-slate-400"
+                                  )}>
+                                    {item.role}
+                                  </span>
+                                </button>
+                              </TooltipTrigger>
+                              <TooltipContent 
+                                side="top" 
+                                className="bg-white border-slate-100 rounded-xl px-4 py-2 shadow-xl mb-2"
+                              >
+                                <p className="text-[10px] font-black uppercase tracking-widest text-blue-600">{item.date}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
@@ -252,24 +267,62 @@ export function AchievementsSection() {
           </TabsContent>
 
           <TabsContent value="certs" className="mt-0 focus-visible:outline-none">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {certificationData.map((cert, idx) => (
-                <Card key={idx} className="bg-white border-slate-200 rounded-3xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
-                  <CardContent className="p-0 flex flex-col items-center gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center transition-colors group-hover:bg-blue-600">
-                      <cert.icon className="w-8 h-8 text-blue-600 transition-colors group-hover:text-white" />
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="text-[11px] font-black text-foreground uppercase tracking-tight leading-tight">{cert.name}</h4>
-                      <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">{cert.issuer}</p>
-                      <div className="flex items-center justify-center gap-2 pt-2">
-                         <span className="text-[9px] font-black text-blue-600/40 uppercase">{cert.date}</span>
-                         <ExternalLink className="w-3 h-3 text-slate-300 group-hover:text-blue-600 transition-colors" />
+            <div className="space-y-12">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-in fade-in duration-500">
+                {paginatedCerts.map((cert, idx) => (
+                  <Card key={idx} className="bg-white border-slate-200 rounded-3xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
+                    <CardContent className="p-0 flex flex-col items-center gap-6">
+                      <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center transition-colors group-hover:bg-blue-600">
+                        <cert.icon className="w-8 h-8 text-blue-600 transition-colors group-hover:text-white" />
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                      <div className="space-y-2">
+                        <h4 className="text-[11px] font-black text-foreground uppercase tracking-tight leading-tight">{cert.name}</h4>
+                        <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">{cert.issuer}</p>
+                        <div className="flex items-center justify-center gap-2 pt-2">
+                          <span className="text-[9px] font-black text-blue-600/40 uppercase">{cert.date}</span>
+                          <ExternalLink className="w-3 h-3 text-slate-300 group-hover:text-blue-600 transition-colors" />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Pagination Controls */}
+              <div className="flex justify-center items-center gap-4">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="rounded-full w-10 h-10 border-slate-200 disabled:opacity-20"
+                  onClick={() => setCertPage(p => Math.max(0, p - 1))}
+                  disabled={certPage === 0}
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </Button>
+                
+                <div className="flex gap-2">
+                  {Array.from({ length: totalCertPages }).map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCertPage(i)}
+                      className={cn(
+                        "h-1.5 transition-all duration-500 rounded-full",
+                        i === certPage ? "w-8 bg-blue-600" : "w-2 bg-slate-200"
+                      )}
+                    />
+                  ))}
+                </div>
+
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="rounded-full w-10 h-10 border-slate-200 disabled:opacity-20"
+                  onClick={() => setCertPage(p => Math.min(totalCertPages - 1, p + 1))}
+                  disabled={certPage === totalCertPages - 1}
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+              </div>
             </div>
           </TabsContent>
 
