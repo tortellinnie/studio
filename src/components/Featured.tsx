@@ -12,14 +12,12 @@ import { Button } from '@/components/ui/button';
 
 export function Featured() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    loop: false, 
-    align: 'start',
-    containScroll: 'trimSnaps',
-    dragFree: true 
+    loop: true, 
+    align: 'center',
+    skipSnaps: false,
   });
   
-  const [canScrollPrev, setCanScrollPrev] = React.useState(false);
-  const [canScrollNext, setCanScrollNext] = React.useState(true);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const featuredItems = [
     {
@@ -61,8 +59,7 @@ export function Featured() {
   ];
 
   const onSelect = React.useCallback((api: any) => {
-    setCanScrollPrev(api.canScrollPrev());
-    setCanScrollNext(api.canScrollNext());
+    setSelectedIndex(api.selectedScrollSnap());
   }, []);
 
   React.useEffect(() => {
@@ -89,24 +86,16 @@ export function Featured() {
             <Button 
               variant="outline" 
               size="icon" 
-              className={cn(
-                "rounded-full w-12 h-12 border-gray-200 transition-all",
-                !canScrollPrev && "opacity-30 cursor-not-allowed"
-              )}
+              className="rounded-full w-12 h-12 border-gray-200 transition-all hover:bg-gray-50"
               onClick={() => emblaApi?.scrollPrev()}
-              disabled={!canScrollPrev}
             >
               <ChevronLeft className="w-5 h-5" />
             </Button>
             <Button 
               variant="outline" 
               size="icon" 
-              className={cn(
-                "rounded-full w-12 h-12 border-gray-200 transition-all",
-                !canScrollNext && "opacity-30 cursor-not-allowed"
-              )}
+              className="rounded-full w-12 h-12 border-gray-200 transition-all hover:bg-gray-50"
               onClick={() => emblaApi?.scrollNext()}
-              disabled={!canScrollNext}
             >
               <ChevronRight className="w-5 h-5" />
             </Button>
@@ -114,14 +103,26 @@ export function Featured() {
         </div>
       </div>
 
-      <div className="px-6 max-w-[1600px] mx-auto overflow-visible">
+      <div className="relative overflow-visible">
         <div className="overflow-visible" ref={emblaRef}>
-          <div className="flex -ml-6">
-            {featuredItems.map((item) => {
+          <div className="flex -ml-4 md:-ml-8 items-center">
+            {featuredItems.map((item, idx) => {
               const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
+              const isActive = selectedIndex === idx;
+              
               return (
-                <div key={item.id} className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_35%] pl-6">
-                  <div className="relative group overflow-hidden rounded-[2.5rem] aspect-[4/5] bg-gray-100 shadow-sm transition-all duration-700 hover:shadow-2xl">
+                <div 
+                  key={item.id} 
+                  className="flex-[0_0_80%] md:flex-[0_0_50%] lg:flex-[0_0_35%] pl-4 md:pl-8 py-10 transition-all duration-700 ease-premium"
+                  style={{
+                    transform: isActive ? 'scale(1.05)' : 'scale(0.9)',
+                    opacity: isActive ? 1 : 0.4,
+                  }}
+                >
+                  <div className={cn(
+                    "relative group overflow-hidden rounded-[3rem] aspect-[4/5] bg-gray-100 shadow-xl transition-all duration-700",
+                    isActive ? "shadow-primary/10" : "shadow-none"
+                  )}>
                     {imageData && (
                       <Image
                         src={imageData.imageUrl}
@@ -132,27 +133,27 @@ export function Featured() {
                       />
                     )}
                     
-                    {/* Dark gradient overlay for text legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                    {/* Dark gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
                     
                     <div className="absolute inset-x-0 bottom-0 p-10 flex flex-col items-start">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className={cn("w-2 h-2 rounded-full", item.color)} />
+                        <div className={cn("w-2.5 h-2.5 rounded-full", item.color, "animate-pulse")} />
                         <p className="text-[11px] font-black text-white/60 uppercase tracking-[0.3em]">{item.tag}</p>
                       </div>
                       
-                      <h3 className="text-3xl md:text-4xl font-black text-white leading-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">
+                      <h3 className="text-3xl md:text-5xl font-black text-white leading-tight mb-4 group-hover:translate-x-2 transition-transform duration-500">
                         {item.title}
                       </h3>
                       
-                      <p className="text-white/70 text-base font-medium mb-8 max-w-xs group-hover:text-white transition-colors">
+                      <p className="text-white/70 text-base md:text-lg font-medium mb-8 max-w-xs">
                         {item.desc}
                       </p>
                       
                       <Link href={`/impact/${item.id}`} className="mt-auto">
-                        <button className="h-12 px-8 rounded-full bg-white text-black text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3 group/btn">
+                        <button className="h-14 px-10 rounded-full bg-white text-black text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-4 group/btn">
                           {item.action}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                          <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
                         </button>
                       </Link>
                     </div>
@@ -162,6 +163,19 @@ export function Featured() {
             })}
           </div>
         </div>
+      </div>
+
+      <div className="flex justify-center gap-2 mt-12">
+        {featuredItems.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => emblaApi?.scrollTo(i)}
+            className={cn(
+              "h-1.5 transition-all duration-500 rounded-full",
+              i === selectedIndex ? "w-12 bg-primary" : "w-2 bg-gray-200"
+            )}
+          />
+        ))}
       </div>
     </section>
   );
