@@ -27,7 +27,7 @@ export function Featured() {
       desc: 'Supercharging ML Research with Google Infrastructure.',
       imageId: 'featured-tpu-research',
       action: 'Explore now',
-      color: 'bg-red-600'
+      color: 'bg-emerald-400'
     },
     {
       id: 'prompt-challenge',
@@ -36,7 +36,7 @@ export function Featured() {
       desc: 'Winning the National AI Prompt Design Challenge.',
       imageId: 'featured-prompt-challenge',
       action: 'Read story',
-      color: 'bg-blue-600'
+      color: 'bg-blue-400'
     },
     {
       id: 'aws-reinvent',
@@ -45,7 +45,7 @@ export function Featured() {
       desc: 'The All Builders Welcome Grant Experience.',
       imageId: 'featured-aws-reinvent',
       action: 'View recap',
-      color: 'bg-orange-600'
+      color: 'bg-orange-400'
     },
     {
       id: 'github-universe',
@@ -54,7 +54,7 @@ export function Featured() {
       desc: 'Deep diving into az:Repo and Copilot extensions.',
       imageId: 'featured-github-universe',
       action: 'See recap',
-      color: 'bg-green-600'
+      color: 'bg-green-400'
     }
   ];
 
@@ -74,11 +74,11 @@ export function Featured() {
       <div className="container mx-auto px-6 max-w-7xl mb-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-6xl font-black text-foreground tracking-tighter uppercase italic">
+            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tighter uppercase italic">
               Featured Impact<span className="text-primary">.</span>
             </h2>
-            <p className="text-muted-foreground text-lg font-medium max-w-xl">
-              Highlights from my technical research, leadership grants, and engineering milestones.
+            <p className="text-muted-foreground text-sm font-medium max-w-xl">
+              Highlights from technical research and engineering milestones.
             </p>
           </div>
           
@@ -86,18 +86,18 @@ export function Featured() {
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full w-12 h-12 border-gray-200 transition-all hover:bg-gray-50"
+              className="rounded-full w-10 h-10 border-gray-200 transition-all hover:bg-gray-50"
               onClick={() => emblaApi?.scrollPrev()}
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4" />
             </Button>
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full w-12 h-12 border-gray-200 transition-all hover:bg-gray-50"
+              className="rounded-full w-10 h-10 border-gray-200 transition-all hover:bg-gray-50"
               onClick={() => emblaApi?.scrollNext()}
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
         </div>
@@ -113,7 +113,7 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_75%] md:flex-[0_0_65%] lg:flex-[0_0_55%] pl-4 transition-all duration-700 ease-premium"
+                  className="flex-[0_0_70%] md:flex-[0_0_50%] lg:flex-[0_0_45%] pl-4 transition-all duration-700 ease-premium"
                   style={{
                     transform: isActive ? 'scale(1)' : 'scale(0.85)',
                     opacity: isActive ? 1 : 0.4,
@@ -134,28 +134,27 @@ export function Featured() {
                       />
                     )}
                     
-                    {/* Dark gradient overlay for legibility */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
                     
-                    <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
-                      <div className="flex flex-col md:flex-row items-end justify-between gap-6">
-                        <div className="space-y-2 md:space-y-4 flex-1">
-                          <div className="flex items-center gap-2 mb-2">
-                             <div className={cn("w-1.5 h-1.5 rounded-full", item.color)} />
-                             <p className="text-[10px] md:text-[11px] font-black text-white/60 uppercase tracking-[0.3em]">{item.tag}</p>
+                    <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
+                      <div className="flex items-end justify-between gap-6">
+                        <div className="space-y-1 md:space-y-3 flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                             <div className={cn("w-2 h-2 rounded-full", item.color)} />
+                             <p className="text-[9px] md:text-[10px] font-black text-white/70 uppercase tracking-[0.3em]">{item.tag}</p>
                           </div>
-                          <h3 className="text-2xl md:text-5xl font-black text-white leading-tight uppercase italic tracking-tighter">
+                          <h3 className="text-xl md:text-4xl font-black text-white leading-tight uppercase italic tracking-tighter">
                             {item.title}
                           </h3>
-                          <p className="text-white/60 text-sm md:text-base font-medium max-w-lg hidden md:block">
+                          <p className="text-white/50 text-[10px] md:text-xs font-medium max-w-sm hidden md:block">
                             {item.desc}
                           </p>
                         </div>
                         
-                        <Link href={`/impact/${item.id}`} className="shrink-0 mb-2">
-                          <button className="h-10 md:h-12 px-8 rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3 group/btn whitespace-nowrap">
+                        <Link href={`/impact/${item.id}`} className="shrink-0 mb-1">
+                          <button className="h-10 md:h-11 px-6 md:px-8 rounded-full bg-white text-black text-[9px] md:text-[10px] font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2.5 group/btn whitespace-nowrap">
                             {item.action}
-                            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover/btn:translate-x-1" />
+                            <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 transition-transform group-hover/btn:translate-x-1" />
                           </button>
                         </Link>
                       </div>
@@ -174,8 +173,8 @@ export function Featured() {
             key={i}
             onClick={() => emblaApi?.scrollTo(i)}
             className={cn(
-              "h-1.5 transition-all duration-500 rounded-full",
-              i === selectedIndex ? "w-12 bg-primary" : "w-2 bg-gray-200"
+              "h-1 transition-all duration-500 rounded-full",
+              i === selectedIndex ? "w-10 bg-primary" : "w-1.5 bg-gray-200"
             )}
           />
         ))}
