@@ -15,6 +15,7 @@ export function Featured() {
     loop: true, 
     align: 'center',
     skipSnaps: false,
+    duration: 30,
   });
   
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -27,7 +28,7 @@ export function Featured() {
       desc: 'Supercharging ML Research with Google Infrastructure.',
       imageId: 'featured-tpu-research',
       action: 'Explore now',
-      color: 'bg-emerald-400'
+      color: 'bg-[#22c55e]' // Emerald dot
     },
     {
       id: 'prompt-challenge',
@@ -36,7 +37,7 @@ export function Featured() {
       desc: 'Winning the National AI Prompt Design Challenge.',
       imageId: 'featured-prompt-challenge',
       action: 'Read story',
-      color: 'bg-blue-400'
+      color: 'bg-[#3b82f6]' // Blue dot
     },
     {
       id: 'aws-reinvent',
@@ -45,7 +46,7 @@ export function Featured() {
       desc: 'The All Builders Welcome Grant Experience.',
       imageId: 'featured-aws-reinvent',
       action: 'View recap',
-      color: 'bg-orange-400'
+      color: 'bg-[#f97316]' // Orange dot
     },
     {
       id: 'github-universe',
@@ -54,7 +55,7 @@ export function Featured() {
       desc: 'Deep diving into az:Repo and Copilot extensions.',
       imageId: 'featured-github-universe',
       action: 'See recap',
-      color: 'bg-green-400'
+      color: 'bg-[#10b981]' // Green dot
     }
   ];
 
@@ -105,7 +106,7 @@ export function Featured() {
 
       <div className="relative">
         <div className="overflow-visible" ref={emblaRef}>
-          <div className="flex -ml-4">
+          <div className="flex -ml-4 md:-ml-8">
             {featuredItems.map((item, idx) => {
               const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
               const isActive = selectedIndex === idx;
@@ -113,15 +114,15 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_70%] md:flex-[0_0_50%] lg:flex-[0_0_45%] pl-4 transition-all duration-700 ease-premium"
+                  className="flex-[0_0_85%] md:flex-[0_0_65%] pl-4 md:pl-8 transition-all duration-700 ease-premium"
                   style={{
                     transform: isActive ? 'scale(1)' : 'scale(0.85)',
-                    opacity: isActive ? 1 : 0.4,
+                    opacity: isActive ? 1 : 0.5,
                   }}
                 >
                   <div className={cn(
-                    "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 shadow-xl transition-all duration-700",
-                    isActive ? "shadow-primary/10" : "shadow-none"
+                    "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 transition-all duration-700",
+                    isActive ? "shadow-2xl shadow-black/10" : "shadow-none"
                   )}>
                     {imageData && (
                       <Image
@@ -134,27 +135,27 @@ export function Featured() {
                       />
                     )}
                     
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
                     
-                    <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
+                    <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                       <div className="flex items-end justify-between gap-6">
-                        <div className="space-y-1 md:space-y-3 flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                             <div className={cn("w-2 h-2 rounded-full", item.color)} />
-                             <p className="text-[9px] md:text-[10px] font-black text-white/70 uppercase tracking-[0.3em]">{item.tag}</p>
+                        <div className="space-y-2 md:space-y-4 flex-1">
+                          <div className="flex items-center gap-2.5 mb-1">
+                             <div className={cn("w-2 h-2 rounded-full", item.color, "shadow-[0_0_10px_rgba(255,255,255,0.2)]")} />
+                             <p className="text-[10px] md:text-[11px] font-black text-white/80 uppercase tracking-[0.3em]">{item.tag}</p>
                           </div>
-                          <h3 className="text-xl md:text-4xl font-black text-white leading-tight uppercase italic tracking-tighter">
+                          <h3 className="text-2xl md:text-5xl font-black text-white leading-tight uppercase italic tracking-tighter">
                             {item.title}
                           </h3>
-                          <p className="text-white/50 text-[10px] md:text-xs font-medium max-w-sm hidden md:block">
+                          <p className="text-white/60 text-[11px] md:text-sm font-medium max-w-lg hidden md:block">
                             {item.desc}
                           </p>
                         </div>
                         
                         <Link href={`/impact/${item.id}`} className="shrink-0 mb-1">
-                          <button className="h-10 md:h-11 px-6 md:px-8 rounded-full bg-white text-black text-[9px] md:text-[10px] font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2.5 group/btn whitespace-nowrap">
+                          <button className="h-10 md:h-12 px-6 md:px-10 rounded-full bg-white text-black text-[10px] md:text-[11px] font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3 group/btn whitespace-nowrap shadow-xl">
                             {item.action}
-                            <ArrowRight className="w-3.5 h-3.5 md:w-4 md:h-4 transition-transform group-hover/btn:translate-x-1" />
+                            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover/btn:translate-x-1" />
                           </button>
                         </Link>
                       </div>
@@ -167,14 +168,14 @@ export function Featured() {
         </div>
       </div>
 
-      <div className="flex justify-center gap-2 mt-12">
+      <div className="flex justify-center gap-3 mt-12">
         {featuredItems.map((_, i) => (
           <button
             key={i}
             onClick={() => emblaApi?.scrollTo(i)}
             className={cn(
-              "h-1 transition-all duration-500 rounded-full",
-              i === selectedIndex ? "w-10 bg-primary" : "w-1.5 bg-gray-200"
+              "h-1.5 transition-all duration-500 rounded-full",
+              i === selectedIndex ? "w-12 bg-primary" : "w-2 bg-gray-200"
             )}
           />
         ))}
