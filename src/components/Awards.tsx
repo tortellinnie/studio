@@ -31,7 +31,7 @@ export function Awards() {
   }, [emblaApi]);
 
   return (
-    <section id="awards" className="py-24 bg-white overflow-hidden">
+    <section id="awards" className="py-24 bg-transparent overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-row justify-between items-end mb-12 border-b border-gray-100 pb-10">
           <div className="space-y-2">

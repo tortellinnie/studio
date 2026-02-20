@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -85,7 +84,7 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-white">
+    <section id="projects" className="py-24 bg-transparent">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header with Pagination Controls */}
         <div className="flex flex-row justify-between items-end mb-12 border-b border-gray-100 pb-10">

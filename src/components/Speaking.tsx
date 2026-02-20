@@ -74,7 +74,7 @@ const speakingData = [
 
 export function Speaking() {
   return (
-    <section id="speaking" className="py-24 bg-white">
+    <section id="speaking" className="py-24 bg-transparent">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex justify-between items-end mb-12">
           <div className="space-y-2">
@@ -122,7 +122,7 @@ export function Speaking() {
           ))}
         </div>
 
-        <div className="bg-gray-50 rounded-[2.5rem] p-12 text-center border border-gray-100">
+        <div className="bg-white/50 backdrop-blur-sm rounded-[2.5rem] p-12 text-center border border-gray-100">
           <p className="text-muted-foreground font-medium mb-8">Interested in having me speak at your event?</p>
           <Button asChild className="bg-primary hover:bg-primary/90 text-white font-black uppercase tracking-widest text-xs h-12 px-10 rounded-full shadow-lg shadow-primary/20">
             <Link href="/#contact">Get in Touch</Link>

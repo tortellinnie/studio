@@ -18,7 +18,7 @@ export function Certifications() {
   ];
 
   return (
-    <section id="certifications" className="py-24 bg-white border-t border-gray-100">
+    <section id="certifications" className="py-24 bg-transparent border-t border-gray-100">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="mb-16">
           <Badge variant="outline" className="border-primary text-primary font-black uppercase tracking-[0.2em] mb-4">Credentials</Badge>
@@ -28,8 +28,8 @@ export function Certifications() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {certifications.map((cert, idx) => (
-            <div key={idx} className="group p-6 bg-gray-50 rounded-3xl border border-gray-100 hover:border-primary/20 transition-all duration-500 flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center border border-gray-200 mb-4 group-hover:bg-primary transition-all duration-500">
+            <div key={idx} className="group p-6 bg-white rounded-3xl border border-gray-100 hover:border-primary/20 transition-all duration-500 flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center border border-gray-200 mb-4 group-hover:bg-primary transition-all duration-500">
                 <cert.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xs font-black text-foreground uppercase tracking-tight leading-tight mb-1">{cert.title}</h3>

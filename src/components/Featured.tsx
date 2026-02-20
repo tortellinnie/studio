@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -44,7 +43,7 @@ export function Featured() {
   ];
 
   return (
-    <section id="featured" className="py-24 bg-white">
+    <section id="featured" className="py-24 bg-transparent">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">Featured Work</h2>

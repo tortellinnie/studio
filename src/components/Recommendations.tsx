@@ -25,7 +25,7 @@ export function Recommendations() {
   ];
 
   return (
-    <section id="recommendations" className="py-24 bg-gray-50 border-t border-gray-100 overflow-visible">
+    <section id="recommendations" className="py-24 bg-gray-50/50 backdrop-blur-sm border-t border-gray-100 overflow-visible">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-20 space-y-4">
           <h2 className="text-[11px] font-black text-primary uppercase tracking-[0.5em]">ENDORSEMENTS</h2>

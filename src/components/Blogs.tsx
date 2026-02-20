@@ -31,7 +31,7 @@ export function Blogs() {
   ];
 
   return (
-    <section id="blogs" className="py-24 bg-white border-t border-gray-100">
+    <section id="blogs" className="py-24 bg-transparent border-t border-gray-100">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex justify-between items-end mb-16">
           <div className="space-y-2">
