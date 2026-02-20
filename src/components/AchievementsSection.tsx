@@ -9,12 +9,7 @@ import {
   ExternalLink, 
   ChevronLeft, 
   ChevronRight, 
-  Calendar,
-  ShieldCheck,
-  Globe,
-  BookOpen,
-  Zap,
-  Microscope
+  Calendar
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -26,19 +21,17 @@ const leadershipData = [
     id: 'pupshs',
     date: 'Sep 2021 – Jul 2023',
     role: 'ICT Representative',
-    org: 'PUPSHS COMELEC · Manila',
+    org: 'PUPSHS COMELEC',
     start: 8, // Months from Jan 2021
     duration: 22,
-    icon: ShieldCheck
   },
   {
     id: 'agape',
     date: 'Feb 2024 – Present',
     role: 'President',
-    org: 'AGAPE PH0209 · Quezon City',
+    org: 'AGAPE PH0209',
     start: 37,
     duration: 35,
-    icon: Globe
   },
   {
     id: 'library',
@@ -47,25 +40,22 @@ const leadershipData = [
     org: 'FEU Institute of Technology',
     start: 43,
     duration: 29,
-    icon: BookOpen
   },
   {
     id: 'cram',
     date: 'Dec 2024 – Dec 2025',
     role: 'Lead Marketing Officer',
-    org: 'C-RAM Solutions · Hybrid',
+    org: 'C-RAM Solutions',
     start: 47,
     duration: 12,
-    icon: Zap
   },
   {
     id: 'nerds',
     date: 'Aug 2025 – Present',
     role: 'Executive Lead',
-    org: 'NERDS 2.0 · Hybrid',
+    org: 'NERDS 2.0',
     start: 55,
     duration: 17,
-    icon: Microscope
   }
 ];
 
@@ -99,11 +89,12 @@ const awardsData = [
 
 const timelineYears = [
   { label: '2021', pos: 0 },
-  { label: '2022', pos: 20 },
-  { label: '2023', pos: 40 },
-  { label: '2024', pos: 60 },
-  { label: '2025', pos: 80 },
-  { label: '2026', pos: 100 },
+  { label: '2022', pos: 16.66 },
+  { label: '2023', pos: 33.33 },
+  { label: '2024', pos: 50 },
+  { label: '2025', pos: 66.66 },
+  { label: '2026', pos: 83.33 },
+  { label: '2027', pos: 100 },
 ];
 
 export function AchievementsSection() {
@@ -111,8 +102,6 @@ export function AchievementsSection() {
   const certsPerPage = 8;
   const paginatedCerts = certificationData.slice(certPage * certsPerPage, (certPage + 1) * certsPerPage);
   const totalCertPages = Math.ceil(certificationData.length / certsPerPage);
-
-  const emcLogo = PlaceHolderImages.find(img => img.id === 'logo-emc');
 
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-white">
@@ -160,20 +149,20 @@ export function AchievementsSection() {
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
             <div className="max-w-6xl mx-auto">
               <TooltipProvider delayDuration={0}>
-                <div className="relative pt-12 pb-24 overflow-x-auto custom-scrollbar">
-                  <div className="min-w-[1200px] relative pb-16">
+                <div className="relative pt-12 pb-32 overflow-x-auto custom-scrollbar">
+                  <div className="min-w-[1200px] relative pb-20">
                     {/* Monthly Vertical Lines (72 months from 2021-2026) */}
-                    <div className="absolute inset-x-0 top-0 bottom-16 flex justify-between pointer-events-none px-4">
+                    <div className="absolute inset-x-0 top-0 bottom-20 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
-                          "w-px bg-slate-100/50",
-                          i % 12 === 0 ? "h-full bg-slate-200" : "h-full"
+                          "w-px bg-slate-100/50 h-full",
+                          i % 12 === 0 ? "bg-slate-200" : ""
                         )} />
                       ))}
                     </div>
 
                     {/* Horizontal Baseline */}
-                    <div className="absolute bottom-[64px] left-0 w-full h-px bg-slate-200" />
+                    <div className="absolute bottom-[80px] left-0 w-full h-px bg-slate-200" />
 
                     {/* Year Labels */}
                     <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
@@ -201,9 +190,9 @@ export function AchievementsSection() {
                                     left: `${left}%`, 
                                     width: `${width}%` 
                                   }}
-                                  className="absolute h-12 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center px-5 transition-all hover:border-blue-600/30 hover:shadow-lg hover:shadow-blue-600/5 group cursor-default"
+                                  className="absolute h-10 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center px-5 transition-all hover:border-blue-600/30 hover:shadow-lg hover:shadow-blue-600/5 group cursor-default"
                                 >
-                                  <div className="w-2 h-2 rounded-full mr-4 bg-slate-200 group-hover:bg-blue-600 transition-colors" />
+                                  <div className="w-1.5 h-1.5 rounded-full mr-4 bg-slate-200 group-hover:bg-blue-600 transition-colors" />
                                   <span className="text-[10px] font-black uppercase tracking-widest truncate text-slate-400 group-hover:text-foreground transition-colors">
                                     {item.role}
                                   </span>
@@ -211,20 +200,19 @@ export function AchievementsSection() {
                               </TooltipTrigger>
                               <TooltipContent 
                                 side="top" 
-                                sideOffset={10}
-                                className="bg-white border-slate-100 p-6 rounded-[2rem] shadow-3xl max-w-xs animate-in fade-in zoom-in-95 duration-200"
+                                sideOffset={15}
+                                className="bg-white border-slate-100 p-6 rounded-[2rem] shadow-3xl max-w-xs animate-in fade-in zoom-in-95 duration-200 z-[100]"
                               >
                                 <div className="space-y-4">
-                                  <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center">
-                                      <item.icon className="w-5 h-5 text-blue-600" />
-                                    </div>
-                                    <div className="space-y-0.5">
-                                      <h4 className="text-xs font-black uppercase italic tracking-tighter text-foreground leading-none">{item.role}</h4>
-                                      <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest">{item.org}</p>
-                                    </div>
+                                  <div className="space-y-1">
+                                    <h4 className="text-xs font-black uppercase italic tracking-tighter text-foreground leading-none">
+                                      {item.role}
+                                    </h4>
+                                    <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest">
+                                      {item.org}
+                                    </p>
                                   </div>
-                                  <div className="flex items-center gap-2 pt-1">
+                                  <div className="flex items-center gap-2 pt-1 border-t border-slate-50">
                                     <Calendar className="w-3.5 h-3.5 text-slate-300" />
                                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.date}</p>
                                   </div>
@@ -248,14 +236,12 @@ export function AchievementsSection() {
                   <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
                     <CardContent className="p-0 flex flex-col items-center gap-6">
                       <div className="relative w-16 h-16 grayscale group-hover:grayscale-0 transition-all duration-500">
-                        {emcLogo && (
-                          <Image 
-                            src={emcLogo.imageUrl} 
-                            alt="EMC Logo" 
-                            fill 
-                            className="object-contain" 
-                          />
-                        )}
+                        <Image 
+                          src="/assets/images/emc.png" 
+                          alt="EMC Logo" 
+                          fill 
+                          className="object-contain" 
+                        />
                       </div>
                       <div className="space-y-2">
                         <h4 className="text-[11px] font-black text-foreground uppercase tracking-tight leading-tight">{cert.name}</h4>
