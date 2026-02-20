@@ -113,15 +113,15 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_80%] md:flex-[0_0_50%] lg:flex-[0_0_35%] pl-4 md:pl-8 py-10 transition-all duration-700 ease-premium"
+                  className="flex-[0_0_75%] md:flex-[0_0_45%] lg:flex-[0_0_30%] pl-4 md:pl-8 py-10 transition-all duration-700 ease-premium"
                   style={{
-                    transform: isActive ? 'scale(1.05)' : 'scale(0.9)',
-                    opacity: isActive ? 1 : 0.4,
+                    transform: isActive ? 'scale(1.1)' : 'scale(0.75)',
+                    opacity: isActive ? 1 : 0.3,
                   }}
                 >
                   <div className={cn(
                     "relative group overflow-hidden rounded-[3rem] aspect-[4/5] bg-gray-100 shadow-xl transition-all duration-700",
-                    isActive ? "shadow-primary/10" : "shadow-none"
+                    isActive ? "shadow-primary/20" : "shadow-none"
                   )}>
                     {imageData && (
                       <Image
