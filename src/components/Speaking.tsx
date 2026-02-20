@@ -3,11 +3,29 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { Calendar, MapPin, ChevronLeft, ChevronRight, MessageSquarePlus } from 'lucide-react';
+import { 
+  Calendar, 
+  MapPin, 
+  ChevronLeft, 
+  ChevronRight, 
+  MessageSquarePlus, 
+  Presentation, 
+  ImagePlus,
+  Monitor,
+  ExternalLink
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import useEmblaCarousel from 'embla-carousel-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const speakingData = [
   {
@@ -18,7 +36,13 @@ const speakingData = [
     location: 'UNIVERSITY OF BATANGAS',
     color: 'bg-emerald-500',
     tag: 'AI',
-    imageId: 'featured-prompt-challenge'
+    imageId: 'featured-prompt-challenge',
+    slidesUrl: '#',
+    gallery: [
+      'https://picsum.photos/seed/speak1/800/600',
+      'https://picsum.photos/seed/speak2/800/600',
+      'https://picsum.photos/seed/speak3/800/600'
+    ]
   },
   {
     type: 'Talk',
@@ -28,7 +52,12 @@ const speakingData = [
     location: 'MICROSOFT OFFICE PHILIPPINES',
     color: 'bg-blue-500',
     tag: 'Automation',
-    imageId: 'featured-github-universe'
+    imageId: 'featured-github-universe',
+    slidesUrl: '#',
+    gallery: [
+      'https://picsum.photos/seed/speak4/800/600',
+      'https://picsum.photos/seed/speak5/800/600'
+    ]
   },
   {
     type: 'Talk',
@@ -38,7 +67,12 @@ const speakingData = [
     location: 'TUP - MANILA',
     color: 'bg-amber-500',
     tag: 'Cloud',
-    imageId: 'featured-tpu-research'
+    imageId: 'featured-tpu-research',
+    slidesUrl: '#',
+    gallery: [
+      'https://picsum.photos/seed/speak6/800/600',
+      'https://picsum.photos/seed/speak7/800/600'
+    ]
   },
   {
     type: 'Talk',
@@ -48,7 +82,11 @@ const speakingData = [
     location: 'ONLINE SESSION',
     color: 'bg-purple-500',
     tag: 'Career',
-    imageId: 'featured-aws-reinvent'
+    imageId: 'featured-aws-reinvent',
+    slidesUrl: '#',
+    gallery: [
+      'https://picsum.photos/seed/speak8/800/600'
+    ]
   }
 ];
 
@@ -66,11 +104,13 @@ export function Speaking() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const filteredData = React.useMemo(() => {
-    if (activeCategory === 'All') return speakingData;
-    return speakingData.filter(item => item.tag === activeCategory);
+    const base = speakingData.slice(0, 4);
+    if (activeCategory === 'All') return base;
+    return base.filter(item => item.tag === activeCategory);
   }, [activeCategory]);
 
   const onSelect = React.useCallback((api: any) => {
+    if (!api) return;
     setSelectedIndex(api.selectedScrollSnap());
   }, []);
 
@@ -155,7 +195,7 @@ export function Speaking() {
                 return (
                   <div 
                     key={idx} 
-                    className="flex-[0_0_85%] md:flex-[0_0_50%] lg:flex-[0_0_35%] pl-6"
+                    className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_35%] pl-6"
                   >
                     <div className="group bg-white rounded-[3.5rem] border border-slate-100 overflow-hidden flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-slate-200/50 h-full">
                       {/* Image Section - Landscape 3:2 */}
@@ -169,37 +209,86 @@ export function Speaking() {
                             data-ai-hint="speaker on stage action shot"
                           />
                         )}
+                        <div className="absolute top-4 left-4">
+                           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
+                             <div className={cn("w-1.5 h-1.5 rounded-full", talk.color)} />
+                             <span className="text-[8px] font-black uppercase tracking-[0.15em] text-slate-800">{talk.type}</span>
+                           </div>
+                        </div>
                       </div>
 
                       {/* Content Section */}
-                      <div className="flex-1 p-10 flex flex-col space-y-8">
-                        {/* Tags Section */}
-                        <div className="flex items-center gap-3">
-                          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-100 bg-slate-50/50">
-                            <div className={cn("w-1.5 h-1.5 rounded-full", talk.color)} />
-                            <span className="text-[9px] font-black uppercase tracking-[0.15em] text-slate-800">{talk.type}</span>
-                          </div>
-                          <span className="text-[9px] font-bold text-blue-600/50 uppercase tracking-[0.15em]">{talk.tag}</span>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          <h3 className="text-2xl font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors duration-500">
+                      <div className="flex-1 p-8 flex flex-col space-y-6">
+                        <div className="space-y-3">
+                          <h3 className="text-xl font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors duration-500">
                             {talk.title}
                           </h3>
-                          <p className="text-blue-600 font-bold uppercase tracking-[0.15em] text-[11px] leading-tight">
+                          <p className="text-blue-600 font-bold uppercase tracking-[0.15em] text-[10px] leading-tight">
                             {talk.event}
                           </p>
                         </div>
 
-                        <div className="space-y-3 pt-6 border-t border-slate-50 mt-auto">
+                        <div className="space-y-2.5">
                           <div className="flex items-center gap-3 text-slate-400">
-                            <Calendar className="w-4 h-4 text-blue-600/30 shrink-0" />
-                            <span className="text-[10px] font-black uppercase tracking-widest">{talk.date}</span>
+                            <Calendar className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
+                            <span className="text-[9px] font-black uppercase tracking-widest">{talk.date}</span>
                           </div>
                           <div className="flex items-center gap-3 text-slate-400">
-                            <MapPin className="w-4 h-4 text-blue-600/30 shrink-0" />
-                            <span className="text-[10px] font-black uppercase tracking-widest line-clamp-1">{talk.location}</span>
+                            <MapPin className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
+                            <span className="text-[9px] font-black uppercase tracking-widest line-clamp-1">{talk.location}</span>
                           </div>
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="flex gap-2 pt-4 mt-auto">
+                          <Button 
+                            variant="outline" 
+                            size="sm" 
+                            className="flex-1 h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-black uppercase tracking-widest gap-2"
+                            asChild
+                          >
+                            <a href={talk.slidesUrl} target="_blank">
+                              <Presentation className="w-3.5 h-3.5 text-blue-600" />
+                              Slides
+                            </a>
+                          </Button>
+                          
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button 
+                                variant="outline" 
+                                size="sm" 
+                                className="flex-1 h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-black uppercase tracking-widest gap-2"
+                              >
+                                <ImagePlus className="w-3.5 h-3.5 text-slate-400" />
+                                Gallery
+                              </Button>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-4xl bg-white border-slate-200 rounded-[2.5rem] p-0 overflow-hidden shadow-3xl">
+                              <div className="p-8 border-b border-slate-100 bg-slate-50/50">
+                                <DialogHeader>
+                                  <DialogTitle className="text-2xl font-medium uppercase italic tracking-tighter text-foreground">
+                                    Event Gallery: <span className="text-blue-600">{talk.title}</span>
+                                  </DialogTitle>
+                                </DialogHeader>
+                              </div>
+                              <ScrollArea className="max-h-[70vh] p-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                  {talk.gallery.map((img, i) => (
+                                    <div key={i} className="relative aspect-video rounded-2xl overflow-hidden border border-slate-100 group/img">
+                                      <Image 
+                                        src={img} 
+                                        alt={`Gallery image ${i + 1}`} 
+                                        fill 
+                                        className="object-cover transition-transform duration-500 group-hover/img:scale-105"
+                                        data-ai-hint="speaker on stage action"
+                                      />
+                                    </div>
+                                  ))}
+                                </div>
+                              </ScrollArea>
+                            </DialogContent>
+                          </Dialog>
                         </div>
                       </div>
                     </div>
