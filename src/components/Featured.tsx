@@ -105,7 +105,7 @@ export function Featured() {
 
       <div className="relative">
         <div className="overflow-visible" ref={emblaRef}>
-          <div className="flex -ml-2 md:-ml-4">
+          <div className="flex -ml-4">
             {featuredItems.map((item, idx) => {
               const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
               const isActive = selectedIndex === idx;
@@ -113,14 +113,14 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_85%] md:flex-[0_0_75%] lg:flex-[0_0_65%] pl-2 md:pl-4 transition-all duration-700 ease-premium"
+                  className="flex-[0_0_75%] md:flex-[0_0_65%] lg:flex-[0_0_55%] pl-4 transition-all duration-700 ease-premium"
                   style={{
                     transform: isActive ? 'scale(1)' : 'scale(0.85)',
                     opacity: isActive ? 1 : 0.4,
                   }}
                 >
                   <div className={cn(
-                    "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 shadow-2xl transition-all duration-700",
+                    "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 shadow-xl transition-all duration-700",
                     isActive ? "shadow-primary/10" : "shadow-none"
                   )}>
                     {imageData && (
@@ -129,32 +129,31 @@ export function Featured() {
                         alt={item.title}
                         fill
                         className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                        data-ai-hint={imageData.imageHint}
+                        data-ai-hint={item.tag}
                         priority={idx === 0}
                       />
                     )}
                     
-                    {/* Dark gradient overlay for legibility - Anchored to bottom */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
+                    {/* Dark gradient overlay for legibility */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     
-                    <div className="absolute inset-x-0 bottom-0 p-6 md:p-12 flex flex-col items-start">
-                      <div className="flex items-center gap-3 mb-3 md:mb-6">
-                        <div className={cn("w-2 h-2 rounded-full", item.color, "animate-pulse")} />
-                        <p className="text-[10px] md:text-[11px] font-black text-white/60 uppercase tracking-[0.3em]">{item.tag}</p>
-                      </div>
-                      
-                      <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 w-full justify-between">
-                        <div className="space-y-2 md:space-y-4 max-w-2xl">
+                    <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                      <div className="flex flex-col md:flex-row items-end justify-between gap-6">
+                        <div className="space-y-2 md:space-y-4 flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                             <div className={cn("w-1.5 h-1.5 rounded-full", item.color)} />
+                             <p className="text-[10px] md:text-[11px] font-black text-white/60 uppercase tracking-[0.3em]">{item.tag}</p>
+                          </div>
                           <h3 className="text-2xl md:text-5xl font-black text-white leading-tight uppercase italic tracking-tighter">
                             {item.title}
                           </h3>
-                          <p className="text-white/60 text-sm md:text-lg font-medium hidden md:block">
+                          <p className="text-white/60 text-sm md:text-base font-medium max-w-lg hidden md:block">
                             {item.desc}
                           </p>
                         </div>
                         
-                        <Link href={`/impact/${item.id}`} className="shrink-0">
-                          <button className="h-10 md:h-14 px-6 md:px-10 rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3 group/btn">
+                        <Link href={`/impact/${item.id}`} className="shrink-0 mb-2">
+                          <button className="h-10 md:h-12 px-8 rounded-full bg-white text-black text-[10px] md:text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3 group/btn whitespace-nowrap">
                             {item.action}
                             <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover/btn:translate-x-1" />
                           </button>
