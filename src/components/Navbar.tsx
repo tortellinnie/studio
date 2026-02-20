@@ -74,7 +74,7 @@ export function Navbar() {
             RESUME
           </Link>
           <Button asChild className="rounded-full bg-primary text-white hover:bg-primary/90 h-11 px-10 text-[12px] font-black uppercase tracking-[0.3em] shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-primary/30 transition-all duration-300">
-            <Link href="/#contact">Connect</Link>
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0lY_shann_karl_felipe" target="_blank" rel="noopener noreferrer">Connect</a>
           </Button>
         </div>
       </div>

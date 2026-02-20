@@ -38,6 +38,36 @@ const blogItems = [
     readTime: '12 MIN READ',
     imageId: 'featured-tpu-research',
     color: 'bg-purple-500'
+  },
+  {
+    id: 'distributed-iot',
+    tag: 'SYSTEMS',
+    title: 'DISTRIBUTED SYSTEMS FOR IOT EDGE NODES',
+    excerpt: 'Managing state and reliability in heterogeneous IoT environments using lightweight consensus protocols.',
+    date: 'JUL 2025',
+    readTime: '10 MIN READ',
+    imageId: 'featured-aws-reinvent',
+    color: 'bg-orange-500'
+  },
+  {
+    id: 'birdseye-deep-dive',
+    tag: 'COMPUTER VISION',
+    title: 'BIRDSEYE: COMPUTER VISION IN POULTRY',
+    excerpt: 'A technical deep dive into the Birdseye architecture, from sensor fusion to real-time inference on the edge.',
+    date: 'JUN 2025',
+    readTime: '15 MIN READ',
+    imageId: 'project-birdseye',
+    color: 'bg-cyan-500'
+  },
+  {
+    id: 'prompt-eng-future',
+    tag: 'AI ENGINEERING',
+    title: 'THE FUTURE OF PROMPT ENGINEERING',
+    excerpt: 'How LLMs are evolving to handle complex, multi-modal reasonings through advanced prompt orchestration.',
+    date: 'MAY 2025',
+    readTime: '7 MIN READ',
+    imageId: 'featured-prompt-challenge',
+    color: 'bg-rose-500'
   }
 ];
 
