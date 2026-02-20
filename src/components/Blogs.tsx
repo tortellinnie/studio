@@ -83,9 +83,6 @@ export function Blogs() {
           </div>
           
           <div className="flex items-center gap-6">
-            <Link href="#" className="hidden md:block text-[10px] font-black uppercase tracking-widest text-primary hover:opacity-80 transition-opacity">
-              View All Articles →
-            </Link>
             <div className="flex gap-2">
               <Button 
                 variant="outline" 
@@ -122,8 +119,8 @@ export function Blogs() {
                 >
                   <Link href={`/blogs/${item.id}`} className="block group">
                     <div className={cn(
-                      "relative overflow-hidden rounded-[3rem] aspect-[2/3] bg-gray-100 transition-all duration-700 ease-premium",
-                      isActive ? "scale-100 opacity-100 shadow-2xl shadow-black/10" : "scale-[0.95] opacity-50 shadow-none"
+                      "relative overflow-hidden rounded-[3rem] aspect-[2/3] bg-gray-100 transition-all duration-700 ease-premium shadow-xl shadow-black/5",
+                      isActive ? "scale-100 shadow-2xl shadow-black/10" : "scale-[0.95]"
                     )}>
                       {imageData && (
                         <Image

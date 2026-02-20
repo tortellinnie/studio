@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -196,18 +195,20 @@ export function AchievementsSection() {
                               <TooltipContent 
                                 side="top" 
                                 sideOffset={12}
-                                className="bg-white border-slate-200 p-5 rounded-2xl shadow-xl max-w-xs z-[100]"
+                                className="bg-white border-slate-200 p-6 rounded-2xl shadow-xl max-w-xs z-[100]"
                               >
-                                <div className="space-y-2">
-                                  <h4 className="text-[11px] font-black uppercase italic tracking-tighter text-foreground leading-none">
+                                <div className="space-y-3">
+                                  <h4 className="text-[13px] font-black uppercase tracking-tight text-foreground leading-none">
                                     {item.role}
                                   </h4>
-                                  <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest">
+                                  <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">
                                     {item.org}
                                   </p>
-                                  <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest pt-1 border-t border-slate-100">
-                                    {item.date}
-                                  </p>
+                                  <div className="pt-2 border-t border-slate-100">
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">
+                                      {item.date}
+                                    </p>
+                                  </div>
                                 </div>
                               </TooltipContent>
                             </Tooltip>
