@@ -74,7 +74,7 @@ export function Projects() {
       id: 'birdseye',
       title: 'Birdseye',
       description: 'Computer vision on edge devices detecting wet zones in litter to improve bird welfare.',
-      tags: ['AI', 'Cloud & IoT'],
+      tags: ['AI', 'CLOUD & IOT'],
       sdgs: [2, 9, 12, 15],
       imageId: 'project-birdseye',
       demoUrl: '#',
@@ -84,7 +84,7 @@ export function Projects() {
       id: 'video-automation',
       title: 'Video Automation Engine',
       description: 'Fully autonomous content generation pipeline using Docker, n8n, and Gemini AI.',
-      tags: ['Automation', 'AI'],
+      tags: ['AUTOMATION', 'AI'],
       sdgs: [9],
       imageId: 'project-video-automation',
       demoUrl: '#',
@@ -94,7 +94,7 @@ export function Projects() {
       id: 'gabaydiwa',
       title: 'GabayDiwa',
       description: 'Healthcare system empowering caregivers with cognitive trend maps and dementia tracking.',
-      tags: ['AI', 'Software Solutions'],
+      tags: ['AI', 'SOFTWARE SOLUTIONS'],
       sdgs: [3],
       imageId: 'project-gabaydiwa',
       demoUrl: '#',
@@ -103,8 +103,8 @@ export function Projects() {
     {
       id: 'salayliwa',
       title: 'Salayliwa',
-      description: 'A personalized adaptive mobile reading app focused on the national literacy crisis.',
-      tags: ['Software Solutions', 'AI'],
+      description: 'A personalized adaptive mobile reading app focused on the national literacy challenge.',
+      tags: ['SOFTWARE SOLUTIONS', 'AI'],
       sdgs: [4],
       imageId: 'project-salayliwa',
       demoUrl: '#',
@@ -114,7 +114,7 @@ export function Projects() {
       id: 'proxygen',
       title: 'Proxygen',
       description: 'Dissolved oxygen management for aquaculture preventing mass fish kills through fuzzy logic.',
-      tags: ['Cloud & IoT', 'AI'],
+      tags: ['CLOUD & IOT', 'AI'],
       sdgs: [2, 9, 12, 15],
       imageId: 'project-proxygen',
       demoUrl: '#',
@@ -127,10 +127,10 @@ export function Projects() {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
           <div className="space-y-3">
-            <h2 className="text-4xl md:text-5xl font-medium text-foreground tracking-tighter uppercase">
-              SELECTED PROJECTS
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
+              Selected Projects
             </h2>
-            <p className="text-slate-500 text-xs font-medium max-w-xl uppercase tracking-widest">
+            <p className="text-slate-500 text-sm font-medium max-w-xl">
               Architecting solutions at the intersection of AI, hardware, and social impact. 
             </p>
           </div>
@@ -179,9 +179,9 @@ export function Projects() {
                             </TooltipTrigger>
                             <TooltipContent className="p-5 rounded-[2rem] max-w-[280px] bg-white shadow-3xl border-slate-100 z-[100] backdrop-blur-xl">
                               <div className="space-y-2">
-                                <p className="text-[10px] font-medium uppercase text-slate-400 tracking-[0.2em]">Goal {id}</p>
-                                <p className="text-sm font-medium text-foreground leading-tight uppercase tracking-tighter">{sdg.title}</p>
-                                <p className="text-[10px] text-slate-500 font-medium leading-relaxed pt-1">{sdg.desc}</p>
+                                <p className="text-[10px] font-medium uppercase text-slate-400 tracking-widest">Goal {id}</p>
+                                <p className="text-sm font-semibold text-foreground leading-tight">{sdg.title}</p>
+                                <p className="text-[11px] text-slate-500 font-medium leading-relaxed pt-1">{sdg.desc}</p>
                               </div>
                             </TooltipContent>
                           </Tooltip>
@@ -201,15 +201,15 @@ export function Projects() {
                       {project.tags.map(tag => (
                         <div key={tag} className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100">
                           <div className="w-1 h-1 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
-                          <span className="text-[8px] font-medium uppercase tracking-[0.15em] text-slate-500">{tag}</span>
+                          <span className="text-[9px] font-semibold uppercase tracking-wider text-slate-500">{tag}</span>
                         </div>
                       ))}
                     </div>
 
-                    <h3 className="text-xl font-medium text-foreground uppercase tracking-tighter leading-tight mb-3 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-semibold text-foreground leading-tight mb-3 group-hover:text-blue-600 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-slate-500 text-[11px] font-medium leading-relaxed line-clamp-2 mb-6">
+                    <p className="text-slate-500 text-sm font-medium leading-relaxed line-clamp-2 mb-6">
                       {project.description}
                     </p>
 
@@ -217,7 +217,7 @@ export function Projects() {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="h-8 text-[9px] font-medium uppercase tracking-widest px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
+                        className="h-9 text-[10px] font-semibold uppercase tracking-widest px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
                         asChild
                       >
                         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
@@ -228,7 +228,7 @@ export function Projects() {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="h-8 text-[9px] font-medium uppercase tracking-widest px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
+                        className="h-9 text-[10px] font-semibold uppercase tracking-widest px-4 border-slate-100 hover:bg-slate-50 transition-colors rounded-xl"
                         asChild
                       >
                         <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>

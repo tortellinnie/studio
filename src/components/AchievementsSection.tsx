@@ -171,7 +171,6 @@ export function AchievementsSection() {
               <TooltipProvider delayDuration={0}>
                 <div className="relative pt-8 pb-10 overflow-x-auto custom-scrollbar">
                   <div className="min-w-[1800px] relative pb-12 px-4">
-                    {/* Vertical Year Markers */}
                     <div className="absolute inset-x-0 top-0 bottom-12 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
@@ -181,10 +180,8 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
-                    {/* Timeline Line */}
                     <div className="absolute bottom-[40px] left-0 w-full h-[1px] bg-slate-200" />
 
-                    {/* Year Labels */}
                     <div className="absolute inset-x-0 bottom-0 h-6 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
@@ -195,7 +192,6 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
-                    {/* Bars Container */}
                     <div className="relative space-y-2 pt-4">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
@@ -233,12 +229,12 @@ export function AchievementsSection() {
                                     <h4 className="text-base font-semibold text-foreground leading-tight tracking-tight">
                                       {item.role}
                                     </h4>
-                                    <p className="text-sm font-medium text-blue-600 uppercase tracking-wider">
+                                    <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest">
                                       {item.org}
                                     </p>
                                   </div>
                                   <div className="pt-3 border-t border-slate-100">
-                                    <Badge variant="outline" className="text-[10px] font-semibold text-slate-500 px-3 py-1 uppercase tracking-wider">
+                                    <Badge variant="outline" className="text-[10px] font-semibold text-slate-500 px-3 py-1 uppercase tracking-widest">
                                       {item.date}
                                     </Badge>
                                   </div>
@@ -260,7 +256,7 @@ export function AchievementsSection() {
                       <div className="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
                          <span className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
                       </div>
-                      <span className="text-xs font-medium text-slate-400 uppercase">{selectedRole.date}</span>
+                      <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
                     </div>
                     <h3 className="text-2xl font-semibold text-foreground tracking-tight">
                       {selectedRole.role}
@@ -300,8 +296,8 @@ export function AchievementsSection() {
                       <div className="flex-1 min-w-0">
                         <h4 className="text-sm font-semibold text-foreground tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
                         <div className="flex items-center justify-between">
-                          <p className="text-xs text-slate-400 font-medium truncate uppercase">{cert.issuer}</p>
-                          <span className="text-xs font-semibold text-blue-600 shrink-0 ml-4 uppercase">{cert.date}</span>
+                          <p className="text-[10px] text-slate-400 font-semibold truncate uppercase tracking-widest">{cert.issuer}</p>
+                          <span className="text-[10px] font-semibold text-blue-600 shrink-0 ml-4 uppercase tracking-widest">{cert.date}</span>
                         </div>
                       </div>
                     </CardContent>
@@ -351,7 +347,7 @@ export function AchievementsSection() {
                   const imageData = PlaceHolderImages.find(img => img.id === award.imageId);
                   return (
                     <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-500 hover:shadow-xl">
-                      <div className="relative aspect-[4/5] overflow-hidden bg-slate-50">
+                      <div className="relative aspect-square overflow-hidden bg-slate-50">
                         {imageData && (
                           <Image 
                             src={imageData.imageUrl} 
@@ -363,7 +359,7 @@ export function AchievementsSection() {
                         )}
                         <div className="absolute top-6 left-6">
                           <div className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
-                            <span className="text-[10px] font-bold text-foreground tracking-widest uppercase">{award.type}</span>
+                            <span className="text-[9px] font-semibold text-foreground tracking-widest uppercase">{award.type}</span>
                           </div>
                         </div>
                       </div>
@@ -373,7 +369,7 @@ export function AchievementsSection() {
                             <h4 className="text-lg font-semibold text-foreground tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
                               {award.title}
                             </h4>
-                            <p className="text-xs text-slate-400 font-medium uppercase">{award.issuer}</p>
+                            <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-widest">{award.issuer}</p>
                           </div>
                           <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
                             {award.year}
