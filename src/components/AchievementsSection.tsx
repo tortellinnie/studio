@@ -5,13 +5,9 @@ import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
-  ExternalLink, 
   ChevronLeft, 
   ChevronRight,
-  Trophy,
-  ArrowUpRight,
-  CheckCircle2,
-  Calendar
+  CheckCircle2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -152,7 +148,7 @@ export function AchievementsSection() {
         </div>
 
         <Tabs defaultValue="leadership" className="w-full">
-          <div className="flex justify-center mb-16">
+          <div className="flex justify-center mb-10">
             <TabsList className="bg-slate-100/50 p-1.5 rounded-full h-14 border border-slate-200">
               <TabsTrigger 
                 value="leadership" 
@@ -176,12 +172,12 @@ export function AchievementsSection() {
           </div>
 
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
-            <div className="w-full space-y-12">
+            <div className="w-full space-y-6">
               <TooltipProvider delayDuration={0}>
-                <div className="relative pt-12 pb-24 overflow-x-auto custom-scrollbar">
-                  <div className="min-w-[1800px] relative pb-24 px-4">
+                <div className="relative pt-8 pb-12 overflow-x-auto custom-scrollbar">
+                  <div className="min-w-[1800px] relative pb-16 px-4">
                     {/* Month Vertical Ticks */}
-                    <div className="absolute inset-x-0 top-0 bottom-24 flex justify-between pointer-events-none px-4">
+                    <div className="absolute inset-x-0 top-0 bottom-16 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
                           "w-px h-full",
@@ -191,10 +187,10 @@ export function AchievementsSection() {
                     </div>
 
                     {/* Base Timeline Line */}
-                    <div className="absolute bottom-[80px] left-0 w-full h-[1.5px] bg-slate-300" />
+                    <div className="absolute bottom-[48px] left-0 w-full h-[1.5px] bg-slate-300" />
 
                     {/* Year Labels */}
-                    <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
+                    <div className="absolute inset-x-0 bottom-0 h-6 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
                           <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.4em] text-slate-900">
@@ -204,15 +200,15 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
-                    {/* Gantt Bars Area */}
-                    <div className="relative space-y-6 pt-4 min-h-[380px]">
+                    {/* Gantt Bars Area - Thinner Bars */}
+                    <div className="relative space-y-4 pt-4 min-h-[260px]">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
                         const width = (item.duration / 72) * 100;
                         const isActive = selectedRole.id === item.id;
 
                         return (
-                          <div key={item.id} className="relative h-12">
+                          <div key={item.id} className="relative h-8">
                             <Tooltip>
                               <TooltipTrigger asChild>
                                 <button
@@ -222,13 +218,13 @@ export function AchievementsSection() {
                                     width: `${width}%` 
                                   }}
                                   className={cn(
-                                    "absolute h-10 rounded-lg flex items-center px-4 transition-all duration-500 border",
+                                    "absolute h-5 rounded-full flex items-center px-4 transition-all duration-500 border overflow-hidden",
                                     isActive 
                                       ? "bg-blue-600 border-blue-600 text-white shadow-xl shadow-blue-600/20 z-10" 
                                       : "bg-white border-slate-200 text-slate-500 hover:border-blue-600/30 shadow-sm"
                                   )}
                                 >
-                                  <span className="text-[10px] font-black uppercase tracking-widest truncate">
+                                  <span className="text-[9px] font-black uppercase tracking-widest truncate">
                                     {item.role}
                                   </span>
                                 </button>
@@ -260,29 +256,29 @@ export function AchievementsSection() {
                 </div>
               </TooltipProvider>
 
-              {/* Selected Role Summary */}
+              {/* Selected Role Summary - More Compact and Closer */}
               <div className="max-w-4xl mx-auto">
-                <div className="p-12 bg-slate-50 rounded-[3rem] border border-slate-100 space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
-                  <div className="space-y-4">
+                <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                  <div className="space-y-3">
                     <div className="flex items-center gap-4">
-                      <div className="px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-600/20">
-                         <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
+                      <div className="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
+                         <span className="text-[9px] font-black text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
                       </div>
-                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
+                      <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
                     </div>
-                    <h3 className="text-3xl font-medium text-foreground uppercase italic tracking-tighter">
+                    <h3 className="text-2xl font-medium text-foreground uppercase italic tracking-tighter">
                       {selectedRole.role}
                     </h3>
-                    <p className="text-lg text-slate-500 font-medium leading-relaxed">
+                    <p className="text-base text-slate-500 font-medium leading-relaxed">
                       {selectedRole.summary}
                     </p>
                   </div>
 
-                  <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
                     {selectedRole.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex gap-4">
-                        <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" />
-                        <p className="text-sm text-slate-600 font-medium leading-relaxed">{highlight}</p>
+                      <div key={idx} className="flex gap-3">
+                        <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                        <p className="text-[13px] text-slate-600 font-medium leading-relaxed">{highlight}</p>
                       </div>
                     ))}
                   </div>
@@ -295,9 +291,9 @@ export function AchievementsSection() {
             <div className="max-w-7xl mx-auto space-y-12">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedCerts.map((cert, idx) => (
-                  <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group">
-                    <CardContent className="p-0 flex items-center gap-8">
-                      <div className="relative w-14 h-14 shrink-0">
+                  <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group">
+                    <CardContent className="p-0 flex items-center gap-6">
+                      <div className="relative w-12 h-12 shrink-0">
                         <Image 
                           src="/assets/images/emc.png" 
                           alt="EMC Logo" 
@@ -306,10 +302,10 @@ export function AchievementsSection() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-black text-foreground uppercase tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
+                        <h4 className="text-[13px] font-black text-foreground uppercase tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
                         <div className="flex items-center justify-between">
-                          <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest truncate">{cert.issuer}</p>
-                          <span className="text-[10px] font-black text-blue-600 uppercase shrink-0 ml-4">{cert.date}</span>
+                          <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest truncate">{cert.issuer}</p>
+                          <span className="text-[9px] font-black text-blue-600 uppercase shrink-0 ml-4">{cert.date}</span>
                         </div>
                       </div>
                     </CardContent>
