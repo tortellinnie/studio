@@ -72,33 +72,33 @@ export function Featured() {
 
   return (
     <section id="featured" className="py-24 bg-transparent overflow-hidden">
-      <div className="container mx-auto px-6 max-w-7xl mb-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="container mx-auto px-6 max-w-7xl mb-16">
+        <div className="flex flex-col items-center text-center gap-10">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tighter uppercase italic">
-              Featured Impact<span className="text-primary">.</span>
+            <h2 className="text-4xl md:text-5xl font-medium text-foreground tracking-tighter uppercase italic">
+              FEATURED CONTRIBUTIONS<span className="text-primary">.</span>
             </h2>
-            <p className="text-muted-foreground text-sm font-medium max-w-xl">
-              Highlights from technical research and engineering milestones.
+            <p className="text-muted-foreground text-sm font-medium max-w-2xl mx-auto">
+              Glimpses of my technological contributions in the field and multiple communities.
             </p>
           </div>
           
-          <div className="flex gap-3">
+          <div className="flex gap-4">
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full w-10 h-10 border-gray-200 transition-all hover:bg-gray-50"
+              className="rounded-full w-12 h-12 border-gray-200 transition-all hover:bg-gray-50 shadow-sm"
               onClick={() => emblaApi?.scrollPrev()}
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
             </Button>
             <Button 
               variant="outline" 
               size="icon" 
-              className="rounded-full w-10 h-10 border-gray-200 transition-all hover:bg-gray-50"
+              className="rounded-full w-12 h-12 border-gray-200 transition-all hover:bg-gray-50 shadow-sm"
               onClick={() => emblaApi?.scrollNext()}
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </Button>
           </div>
         </div>
@@ -114,7 +114,7 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_70%] md:flex-[0_0_45%] px-0.5 md:px-1"
+                  className="flex-[0_0_75%] md:flex-[0_0_55%] px-1 md:px-2"
                 >
                   <div className={cn(
                     "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 transition-all duration-700 ease-premium",
@@ -135,7 +135,6 @@ export function Featured() {
                     
                     <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                       <div className="flex items-end justify-between gap-6">
-                        {/* Metadata Bottom-Left */}
                         <div className="space-y-1 md:space-y-3 flex-1">
                           <div className="flex items-center gap-2.5 mb-1">
                              <div className={cn("w-2 h-2 rounded-full", item.color, "shadow-[0_0_10px_rgba(255,255,255,0.2)]")} />
@@ -146,7 +145,6 @@ export function Featured() {
                           </h3>
                         </div>
                         
-                        {/* Pill Action Bottom-Right */}
                         <Link href={`/impact/${item.id}`} className="shrink-0 mb-1">
                           <button className="h-10 md:h-12 px-6 md:px-10 rounded-full bg-white text-black text-[10px] md:text-[11px] font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3 group/btn whitespace-nowrap shadow-xl">
                             {item.action}
