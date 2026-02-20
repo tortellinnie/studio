@@ -7,13 +7,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   ExternalLink, 
-  Calendar, 
   ChevronLeft, 
   ChevronRight, 
-  Info,
-  BookOpen,
-  Globe,
+  Calendar,
   ShieldCheck,
+  Globe,
+  BookOpen,
   Zap,
   Microscope
 } from 'lucide-react';
@@ -22,18 +21,14 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-// 2021 to 2026 = 6 years = 72 months
 const leadershipData = [
   {
     id: 'pupshs',
     date: 'Sep 2021 – Jul 2023',
     role: 'ICT Representative',
     org: 'PUPSHS COMELEC · Manila',
-    description: 'Served as the primary liaison for the ICT strand during Senior High School, coordinating elections and student initiatives for technical tracks.',
-    start: 8, // Sep 2021
+    start: 8, // Months from Jan 2021
     duration: 22,
-    color: 'bg-slate-100 border-slate-200',
-    textColor: 'text-slate-400',
     icon: ShieldCheck
   },
   {
@@ -41,11 +36,8 @@ const leadershipData = [
     date: 'Feb 2024 – Present',
     role: 'President',
     org: 'AGAPE PH0209 · Quezon City',
-    description: 'Directing strategic operations for a youth-led NGO with 200+ members, orchestrating 15+ community programs impacting over 600 beneficiaries nationwide.',
-    start: 37, // Feb 2024
+    start: 37,
     duration: 35,
-    color: 'bg-blue-50 border-blue-100',
-    textColor: 'text-blue-600',
     icon: Globe
   },
   {
@@ -53,11 +45,8 @@ const leadershipData = [
     date: 'Aug 2024 – Present',
     role: 'President, Library Committee',
     org: 'FEU Institute of Technology',
-    description: 'Presiding over academic resource planning and digital literacy initiatives, spearheading the Salayliwa edu-cultural project with the National Library.',
-    start: 43, // Aug 2024
+    start: 43,
     duration: 29,
-    color: 'bg-indigo-50 border-indigo-100',
-    textColor: 'text-indigo-600',
     icon: BookOpen
   },
   {
@@ -65,11 +54,8 @@ const leadershipData = [
     date: 'Dec 2024 – Dec 2025',
     role: 'Lead Marketing Officer',
     org: 'C-RAM Solutions · Hybrid',
-    description: 'Drove technical marketing and innovation development, securing capital grants and shaping product roadmaps for IoT solutions.',
-    start: 47, // Dec 2024
+    start: 47,
     duration: 12,
-    color: 'bg-blue-50 border-blue-100',
-    textColor: 'text-blue-400',
     icon: Zap
   },
   {
@@ -77,11 +63,8 @@ const leadershipData = [
     date: 'Aug 2025 – Present',
     role: 'Executive Lead',
     org: 'NERDS 2.0 · Hybrid',
-    description: 'Directing R&D operations for award-winning initiatives, securing ₱1.2M+ in total grants while leading cross-functional engineering teams.',
-    start: 55, // Aug 2025
+    start: 55,
     duration: 17,
-    color: 'bg-slate-900 border-slate-800',
-    textColor: 'text-white',
     icon: Microscope
   }
 ];
@@ -124,14 +107,12 @@ const timelineYears = [
 ];
 
 export function AchievementsSection() {
-  const [activeRole, setActiveRole] = React.useState(leadershipData[leadershipData.length - 1]);
   const [certPage, setCertPage] = React.useState(0);
   const certsPerPage = 8;
   const paginatedCerts = certificationData.slice(certPage * certsPerPage, (certPage + 1) * certsPerPage);
   const totalCertPages = Math.ceil(certificationData.length / certsPerPage);
 
   const emcLogo = PlaceHolderImages.find(img => img.id === 'logo-emc');
-  const ActiveRoleIcon = activeRole.icon;
 
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-white">
@@ -177,105 +158,86 @@ export function AchievementsSection() {
           </div>
 
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
-            <div className="max-w-6xl mx-auto space-y-16">
-              {/* Gantt Chart Container */}
-              <div className="relative pt-12 pb-24 overflow-x-auto custom-scrollbar">
-                <div className="min-w-[1000px] relative pb-12">
-                  {/* Monthly Vertical Lines */}
-                  <div className="absolute inset-x-0 top-0 bottom-12 flex justify-between pointer-events-none px-4">
-                    {Array.from({ length: 73 }).map((_, i) => (
-                      <div key={i} className={cn(
-                        "w-px bg-slate-100/50",
-                        i % 12 === 0 ? "h-full bg-slate-200" : "h-full"
-                      )} />
-                    ))}
-                  </div>
+            <div className="max-w-6xl mx-auto">
+              <TooltipProvider delayDuration={0}>
+                <div className="relative pt-12 pb-24 overflow-x-auto custom-scrollbar">
+                  <div className="min-w-[1200px] relative pb-16">
+                    {/* Monthly Vertical Lines (72 months from 2021-2026) */}
+                    <div className="absolute inset-x-0 top-0 bottom-16 flex justify-between pointer-events-none px-4">
+                      {Array.from({ length: 73 }).map((_, i) => (
+                        <div key={i} className={cn(
+                          "w-px bg-slate-100/50",
+                          i % 12 === 0 ? "h-full bg-slate-200" : "h-full"
+                        )} />
+                      ))}
+                    </div>
 
-                  {/* Horizontal Baseline */}
-                  <div className="absolute bottom-[48px] left-0 w-full h-px bg-slate-200" />
+                    {/* Horizontal Baseline */}
+                    <div className="absolute bottom-[64px] left-0 w-full h-px bg-slate-200" />
 
-                  {/* Year Labels */}
-                  <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
-                    {timelineYears.map((y) => (
-                      <div key={y.label} className="relative flex flex-col items-center">
-                        <span className="whitespace-nowrap text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
-                          {y.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Role Bars */}
-                  <div className="relative space-y-4 px-4 min-h-[320px]">
-                    {leadershipData.map((item) => {
-                      const left = (item.start / 72) * 100;
-                      const width = (item.duration / 72) * 100;
-                      const isActive = activeRole.id === item.id;
-
-                      return (
-                        <div key={item.id} className="relative h-12">
-                          <button
-                            onClick={() => setActiveRole(item)}
-                            style={{ 
-                              left: `${left}%`, 
-                              width: `${width}%` 
-                            }}
-                            className={cn(
-                              "absolute h-10 rounded-xl transition-all duration-500 border shadow-sm flex items-center px-4 group overflow-hidden",
-                              isActive 
-                                ? "bg-slate-900 border-slate-800 shadow-xl z-20 scale-[1.02]" 
-                                : "bg-white border-slate-100 hover:border-slate-300 z-10"
-                            )}
-                          >
-                            <div className={cn(
-                              "w-1.5 h-1.5 rounded-full mr-3 shrink-0",
-                              isActive ? "bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" : "bg-slate-200"
-                            )} />
-                            <span className={cn(
-                              "text-[9px] font-black uppercase tracking-widest truncate",
-                              isActive ? "text-white" : "text-slate-400"
-                            )}>
-                              {item.role}
-                            </span>
-                          </button>
+                    {/* Year Labels */}
+                    <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
+                      {timelineYears.map((y) => (
+                        <div key={y.label} className="relative flex flex-col items-center">
+                          <span className="whitespace-nowrap text-[9px] font-black uppercase tracking-[0.3em] text-slate-400">
+                            {y.label}
+                          </span>
                         </div>
-                      );
-                    })}
+                      ))}
+                    </div>
+
+                    {/* Gantt Role Bars with Hover Tooltips */}
+                    <div className="relative space-y-5 px-4 min-h-[400px]">
+                      {leadershipData.map((item) => {
+                        const left = (item.start / 72) * 100;
+                        const width = (item.duration / 72) * 100;
+
+                        return (
+                          <div key={item.id} className="relative h-14">
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <div
+                                  style={{ 
+                                    left: `${left}%`, 
+                                    width: `${width}%` 
+                                  }}
+                                  className="absolute h-12 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center px-5 transition-all hover:border-blue-600/30 hover:shadow-lg hover:shadow-blue-600/5 group cursor-default"
+                                >
+                                  <div className="w-2 h-2 rounded-full mr-4 bg-slate-200 group-hover:bg-blue-600 transition-colors" />
+                                  <span className="text-[10px] font-black uppercase tracking-widest truncate text-slate-400 group-hover:text-foreground transition-colors">
+                                    {item.role}
+                                  </span>
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent 
+                                side="top" 
+                                sideOffset={10}
+                                className="bg-white border-slate-100 p-6 rounded-[2rem] shadow-3xl max-w-xs animate-in fade-in zoom-in-95 duration-200"
+                              >
+                                <div className="space-y-4">
+                                  <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center">
+                                      <item.icon className="w-5 h-5 text-blue-600" />
+                                    </div>
+                                    <div className="space-y-0.5">
+                                      <h4 className="text-xs font-black uppercase italic tracking-tighter text-foreground leading-none">{item.role}</h4>
+                                      <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest">{item.org}</p>
+                                    </div>
+                                  </div>
+                                  <div className="flex items-center gap-2 pt-1">
+                                    <Calendar className="w-3.5 h-3.5 text-slate-300" />
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{item.date}</p>
+                                  </div>
+                                </div>
+                              </TooltipContent>
+                            </Tooltip>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Summary Detail Card */}
-              <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-4xl mx-auto">
-                <Card className="bg-white border-slate-100 rounded-[2.5rem] p-10 shadow-sm border overflow-hidden relative group">
-                  <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
-                    <ActiveRoleIcon className="w-40 h-40 text-blue-600" />
-                  </div>
-                  <CardContent className="p-0 space-y-8">
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-4">
-                        <Calendar className="w-4 h-4 text-slate-300" />
-                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">{activeRole.date}</p>
-                      </div>
-                      <div className="space-y-1">
-                        <h3 className="text-3xl font-medium text-foreground uppercase italic tracking-tighter leading-none">
-                          {activeRole.role}
-                        </h3>
-                        <p className="text-blue-600 font-bold uppercase tracking-widest text-xs">{activeRole.org}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex gap-6 items-start">
-                      <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                        <Info className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <p className="text-slate-500 font-medium leading-relaxed max-w-2xl text-lg">
-                        {activeRole.description}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              </TooltipProvider>
             </div>
           </TabsContent>
 
@@ -283,7 +245,7 @@ export function AchievementsSection() {
             <div className="space-y-12">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-in fade-in duration-500">
                 {paginatedCerts.map((cert, idx) => (
-                  <Card key={idx} className="bg-white border-slate-200 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
+                  <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
                     <CardContent className="p-0 flex flex-col items-center gap-6">
                       <div className="relative w-16 h-16 grayscale group-hover:grayscale-0 transition-all duration-500">
                         {emcLogo && (
