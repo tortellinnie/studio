@@ -121,12 +121,6 @@ export function Projects() {
               Architecting solutions at the intersection of AI, hardware, and social impact. 
             </p>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="h-px w-12 bg-gray-200" />
-            <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-widest">
-              {projects.length} TECHNICAL LOGS
-            </span>
-          </div>
         </div>
 
         <TooltipProvider delayDuration={0}>
@@ -136,11 +130,11 @@ export function Projects() {
               return (
                 <div 
                   key={project.id} 
-                  className="group relative flex flex-col bg-white rounded-[2.5rem] border border-gray-100 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2"
+                  className="group relative flex flex-col bg-white rounded-[2rem] border border-gray-100 overflow-hidden transition-all duration-700 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1.5"
                 >
                   <Link href={`/projects/${project.id}`} className="absolute inset-0 z-0" aria-label={`View ${project.title}`} />
                   
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-50 z-10 pointer-events-none group-hover:pointer-events-auto">
+                  <div className="relative aspect-video overflow-hidden bg-gray-50 z-10 pointer-events-none group-hover:pointer-events-auto">
                     {imageData && (
                       <Image 
                         src={imageData.imageUrl} 
@@ -153,7 +147,7 @@ export function Projects() {
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     
-                    <div className="absolute top-6 left-6 flex gap-2 pointer-events-auto">
+                    <div className="absolute top-4 left-4 flex gap-1.5 pointer-events-auto">
                       {project.sdgs.map((id) => {
                         const sdg = sdgData[id];
                         const SdgIcon = sdg.icon;
@@ -164,10 +158,10 @@ export function Projects() {
                                 href={`https://sdgs.un.org/goals/goal${id}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`w-8 h-8 rounded-xl ${sdg.color} flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-150 hover:z-50`}
+                                className={`w-7 h-7 rounded-lg ${sdg.color} flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-150 hover:z-50`}
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                <SdgIcon className="w-4 h-4 text-white" />
+                                <SdgIcon className="w-3.5 h-3.5 text-white" />
                               </a>
                             </TooltipTrigger>
                             <TooltipContent className="p-4 rounded-2xl max-w-[240px] bg-white shadow-2xl border-gray-100 z-[100]">
@@ -182,15 +176,15 @@ export function Projects() {
                       })}
                     </div>
 
-                    <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                      <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                        <ArrowUpRight className="w-5 h-5 text-white" />
+                    <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                        <ArrowUpRight className="w-4 h-4 text-white" />
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-10 flex flex-col flex-grow relative z-20 pointer-events-none">
-                    <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="p-8 flex flex-col flex-grow relative z-20 pointer-events-none">
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map(tag => (
                         <div key={tag} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-black/[0.05] shadow-sm">
                           <div className="w-1 h-1 rounded-full bg-primary shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
@@ -199,10 +193,10 @@ export function Projects() {
                       ))}
                     </div>
 
-                    <h3 className="text-2xl font-medium text-foreground uppercase italic tracking-tighter leading-tight mb-4 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-medium text-foreground uppercase italic tracking-tighter leading-tight mb-3 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm font-medium leading-relaxed line-clamp-2">
+                    <p className="text-muted-foreground text-xs font-medium leading-relaxed line-clamp-2">
                       {project.description}
                     </p>
                   </div>
