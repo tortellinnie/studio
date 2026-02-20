@@ -20,7 +20,7 @@ const leadershipData = [
   {
     id: 'pupshs',
     date: 'Sep 2021 – Jul 2023',
-    role: 'ICT Representative',
+    role: 'ICT REPRESENTATIVE',
     org: 'PUPSHS COMELEC',
     start: 8, // Months from Jan 2021
     duration: 22,
@@ -28,7 +28,7 @@ const leadershipData = [
   {
     id: 'agape',
     date: 'Feb 2024 – Present',
-    role: 'President',
+    role: 'PRESIDENT',
     org: 'AGAPE PH0209',
     start: 37,
     duration: 35,
@@ -36,7 +36,7 @@ const leadershipData = [
   {
     id: 'library',
     date: 'Aug 2024 – Present',
-    role: 'President, Library Committee',
+    role: 'PRESIDENT, LIBRARY COMMITTEE',
     org: 'FEU Institute of Technology',
     start: 43,
     duration: 29,
@@ -44,7 +44,7 @@ const leadershipData = [
   {
     id: 'cram',
     date: 'Dec 2024 – Dec 2025',
-    role: 'Lead Marketing Officer',
+    role: 'LEAD MARKETING OFFICER',
     org: 'C-RAM Solutions',
     start: 47,
     duration: 12,
@@ -52,7 +52,7 @@ const leadershipData = [
   {
     id: 'nerds',
     date: 'Aug 2025 – Present',
-    role: 'Executive Lead',
+    role: 'EXECUTIVE LEAD',
     org: 'NERDS 2.0',
     start: 55,
     duration: 17,
@@ -150,6 +150,7 @@ export function AchievementsSection() {
               <TooltipProvider delayDuration={0}>
                 <div className="relative pt-12 pb-32 overflow-x-auto custom-scrollbar">
                   <div className="min-w-[1800px] relative pb-24">
+                    {/* Month Vertical Ticks */}
                     <div className="absolute inset-x-0 top-0 bottom-24 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
@@ -159,8 +160,10 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
+                    {/* Base Timeline Line */}
                     <div className="absolute bottom-[80px] left-0 w-full h-[1.5px] bg-slate-300" />
 
+                    {/* Year Labels */}
                     <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
@@ -171,6 +174,7 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
+                    {/* Gantt Bars Area */}
                     <div className="relative space-y-8 px-4 min-h-[420px] pt-4">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
@@ -224,11 +228,11 @@ export function AchievementsSection() {
 
           <TabsContent value="certs" className="mt-0 focus-visible:outline-none">
             <div className="max-w-7xl mx-auto space-y-12">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {paginatedCerts.map((cert, idx) => (
-                  <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
-                    <CardContent className="p-0 flex flex-col items-center gap-6">
-                      <div className="relative w-16 h-16">
+                  <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group">
+                    <CardContent className="p-0 flex items-center gap-8">
+                      <div className="relative w-16 h-16 shrink-0">
                         <Image 
                           src="/assets/images/emc.png" 
                           alt="EMC Logo" 
@@ -236,12 +240,14 @@ export function AchievementsSection() {
                           className="object-contain" 
                         />
                       </div>
-                      <div className="space-y-2">
-                        <h4 className="text-[11px] font-black text-foreground uppercase tracking-tight leading-tight">{cert.name}</h4>
-                        <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">{cert.issuer}</p>
-                        <div className="flex items-center justify-center gap-2 pt-2">
-                          <span className="text-[9px] font-black text-blue-600 uppercase">{cert.date}</span>
-                          <ExternalLink className="w-3 h-3 text-slate-300 group-hover:text-blue-600 transition-colors" />
+                      <div className="flex-1 space-y-2">
+                        <h4 className="text-base font-black text-foreground uppercase tracking-tight leading-tight">{cert.name}</h4>
+                        <div className="flex items-center justify-between">
+                          <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{cert.issuer}</p>
+                          <div className="flex items-center gap-4">
+                            <span className="text-[10px] font-black text-blue-600 uppercase">{cert.date}</span>
+                            <ExternalLink className="w-4 h-4 text-slate-300 group-hover:text-blue-600 transition-colors" />
+                          </div>
                         </div>
                       </div>
                     </CardContent>
