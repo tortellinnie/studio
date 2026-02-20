@@ -3,31 +3,40 @@
 import * as React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
-import { ExternalLink, Briefcase, Trophy, Globe, Code2, Terminal, ShieldCheck, ChevronRight, Info } from 'lucide-react';
+import { ExternalLink, Briefcase, Trophy, Globe, Code2, Terminal, ShieldCheck, Info, Calendar } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const leadershipData = [
   {
-    id: 'nerds',
-    date: '2025 – Present',
-    role: 'Executive Lead',
-    org: 'NERDS 2.0 · Hybrid',
-    description: 'Directed R&D operations for award-winning initiatives, securing ₱1.2M+ in total grants and startup incentives while leading cross-functional engineering teams.'
-  },
-  {
     id: 'agape',
-    date: '2024 – Present',
+    date: 'Feb 2024 – Present',
     role: 'President',
     org: 'AGAPE PH0209 · Quezon City',
-    description: 'Directed strategic operations for a youth-led NGO with 200+ members, orchestrating 15+ community programs impacting over 600 beneficiaries nationwide.'
+    description: 'Directed strategic operations for a youth-led NGO with 200+ members, orchestrating 15+ community programs impacting over 600 beneficiaries nationwide.',
+    start: 1, // Feb 2024 (Index from Jan 2024 = 0)
+    duration: 23, // 23 months to current
+    color: 'bg-blue-600'
   },
   {
     id: 'library',
-    date: '2024 – Present',
+    date: 'Aug 2024 – Present',
     role: 'President, Library Committee',
     org: 'FEU Institute of Technology',
-    description: 'Presiding over academic resource planning and digital literacy initiatives, spearheading the Salayliwa edu-cultural project with the National Library.'
+    description: 'Presiding over academic resource planning and digital literacy initiatives, spearheading the Salayliwa edu-cultural project with the National Library.',
+    start: 7, // Aug 2024
+    duration: 17,
+    color: 'bg-indigo-600'
+  },
+  {
+    id: 'nerds',
+    date: 'Aug 2025 – Present',
+    role: 'Executive Lead',
+    org: 'NERDS 2.0 · Hybrid',
+    description: 'Directed R&D operations for award-winning initiatives, securing ₱1.2M+ in total grants and startup incentives while leading cross-functional engineering teams.',
+    start: 19, // Aug 2025
+    duration: 5,
+    color: 'bg-slate-800'
   }
 ];
 
@@ -49,6 +58,14 @@ const awardsData = [
   { title: 'Winner, Musashinova Pitching', issuer: 'EMC Global / Musashino Uni', year: '2025' },
   { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023' },
   { title: 'QCYDO Economic Scholarship', issuer: 'Quezon City Government', year: '2025' }
+];
+
+const timelineQuarters = [
+  { label: 'Q1 2024', pos: 0 },
+  { label: 'Q3 2024', pos: 25 },
+  { label: 'Q1 2025', pos: 50 },
+  { label: 'Q3 2025', pos: 75 },
+  { label: '2026', pos: 100 },
 ];
 
 export function AchievementsSection() {
@@ -97,49 +114,73 @@ export function AchievementsSection() {
             </TabsList>
           </div>
 
-          {/* Leadership: Horizontal Timeline */}
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
             <div className="max-w-4xl mx-auto space-y-16">
-              <div className="relative pt-12 pb-8">
-                {/* Main Horizontal Axis */}
-                <div className="absolute top-1/2 left-0 w-full h-px bg-slate-200 -translate-y-1/2" />
+              {/* Gantt Chart Implementation */}
+              <div className="relative pt-12 pb-20">
+                {/* Horizontal Baseline */}
+                <div className="absolute top-[calc(100%-40px)] left-0 w-full h-px bg-slate-200" />
                 
-                <div className="relative flex justify-between items-center px-4 md:px-12">
-                  <TooltipProvider delayDuration={0}>
-                    {leadershipData.map((item, idx) => (
-                      <div key={item.id} className="relative group">
-                        <Tooltip>
-                          <TooltipTrigger asChild>
-                            <button
-                              onClick={() => setActiveRole(item)}
-                              className={cn(
-                                "relative z-10 w-4 h-4 rounded-full border-4 transition-all duration-500",
-                                activeRole.id === item.id 
-                                  ? "bg-blue-600 border-white scale-150 shadow-lg shadow-blue-600/20" 
-                                  : "bg-white border-slate-200 hover:border-blue-600 group-hover:scale-125"
-                              )}
-                            />
-                          </TooltipTrigger>
-                          <TooltipContent 
-                            side="top" 
-                            className="bg-white border-slate-100 rounded-xl px-4 py-2 shadow-xl mb-2"
-                          >
-                            <p className="text-[10px] font-black uppercase tracking-widest text-blue-600">{item.role}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                        
-                        {/* Year Label below node */}
-                        <div className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                          <span className={cn(
-                            "text-[9px] font-black uppercase tracking-widest transition-colors",
-                            activeRole.id === item.id ? "text-blue-600" : "text-slate-400"
-                          )}>
-                            {item.date.split(' – ')[0]}
-                          </span>
-                        </div>
+                {/* Quarter Markers (Vertical Lines) */}
+                <div className="absolute inset-x-0 bottom-8 h-4 flex justify-between pointer-events-none">
+                  {timelineQuarters.map((q) => (
+                    <div key={q.label} className="relative flex flex-col items-center">
+                      <div className="h-2 w-px bg-slate-300" />
+                      <span className="absolute top-4 whitespace-nowrap text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
+                        {q.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Gantt Bars */}
+                <div className="relative space-y-4 px-4">
+                  {leadershipData.map((item) => {
+                    const left = (item.start / 24) * 100;
+                    const width = (item.duration / 24) * 100;
+                    const isActive = activeRole.id === item.id;
+
+                    return (
+                      <div key={item.id} className="relative h-12">
+                        <TooltipProvider delayDuration={0}>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <button
+                                onClick={() => setActiveRole(item)}
+                                style={{ 
+                                  left: `${left}%`, 
+                                  width: `${width}%` 
+                                }}
+                                className={cn(
+                                  "absolute h-8 rounded-xl transition-all duration-500 border shadow-sm group overflow-hidden flex items-center px-4",
+                                  isActive 
+                                    ? cn(item.color, "border-white/20 shadow-xl shadow-blue-600/10 scale-[1.02] z-20") 
+                                    : "bg-slate-50 border-slate-100 hover:border-slate-300 z-10"
+                                )}
+                              >
+                                <div className={cn(
+                                  "w-1.5 h-1.5 rounded-full mr-3 shrink-0",
+                                  isActive ? "bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" : cn(item.color, "opacity-40")
+                                )} />
+                                <span className={cn(
+                                  "text-[9px] font-black uppercase tracking-widest truncate",
+                                  isActive ? "text-white" : "text-slate-400"
+                                )}>
+                                  {item.role}
+                                </span>
+                              </button>
+                            </TooltipTrigger>
+                            <TooltipContent 
+                              side="top" 
+                              className="bg-white border-slate-100 rounded-xl px-4 py-2 shadow-xl mb-2"
+                            >
+                              <p className="text-[10px] font-black uppercase tracking-widest text-blue-600">{item.date}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
                       </div>
-                    ))}
-                  </TooltipProvider>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -151,7 +192,10 @@ export function AchievementsSection() {
                   </div>
                   <CardContent className="p-0 space-y-8">
                     <div className="space-y-4">
-                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">{activeRole.date}</p>
+                      <div className="flex items-center gap-4">
+                        <Calendar className="w-4 h-4 text-slate-300" />
+                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">{activeRole.date}</p>
+                      </div>
                       <div className="space-y-1">
                         <h3 className="text-3xl font-medium text-foreground uppercase italic tracking-tighter leading-none">
                           {activeRole.role}
