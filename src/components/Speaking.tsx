@@ -153,16 +153,16 @@ export function Speaking() {
                 return (
                   <div 
                     key={idx} 
-                    className="flex-[0_0_85%] md:flex-[0_0_32%] lg:flex-[0_0_28%] pl-6"
+                    className="flex-[0_0_85%] md:flex-[0_0_35%] lg:flex-[0_0_30%] pl-6"
                   >
                     <div 
                       className={cn(
-                        "group bg-white rounded-[3.5rem] border border-gray-100 overflow-hidden aspect-[4/5.5] flex flex-col transition-all duration-700 ease-premium",
+                        "group bg-white rounded-[3.5rem] border border-gray-100 overflow-hidden aspect-[4/6] flex flex-col transition-all duration-700 ease-premium",
                         isActive ? "scale-100 opacity-100 shadow-2xl shadow-black/5 ring-1 ring-primary/5" : "scale-[0.95] opacity-50 shadow-none"
                       )}
                     >
-                      {/* Image Section */}
-                      <div className="relative h-[40%] w-full overflow-hidden">
+                      {/* Image Section - Landscape 3:2 Rectangle */}
+                      <div className="relative aspect-[3/2] w-full overflow-hidden shrink-0">
                         {imageData && (
                           <Image 
                             src={imageData.imageUrl} 
@@ -172,11 +172,11 @@ export function Speaking() {
                             data-ai-hint={imageData.imageHint}
                           />
                         )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" />
                       </div>
 
                       {/* Content Section */}
-                      <div className="flex-1 p-8 md:p-10 flex flex-col justify-between">
+                      <div className="flex-1 p-8 md:p-10 flex flex-col justify-between overflow-hidden">
                         <div className="space-y-6">
                           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-50 border border-black/[0.05] shadow-sm">
                             <div className={cn("w-1.5 h-1.5 rounded-full shadow-[0_0_8px_rgba(0,0,0,0.1)]", talk.color)} />
@@ -184,21 +184,21 @@ export function Speaking() {
                           </div>
                           
                           <div className="space-y-4">
-                            <h3 className="text-xl md:text-2xl font-medium text-foreground uppercase italic tracking-tighter leading-[1.2] group-hover:text-primary transition-colors duration-500">
+                            <h3 className="text-xl md:text-2xl font-medium text-foreground uppercase italic tracking-tighter leading-[1.2] group-hover:text-primary transition-colors duration-500 line-clamp-2">
                               {talk.title}
                             </h3>
-                            <p className="text-primary text-[11px] font-bold uppercase tracking-[0.15em] leading-snug">
+                            <p className="text-primary text-[11px] font-bold uppercase tracking-[0.15em] leading-snug line-clamp-1">
                               {talk.event}
                             </p>
                           </div>
 
                           <div className="space-y-3 pt-2">
                             <div className="flex items-center gap-3 text-muted-foreground/60">
-                              <Calendar className="w-4 h-4 text-primary/30" />
+                              <Calendar className="w-4 h-4 text-primary/30 shrink-0" />
                               <span className="text-[10px] font-black uppercase tracking-widest">{talk.date}</span>
                             </div>
                             <div className="flex items-center gap-3 text-muted-foreground/60">
-                              <MapPin className="w-4 h-4 text-primary/30" />
+                              <MapPin className="w-4 h-4 text-primary/30 shrink-0" />
                               <span className="text-[10px] font-black uppercase tracking-widest line-clamp-1">{talk.location}</span>
                             </div>
                           </div>
