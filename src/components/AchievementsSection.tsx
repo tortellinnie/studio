@@ -9,7 +9,9 @@ import {
   ChevronLeft, 
   ChevronRight,
   Trophy,
-  ArrowUpRight
+  ArrowUpRight,
+  CheckCircle2,
+  Calendar
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -24,6 +26,12 @@ const leadershipData = [
     org: 'PUPSHS COMELEC',
     start: 8, // Months from Jan 2021
     duration: 22,
+    summary: 'Spearheaded technical logistics for campus-wide elections, ensuring digital integrity and streamlined student representation.',
+    highlights: [
+      'Managed digital ballot systems for 5,000+ students.',
+      'Optimized verification workflows reducing wait times by 40%.',
+      'Coordinated ICT support teams across 5 departments.'
+    ]
   },
   {
     id: 'agape',
@@ -32,6 +40,12 @@ const leadershipData = [
     org: 'AGAPE PH0209',
     start: 37,
     duration: 35,
+    summary: 'Directing operations and strategic planning for a youth-led NGO with 200+ members, focusing on nationwide community programs.',
+    highlights: [
+      'Orchestrated 15+ community programs impacting 600+ beneficiaries.',
+      'Managed 5 cross-functional teams of 40+ volunteers.',
+      'Secured institutional support from 20+ city-wide forums.'
+    ]
   },
   {
     id: 'library',
@@ -40,6 +54,12 @@ const leadershipData = [
     org: 'FEU Institute of Technology',
     start: 43,
     duration: 29,
+    summary: 'Leading student representation for the academic community, directing resource strategy and cultural innovation projects.',
+    highlights: [
+      'Spearheading the Salayliwa edu-cultural project with the National Library.',
+      'Directing initiatives to improve digital literacy for 4,000+ students.',
+      'Modernizing library engagement through proactive faculty collaboration.'
+    ]
   },
   {
     id: 'cram',
@@ -48,6 +68,12 @@ const leadershipData = [
     org: 'C-RAM Solutions',
     start: 47,
     duration: 12,
+    summary: 'Secured critical capital grants and shaped product roadmaps for innovation-driven technological solutions.',
+    highlights: [
+      'Drove marketing campaigns securing venture capital seed funding.',
+      'Provided UX/UI insights within the Scrum team for product roadmaps.',
+      'Boosted investor engagement by 30% through technical storytelling.'
+    ]
   },
   {
     id: 'nerds',
@@ -56,6 +82,12 @@ const leadershipData = [
     org: 'NERDS 2.0',
     start: 55,
     duration: 17,
+    summary: 'Coordinating R&D for award-winning initiatives, securing significant grants and directing cross-functional innovation teams.',
+    highlights: [
+      'Directing R&D leading to ₱1.2M+ in total grants and incentives.',
+      'Architecting Proxygen and Birdseye AI/IoT industrial solutions.',
+      'Leading 3 cross-functional teams of developers and researchers.'
+    ]
   }
 ];
 
@@ -71,20 +103,16 @@ const certificationData = [
   { name: 'Node.js Testing', issuer: 'LinkedIn Learning', date: '2025' },
   { name: 'IT Specialist - Java', issuer: 'Certiport', date: '2025' },
   { name: 'MS Summer Bootcamp', issuer: 'Microsoft', date: '2025' },
-  { name: 'Cloud AI Literacy', issuer: 'Google Cloud', date: '2025' },
-  { name: 'Cybersecurity Ops', issuer: 'Cisco Academy', date: '2025' },
-  { name: 'Data Engineering', issuer: 'Datacamp', date: '2024' },
-  { name: 'Innovation Dev', issuer: 'Urban Youth Academy', date: '2025' },
-  { name: 'Technical Writing', issuer: 'FEU Tech ACM', date: '2024' }
+  { name: 'Cloud AI Literacy', issuer: 'Google Cloud', date: '2025' }
 ];
 
 const awardsData = [
-  { title: 'EMC Global Award', issuer: 'EMC Global Summit', year: '2026', imageId: 'featured-prompt-challenge' },
-  { title: 'Most Outstanding Youth Awardee', issuer: 'QC Gov / SK Commonwealth', year: '2025', imageId: 'featured-tpu-research' },
-  { title: '1st Runner-Up, Startup Challenge X', issuer: 'DICT Regional NCR', year: '2025', imageId: 'featured-aws-reinvent' },
-  { title: 'Winner, Musashinova Pitching', issuer: 'EMC Global / Musashino Uni', year: '2025', imageId: 'featured-github-universe' },
-  { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023', imageId: 'featured-prompt-challenge' },
-  { title: 'QCYDO Economic Scholarship', issuer: 'Quezon City Government', year: '2025', imageId: 'featured-tpu-research' }
+  { title: 'EMC Global Award', issuer: 'EMC Global Summit', year: '2026', type: 'AWARD', imageId: 'featured-prompt-challenge' },
+  { title: 'Most Outstanding Youth', issuer: 'QC Gov', year: '2025', type: 'AWARD', imageId: 'featured-tpu-research' },
+  { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023', type: 'SCHOLARSHIP', imageId: 'featured-aws-reinvent' },
+  { title: 'Winner, Musashinova', issuer: 'EMC Global', year: '2025', type: 'AWARD', imageId: 'featured-github-universe' },
+  { title: 'Startup Challenge X', issuer: 'DICT NCR', year: '2025', type: 'AWARD', imageId: 'featured-prompt-challenge' },
+  { title: 'QCYDO Scholarship', issuer: 'Quezon City Gov', year: '2025', type: 'SCHOLARSHIP', imageId: 'featured-tpu-research' }
 ];
 
 const timelineYears = [
@@ -99,9 +127,11 @@ const timelineYears = [
 
 export function AchievementsSection() {
   const [certPage, setCertPage] = React.useState(0);
-  const certsPerPage = 8;
+  const certsPerPage = 9;
   const paginatedCerts = certificationData.slice(certPage * certsPerPage, (certPage + 1) * certsPerPage);
   const totalCertPages = Math.ceil(certificationData.length / certsPerPage);
+
+  const [selectedRole, setSelectedRole] = React.useState(leadershipData[leadershipData.length - 1]);
 
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-white">
@@ -126,19 +156,19 @@ export function AchievementsSection() {
             <TabsList className="bg-slate-100/50 p-1.5 rounded-full h-14 border border-slate-200">
               <TabsTrigger 
                 value="leadership" 
-                className="rounded-full px-8 text-xs font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Leadership
               </TabsTrigger>
               <TabsTrigger 
                 value="certs" 
-                className="rounded-full px-8 text-xs font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Certifications
               </TabsTrigger>
               <TabsTrigger 
                 value="awards" 
-                className="rounded-full px-8 text-xs font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Awards & Scholarships
               </TabsTrigger>
@@ -146,16 +176,16 @@ export function AchievementsSection() {
           </div>
 
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
-            <div className="w-full">
+            <div className="w-full space-y-12">
               <TooltipProvider delayDuration={0}>
-                <div className="relative pt-12 pb-32 overflow-x-auto custom-scrollbar">
-                  <div className="min-w-[1800px] relative pb-24">
+                <div className="relative pt-12 pb-24 overflow-x-auto custom-scrollbar">
+                  <div className="min-w-[1800px] relative pb-24 px-4">
                     {/* Month Vertical Ticks */}
                     <div className="absolute inset-x-0 top-0 bottom-24 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
                           "w-px h-full",
-                          i % 12 === 0 ? "bg-slate-800 w-[2px]" : "bg-slate-100"
+                          i % 12 === 0 ? "bg-slate-900 w-[2px]" : "bg-slate-100"
                         )} />
                       ))}
                     </div>
@@ -167,7 +197,7 @@ export function AchievementsSection() {
                     <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
-                          <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.3em] text-slate-800">
+                          <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.4em] text-slate-900">
                             {y.label}
                           </span>
                         </div>
@@ -175,31 +205,37 @@ export function AchievementsSection() {
                     </div>
 
                     {/* Gantt Bars Area */}
-                    <div className="relative space-y-8 px-4 min-h-[420px] pt-4">
+                    <div className="relative space-y-6 pt-4 min-h-[380px]">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
                         const width = (item.duration / 72) * 100;
+                        const isActive = selectedRole.id === item.id;
 
                         return (
                           <div key={item.id} className="relative h-12">
                             <Tooltip>
                               <TooltipTrigger asChild>
-                                <div
+                                <button
+                                  onClick={() => setSelectedRole(item)}
                                   style={{ 
                                     left: `${left}%`, 
                                     width: `${width}%` 
                                   }}
-                                  className="absolute h-10 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center px-4 transition-all hover:border-blue-600 hover:shadow-lg hover:shadow-blue-600/5 group cursor-default"
+                                  className={cn(
+                                    "absolute h-10 rounded-lg flex items-center px-4 transition-all duration-500 border",
+                                    isActive 
+                                      ? "bg-blue-600 border-blue-600 text-white shadow-xl shadow-blue-600/20 z-10" 
+                                      : "bg-white border-slate-200 text-slate-500 hover:border-blue-600/30 shadow-sm"
+                                  )}
                                 >
-                                  <span className="text-[10px] font-black uppercase tracking-widest truncate text-slate-500 group-hover:text-foreground transition-colors">
+                                  <span className="text-[10px] font-black uppercase tracking-widest truncate">
                                     {item.role}
                                   </span>
-                                </div>
+                                </button>
                               </TooltipTrigger>
                               <TooltipContent 
                                 side="top" 
-                                sideOffset={12}
-                                className="bg-white border-slate-200 p-6 rounded-2xl shadow-xl max-w-xs z-[100]"
+                                className="bg-white border-slate-200 p-6 rounded-2xl shadow-xl z-[100] min-w-[280px]"
                               >
                                 <div className="space-y-3">
                                   <h4 className="text-[13px] font-black uppercase tracking-tight text-foreground leading-none">
@@ -223,16 +259,45 @@ export function AchievementsSection() {
                   </div>
                 </div>
               </TooltipProvider>
+
+              {/* Selected Role Summary */}
+              <div className="max-w-4xl mx-auto">
+                <div className="p-12 bg-slate-50 rounded-[3rem] border border-slate-100 space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <div className="px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-600/20">
+                         <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
+                      </div>
+                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
+                    </div>
+                    <h3 className="text-3xl font-medium text-foreground uppercase italic tracking-tighter">
+                      {selectedRole.role}
+                    </h3>
+                    <p className="text-lg text-slate-500 font-medium leading-relaxed">
+                      {selectedRole.summary}
+                    </p>
+                  </div>
+
+                  <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+                    {selectedRole.highlights.map((highlight, idx) => (
+                      <div key={idx} className="flex gap-4">
+                        <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0" />
+                        <p className="text-sm text-slate-600 font-medium leading-relaxed">{highlight}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </TabsContent>
 
           <TabsContent value="certs" className="mt-0 focus-visible:outline-none">
             <div className="max-w-7xl mx-auto space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedCerts.map((cert, idx) => (
                   <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group">
                     <CardContent className="p-0 flex items-center gap-8">
-                      <div className="relative w-16 h-16 shrink-0">
+                      <div className="relative w-14 h-14 shrink-0">
                         <Image 
                           src="/assets/images/emc.png" 
                           alt="EMC Logo" 
@@ -240,14 +305,11 @@ export function AchievementsSection() {
                           className="object-contain" 
                         />
                       </div>
-                      <div className="flex-1 space-y-2">
-                        <h4 className="text-base font-black text-foreground uppercase tracking-tight leading-tight">{cert.name}</h4>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-sm font-black text-foreground uppercase tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
                         <div className="flex items-center justify-between">
-                          <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{cert.issuer}</p>
-                          <div className="flex items-center gap-4">
-                            <span className="text-[10px] font-black text-blue-600 uppercase">{cert.date}</span>
-                            <ExternalLink className="w-4 h-4 text-slate-300 group-hover:text-blue-600 transition-colors" />
-                          </div>
+                          <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest truncate">{cert.issuer}</p>
+                          <span className="text-[10px] font-black text-blue-600 uppercase shrink-0 ml-4">{cert.date}</span>
                         </div>
                       </div>
                     </CardContent>
@@ -265,7 +327,6 @@ export function AchievementsSection() {
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </Button>
-                
                 <div className="flex gap-2">
                   {Array.from({ length: totalCertPages }).map((_, i) => (
                     <button
@@ -278,7 +339,6 @@ export function AchievementsSection() {
                     />
                   ))}
                 </div>
-
                 <Button 
                   variant="outline" 
                   size="icon" 
@@ -294,12 +354,12 @@ export function AchievementsSection() {
 
           <TabsContent value="awards" className="mt-0 focus-visible:outline-none">
             <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {awardsData.map((award, idx) => {
                   const imageData = PlaceHolderImages.find(img => img.id === award.imageId);
                   return (
-                    <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-700 hover:shadow-2xl hover:shadow-blue-600/5 hover:-translate-y-1.5">
-                      <div className="relative aspect-video overflow-hidden bg-slate-50">
+                    <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-700 hover:shadow-2xl hover:shadow-blue-600/5">
+                      <div className="relative aspect-[3/2] overflow-hidden bg-slate-50">
                         {imageData && (
                           <Image 
                             src={imageData.imageUrl} 
@@ -310,13 +370,8 @@ export function AchievementsSection() {
                           />
                         )}
                         <div className="absolute top-4 left-4">
-                          <div className="p-2 rounded-xl bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
-                            <Trophy className="w-4 h-4 text-blue-600" />
-                          </div>
-                        </div>
-                        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                          <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                            <ArrowUpRight className="w-5 h-5 text-white" />
+                          <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
+                            <span className="text-[9px] font-black text-foreground uppercase tracking-widest">{award.type}</span>
                           </div>
                         </div>
                       </div>
