@@ -2,32 +2,25 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   ExternalLink, 
-  Briefcase, 
-  Trophy, 
-  Globe, 
-  Code2, 
-  Terminal, 
-  ShieldCheck, 
-  Info, 
   Calendar, 
   ChevronLeft, 
   ChevronRight, 
-  Cpu, 
-  Layout, 
-  Smartphone, 
-  Server,
+  Info,
   BookOpen,
-  Vote,
-  Microscope,
-  Zap
+  Globe,
+  ShieldCheck,
+  Zap,
+  Microscope
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 // 2021 to 2026 = 6 years = 72 months
 const leadershipData = [
@@ -39,7 +32,8 @@ const leadershipData = [
     description: 'Served as the primary liaison for the ICT strand during Senior High School, coordinating elections and student initiatives for technical tracks.',
     start: 8, // Sep 2021
     duration: 22,
-    color: 'bg-slate-400',
+    color: 'bg-slate-100 border-slate-200',
+    textColor: 'text-slate-400',
     icon: ShieldCheck
   },
   {
@@ -49,8 +43,9 @@ const leadershipData = [
     org: 'AGAPE PH0209 · Quezon City',
     description: 'Directing strategic operations for a youth-led NGO with 200+ members, orchestrating 15+ community programs impacting over 600 beneficiaries nationwide.',
     start: 37, // Feb 2024
-    duration: 34,
-    color: 'bg-blue-600',
+    duration: 35,
+    color: 'bg-blue-50 border-blue-100',
+    textColor: 'text-blue-600',
     icon: Globe
   },
   {
@@ -60,8 +55,9 @@ const leadershipData = [
     org: 'FEU Institute of Technology',
     description: 'Presiding over academic resource planning and digital literacy initiatives, spearheading the Salayliwa edu-cultural project with the National Library.',
     start: 43, // Aug 2024
-    duration: 28,
-    color: 'bg-indigo-600',
+    duration: 29,
+    color: 'bg-indigo-50 border-indigo-100',
+    textColor: 'text-indigo-600',
     icon: BookOpen
   },
   {
@@ -72,7 +68,8 @@ const leadershipData = [
     description: 'Drove technical marketing and innovation development, securing capital grants and shaping product roadmaps for IoT solutions.',
     start: 47, // Dec 2024
     duration: 12,
-    color: 'bg-blue-400',
+    color: 'bg-blue-50 border-blue-100',
+    textColor: 'text-blue-400',
     icon: Zap
   },
   {
@@ -82,29 +79,30 @@ const leadershipData = [
     org: 'NERDS 2.0 · Hybrid',
     description: 'Directing R&D operations for award-winning initiatives, securing ₱1.2M+ in total grants while leading cross-functional engineering teams.',
     start: 55, // Aug 2025
-    duration: 16,
-    color: 'bg-slate-800',
+    duration: 17,
+    color: 'bg-slate-900 border-slate-800',
+    textColor: 'text-white',
     icon: Microscope
   }
 ];
 
 const certificationData = [
-  { name: 'Linux Essentials', issuer: 'Cisco Networking Academy', date: '2025', icon: Terminal },
-  { name: 'IT Specialist - Python', issuer: 'Certiport', date: '2025', icon: Code2 },
-  { name: 'OCI AI Foundations', issuer: 'Oracle', date: '2025', icon: Globe },
-  { name: 'AI Associate', issuer: 'Salesforce', date: '2025', icon: ShieldCheck },
-  { name: 'GenAI Fundamentals', issuer: 'Databricks Academy', date: '2025', icon: Layout },
-  { name: 'Network Security', issuer: 'The SecOps Group', date: '2025', icon: ShieldCheck },
-  { name: 'Android with Kotlin', issuer: 'LinkedIn Learning', date: '2025', icon: Smartphone },
-  { name: 'MATLAB Professional', issuer: 'LinkedIn Learning', date: '2025', icon: Terminal },
-  { name: 'Node.js Testing', issuer: 'LinkedIn Learning', date: '2025', icon: Server },
-  { name: 'IT Specialist - Java', issuer: 'Certiport', date: '2025', icon: Code2 },
-  { name: 'MS Summer Bootcamp', issuer: 'Microsoft', date: '2025', icon: Cpu },
-  { name: 'Cloud AI Literacy', issuer: 'Google Cloud', date: '2025', icon: Globe },
-  { name: 'Cybersecurity Ops', issuer: 'Cisco Academy', date: '2025', icon: ShieldCheck },
-  { name: 'Data Engineering', issuer: 'Datacamp', date: '2024', icon: Layout },
-  { name: 'Innovation Dev', issuer: 'Urban Youth Academy', date: '2025', icon: Briefcase },
-  { name: 'Technical Writing', issuer: 'FEU Tech ACM', date: '2024', icon: Terminal }
+  { name: 'Linux Essentials', issuer: 'Cisco Networking Academy', date: '2025' },
+  { name: 'IT Specialist - Python', issuer: 'Certiport', date: '2025' },
+  { name: 'OCI AI Foundations', issuer: 'Oracle', date: '2025' },
+  { name: 'AI Associate', issuer: 'Salesforce', date: '2025' },
+  { name: 'GenAI Fundamentals', issuer: 'Databricks Academy', date: '2025' },
+  { name: 'Network Security', issuer: 'The SecOps Group', date: '2025' },
+  { name: 'Android with Kotlin', issuer: 'LinkedIn Learning', date: '2025' },
+  { name: 'MATLAB Professional', issuer: 'LinkedIn Learning', date: '2025' },
+  { name: 'Node.js Testing', issuer: 'LinkedIn Learning', date: '2025' },
+  { name: 'IT Specialist - Java', issuer: 'Certiport', date: '2025' },
+  { name: 'MS Summer Bootcamp', issuer: 'Microsoft', date: '2025' },
+  { name: 'Cloud AI Literacy', issuer: 'Google Cloud', date: '2025' },
+  { name: 'Cybersecurity Ops', issuer: 'Cisco Academy', date: '2025' },
+  { name: 'Data Engineering', issuer: 'Datacamp', date: '2024' },
+  { name: 'Innovation Dev', issuer: 'Urban Youth Academy', date: '2025' },
+  { name: 'Technical Writing', issuer: 'FEU Tech ACM', date: '2024' }
 ];
 
 const awardsData = [
@@ -132,10 +130,12 @@ export function AchievementsSection() {
   const paginatedCerts = certificationData.slice(certPage * certsPerPage, (certPage + 1) * certsPerPage);
   const totalCertPages = Math.ceil(certificationData.length / certsPerPage);
 
+  const emcLogo = PlaceHolderImages.find(img => img.id === 'logo-emc');
   const ActiveRoleIcon = activeRole.icon;
 
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-white">
+      {/* Technical Grid Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
@@ -178,30 +178,35 @@ export function AchievementsSection() {
 
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
             <div className="max-w-6xl mx-auto space-y-16">
-              <div className="relative pt-12 pb-20 overflow-x-auto custom-scrollbar">
-                <div className="min-w-[1000px] relative">
-                  <div className="absolute top-[calc(100%-40px)] left-0 w-full h-px bg-slate-200" />
-                  
-                  <div className="absolute inset-x-0 bottom-[40px] h-full flex justify-between pointer-events-none px-4">
+              {/* Gantt Chart Container */}
+              <div className="relative pt-12 pb-24 overflow-x-auto custom-scrollbar">
+                <div className="min-w-[1000px] relative pb-12">
+                  {/* Monthly Vertical Lines */}
+                  <div className="absolute inset-x-0 top-0 bottom-12 flex justify-between pointer-events-none px-4">
                     {Array.from({ length: 73 }).map((_, i) => (
                       <div key={i} className={cn(
                         "w-px bg-slate-100/50",
-                        i % 12 === 0 ? "h-6 bg-slate-300" : "h-3"
+                        i % 12 === 0 ? "h-full bg-slate-200" : "h-full"
                       )} />
                     ))}
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-8 h-4 flex justify-between pointer-events-none px-4">
+                  {/* Horizontal Baseline */}
+                  <div className="absolute bottom-[48px] left-0 w-full h-px bg-slate-200" />
+
+                  {/* Year Labels */}
+                  <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
                     {timelineYears.map((y) => (
                       <div key={y.label} className="relative flex flex-col items-center">
-                        <span className="absolute top-4 whitespace-nowrap text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
+                        <span className="whitespace-nowrap text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
                           {y.label}
                         </span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="relative space-y-4 px-4 min-h-[280px]">
+                  {/* Role Bars */}
+                  <div className="relative space-y-4 px-4 min-h-[320px]">
                     {leadershipData.map((item) => {
                       const left = (item.start / 72) * 100;
                       const width = (item.duration / 72) * 100;
@@ -209,42 +214,30 @@ export function AchievementsSection() {
 
                       return (
                         <div key={item.id} className="relative h-12">
-                          <TooltipProvider delayDuration={0}>
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <button
-                                  onClick={() => setActiveRole(item)}
-                                  style={{ 
-                                    left: `${left}%`, 
-                                    width: `${width}%` 
-                                  }}
-                                  className={cn(
-                                    "absolute h-8 rounded-xl transition-all duration-500 border shadow-sm group overflow-hidden flex items-center px-4",
-                                    isActive 
-                                      ? cn(item.color, "border-white/20 shadow-xl shadow-blue-600/10 scale-[1.02] z-20") 
-                                      : "bg-slate-50 border-slate-100 hover:border-slate-300 z-10"
-                                  )}
-                                >
-                                  <div className={cn(
-                                    "w-1.5 h-1.5 rounded-full mr-3 shrink-0",
-                                    isActive ? "bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" : cn(item.color, "opacity-40")
-                                  )} />
-                                  <span className={cn(
-                                    "text-[9px] font-black uppercase tracking-widest truncate",
-                                    isActive ? "text-white" : "text-slate-400"
-                                  )}>
-                                    {item.role}
-                                  </span>
-                                </button>
-                              </TooltipTrigger>
-                              <TooltipContent 
-                                side="top" 
-                                className="bg-white border-slate-100 rounded-xl px-4 py-2 shadow-xl mb-2"
-                              >
-                                <p className="text-[10px] font-black uppercase tracking-widest text-blue-600">{item.date}</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
+                          <button
+                            onClick={() => setActiveRole(item)}
+                            style={{ 
+                              left: `${left}%`, 
+                              width: `${width}%` 
+                            }}
+                            className={cn(
+                              "absolute h-10 rounded-xl transition-all duration-500 border shadow-sm flex items-center px-4 group overflow-hidden",
+                              isActive 
+                                ? "bg-slate-900 border-slate-800 shadow-xl z-20 scale-[1.02]" 
+                                : "bg-white border-slate-100 hover:border-slate-300 z-10"
+                            )}
+                          >
+                            <div className={cn(
+                              "w-1.5 h-1.5 rounded-full mr-3 shrink-0",
+                              isActive ? "bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" : "bg-slate-200"
+                            )} />
+                            <span className={cn(
+                              "text-[9px] font-black uppercase tracking-widest truncate",
+                              isActive ? "text-white" : "text-slate-400"
+                            )}>
+                              {item.role}
+                            </span>
+                          </button>
                         </div>
                       );
                     })}
@@ -252,10 +245,11 @@ export function AchievementsSection() {
                 </div>
               </div>
 
+              {/* Summary Detail Card */}
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-4xl mx-auto">
                 <Card className="bg-white border-slate-100 rounded-[2.5rem] p-10 shadow-sm border overflow-hidden relative group">
-                  <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <ActiveRoleIcon className="w-32 h-32 text-blue-600" />
+                  <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
+                    <ActiveRoleIcon className="w-40 h-40 text-blue-600" />
                   </div>
                   <CardContent className="p-0 space-y-8">
                     <div className="space-y-4">
@@ -272,8 +266,8 @@ export function AchievementsSection() {
                     </div>
                     
                     <div className="flex gap-6 items-start">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                        <Info className="w-5 h-5 text-blue-600" />
+                      <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
+                        <Info className="w-6 h-6 text-blue-600" />
                       </div>
                       <p className="text-slate-500 font-medium leading-relaxed max-w-2xl text-lg">
                         {activeRole.description}
@@ -289,10 +283,17 @@ export function AchievementsSection() {
             <div className="space-y-12">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-in fade-in duration-500">
                 {paginatedCerts.map((cert, idx) => (
-                  <Card key={idx} className="bg-white border-slate-200 rounded-3xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
+                  <Card key={idx} className="bg-white border-slate-200 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
                     <CardContent className="p-0 flex flex-col items-center gap-6">
-                      <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center transition-colors group-hover:bg-blue-600">
-                        <cert.icon className="w-8 h-8 text-blue-600 transition-colors group-hover:text-white" />
+                      <div className="relative w-16 h-16 grayscale group-hover:grayscale-0 transition-all duration-500">
+                        {emcLogo && (
+                          <Image 
+                            src={emcLogo.imageUrl} 
+                            alt="EMC Logo" 
+                            fill 
+                            className="object-contain" 
+                          />
+                        )}
                       </div>
                       <div className="space-y-2">
                         <h4 className="text-[11px] font-black text-foreground uppercase tracking-tight leading-tight">{cert.name}</h4>
@@ -307,6 +308,7 @@ export function AchievementsSection() {
                 ))}
               </div>
 
+              {/* Pagination Controls */}
               <div className="flex justify-center items-center gap-4">
                 <Button 
                   variant="outline" 
@@ -347,15 +349,10 @@ export function AchievementsSection() {
           <TabsContent value="awards" className="mt-0 focus-visible:outline-none">
             <div className="max-w-4xl mx-auto divide-y divide-slate-100">
               {awardsData.map((award, idx) => (
-                <div key={idx} className="py-8 first:pt-0 last:pb-0 group transition-all duration-300 hover:px-6 hover:bg-slate-50/50 rounded-2xl flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                      <Trophy className="w-5 h-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-medium text-foreground uppercase italic tracking-tighter leading-none">{award.title}</h4>
-                      <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{award.issuer}</p>
-                    </div>
+                <div key={idx} className="py-8 first:pt-0 last:pb-0 group transition-all duration-300 hover:px-8 hover:bg-slate-50/50 rounded-2xl flex items-center justify-between">
+                  <div className="space-y-1">
+                    <h4 className="text-lg font-medium text-foreground uppercase italic tracking-tighter leading-none">{award.title}</h4>
+                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{award.issuer}</p>
                   </div>
                   <span className="text-xs font-black text-slate-300 group-hover:text-blue-600 transition-colors">{award.year}</span>
                 </div>
