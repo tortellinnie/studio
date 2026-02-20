@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -7,15 +8,27 @@ import { ExternalLink, Briefcase, Trophy, Globe, Code2, Terminal, ShieldCheck, I
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
+// 2021 to 2026 = 6 years = 72 months
+// Index starts at 0 (Jan 2021)
 const leadershipData = [
+  {
+    id: 'pupshs',
+    date: 'Sep 2021 – Jul 2023',
+    role: 'ICT Representative',
+    org: 'PUPSHS COMELEC · Manila',
+    description: 'Served as the primary liaison for the ICT strand during Senior High School, coordinating elections and student initiatives for technical tracks.',
+    start: 8, // Sep 2021
+    duration: 22, // 22 months
+    color: 'bg-slate-400'
+  },
   {
     id: 'agape',
     date: 'Feb 2024 – Present',
     role: 'President',
     org: 'AGAPE PH0209 · Quezon City',
-    description: 'Directed strategic operations for a youth-led NGO with 200+ members, orchestrating 15+ community programs impacting over 600 beneficiaries nationwide.',
-    start: 1, // Feb 2024 (Index from Jan 2024 = 0)
-    duration: 23, // 23 months to current
+    description: 'Directing strategic operations for a youth-led NGO with 200+ members, orchestrating 15+ community programs impacting over 600 beneficiaries nationwide.',
+    start: 37, // Feb 2024
+    duration: 34, // to end of 2026
     color: 'bg-blue-600'
   },
   {
@@ -24,18 +37,28 @@ const leadershipData = [
     role: 'President, Library Committee',
     org: 'FEU Institute of Technology',
     description: 'Presiding over academic resource planning and digital literacy initiatives, spearheading the Salayliwa edu-cultural project with the National Library.',
-    start: 7, // Aug 2024
-    duration: 17,
+    start: 43, // Aug 2024
+    duration: 28,
     color: 'bg-indigo-600'
+  },
+  {
+    id: 'cram',
+    date: 'Dec 2024 – Dec 2025',
+    role: 'Lead Marketing Officer',
+    org: 'C-RAM Solutions · Hybrid',
+    description: 'Drove technical marketing and innovation development, securing capital grants and shaping product roadmaps for IoT solutions.',
+    start: 47, // Dec 2024
+    duration: 12,
+    color: 'bg-blue-400'
   },
   {
     id: 'nerds',
     date: 'Aug 2025 – Present',
     role: 'Executive Lead',
     org: 'NERDS 2.0 · Hybrid',
-    description: 'Directed R&D operations for award-winning initiatives, securing ₱1.2M+ in total grants and startup incentives while leading cross-functional engineering teams.',
-    start: 19, // Aug 2025
-    duration: 5,
+    description: 'Directing R&D operations for award-winning initiatives, securing ₱1.2M+ in total grants while leading cross-functional engineering teams.',
+    start: 55, // Aug 2025
+    duration: 16,
     color: 'bg-slate-800'
   }
 ];
@@ -60,11 +83,12 @@ const awardsData = [
   { title: 'QCYDO Economic Scholarship', issuer: 'Quezon City Government', year: '2025' }
 ];
 
-const timelineQuarters = [
-  { label: 'Q1 2024', pos: 0 },
-  { label: 'Q3 2024', pos: 25 },
-  { label: 'Q1 2025', pos: 50 },
-  { label: 'Q3 2025', pos: 75 },
+const timelineYears = [
+  { label: '2021', pos: 0 },
+  { label: '2022', pos: 20 },
+  { label: '2023', pos: 40 },
+  { label: '2024', pos: 60 },
+  { label: '2025', pos: 80 },
   { label: '2026', pos: 100 },
 ];
 
@@ -80,7 +104,7 @@ export function AchievementsSection() {
              backgroundSize: '40px 40px' 
            }} />
       
-      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="text-center mb-16 space-y-3">
           <h2 className="text-4xl md:text-5xl font-medium text-foreground italic uppercase tracking-tighter">
             IMPACT & RECOGNITION
@@ -115,29 +139,38 @@ export function AchievementsSection() {
           </div>
 
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
-            <div className="max-w-4xl mx-auto space-y-16">
+            <div className="max-w-6xl mx-auto space-y-16">
               {/* Gantt Chart Implementation */}
               <div className="relative pt-12 pb-20">
                 {/* Horizontal Baseline */}
                 <div className="absolute top-[calc(100%-40px)] left-0 w-full h-px bg-slate-200" />
                 
-                {/* Quarter Markers (Vertical Lines) */}
-                <div className="absolute inset-x-0 bottom-8 h-4 flex justify-between pointer-events-none">
-                  {timelineQuarters.map((q) => (
-                    <div key={q.label} className="relative flex flex-col items-center">
-                      <div className="h-2 w-px bg-slate-300" />
+                {/* Monthly Vertical Markers (Ticks) */}
+                <div className="absolute inset-x-0 bottom-[40px] h-full flex justify-between pointer-events-none px-4">
+                  {Array.from({ length: 73 }).map((_, i) => (
+                    <div key={i} className={cn(
+                      "w-px bg-slate-100/50",
+                      i % 12 === 0 ? "h-6 bg-slate-300" : "h-3"
+                    )} />
+                  ))}
+                </div>
+
+                {/* Year Labels */}
+                <div className="absolute inset-x-0 bottom-8 h-4 flex justify-between pointer-events-none px-4">
+                  {timelineYears.map((y) => (
+                    <div key={y.label} className="relative flex flex-col items-center">
                       <span className="absolute top-4 whitespace-nowrap text-[8px] font-black uppercase tracking-[0.2em] text-slate-400">
-                        {q.label}
+                        {y.label}
                       </span>
                     </div>
                   ))}
                 </div>
 
                 {/* Gantt Bars */}
-                <div className="relative space-y-4 px-4">
+                <div className="relative space-y-4 px-4 min-h-[280px]">
                   {leadershipData.map((item) => {
-                    const left = (item.start / 24) * 100;
-                    const width = (item.duration / 24) * 100;
+                    const left = (item.start / 72) * 100;
+                    const width = (item.duration / 72) * 100;
                     const isActive = activeRole.id === item.id;
 
                     return (
@@ -185,7 +218,7 @@ export function AchievementsSection() {
               </div>
 
               {/* Active Role Summary Card */}
-              <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-4xl mx-auto">
                 <Card className="bg-white border-slate-100 rounded-[2.5rem] p-10 shadow-sm border overflow-hidden relative group">
                   <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                     <Briefcase className="w-32 h-32 text-blue-600" />
