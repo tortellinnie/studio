@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -171,7 +170,7 @@ export function Projects() {
                                 <SdgIcon className="w-4 h-4 text-white" />
                               </a>
                             </TooltipTrigger>
-                            <TooltipContent className="p-4 rounded-2xl max-w-[200px] bg-white shadow-2xl border-gray-100">
+                            <TooltipContent className="p-4 rounded-2xl max-w-[240px] bg-white shadow-2xl border-gray-100 z-[100]">
                               <div className="space-y-1">
                                 <p className="text-[10px] font-black uppercase text-muted-foreground tracking-widest">Goal {id}</p>
                                 <p className="text-sm font-bold text-foreground leading-tight">{sdg.title}</p>
