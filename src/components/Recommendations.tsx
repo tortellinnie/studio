@@ -55,7 +55,7 @@ export function Recommendations() {
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-10">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground uppercase tracking-tighter leading-none">
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight leading-none">
               Recommendations
             </h2>
             <p className="text-slate-500 text-sm font-medium">What colleagues say about working with me.</p>
@@ -98,13 +98,13 @@ export function Recommendations() {
                   <div className="flex items-center gap-4 pt-8 mt-auto border-t border-slate-50">
                     <Avatar className="w-12 h-12 border border-slate-100">
                       <AvatarImage src={item.avatarUrl} alt={item.name} className="object-cover" />
-                      <AvatarFallback className="bg-blue-600 text-white font-medium text-[10px]">
+                      <AvatarFallback className="bg-blue-600 text-white font-medium text-xs">
                         {item.initials}
                       </AvatarFallback>
                     </Avatar>
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-foreground uppercase tracking-tight truncate">{item.name}</p>
-                      <p className="text-[9px] font-medium text-blue-600 uppercase tracking-widest truncate">{item.role}</p>
+                      <p className="text-sm font-semibold text-foreground tracking-tight truncate">{item.name}</p>
+                      <p className="text-xs font-medium text-blue-600 truncate">{item.role}</p>
                     </div>
                   </div>
                 </div>

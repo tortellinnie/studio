@@ -27,7 +27,7 @@ export function Contact() {
   ];
 
   return (
-    <footer className="py-12 bg-white">
+    <footer className="py-12 bg-white" id="contact">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="bg-slate-50/50 rounded-[3rem] border border-slate-100 p-12 md:p-16">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
@@ -35,8 +35,8 @@ export function Contact() {
             <div className="md:col-span-5 space-y-8">
               <div className="space-y-4">
                 <Link href="/" className="flex items-center gap-1 group">
-                  <span className="text-2xl font-black tracking-tighter uppercase italic text-black">
-                    <span className="text-primary">TECHNO</span>LEADER
+                  <span className="text-2xl font-semibold tracking-tight text-black">
+                    <span className="text-primary">Techno</span>Leader
                   </span>
                 </Link>
                 <p className="text-slate-500 text-sm font-medium leading-relaxed max-w-xs">
@@ -62,7 +62,7 @@ export function Contact() {
 
             {/* Navigation Column */}
             <div className="md:col-span-3 space-y-6">
-              <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.2em]">Navigation</h4>
+              <h4 className="text-sm font-semibold text-slate-900">Navigation</h4>
               <ul className="space-y-4">
                 {navLinks.map((link, i) => (
                   <li key={i}>
@@ -76,7 +76,7 @@ export function Contact() {
 
             {/* Resources Column */}
             <div className="md:col-span-4 space-y-6">
-              <h4 className="text-[11px] font-black text-slate-900 uppercase tracking-[0.2em]">Resources</h4>
+              <h4 className="text-sm font-semibold text-slate-900">Resources</h4>
               <ul className="space-y-4">
                 {resourceLinks.map((link, i) => (
                   <li key={i}>
@@ -90,10 +90,10 @@ export function Contact() {
           </div>
 
           <div className="mt-20 pt-10 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-slate-400 text-[11px] font-black uppercase tracking-widest">
-              © {currentYear} SHANN KARL FELIPE
+            <div className="text-slate-400 text-xs font-medium">
+              © {currentYear} Shann Karl Felipe
             </div>
-            <div className="flex items-center gap-1 text-slate-400 text-[11px] font-black uppercase tracking-widest">
+            <div className="flex items-center gap-1 text-slate-400 text-xs font-medium">
               Built with Next.js & Firebase
             </div>
           </div>

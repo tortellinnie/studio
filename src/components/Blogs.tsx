@@ -11,61 +11,61 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 const blogItems = [
   {
     id: 'edge-ai-agri',
-    tag: 'AGRICULTURE',
-    title: 'THE FUTURE OF EDGE AI IN AGRICULTURE',
+    tag: 'Agriculture',
+    title: 'The Future of Edge AI in Agriculture',
     excerpt: 'Exploring how real-time computer vision on edge devices is transforming modern farm management.',
-    date: 'OCT 2025',
-    readTime: '5 MIN READ',
+    date: 'Oct 2025',
+    readTime: '5 min read',
     imageId: 'featured-prompt-challenge',
     color: 'bg-emerald-500'
   },
   {
     id: 'video-automation-gemini',
-    tag: 'AUTOMATION',
-    title: 'AUTONOMOUS VIDEO PRODUCTION WITH GEMINI',
+    tag: 'Automation',
+    title: 'Autonomous Video Production with Gemini',
     excerpt: 'A deep dive into building an end-to-end automation pipeline using n8n, Docker, and Gemini 2.5 Flash.',
-    date: 'SEP 2025',
-    readTime: '8 MIN READ',
+    date: 'Sep 2025',
+    readTime: '8 min read',
     imageId: 'featured-github-universe',
     color: 'bg-blue-500'
   },
   {
     id: 'tpu-scaling',
-    tag: 'MACHINE LEARNING',
-    title: 'SCALING NEURAL NETWORKS ON CLOUD TPUS',
+    tag: 'Machine Learning',
+    title: 'Scaling Neural Networks on Cloud TPUs',
     excerpt: 'Technical insights from my research experience with the Google TPU Research Cloud (TRC) program.',
-    date: 'AUG 2025',
-    readTime: '12 MIN READ',
+    date: 'Aug 2025',
+    readTime: '12 min read',
     imageId: 'featured-tpu-research',
     color: 'bg-purple-500'
   },
   {
     id: 'distributed-iot',
-    tag: 'SYSTEMS',
-    title: 'DISTRIBUTED SYSTEMS FOR IOT EDGE NODES',
+    tag: 'Systems',
+    title: 'Distributed Systems for IoT Edge Nodes',
     excerpt: 'Managing state and reliability in heterogeneous IoT environments using lightweight consensus protocols.',
-    date: 'JUL 2025',
-    readTime: '10 MIN READ',
+    date: 'Jul 2025',
+    readTime: '10 min read',
     imageId: 'featured-aws-reinvent',
     color: 'bg-orange-500'
   },
   {
     id: 'birdseye-deep-dive',
-    tag: 'COMPUTER VISION',
-    title: 'BIRDSEYE: COMPUTER VISION IN POULTRY',
+    tag: 'Computer Vision',
+    title: 'Birdseye: Computer Vision in Poultry',
     excerpt: 'A technical deep dive into the Birdseye architecture, from sensor fusion to real-time inference on the edge.',
-    date: 'JUN 2025',
-    readTime: '15 MIN READ',
+    date: 'Jun 2025',
+    readTime: '15 min read',
     imageId: 'project-birdseye',
     color: 'bg-cyan-500'
   },
   {
     id: 'prompt-eng-future',
-    tag: 'AI ENGINEERING',
-    title: 'THE FUTURE OF PROMPT ENGINEERING',
+    tag: 'AI Engineering',
+    title: 'The Future of Prompt Engineering',
     excerpt: 'How LLMs are evolving to handle complex, multi-modal reasonings through advanced prompt orchestration.',
-    date: 'MAY 2025',
-    readTime: '7 MIN READ',
+    date: 'May 2025',
+    readTime: '7 min read',
     imageId: 'featured-prompt-challenge',
     color: 'bg-rose-500'
   }
@@ -82,8 +82,8 @@ export function Blogs() {
 
       <div className="container mx-auto px-6 max-w-7xl mb-12 relative z-10">
         <div className="space-y-2 border-b border-gray-100 pb-10 text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl font-medium text-foreground tracking-tighter uppercase">
-            INSIGHTS
+          <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
+            Insights
           </h2>
           <p className="text-muted-foreground text-sm font-medium">
             Thoughts on technology, engineering, and innovation.
@@ -117,30 +117,30 @@ export function Blogs() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
                     
                     <div className="absolute top-6 right-6 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center gap-2">
-                      <Clock className="w-3 h-3 text-white/60" />
-                      <span className="text-[8px] font-medium text-white uppercase tracking-widest">{item.readTime}</span>
+                      <Clock className="w-4 h-4 text-white/60" />
+                      <span className="text-xs font-medium text-white">{item.readTime}</span>
                     </div>
 
                     <div className="absolute inset-0 p-10 flex flex-col justify-end whitespace-normal">
                       <div className="space-y-4">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
                            <div className={cn("w-1.5 h-1.5 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.5)]", item.color)} />
-                           <p className="text-[9px] font-medium text-white uppercase tracking-[0.2em]">{item.tag}</p>
+                           <p className="text-xs font-medium text-white">{item.tag}</p>
                         </div>
                         
                         <div className="space-y-2">
-                          <h3 className="text-2xl font-medium text-white leading-[1.1] uppercase tracking-tighter group-hover:text-primary transition-colors">
+                          <h3 className="text-2xl font-semibold text-white leading-tight tracking-tight group-hover:text-primary transition-colors">
                             {item.title}
                           </h3>
-                          <p className="text-white/60 text-xs font-medium line-clamp-2 uppercase tracking-wide">
+                          <p className="text-white/60 text-sm font-medium line-clamp-2">
                             {item.excerpt}
                           </p>
                         </div>
 
                         <div className="pt-4 flex items-center justify-between">
                           <div className="flex items-center gap-2 text-white/40">
-                            <Calendar className="w-3 h-3" />
-                            <span className="text-[9px] font-medium uppercase tracking-widest">{item.date}</span>
+                            <Calendar className="w-4 h-4" />
+                            <span className="text-xs font-medium">{item.date}</span>
                           </div>
                           <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-500">
                             <ArrowRight className="w-5 h-5" />

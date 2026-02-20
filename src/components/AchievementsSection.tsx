@@ -18,7 +18,7 @@ const leadershipData = [
   {
     id: 'pupshs',
     date: 'Sep 2021 – Jul 2023',
-    role: 'ICT REPRESENTATIVE',
+    role: 'ICT Representative',
     org: 'PUPSHS COMELEC',
     start: 8,
     duration: 22,
@@ -32,7 +32,7 @@ const leadershipData = [
   {
     id: 'agape',
     date: 'Feb 2024 – Present',
-    role: 'PRESIDENT',
+    role: 'President',
     org: 'AGAPE PH0209',
     start: 37,
     duration: 35,
@@ -46,7 +46,7 @@ const leadershipData = [
   {
     id: 'library',
     date: 'Aug 2024 – Present',
-    role: 'PRESIDENT, LIBRARY COMMITTEE',
+    role: 'President, Library Committee',
     org: 'FEU Institute of Technology',
     start: 43,
     duration: 29,
@@ -60,7 +60,7 @@ const leadershipData = [
   {
     id: 'cram',
     date: 'Dec 2024 – Dec 2025',
-    role: 'LEAD MARKETING OFFICER',
+    role: 'Lead Marketing Officer',
     org: 'C-RAM Solutions',
     start: 47,
     duration: 12,
@@ -74,7 +74,7 @@ const leadershipData = [
   {
     id: 'nerds',
     date: 'Aug 2025 – Present',
-    role: 'EXECUTIVE LEAD',
+    role: 'Executive Lead',
     org: 'NERDS 2.0',
     start: 55,
     duration: 17,
@@ -103,12 +103,12 @@ const certificationData = [
 ];
 
 const awardsData = [
-  { title: 'EMC Global Award', issuer: 'EMC Global Summit', year: '2026', type: 'AWARD', imageId: 'featured-prompt-challenge' },
-  { title: 'Most Outstanding Youth', issuer: 'QC Gov', year: '2025', type: 'AWARD', imageId: 'featured-tpu-research' },
-  { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023', type: 'SCHOLARSHIP', imageId: 'featured-aws-reinvent' },
-  { title: 'Winner, Musashinova', issuer: 'EMC Global', year: '2025', type: 'AWARD', imageId: 'featured-github-universe' },
-  { title: 'Startup Challenge X', issuer: 'DICT NCR', year: '2025', type: 'AWARD', imageId: 'featured-prompt-challenge' },
-  { title: 'QCYDO Scholarship', issuer: 'Quezon City Gov', year: '2025', type: 'SCHOLARSHIP', imageId: 'featured-tpu-research' }
+  { title: 'EMC Global Award', issuer: 'EMC Global Summit', year: '2026', type: 'Award', imageId: 'featured-prompt-challenge' },
+  { title: 'Most Outstanding Youth', issuer: 'QC Gov', year: '2025', type: 'Award', imageId: 'featured-tpu-research' },
+  { title: 'DOST Merit Scholarship', issuer: 'DOST Philippines', year: '2023', type: 'Scholarship', imageId: 'featured-aws-reinvent' },
+  { title: 'Winner, Musashinova', issuer: 'EMC Global', year: '2025', type: 'Award', imageId: 'featured-github-universe' },
+  { title: 'Startup Challenge X', issuer: 'DICT NCR', year: '2025', type: 'Award', imageId: 'featured-prompt-challenge' },
+  { title: 'QCYDO Scholarship', issuer: 'Quezon City Gov', year: '2025', type: 'Scholarship', imageId: 'featured-tpu-research' }
 ];
 
 const timelineYears = [
@@ -139,8 +139,8 @@ export function AchievementsSection() {
       
       <div className="container mx-auto px-6 max-w-[100rem] relative z-10">
         <div className="text-center mb-16 space-y-3">
-          <h2 className="text-4xl md:text-5xl font-medium text-foreground uppercase tracking-tighter">
-            IMPACT & RECOGNITION
+          <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight">
+            Impact & Recognition
           </h2>
           <p className="text-slate-500 text-sm font-medium">
             Milestones, technical validations, and community leadership.
@@ -152,19 +152,19 @@ export function AchievementsSection() {
             <TabsList className="bg-slate-100/50 p-1.5 rounded-full h-14 border border-slate-200">
               <TabsTrigger 
                 value="leadership" 
-                className="rounded-full px-8 text-[11px] font-medium uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-sm font-medium data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Leadership
               </TabsTrigger>
               <TabsTrigger 
                 value="certs" 
-                className="rounded-full px-8 text-[11px] font-medium uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-sm font-medium data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Certifications
               </TabsTrigger>
               <TabsTrigger 
                 value="awards" 
-                className="rounded-full px-8 text-[11px] font-medium uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-sm font-medium data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Awards & Scholarships
               </TabsTrigger>
@@ -190,7 +190,7 @@ export function AchievementsSection() {
                     <div className="absolute inset-x-0 bottom-0 h-6 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
-                          <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.2em] text-slate-900">
+                          <span className="whitespace-nowrap text-xs font-semibold text-slate-900">
                             {y.label}
                           </span>
                         </div>
@@ -220,7 +220,7 @@ export function AchievementsSection() {
                                       : "bg-white border-slate-200 text-slate-500 hover:border-blue-600/30 shadow-sm"
                                   )}
                                 >
-                                  <span className="text-[9px] font-medium uppercase tracking-widest truncate">
+                                  <span className="text-xs font-medium truncate">
                                     {item.role}
                                   </span>
                                 </button>
@@ -230,14 +230,14 @@ export function AchievementsSection() {
                                 className="bg-white border-slate-200 p-6 rounded-2xl shadow-xl z-[100] min-w-[280px]"
                               >
                                 <div className="space-y-3">
-                                  <h4 className="text-[13px] font-medium uppercase tracking-tight text-foreground leading-none">
+                                  <h4 className="text-sm font-semibold text-foreground leading-none">
                                     {item.role}
                                   </h4>
-                                  <p className="text-[10px] font-medium text-blue-600 uppercase tracking-widest">
+                                  <p className="text-xs font-medium text-blue-600">
                                     {item.org}
                                   </p>
                                   <div className="pt-2 border-t border-slate-100">
-                                    <p className="text-[10px] font-medium text-slate-400 uppercase tracking-widest leading-none">
+                                    <p className="text-xs font-medium text-slate-400 leading-none">
                                       {item.date}
                                     </p>
                                   </div>
@@ -257,11 +257,11 @@ export function AchievementsSection() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-4">
                       <div className="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
-                         <span className="text-[9px] font-medium text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
+                         <span className="text-xs font-medium text-blue-600">{selectedRole.org}</span>
                       </div>
-                      <span className="text-[9px] font-medium text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
+                      <span className="text-xs font-medium text-slate-400">{selectedRole.date}</span>
                     </div>
-                    <h3 className="text-2xl font-medium text-foreground uppercase tracking-tighter">
+                    <h3 className="text-2xl font-semibold text-foreground tracking-tight">
                       {selectedRole.role}
                     </h3>
                     <p className="text-base text-slate-500 font-medium leading-relaxed">
@@ -273,7 +273,7 @@ export function AchievementsSection() {
                     {selectedRole.highlights.map((highlight, idx) => (
                       <div key={idx} className="flex gap-3">
                         <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                        <p className="text-[13px] text-slate-600 font-medium leading-relaxed">{highlight}</p>
+                        <p className="text-sm text-slate-600 font-medium leading-relaxed">{highlight}</p>
                       </div>
                     ))}
                   </div>
@@ -297,10 +297,10 @@ export function AchievementsSection() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-[13px] font-medium text-foreground uppercase tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
+                        <h4 className="text-sm font-semibold text-foreground tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
                         <div className="flex items-center justify-between">
-                          <p className="text-[9px] text-slate-400 font-medium uppercase tracking-widest truncate">{cert.issuer}</p>
-                          <span className="text-[9px] font-medium text-blue-600 uppercase shrink-0 ml-4">{cert.date}</span>
+                          <p className="text-xs text-slate-400 font-medium truncate">{cert.issuer}</p>
+                          <span className="text-xs font-medium text-blue-600 shrink-0 ml-4">{cert.date}</span>
                         </div>
                       </div>
                     </CardContent>
@@ -362,19 +362,19 @@ export function AchievementsSection() {
                         )}
                         <div className="absolute top-4 left-4">
                           <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
-                            <span className="text-[9px] font-medium text-foreground uppercase tracking-widest">{award.type}</span>
+                            <span className="text-xs font-medium text-foreground">{award.type}</span>
                           </div>
                         </div>
                       </div>
                       <CardContent className="p-8 space-y-4">
                         <div className="flex justify-between items-start gap-4">
                           <div className="space-y-1">
-                            <h4 className="text-base font-medium text-foreground uppercase tracking-tighter leading-tight group-hover:text-blue-600 transition-colors">
+                            <h4 className="text-base font-semibold text-foreground tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
                               {award.title}
                             </h4>
-                            <p className="text-[10px] text-slate-400 font-medium uppercase tracking-[0.15em]">{award.issuer}</p>
+                            <p className="text-xs text-slate-400 font-medium">{award.issuer}</p>
                           </div>
-                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[9px] font-medium text-slate-500 uppercase tracking-widest">
+                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-xs font-medium text-slate-500">
                             {award.year}
                           </span>
                         </div>

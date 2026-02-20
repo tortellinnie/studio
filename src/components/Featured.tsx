@@ -22,7 +22,7 @@ export function Featured() {
   const featuredItems = [
     {
       id: 'tpu-research',
-      tag: 'ARTIFICIAL INTELLIGENCE',
+      tag: 'Artificial Intelligence',
       title: 'TPU Research Cloud',
       desc: 'Supercharging ML Research with Google Infrastructure.',
       imageId: 'featured-tpu-research',
@@ -31,7 +31,7 @@ export function Featured() {
     },
     {
       id: 'prompt-challenge',
-      tag: 'SOFTWARE SOLUTIONS',
+      tag: 'Software Solutions',
       title: 'Prompt Design',
       desc: 'Winning the National AI Prompt Design Challenge.',
       imageId: 'featured-prompt-challenge',
@@ -40,7 +40,7 @@ export function Featured() {
     },
     {
       id: 'aws-reinvent',
-      tag: 'CLOUD & IOT',
+      tag: 'Cloud & IoT',
       title: 'AWS re:Invent',
       desc: 'The All Builders Welcome Grant Experience.',
       imageId: 'featured-aws-reinvent',
@@ -49,7 +49,7 @@ export function Featured() {
     },
     {
       id: 'github-universe',
-      tag: 'AUTOMATION',
+      tag: 'Automation',
       title: 'GitHub Universe',
       desc: 'Deep diving into az:Repo and Copilot extensions.',
       imageId: 'featured-github-universe',
@@ -74,8 +74,8 @@ export function Featured() {
       <div className="container mx-auto px-6 max-w-7xl mb-12">
         <div className="flex flex-row justify-between items-end border-b border-gray-100 pb-10">
           <div className="space-y-2">
-            <h2 className="text-4xl font-medium text-foreground tracking-tighter uppercase">
-              FEATURED CONTRIBUTIONS
+            <h2 className="text-4xl font-semibold text-foreground tracking-tight">
+              Featured Contributions
             </h2>
             <p className="text-slate-500 text-sm font-medium">
               Glimpses of my technological contributions in the field and multiple communities.
@@ -85,7 +85,7 @@ export function Featured() {
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary" />
-              <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-widest">
+              <span className="text-xs font-medium text-muted-foreground">
                 {selectedIndex + 1} / {featuredItems.length}
               </span>
             </div>
@@ -145,15 +145,15 @@ export function Featured() {
                         <div className="space-y-1 md:space-y-2 flex-1">
                           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 mb-2">
                              <div className={cn("w-1.5 h-1.5 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.5)]", item.color)} />
-                             <p className="text-[9px] font-medium text-white uppercase tracking-[0.1em]">{item.tag}</p>
+                             <p className="text-xs font-medium text-white">{item.tag}</p>
                           </div>
-                          <h3 className="text-xl md:text-3xl font-medium text-white leading-tight uppercase tracking-tighter">
+                          <h3 className="text-2xl md:text-3xl font-semibold text-white leading-tight">
                             {item.title}
                           </h3>
                         </div>
                         
                         <Link href={`/impact/${item.id}`} className="shrink-0">
-                          <button className="h-10 md:h-12 px-6 md:px-8 rounded-full bg-white text-black text-[10px] font-medium uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2 group/btn whitespace-nowrap shadow-xl">
+                          <button className="h-10 md:h-12 px-6 md:px-8 rounded-full bg-white text-black text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-2 group/btn whitespace-nowrap shadow-xl">
                             {item.action}
                             <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                           </button>
