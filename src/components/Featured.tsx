@@ -114,11 +114,11 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_85%] md:flex-[0_0_65%] px-1 md:px-2"
+                  className="flex-[0_0_80%] md:flex-[0_0_60%] px-0.5 md:px-1"
                 >
                   <div className={cn(
                     "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 transition-all duration-700 ease-premium",
-                    isActive ? "scale-100 opacity-100 shadow-2xl shadow-black/10" : "scale-90 opacity-40 shadow-none"
+                    isActive ? "scale-100 opacity-100 shadow-2xl shadow-black/10" : "scale-[0.92] opacity-40 shadow-none"
                   )}>
                     {imageData && (
                       <Image
