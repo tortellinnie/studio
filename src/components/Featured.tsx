@@ -15,7 +15,7 @@ export function Featured() {
     loop: true, 
     align: 'center',
     skipSnaps: false,
-    duration: 30,
+    duration: 35,
   });
   
   const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -106,7 +106,7 @@ export function Featured() {
 
       <div className="relative">
         <div className="overflow-visible" ref={emblaRef}>
-          <div className="flex -ml-4 md:-ml-8">
+          <div className="flex">
             {featuredItems.map((item, idx) => {
               const imageData = PlaceHolderImages.find(img => img.id === item.imageId);
               const isActive = selectedIndex === idx;
@@ -114,15 +114,11 @@ export function Featured() {
               return (
                 <div 
                   key={item.id} 
-                  className="flex-[0_0_85%] md:flex-[0_0_65%] pl-4 md:pl-8 transition-all duration-700 ease-premium"
-                  style={{
-                    transform: isActive ? 'scale(1)' : 'scale(0.85)',
-                    opacity: isActive ? 1 : 0.5,
-                  }}
+                  className="flex-[0_0_80%] md:flex-[0_0_50%] px-3 md:px-6"
                 >
                   <div className={cn(
-                    "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 transition-all duration-700",
-                    isActive ? "shadow-2xl shadow-black/10" : "shadow-none"
+                    "relative group overflow-hidden rounded-[2.5rem] md:rounded-[3rem] aspect-video bg-gray-100 transition-all duration-700 ease-premium",
+                    isActive ? "scale-100 opacity-100 shadow-2xl shadow-black/10" : "scale-90 opacity-40 shadow-none"
                   )}>
                     {imageData && (
                       <Image
@@ -139,19 +135,18 @@ export function Featured() {
                     
                     <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
                       <div className="flex items-end justify-between gap-6">
-                        <div className="space-y-2 md:space-y-4 flex-1">
+                        {/* Metadata Bottom-Left */}
+                        <div className="space-y-1 md:space-y-3 flex-1">
                           <div className="flex items-center gap-2.5 mb-1">
                              <div className={cn("w-2 h-2 rounded-full", item.color, "shadow-[0_0_10px_rgba(255,255,255,0.2)]")} />
                              <p className="text-[10px] md:text-[11px] font-black text-white/80 uppercase tracking-[0.3em]">{item.tag}</p>
                           </div>
-                          <h3 className="text-2xl md:text-5xl font-black text-white leading-tight uppercase italic tracking-tighter">
+                          <h3 className="text-xl md:text-4xl font-black text-white leading-tight uppercase italic tracking-tighter">
                             {item.title}
                           </h3>
-                          <p className="text-white/60 text-[11px] md:text-sm font-medium max-w-lg hidden md:block">
-                            {item.desc}
-                          </p>
                         </div>
                         
+                        {/* Pill Action Bottom-Right */}
                         <Link href={`/impact/${item.id}`} className="shrink-0 mb-1">
                           <button className="h-10 md:h-12 px-6 md:px-10 rounded-full bg-white text-black text-[10px] md:text-[11px] font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 flex items-center gap-3 group/btn whitespace-nowrap shadow-xl">
                             {item.action}
