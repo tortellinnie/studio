@@ -35,7 +35,7 @@
     @apply text-foreground font-body antialiased selection:bg-black selection:text-white overflow-x-hidden;
     background-color: white;
     background-image: 
-      radial-gradient(circle at 2px 2px, rgba(0,0,0,0.03) 1px, transparent 0);
+      radial-gradient(circle at 2px 2px, rgba(0,0,0,0.05) 1px, transparent 0);
     background-size: 32px 32px;
   }
 }
@@ -50,36 +50,4 @@
   justify-content: center;
   align-items: center;
   max-width: 800px;
-  margin: 0 auto;
-  gap: 1.5rem;
-}
-
-.huddle-item {
-  @apply transition-all duration-300 hover:scale-110;
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600;
-}
-
-.glass-card {
-  @apply backdrop-blur-md bg-white border border-gray-100;
-}
-
-/* Tighter vertical spacing for better navigation */
-section {
-  @apply py-16 md:py-20;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-primary/20 rounded-full;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/40;
-}
+  margin: 0 auto; gap: 1.5rem; } .huddle-item { @apply transition-all duration-300 hover:scale-110; } .text-gradient { @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600; } .glass-card { @apply backdrop-blur-md bg-white border border-gray-100; } section { @apply py-16 md:py-20; } .custom-scrollbar::-webkit-scrollbar { width: 4px; } .custom-scrollbar::-webkit-scrollbar-track { background: transparent; } .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-primary/20 rounded-full; } .custom-scrollbar::-webkit-scrollbar-thumb:hover { @apply bg-primary/40; }

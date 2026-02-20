@@ -22,7 +22,7 @@ export function Collaborators() {
   ];
 
   return (
-    <section id="collaborators" className="py-12 relative overflow-hidden bg-white">
+    <section id="collaborators" className="py-12 relative overflow-hidden bg-transparent">
       {/* Subtle Technical Grid Background */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
            style={{ 

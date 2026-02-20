@@ -95,7 +95,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-8 overflow-hidden bg-white">
+    <section className="relative min-h-screen flex flex-col justify-center px-6 pt-20 pb-8 overflow-hidden bg-transparent">
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
@@ -132,7 +132,7 @@ export function Hero() {
 
           <div className="relative">
             <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
-              <div className="bg-white px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
+              <div className="bg-white/50 backdrop-blur-sm px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
                 <span className="text-[8px] font-black uppercase tracking-[0.6em] text-primary">STRATEGIC LEADERSHIP</span>
               </div>
             </div>
@@ -170,7 +170,6 @@ export function Hero() {
         </div>
 
         <div className="space-y-6">
-          {/* Metrics - Shifted Down Slightly */}
           <div className="flex justify-center pt-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-5xl">
               {compactStats.map((stat, i) => (
@@ -212,7 +211,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Single Line Colored Partners - Bigger Logos */}
           <div className="pt-6 border-t border-black/[0.05] overflow-hidden">
             <div className="flex flex-nowrap items-center justify-center gap-x-14 max-w-[90vw] mx-auto py-2">
               {partners.map((partner, i) => {
