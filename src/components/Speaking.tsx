@@ -10,9 +10,7 @@ import {
   ChevronRight, 
   MessageSquarePlus, 
   Presentation, 
-  ImagePlus,
-  Monitor,
-  ExternalLink
+  ImagePlus
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -123,7 +121,6 @@ export function Speaking() {
 
   return (
     <section id="speaking" className="py-24 bg-white relative overflow-hidden">
-      {/* Grid Pattern Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
@@ -131,7 +128,6 @@ export function Speaking() {
            }} />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-10">
           <div className="space-y-6 text-center md:text-left">
             <h2 className="text-5xl md:text-6xl font-medium text-foreground tracking-tighter italic uppercase">
@@ -141,7 +137,6 @@ export function Speaking() {
               Sharing engineering insights and leadership strategies at conferences across the technology landscape.
             </p>
             
-            {/* Category Filters */}
             <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-4">
               {categories.map((cat) => (
                 <button
@@ -185,7 +180,6 @@ export function Speaking() {
           </div>
         </div>
 
-        {/* Carousel Section */}
         <div className="relative">
           <div className="overflow-visible" ref={emblaRef}>
             <div className="flex -ml-6">
@@ -198,7 +192,6 @@ export function Speaking() {
                     className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_35%] pl-6"
                   >
                     <div className="group bg-white rounded-[3.5rem] border border-slate-100 overflow-hidden flex flex-col transition-all duration-500 hover:shadow-2xl hover:shadow-slate-200/50 h-full">
-                      {/* Image Section - Landscape 3:2 */}
                       <div className="relative aspect-[3/2] w-full overflow-hidden shrink-0">
                         {imageData && (
                           <Image 
@@ -206,7 +199,7 @@ export function Speaking() {
                             alt={talk.title}
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                            data-ai-hint="speaker on stage action shot"
+                            data-ai-hint="speaker on stage"
                           />
                         )}
                         <div className="absolute top-4 left-4">
@@ -217,37 +210,37 @@ export function Speaking() {
                         </div>
                       </div>
 
-                      {/* Content Section */}
-                      <div className="flex-1 p-8 flex flex-col space-y-6">
-                        <div className="space-y-3">
-                          <h3 className="text-xl font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors duration-500">
-                            {talk.title}
-                          </h3>
-                          <p className="text-blue-600 font-bold uppercase tracking-[0.15em] text-[10px] leading-tight">
-                            {talk.event}
-                          </p>
+                      <div className="flex-1 p-8 flex flex-col">
+                        <div className="space-y-6 mb-8">
+                          <div className="space-y-3">
+                            <h3 className="text-xl font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors duration-500">
+                              {talk.title}
+                            </h3>
+                            <p className="text-blue-600 font-bold uppercase tracking-[0.15em] text-[10px] leading-tight">
+                              {talk.event}
+                            </p>
+                          </div>
+
+                          <div className="space-y-2.5">
+                            <div className="flex items-center gap-3 text-slate-400">
+                              <Calendar className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
+                              <span className="text-[9px] font-black uppercase tracking-widest">{talk.date}</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-slate-400">
+                              <MapPin className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
+                              <span className="text-[9px] font-black uppercase tracking-widest line-clamp-1">{talk.location}</span>
+                            </div>
+                          </div>
                         </div>
 
-                        <div className="space-y-2.5">
-                          <div className="flex items-center gap-3 text-slate-400">
-                            <Calendar className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
-                            <span className="text-[9px] font-black uppercase tracking-widest">{talk.date}</span>
-                          </div>
-                          <div className="flex items-center gap-3 text-slate-400">
-                            <MapPin className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
-                            <span className="text-[9px] font-black uppercase tracking-widest line-clamp-1">{talk.location}</span>
-                          </div>
-                        </div>
-
-                        {/* Action Buttons */}
-                        <div className="flex gap-2 pt-4 mt-auto">
+                        <div className="grid grid-cols-2 gap-3 mt-auto">
                           <Button 
                             variant="outline" 
                             size="sm" 
-                            className="flex-1 h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-black uppercase tracking-widest gap-2"
+                            className="h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-black uppercase tracking-widest gap-2 w-full"
                             asChild
                           >
-                            <a href={talk.slidesUrl} target="_blank">
+                            <a href={talk.slidesUrl} target="_blank" className="flex items-center justify-center gap-2">
                               <Presentation className="w-3.5 h-3.5 text-blue-600" />
                               Slides
                             </a>
@@ -258,7 +251,7 @@ export function Speaking() {
                               <Button 
                                 variant="outline" 
                                 size="sm" 
-                                className="flex-1 h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-black uppercase tracking-widest gap-2"
+                                className="h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-black uppercase tracking-widest gap-2 w-full"
                               >
                                 <ImagePlus className="w-3.5 h-3.5 text-slate-400" />
                                 Gallery
@@ -281,7 +274,7 @@ export function Speaking() {
                                         alt={`Gallery image ${i + 1}`} 
                                         fill 
                                         className="object-cover transition-transform duration-500 group-hover/img:scale-105"
-                                        data-ai-hint="speaker on stage action"
+                                        data-ai-hint="event photo"
                                       />
                                     </div>
                                   ))}

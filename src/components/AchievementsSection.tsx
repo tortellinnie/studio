@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -7,10 +8,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { 
   ExternalLink, 
   ChevronLeft, 
-  ChevronRight, 
-  Calendar,
-  Award,
-  Trophy
+  ChevronRight,
+  Trophy,
+  ArrowUpRight
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
@@ -106,14 +106,13 @@ export function AchievementsSection() {
 
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-white">
-      {/* Technical Grid Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ 
              backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
              backgroundSize: '40px 40px' 
            }} />
       
-      <div className="container mx-auto px-6 max-w-[90rem] relative z-10">
+      <div className="container mx-auto px-6 max-w-[100rem] relative z-10">
         <div className="text-center mb-16 space-y-3">
           <h2 className="text-4xl md:text-5xl font-medium text-foreground italic uppercase tracking-tighter">
             IMPACT & RECOGNITION
@@ -151,21 +150,18 @@ export function AchievementsSection() {
             <div className="w-full">
               <TooltipProvider delayDuration={0}>
                 <div className="relative pt-12 pb-32 overflow-x-auto custom-scrollbar">
-                  <div className="min-w-[1500px] relative pb-24">
-                    {/* Monthly Vertical Lines (72 months from 2021-2026) */}
+                  <div className="min-w-[1800px] relative pb-24">
                     <div className="absolute inset-x-0 top-0 bottom-24 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
                           "w-px h-full",
-                          i % 12 === 0 ? "bg-slate-800/20 w-[1.5px]" : "bg-slate-100"
+                          i % 12 === 0 ? "bg-slate-800 w-[2px]" : "bg-slate-100"
                         )} />
                       ))}
                     </div>
 
-                    {/* Horizontal Baseline */}
                     <div className="absolute bottom-[80px] left-0 w-full h-[1.5px] bg-slate-300" />
 
-                    {/* Year Labels */}
                     <div className="absolute inset-x-0 bottom-0 h-8 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
@@ -176,7 +172,6 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
-                    {/* Gantt Role Bars */}
                     <div className="relative space-y-8 px-4 min-h-[420px] pt-4">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
@@ -203,19 +198,16 @@ export function AchievementsSection() {
                                 sideOffset={12}
                                 className="bg-white border-slate-200 p-5 rounded-2xl shadow-xl max-w-xs z-[100]"
                               >
-                                <div className="space-y-3">
-                                  <div className="space-y-1">
-                                    <h4 className="text-[11px] font-black uppercase italic tracking-tighter text-foreground leading-none">
-                                      {item.role}
-                                    </h4>
-                                    <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest">
-                                      {item.org}
-                                    </p>
-                                  </div>
-                                  <div className="flex items-center gap-2 pt-1.5 border-t border-slate-100">
-                                    <Calendar className="w-3 h-3 text-slate-400" />
-                                    <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest">{item.date}</p>
-                                  </div>
+                                <div className="space-y-2">
+                                  <h4 className="text-[11px] font-black uppercase italic tracking-tighter text-foreground leading-none">
+                                    {item.role}
+                                  </h4>
+                                  <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest">
+                                    {item.org}
+                                  </p>
+                                  <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest pt-1 border-t border-slate-100">
+                                    {item.date}
+                                  </p>
                                 </div>
                               </TooltipContent>
                             </Tooltip>
@@ -235,7 +227,7 @@ export function AchievementsSection() {
                 {paginatedCerts.map((cert, idx) => (
                   <Card key={idx} className="bg-white border-slate-100 rounded-3xl p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5 hover:border-blue-600/20 group text-center">
                     <CardContent className="p-0 flex flex-col items-center gap-6">
-                      <div className="relative w-16 h-16 transition-all duration-500">
+                      <div className="relative w-16 h-16">
                         <Image 
                           src="/assets/images/emc.png" 
                           alt="EMC Logo" 
@@ -247,7 +239,7 @@ export function AchievementsSection() {
                         <h4 className="text-[11px] font-black text-foreground uppercase tracking-tight leading-tight">{cert.name}</h4>
                         <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest">{cert.issuer}</p>
                         <div className="flex items-center justify-center gap-2 pt-2">
-                          <span className="text-[9px] font-black text-blue-600/40 uppercase">{cert.date}</span>
+                          <span className="text-[9px] font-black text-blue-600 uppercase">{cert.date}</span>
                           <ExternalLink className="w-3 h-3 text-slate-300 group-hover:text-blue-600 transition-colors" />
                         </div>
                       </div>
@@ -256,7 +248,6 @@ export function AchievementsSection() {
                 ))}
               </div>
 
-              {/* Pagination Controls */}
               <div className="flex justify-center items-center gap-4">
                 <Button 
                   variant="outline" 
@@ -300,15 +291,15 @@ export function AchievementsSection() {
                 {awardsData.map((award, idx) => {
                   const imageData = PlaceHolderImages.find(img => img.id === award.imageId);
                   return (
-                    <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-blue-600/5 hover:-translate-y-1">
-                      <div className="relative aspect-[16/9] overflow-hidden bg-slate-50">
+                    <Card key={idx} className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden group transition-all duration-700 hover:shadow-2xl hover:shadow-blue-600/5 hover:-translate-y-1.5">
+                      <div className="relative aspect-video overflow-hidden bg-slate-50">
                         {imageData && (
                           <Image 
                             src={imageData.imageUrl} 
                             alt={award.title}
                             fill
-                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                            data-ai-hint="award recognition event"
+                            className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                            data-ai-hint="award ceremony"
                           />
                         )}
                         <div className="absolute top-4 left-4">
@@ -316,19 +307,23 @@ export function AchievementsSection() {
                             <Trophy className="w-4 h-4 text-blue-600" />
                           </div>
                         </div>
-                        <div className="absolute top-4 right-4">
-                          <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[9px] font-black text-white uppercase tracking-widest">
-                            {award.year}
-                          </span>
+                        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                          <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                            <ArrowUpRight className="w-5 h-5 text-white" />
+                          </div>
                         </div>
                       </div>
-                      <CardContent className="p-8 space-y-3">
-                        <h4 className="text-base font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors">
-                          {award.title}
-                        </h4>
-                        <div className="flex items-center gap-2">
-                          <Award className="w-3 h-3 text-slate-300" />
-                          <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{award.issuer}</p>
+                      <CardContent className="p-8 space-y-4">
+                        <div className="flex justify-between items-start gap-4">
+                          <div className="space-y-1">
+                            <h4 className="text-base font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors">
+                              {award.title}
+                            </h4>
+                            <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{award.issuer}</p>
+                          </div>
+                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[9px] font-black text-slate-500 uppercase tracking-widest">
+                            {award.year}
+                          </span>
                         </div>
                       </CardContent>
                     </Card>
