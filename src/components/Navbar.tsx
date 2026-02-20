@@ -48,7 +48,7 @@ export function Navbar() {
         isScrolled ? "scale-[0.98] shadow-[0_12px_40px_rgba(59,130,246,0.1)]" : "scale-100"
       )}>
         <Link href="/" className="flex items-center gap-2 shrink-0 group">
-          <span className="text-base md:text-lg lg:text-xl font-black tracking-tighter uppercase italic text-black transition-transform group-hover:scale-105 duration-300">
+          <span className="text-base md:text-lg lg:text-xl font-medium tracking-tighter uppercase text-black transition-transform group-hover:scale-105 duration-300">
             TECHNOLEADER<span className="text-primary">.</span>
           </span>
         </Link>
@@ -58,7 +58,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-[11px] font-semibold text-black/60 hover:text-primary transition-all uppercase tracking-[0.12em] whitespace-nowrap relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary after:transition-all hover:after:w-full"
+              className="text-[11px] font-medium text-black/60 hover:text-primary transition-all uppercase tracking-[0.12em] whitespace-nowrap relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-primary after:transition-all hover:after:w-full"
             >
               {item.label}
             </Link>
@@ -68,12 +68,12 @@ export function Navbar() {
         <div className="flex items-center gap-4 md:gap-8 shrink-0">
           <Link 
             href="/resume" 
-            className="hidden md:flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-black/80 hover:text-primary transition-colors group"
+            className="hidden md:flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.12em] text-black/80 hover:text-primary transition-colors group"
           >
             <FileText className="w-3.5 h-3.5 text-black/30 group-hover:text-primary transition-colors" />
             RESUME
           </Link>
-          <Button asChild className="rounded-full bg-primary text-white hover:bg-primary/90 h-10 px-8 text-[11px] font-bold uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:shadow-primary/30 transition-all duration-300">
+          <Button asChild className="rounded-full bg-primary text-white hover:bg-primary/90 h-10 px-8 text-[11px] font-medium uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:shadow-primary/30 transition-all duration-300">
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0lY_shann_karl_felipe" target="_blank" rel="noopener noreferrer">Connect</a>
           </Button>
         </div>

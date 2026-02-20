@@ -82,7 +82,7 @@ export function Blogs() {
 
       <div className="container mx-auto px-6 max-w-7xl mb-12 relative z-10">
         <div className="space-y-2 border-b border-gray-100 pb-10 text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl font-medium text-foreground tracking-tighter uppercase italic">
+          <h2 className="text-4xl md:text-5xl font-medium text-foreground tracking-tighter uppercase">
             INSIGHTS
           </h2>
           <p className="text-muted-foreground text-sm font-medium">
@@ -118,18 +118,18 @@ export function Blogs() {
                     
                     <div className="absolute top-6 right-6 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 flex items-center gap-2">
                       <Clock className="w-3 h-3 text-white/60" />
-                      <span className="text-[8px] font-black text-white uppercase tracking-widest">{item.readTime}</span>
+                      <span className="text-[8px] font-medium text-white uppercase tracking-widest">{item.readTime}</span>
                     </div>
 
                     <div className="absolute inset-0 p-10 flex flex-col justify-end whitespace-normal">
                       <div className="space-y-4">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
                            <div className={cn("w-1.5 h-1.5 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.5)]", item.color)} />
-                           <p className="text-[9px] font-black text-white uppercase tracking-[0.2em]">{item.tag}</p>
+                           <p className="text-[9px] font-medium text-white uppercase tracking-[0.2em]">{item.tag}</p>
                         </div>
                         
                         <div className="space-y-2">
-                          <h3 className="text-2xl font-black text-white leading-[1.1] uppercase italic tracking-tighter group-hover:text-primary transition-colors">
+                          <h3 className="text-2xl font-medium text-white leading-[1.1] uppercase tracking-tighter group-hover:text-primary transition-colors">
                             {item.title}
                           </h3>
                           <p className="text-white/60 text-xs font-medium line-clamp-2 uppercase tracking-wide">
@@ -140,7 +140,7 @@ export function Blogs() {
                         <div className="pt-4 flex items-center justify-between">
                           <div className="flex items-center gap-2 text-white/40">
                             <Calendar className="w-3 h-3" />
-                            <span className="text-[9px] font-black uppercase tracking-widest">{item.date}</span>
+                            <span className="text-[9px] font-medium uppercase tracking-widest">{item.date}</span>
                           </div>
                           <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-500">
                             <ArrowRight className="w-5 h-5" />

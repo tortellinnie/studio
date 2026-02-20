@@ -139,7 +139,7 @@ export function AchievementsSection() {
       
       <div className="container mx-auto px-6 max-w-[100rem] relative z-10">
         <div className="text-center mb-16 space-y-3">
-          <h2 className="text-4xl md:text-5xl font-medium text-foreground italic uppercase tracking-tighter">
+          <h2 className="text-4xl md:text-5xl font-medium text-foreground uppercase tracking-tighter">
             IMPACT & RECOGNITION
           </h2>
           <p className="text-slate-500 text-sm font-medium">
@@ -152,19 +152,19 @@ export function AchievementsSection() {
             <TabsList className="bg-slate-100/50 p-1.5 rounded-full h-14 border border-slate-200">
               <TabsTrigger 
                 value="leadership" 
-                className="rounded-full px-8 text-[11px] font-semibold uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[11px] font-medium uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Leadership
               </TabsTrigger>
               <TabsTrigger 
                 value="certs" 
-                className="rounded-full px-8 text-[11px] font-semibold uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[11px] font-medium uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Certifications
               </TabsTrigger>
               <TabsTrigger 
                 value="awards" 
-                className="rounded-full px-8 text-[11px] font-semibold uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
+                className="rounded-full px-8 text-[11px] font-medium uppercase tracking-widest data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all"
               >
                 Awards & Scholarships
               </TabsTrigger>
@@ -190,7 +190,7 @@ export function AchievementsSection() {
                     <div className="absolute inset-x-0 bottom-0 h-6 flex justify-between pointer-events-none px-4">
                       {timelineYears.map((y) => (
                         <div key={y.label} className="relative flex flex-col items-center">
-                          <span className="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900">
+                          <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.2em] text-slate-900">
                             {y.label}
                           </span>
                         </div>
@@ -220,7 +220,7 @@ export function AchievementsSection() {
                                       : "bg-white border-slate-200 text-slate-500 hover:border-blue-600/30 shadow-sm"
                                   )}
                                 >
-                                  <span className="text-[9px] font-semibold uppercase tracking-widest truncate">
+                                  <span className="text-[9px] font-medium uppercase tracking-widest truncate">
                                     {item.role}
                                   </span>
                                 </button>
@@ -230,14 +230,14 @@ export function AchievementsSection() {
                                 className="bg-white border-slate-200 p-6 rounded-2xl shadow-xl z-[100] min-w-[280px]"
                               >
                                 <div className="space-y-3">
-                                  <h4 className="text-[13px] font-bold uppercase tracking-tight text-foreground leading-none">
+                                  <h4 className="text-[13px] font-medium uppercase tracking-tight text-foreground leading-none">
                                     {item.role}
                                   </h4>
-                                  <p className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest">
+                                  <p className="text-[10px] font-medium text-blue-600 uppercase tracking-widest">
                                     {item.org}
                                   </p>
                                   <div className="pt-2 border-t border-slate-100">
-                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest leading-none">
+                                    <p className="text-[10px] font-medium text-slate-400 uppercase tracking-widest leading-none">
                                       {item.date}
                                     </p>
                                   </div>
@@ -257,11 +257,11 @@ export function AchievementsSection() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-4">
                       <div className="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
-                         <span className="text-[9px] font-semibold text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
+                         <span className="text-[9px] font-medium text-blue-600 uppercase tracking-widest">{selectedRole.org}</span>
                       </div>
-                      <span className="text-[9px] font-semibold text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
+                      <span className="text-[9px] font-medium text-slate-400 uppercase tracking-widest">{selectedRole.date}</span>
                     </div>
-                    <h3 className="text-2xl font-medium text-foreground uppercase italic tracking-tighter">
+                    <h3 className="text-2xl font-medium text-foreground uppercase tracking-tighter">
                       {selectedRole.role}
                     </h3>
                     <p className="text-base text-slate-500 font-medium leading-relaxed">
@@ -297,10 +297,10 @@ export function AchievementsSection() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-[13px] font-semibold text-foreground uppercase tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
+                        <h4 className="text-[13px] font-medium text-foreground uppercase tracking-tight leading-tight truncate mb-2">{cert.name}</h4>
                         <div className="flex items-center justify-between">
-                          <p className="text-[9px] text-slate-400 font-semibold uppercase tracking-widest truncate">{cert.issuer}</p>
-                          <span className="text-[9px] font-semibold text-blue-600 uppercase shrink-0 ml-4">{cert.date}</span>
+                          <p className="text-[9px] text-slate-400 font-medium uppercase tracking-widest truncate">{cert.issuer}</p>
+                          <span className="text-[9px] font-medium text-blue-600 uppercase shrink-0 ml-4">{cert.date}</span>
                         </div>
                       </div>
                     </CardContent>
@@ -362,19 +362,19 @@ export function AchievementsSection() {
                         )}
                         <div className="absolute top-4 left-4">
                           <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
-                            <span className="text-[9px] font-semibold text-foreground uppercase tracking-widest">{award.type}</span>
+                            <span className="text-[9px] font-medium text-foreground uppercase tracking-widest">{award.type}</span>
                           </div>
                         </div>
                       </div>
                       <CardContent className="p-8 space-y-4">
                         <div className="flex justify-between items-start gap-4">
                           <div className="space-y-1">
-                            <h4 className="text-base font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors">
+                            <h4 className="text-base font-medium text-foreground uppercase tracking-tighter leading-tight group-hover:text-blue-600 transition-colors">
                               {award.title}
                             </h4>
-                            <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-[0.15em]">{award.issuer}</p>
+                            <p className="text-[10px] text-slate-400 font-medium uppercase tracking-[0.15em]">{award.issuer}</p>
                           </div>
-                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[9px] font-semibold text-slate-500 uppercase tracking-widest">
+                          <span className="shrink-0 px-3 py-1 rounded-full bg-slate-100 text-[9px] font-medium text-slate-500 uppercase tracking-widest">
                             {award.year}
                           </span>
                         </div>

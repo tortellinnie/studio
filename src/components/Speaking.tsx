@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -130,7 +129,7 @@ export function Speaking() {
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-10">
           <div className="space-y-6 text-center md:text-left">
-            <h2 className="text-5xl md:text-6xl font-medium text-foreground tracking-tighter italic uppercase">
+            <h2 className="text-5xl md:text-6xl font-medium text-foreground tracking-tighter uppercase">
               SPEAKING
             </h2>
             <p className="text-slate-500 text-sm font-medium max-w-xl">
@@ -143,7 +142,7 @@ export function Speaking() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   className={cn(
-                    "px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 border",
+                    "px-6 py-2 rounded-full text-[10px] font-medium uppercase tracking-widest transition-all duration-300 border",
                     activeCategory === cat 
                       ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-600/20" 
                       : "bg-white border-slate-100 text-slate-400 hover:border-blue-600/30"
@@ -156,7 +155,7 @@ export function Speaking() {
           </div>
           
           <div className="flex flex-col sm:flex-row items-center gap-6">
-            <Button className="rounded-2xl bg-blue-600 text-white hover:bg-blue-700 text-[10px] font-black uppercase tracking-widest px-8 h-14 gap-3 shadow-xl shadow-blue-600/20">
+            <Button className="rounded-2xl bg-blue-600 text-white hover:bg-blue-700 text-[10px] font-medium uppercase tracking-widest px-8 h-14 gap-3 shadow-xl shadow-blue-600/20">
               Book me to speak <MessageSquarePlus className="w-4 h-4" />
             </Button>
             <div className="flex gap-2">
@@ -205,7 +204,7 @@ export function Speaking() {
                         <div className="absolute top-4 left-4">
                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
                              <div className={cn("w-1.5 h-1.5 rounded-full", talk.color)} />
-                             <span className="text-[8px] font-black uppercase tracking-[0.15em] text-slate-800">{talk.type}</span>
+                             <span className="text-[8px] font-medium uppercase tracking-[0.15em] text-slate-800">{talk.type}</span>
                            </div>
                         </div>
                       </div>
@@ -213,10 +212,10 @@ export function Speaking() {
                       <div className="flex-1 p-8 flex flex-col">
                         <div className="space-y-6 mb-8">
                           <div className="space-y-3">
-                            <h3 className="text-xl font-medium text-foreground uppercase italic tracking-tighter leading-tight group-hover:text-blue-600 transition-colors duration-500">
+                            <h3 className="text-xl font-medium text-foreground uppercase tracking-tighter leading-tight group-hover:text-blue-600 transition-colors duration-500">
                               {talk.title}
                             </h3>
-                            <p className="text-blue-600 font-bold uppercase tracking-[0.15em] text-[10px] leading-tight">
+                            <p className="text-blue-600 font-medium uppercase tracking-[0.15em] text-[10px] leading-tight">
                               {talk.event}
                             </p>
                           </div>
@@ -224,11 +223,11 @@ export function Speaking() {
                           <div className="space-y-2.5">
                             <div className="flex items-center gap-3 text-slate-400">
                               <Calendar className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
-                              <span className="text-[9px] font-black uppercase tracking-widest">{talk.date}</span>
+                              <span className="text-[9px] font-medium uppercase tracking-widest">{talk.date}</span>
                             </div>
                             <div className="flex items-center gap-3 text-slate-400">
                               <MapPin className="w-3.5 h-3.5 text-blue-600/30 shrink-0" />
-                              <span className="text-[9px] font-black uppercase tracking-widest line-clamp-1">{talk.location}</span>
+                              <span className="text-[9px] font-medium uppercase tracking-widest line-clamp-1">{talk.location}</span>
                             </div>
                           </div>
                         </div>
@@ -237,7 +236,7 @@ export function Speaking() {
                           <Button 
                             variant="outline" 
                             size="sm" 
-                            className="h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-black uppercase tracking-widest gap-2 w-full"
+                            className="h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-medium uppercase tracking-widest gap-2 w-full"
                             asChild
                           >
                             <a href={talk.slidesUrl} target="_blank" className="flex items-center justify-center gap-2">
@@ -251,7 +250,7 @@ export function Speaking() {
                               <Button 
                                 variant="outline" 
                                 size="sm" 
-                                className="h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-black uppercase tracking-widest gap-2 w-full"
+                                className="h-10 rounded-xl border-slate-100 hover:bg-slate-50 text-[9px] font-medium uppercase tracking-widest gap-2 w-full"
                               >
                                 <ImagePlus className="w-3.5 h-3.5 text-slate-400" />
                                 Gallery
@@ -260,7 +259,7 @@ export function Speaking() {
                             <DialogContent className="max-w-4xl bg-white border-slate-200 rounded-[2.5rem] p-0 overflow-hidden shadow-3xl">
                               <div className="p-8 border-b border-slate-100 bg-slate-50/50">
                                 <DialogHeader>
-                                  <DialogTitle className="text-2xl font-medium uppercase italic tracking-tighter text-foreground">
+                                  <DialogTitle className="text-2xl font-medium uppercase tracking-tighter text-foreground">
                                     Event Gallery: <span className="text-blue-600">{talk.title}</span>
                                   </DialogTitle>
                                 </DialogHeader>

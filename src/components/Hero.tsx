@@ -100,25 +100,25 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-10">
           <div className="space-y-10">
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground italic uppercase">
+              <h1 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-foreground uppercase">
                 TURNING VISION INTO <br />
                 INTELLIGENT SYSTEMS <br />
                 <span className="text-primary">THAT SCALE.</span>
               </h1>
 
-              <div className="flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/40">
+              <div className="flex items-center gap-4 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground/40">
                 <span>SHANN KARL FELIPE • AI / LEADERSHIP</span>
               </div>
             </div>
             
             <div className="flex flex-wrap items-center gap-4">
-              <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-12 px-8 text-[11px] font-bold uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
+              <Button size="lg" className="rounded-full bg-black text-white hover:bg-black/90 h-12 px-8 text-[11px] font-medium uppercase tracking-widest flex items-center gap-3 group shadow-2xl" asChild>
                 <Link href="/#contact">
                   Initiate Discussion
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="rounded-full h-12 px-8 text-[11px] font-bold uppercase tracking-widest bg-white border-border hover:bg-gray-50 flex items-center gap-3" asChild>
+              <Button variant="outline" size="lg" className="rounded-full h-12 px-8 text-[11px] font-medium uppercase tracking-widest bg-white border-border hover:bg-gray-50 flex items-center gap-3" asChild>
                 <Link href="/resume">
                   <FileText className="w-4 h-4" />
                   Technical Resume
@@ -130,7 +130,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
               <div className="bg-white/50 backdrop-blur-sm px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">STRATEGIC LEADERSHIP</span>
+                <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-primary">STRATEGIC LEADERSHIP</span>
               </div>
             </div>
 
@@ -151,7 +151,7 @@ export function Hero() {
                   </svg>
 
                   <div className="relative z-10">
-                    <h3 className="text-white text-[11px] font-semibold uppercase tracking-widest leading-tight mb-2">
+                    <h3 className="text-white text-[11px] font-medium uppercase tracking-widest leading-tight mb-2">
                       {spec.title}
                     </h3>
                     <p className="text-white/40 text-[9px] font-medium uppercase tracking-wider">
@@ -173,10 +173,10 @@ export function Hero() {
                 <Dialog key={i}>
                   <DialogTrigger asChild>
                     <button className="flex flex-col items-center text-center hover:opacity-70 transition-opacity outline-none group space-y-2 w-full">
-                      <span className="text-5xl lg:text-7xl font-semibold italic tracking-tighter text-primary leading-none transition-colors">
+                      <span className="text-5xl lg:text-7xl font-medium tracking-tighter text-primary leading-none transition-colors">
                         {stat.value}
                       </span>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/60 leading-tight">
+                      <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-muted-foreground/60 leading-tight">
                         {stat.label}
                       </p>
                     </button>
@@ -184,7 +184,7 @@ export function Hero() {
                   <DialogContent className="bg-white border-border text-foreground max-w-lg rounded-[2.5rem] p-0 focus:outline-none shadow-3xl overflow-hidden">
                     <div className="p-10 border-b border-border bg-gray-50/50">
                       <DialogHeader>
-                        <DialogTitle className="text-4xl font-black uppercase italic tracking-tighter text-primary">
+                        <DialogTitle className="text-4xl font-medium uppercase tracking-tighter text-primary">
                           {stat.title}
                         </DialogTitle>
                       </DialogHeader>
@@ -194,8 +194,8 @@ export function Hero() {
                       <div className="grid gap-6">
                         {stat.details.map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between group border-b border-gray-100 pb-6 last:border-0">
-                            <span className="font-bold text-foreground/80 text-base">{item.name}</span>
-                            <Badge variant="outline" className="border-border text-muted-foreground text-[9px] font-semibold uppercase tracking-widest px-4 py-1.5">
+                            <span className="font-medium text-foreground/80 text-base">{item.name}</span>
+                            <Badge variant="outline" className="border-border text-muted-foreground text-[9px] font-medium uppercase tracking-widest px-4 py-1.5">
                               {item.detail}
                             </Badge>
                           </div>
