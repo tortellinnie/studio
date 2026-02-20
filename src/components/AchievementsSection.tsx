@@ -3,24 +3,27 @@
 import * as React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink, GraduationCap, Briefcase, Award, CheckCircle2, Trophy, Medal, Globe, Code2, Terminal, ShieldCheck } from 'lucide-react';
+import { ExternalLink, Briefcase, Trophy, Globe, Code2, Terminal, ShieldCheck, ChevronRight, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 const leadershipData = [
   {
+    id: 'nerds',
     date: '2025 – Present',
     role: 'Executive Lead',
     org: 'NERDS 2.0 · Hybrid',
     description: 'Directed R&D operations for award-winning initiatives, securing ₱1.2M+ in total grants and startup incentives while leading cross-functional engineering teams.'
   },
   {
+    id: 'agape',
     date: '2024 – Present',
     role: 'President',
     org: 'AGAPE PH0209 · Quezon City',
     description: 'Directed strategic operations for a youth-led NGO with 200+ members, orchestrating 15+ community programs impacting over 600 beneficiaries nationwide.'
   },
   {
+    id: 'library',
     date: '2024 – Present',
     role: 'President, Library Committee',
     org: 'FEU Institute of Technology',
@@ -49,6 +52,8 @@ const awardsData = [
 ];
 
 export function AchievementsSection() {
+  const [activeRole, setActiveRole] = React.useState(leadershipData[0]);
+
   return (
     <section id="achievements" className="py-24 relative overflow-hidden bg-white">
       {/* Subtle Grid Pattern Overlay */}
@@ -69,7 +74,7 @@ export function AchievementsSection() {
         </div>
 
         <Tabs defaultValue="leadership" className="w-full">
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-16">
             <TabsList className="bg-slate-100/50 p-1.5 rounded-full h-14 border border-slate-200">
               <TabsTrigger 
                 value="leadership" 
@@ -92,23 +97,80 @@ export function AchievementsSection() {
             </TabsList>
           </div>
 
+          {/* Leadership: Horizontal Timeline */}
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
-            <div className="max-w-4xl mx-auto space-y-0">
-              {leadershipData.map((item, idx) => (
-                <div key={idx} className="group relative pl-12 pb-16 last:pb-0 border-l border-slate-200 ml-4">
-                  <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm" />
-                  <div className="space-y-4 -mt-1.5">
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">{item.date}</p>
-                    <div className="space-y-1">
-                      <h3 className="text-2xl font-black text-foreground uppercase italic tracking-tight">{item.role}</h3>
-                      <p className="text-blue-600 font-bold uppercase tracking-widest text-[11px]">{item.org}</p>
-                    </div>
-                    <p className="text-slate-500 font-medium leading-relaxed max-w-2xl text-base">
-                      {item.description}
-                    </p>
-                  </div>
+            <div className="max-w-4xl mx-auto space-y-16">
+              <div className="relative pt-12 pb-8">
+                {/* Main Horizontal Axis */}
+                <div className="absolute top-1/2 left-0 w-full h-px bg-slate-200 -translate-y-1/2" />
+                
+                <div className="relative flex justify-between items-center px-4 md:px-12">
+                  <TooltipProvider delayDuration={0}>
+                    {leadershipData.map((item, idx) => (
+                      <div key={item.id} className="relative group">
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <button
+                              onClick={() => setActiveRole(item)}
+                              className={cn(
+                                "relative z-10 w-4 h-4 rounded-full border-4 transition-all duration-500",
+                                activeRole.id === item.id 
+                                  ? "bg-blue-600 border-white scale-150 shadow-lg shadow-blue-600/20" 
+                                  : "bg-white border-slate-200 hover:border-blue-600 group-hover:scale-125"
+                              )}
+                            />
+                          </TooltipTrigger>
+                          <TooltipContent 
+                            side="top" 
+                            className="bg-white border-slate-100 rounded-xl px-4 py-2 shadow-xl mb-2"
+                          >
+                            <p className="text-[10px] font-black uppercase tracking-widest text-blue-600">{item.role}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                        
+                        {/* Year Label below node */}
+                        <div className="absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                          <span className={cn(
+                            "text-[9px] font-black uppercase tracking-widest transition-colors",
+                            activeRole.id === item.id ? "text-blue-600" : "text-slate-400"
+                          )}>
+                            {item.date.split(' – ')[0]}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </TooltipProvider>
                 </div>
-              ))}
+              </div>
+
+              {/* Active Role Summary Card */}
+              <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <Card className="bg-white border-slate-100 rounded-[2.5rem] p-10 shadow-sm border overflow-hidden relative group">
+                  <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <Briefcase className="w-32 h-32 text-blue-600" />
+                  </div>
+                  <CardContent className="p-0 space-y-8">
+                    <div className="space-y-4">
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">{activeRole.date}</p>
+                      <div className="space-y-1">
+                        <h3 className="text-3xl font-medium text-foreground uppercase italic tracking-tighter leading-none">
+                          {activeRole.role}
+                        </h3>
+                        <p className="text-blue-600 font-bold uppercase tracking-widest text-xs">{activeRole.org}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-6 items-start">
+                      <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
+                        <Info className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <p className="text-slate-500 font-medium leading-relaxed max-w-2xl text-lg">
+                        {activeRole.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </TabsContent>
 
@@ -143,7 +205,7 @@ export function AchievementsSection() {
                       <Trophy className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-black text-foreground uppercase italic tracking-tight">{award.title}</h4>
+                      <h4 className="text-lg font-medium text-foreground uppercase italic tracking-tighter leading-none">{award.title}</h4>
                       <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em]">{award.issuer}</p>
                     </div>
                   </div>
