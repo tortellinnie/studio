@@ -12,7 +12,6 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 const speakingData = [
@@ -122,7 +121,7 @@ export function Speaking() {
   return (
     <section id="speaking" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl relative z-10 mb-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 gap-8">
           <div className="space-y-3">
             <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
               Speaking
@@ -132,9 +131,9 @@ export function Speaking() {
             </p>
           </div>
           
-          <Button className="rounded-full bg-blue-600 text-white hover:bg-blue-700 h-11 px-8 gap-2 group shadow-lg shadow-blue-600/10" asChild>
+          <Button className="rounded-full bg-blue-600 text-white hover:bg-blue-700 h-11 px-8 gap-2 group shadow-lg shadow-blue-600/10 whitespace-nowrap" asChild>
             <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0lY_shann_karl_felipe" target="_blank" rel="noopener noreferrer">
-              Let's Connect! <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              Interested in having me at your event? Let's connect! <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
         </div>
@@ -211,7 +210,9 @@ export function Speaking() {
                       <div className="space-y-3">
                         <div className="flex items-center gap-2 mb-2">
                            <div className="w-1 h-1 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.4)]" />
-                           <span className="text-[10px] font-bold text-blue-600 uppercase">{talk.tag}</span>
+                           <span className="text-[10px] font-bold text-blue-600 uppercase">
+                             {talk.tag}
+                           </span>
                         </div>
                         <h3 className="text-lg font-semibold text-foreground leading-tight tracking-tight">
                           {talk.title}
@@ -253,17 +254,6 @@ export function Speaking() {
           </div>
           <ScrollBar orientation="horizontal" className="h-2 bg-slate-100/50" />
         </ScrollArea>
-      </div>
-
-      <div className="container mx-auto px-6 max-w-7xl mt-8">
-        <div className="p-12 bg-slate-50/50 rounded-[3rem] border border-slate-100 flex flex-col items-center justify-center text-center space-y-6">
-          <p className="text-slate-500 text-sm font-medium">Interested in having me share technical insights at your next event?</p>
-          <Button className="rounded-full bg-blue-600 text-white hover:bg-blue-700 h-12 px-10 text-sm font-semibold shadow-lg shadow-blue-600/20" asChild>
-            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0lY_shann_karl_felipe" target="_blank" rel="noopener noreferrer">
-              Let's Book a Session
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );
