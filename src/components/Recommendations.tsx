@@ -78,27 +78,27 @@ export function Recommendations() {
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex -ml-6">
             {testimonials.map((item, idx) => (
-              <div key={idx} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] pl-6">
-                <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-700 group relative flex flex-col justify-between h-full min-h-[380px]">
-                  <div className="space-y-6">
+              <div key={idx} className="flex-[0_0_90%] sm:flex-[0_0_33.33%] lg:flex-[0_0_25%] pl-6">
+                <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-700 group relative flex flex-col justify-between h-full min-h-[300px]">
+                  <div className="space-y-4">
                     <div className="text-blue-600">
-                      <Quote className="w-10 h-10 opacity-20" fill="currentColor" />
+                      <Quote className="w-8 h-8 opacity-20" fill="currentColor" />
                     </div>
-                    <p className="text-lg text-slate-500 font-medium leading-relaxed italic">
+                    <p className="text-sm text-slate-500 font-medium leading-relaxed italic">
                       "{item.text}"
                     </p>
                   </div>
                   
-                  <div className="flex items-center gap-4 pt-8 mt-auto">
-                    <Avatar className="w-14 h-14 border-2 border-slate-50">
+                  <div className="flex items-center gap-4 pt-6 mt-auto">
+                    <Avatar className="w-10 h-10 border border-slate-50">
                       <AvatarImage src={item.avatarUrl} alt={item.name} className="object-cover" />
-                      <AvatarFallback className="bg-blue-600 text-white font-medium text-xs">
+                      <AvatarFallback className="bg-blue-600 text-white font-medium text-[10px]">
                         {item.initials}
                       </AvatarFallback>
                     </Avatar>
                     <div className="min-w-0">
-                      <p className="text-sm font-semibold text-foreground tracking-tight truncate">{item.name}</p>
-                      <p className="text-[10px] font-semibold text-blue-600 uppercase tracking-widest truncate">{item.role}</p>
+                      <p className="text-xs font-semibold text-foreground tracking-tight truncate">{item.name}</p>
+                      <p className="text-[9px] font-semibold text-blue-600 uppercase tracking-widest truncate">{item.role}</p>
                     </div>
                   </div>
                 </div>
