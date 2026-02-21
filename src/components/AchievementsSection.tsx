@@ -169,8 +169,8 @@ export function AchievementsSection() {
           <TabsContent value="leadership" className="mt-0 focus-visible:outline-none">
             <div className="w-full space-y-6">
               <TooltipProvider delayDuration={0}>
-                <div className="relative pt-8 pb-10 overflow-x-auto custom-scrollbar">
-                  <div className="min-w-[1800px] relative pb-12 px-4">
+                <div className="relative pt-8 pb-4 overflow-x-auto custom-scrollbar">
+                  <div className="min-w-[1200px] relative pb-12 px-4">
                     <div className="absolute inset-x-0 top-0 bottom-12 flex justify-between pointer-events-none px-4">
                       {Array.from({ length: 73 }).map((_, i) => (
                         <div key={i} className={cn(
@@ -192,55 +192,27 @@ export function AchievementsSection() {
                       ))}
                     </div>
 
-                    <div className="relative space-y-2 pt-4">
+                    <div className="relative space-y-1.5 pt-4">
                       {leadershipData.map((item) => {
                         const left = (item.start / 72) * 100;
                         const width = (item.duration / 72) * 100;
                         const isActive = selectedRole.id === item.id;
 
                         return (
-                          <div key={item.id} className="relative h-4">
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <button
-                                  onClick={() => setSelectedRole(item)}
-                                  style={{ 
-                                    left: `${left}%`, 
-                                    width: `${width}%` 
-                                  }}
-                                  className={cn(
-                                    "absolute h-3 rounded-full flex items-center px-4 transition-all duration-500 border overflow-hidden",
-                                    isActive 
-                                      ? "bg-blue-600 border-blue-600 text-white shadow-lg z-10" 
-                                      : "bg-white border-slate-100 text-slate-500 hover:border-blue-600/30 shadow-sm"
-                                  )}
-                                >
-                                  <span className="text-[9px] font-medium truncate">
-                                    {item.role}
-                                  </span>
-                                </button>
-                              </TooltipTrigger>
-                              <TooltipContent 
-                                side="top" 
-                                className="bg-white border-slate-200 p-6 rounded-2xl shadow-xl z-[100] min-w-[280px]"
-                              >
-                                <div className="space-y-4">
-                                  <div className="space-y-1">
-                                    <h4 className="text-base font-semibold text-foreground leading-tight tracking-tight">
-                                      {item.role}
-                                    </h4>
-                                    <p className="text-sm font-semibold text-blue-600 uppercase">
-                                      {item.org}
-                                    </p>
-                                  </div>
-                                  <div className="pt-3 border-t border-slate-100">
-                                    <Badge variant="outline" className="text-[10px] font-semibold text-slate-500 px-3 py-1">
-                                      {item.date}
-                                    </Badge>
-                                  </div>
-                                </div>
-                              </TooltipContent>
-                            </Tooltip>
+                          <div key={item.id} className="relative h-2.5">
+                            <button
+                              onClick={() => setSelectedRole(item)}
+                              style={{ 
+                                left: `${left}%`, 
+                                width: `${width}%` 
+                              }}
+                              className={cn(
+                                "absolute h-2 rounded-full transition-all duration-500 border",
+                                isActive 
+                                  ? "bg-blue-600 border-blue-600 shadow-md z-10" 
+                                  : "bg-slate-100 border-slate-200 hover:border-blue-600/30"
+                              )}
+                            />
                           </div>
                         );
                       })}
@@ -249,8 +221,8 @@ export function AchievementsSection() {
                 </div>
               </TooltipProvider>
 
-              <div className="max-w-4xl mx-auto">
-                <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 space-y-6">
+              <div className="max-w-4xl mx-auto pt-2">
+                <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100 space-y-6">
                   <div className="space-y-3">
                     <div className="flex items-center gap-4">
                       <div className="px-3 py-1 rounded-full bg-blue-600/10 border border-blue-600/20">
@@ -258,10 +230,10 @@ export function AchievementsSection() {
                       </div>
                       <span className="text-[10px] font-semibold text-slate-400">{selectedRole.date}</span>
                     </div>
-                    <h3 className="text-2xl font-semibold text-foreground tracking-tight">
+                    <h3 className="text-xl font-semibold text-foreground tracking-tight">
                       {selectedRole.role}
                     </h3>
-                    <p className="text-base text-slate-500 font-medium leading-relaxed">
+                    <p className="text-sm text-slate-500 font-medium leading-relaxed">
                       {selectedRole.summary}
                     </p>
                   </div>
@@ -270,7 +242,7 @@ export function AchievementsSection() {
                     {selectedRole.highlights.map((highlight, idx) => (
                       <div key={idx} className="flex gap-3">
                         <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                        <p className="text-sm text-slate-600 font-medium leading-relaxed">{highlight}</p>
+                        <p className="text-xs text-slate-600 font-medium leading-relaxed">{highlight}</p>
                       </div>
                     ))}
                   </div>
@@ -346,7 +318,7 @@ export function AchievementsSection() {
                 {awardsData.map((award, idx) => {
                   const imageData = PlaceHolderImages.find(img => img.id === award.imageId);
                   return (
-                    <Card key={idx} className="bg-white border-slate-100 rounded-[2rem] overflow-hidden group transition-all duration-500 hover:shadow-xl">
+                    <Card key={idx} className="bg-white border-slate-100 rounded-2xl overflow-hidden group transition-all duration-500 hover:shadow-xl">
                       <div className="relative aspect-video overflow-hidden bg-slate-50">
                         {imageData && (
                           <Image 
@@ -357,21 +329,21 @@ export function AchievementsSection() {
                             data-ai-hint={award.type}
                           />
                         )}
-                        <div className="absolute top-4 left-4">
-                          <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/20 shadow-sm">
-                            <span className="text-[8px] font-semibold text-foreground uppercase">{award.type}</span>
+                        <div className="absolute top-3 left-3">
+                          <div className="px-2 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-white/10 shadow-sm">
+                            <span className="text-[8px] font-semibold text-foreground uppercase tracking-wider">{award.type}</span>
                           </div>
                         </div>
                       </div>
-                      <CardContent className="p-5 space-y-2">
+                      <CardContent className="p-4 space-y-1.5">
                         <div className="flex justify-between items-start gap-4">
                           <div className="space-y-0.5">
-                            <h4 className="text-sm font-semibold text-foreground tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
+                            <h4 className="text-xs font-semibold text-foreground tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
                               {award.title}
                             </h4>
                             <p className="text-[9px] text-slate-400 font-semibold uppercase">{award.issuer}</p>
                           </div>
-                          <span className="shrink-0 px-2 py-0.5 rounded-full bg-slate-100 text-[9px] font-semibold text-slate-500">
+                          <span className="shrink-0 px-1.5 py-0.5 rounded-full bg-slate-100 text-[8px] font-semibold text-slate-500">
                             {award.year}
                           </span>
                         </div>

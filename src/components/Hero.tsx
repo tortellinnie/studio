@@ -130,7 +130,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent flex flex-col justify-center items-center">
               <div className="bg-white/50 backdrop-blur-sm px-2 py-4 -rotate-90 origin-center whitespace-nowrap">
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">STRATEGIC LEADERSHIP</span>
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-primary">STRATEGIC LEADERSHIP</span>
               </div>
             </div>
 
@@ -171,7 +171,7 @@ export function Hero() {
                       <span className="text-5xl lg:text-7xl font-semibold tracking-tighter text-primary leading-none">
                         {stat.value}
                       </span>
-                      <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                      <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
                         {stat.label}
                       </p>
                     </button>
@@ -215,7 +215,7 @@ export function Hero() {
                         alt={partner.name}
                         width={200}
                         height={80}
-                        className="object-contain h-full w-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                        className="object-contain h-full w-auto opacity-80 hover:opacity-100 transition-all duration-500"
                         data-ai-hint={logo.imageHint}
                       />
                     )}
